@@ -57,104 +57,7 @@
 <script src="js/modal.js"></script>
 </head>
 <body class="">
-  <!-- BEGIN # MODAL LOGIN -->
-  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header" align="center">
-            <img class="img-circle" id="img_logo" src="images/logo_login.png">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-            </button>
-          </div>
-                  
-                  <!-- Begin # DIV Form -->
-                  <div id="div-forms">
-                  
-                      <!-- Begin # Login Form -->
-                      <form id="login-form">
-                      <div class="modal-body">
-                  <div id="div-login-msg">
-                                  <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                  <span id="text-login-msg">Type your username and password.</span>
-                              </div>
-                              <br/>
-                              <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login with Facebook</button>
-                            </div>
-                  <input id="login_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
-                  <input id="login_password" class="form-control" type="password" placeholder="Password" required>
-                              <div class="checkbox">
-                                  <label>
-                                      <input type="checkbox"> Remember me
-                                  </label>
-                              </div>
-                    </div>
-                  <div class="modal-footer">
-                              <div>
-                                  <button type="submit" class="btn btn-success btn-lg btn-block">Login</button>
-                              </div>
-                    <div>
-                                  <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-                                  <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
-                              </div>
-                  </div>
-                      </form>
-                      <!-- End # Login Form -->
-                      
-                      <!-- Begin | Lost Password Form -->
-                      <form id="lost-form" style="display:none;">
-                    <div class="modal-body">
-                  <div id="div-lost-msg">
-                                  <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                  <span id="text-lost-msg">Type your e-mail.</span>
-                              </div>
-                  <input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
-                    </div>
-                  <div class="modal-footer">
-                              <div>
-                                  <button type="submit" class="btn btn-success btn-lg btn-block">Send</button>
-                              </div>
-                              <div>
-                                  <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
-                                  <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
-                              </div>
-                  </div>
-                      </form>
-                      <!-- End | Lost Password Form -->
-                      
-                      <!-- Begin | Register Form -->
-                      <form id="register-form" style="display:none;">
-                      <div class="modal-body">
-                  <div id="div-register-msg">
-                                  <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                  <span id="text-register-msg">Register an account.</span>
-                              </div>
-                              <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up with Facebook</button>
-                            </div>
-                  <input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
-                              <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
-                              <input id="register_password" class="form-control" type="password" placeholder="Password" required>
-                    </div>
-                  <div class="modal-footer">
-                              <div>
-                                  <button type="submit" class="btn btn-success btn-lg btn-block">Register</button>
-                              </div>
-                              <div>
-                                  <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
-                                  <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-                              </div>
-                  </div>
-                      </form>
-                      <!-- End | Register Form -->
-                      
-                  </div>
-                  <!-- End # DIV Form --> 
-        </div>
-      </div>
-    </div>
-      <!-- END # MODAL LOGIN -->
+
 <div id="wrapper">
   <div id="preloader">
     <div id="loader"></div>
@@ -163,7 +66,7 @@
     <form class="modal-content animate" action="" >
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-        <img src="images/logo-wide-white.png" alt="logo" style="width:400px" class="avatar">
+        <img src="images/Logo_login.png" alt="logo" style="width:300px" class="avatar">
       </div>
   
       <div class=" col-md-offset-4 col-md-4">
@@ -175,7 +78,8 @@
           
         <button type="submit">Login</button>
         <input type="checkbox" checked="checked"> Remember me
-        <span class="new" style="float: right;">forgot <a href="#" style="color:blue;font-weight:bolder;" >password?</a></span>
+        <span class="new" style="float: right;">forgot <a href="#" onclick="document.getElementById('id03').style.display='block';
+          document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='none';" style="color:blue;font-weight:bolder;" >password?</a></span>
       </div>
   
       <div class=" col-md-offset-4 col-md-4">
@@ -237,11 +141,35 @@
       </div>
     </form>
   </div>
+
+  <div id="id03" class="modal"style="z-index: 5555;">
+    <form class="modal-content animate" action="" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="images/Logo_login.png" alt="logo" style="width:300px" class="avatar">
+      </div>
   
+      <div class=" col-md-offset-4 col-md-4">
+        <label><b>email</b></label>
+        <input type="text" placeholder="email" name="email" required>
+
+        <button type="submit">Send</button>
+    
+        <div class="col-md-6 navbar-right">
+          <a href="#" class="fomrLink" onclick="document.getElementById('id02').style.display='block';
+        document.getElementById('id01').style.display='none';document.getElementById('id03').style.display='none'" style="color:blue;font-weight:bolder;padding-right:20px">Register</a>
+         |  <a href="#" class="fomrLink" onclick="document.getElementById('id01').style.display='block';
+        document.getElementById('id02').style.display='none';document.getElementById('id03').style.display='none';" style="color:blue;font-weight:bolder;">Login</a>
+        </div>
+      </div>
+      </div>
+    </form>
+  </div>
   <script>
   // Get the modal
   var modal = document.getElementById('id01');
   var modal1 = document.getElementById('id02');
+  var modal2 = document.getElementById('id03');
   
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
@@ -253,6 +181,11 @@
   window.onclick = function(event) {
       if (event.target == modal1) {
           modal1.style.display = "none";
+      }
+  }
+  window.onclick = function(event) {
+      if (event.target == modal2) {
+          modal2.style.display = "none";
       }
   }
   </script>
