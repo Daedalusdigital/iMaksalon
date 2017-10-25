@@ -1,6 +1,6 @@
  
     /* Full-width input fields */
-    input[type=text], input[type=password],.form>input[type=email] {
+    input[type=text], input[type=password],input[type=email] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -9,9 +9,9 @@
         box-sizing: border-box;
         height: 40px;
     }
-    
+
     /* Set a style for all buttons */
-    button {
+    button, input[type=submit]{
         background-color: #4CAF50;
         color: white;
         padding: 14px 20px;

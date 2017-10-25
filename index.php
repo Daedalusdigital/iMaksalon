@@ -57,18 +57,25 @@
 <script src="js/modal.js"></script>
 </head>
 <body class="">
+<?php
 
+include("inc/connection.php");
+
+if(isset($_POST['uname']) && isset($_POST['psw'])){
+    @$response =  "Username : ".$_POST['uname']."<br/>Password : ".$_POST['psw'];
+}
+?>
 <div id="wrapper">
   <div id="preloader">
     <div id="loader"></div>
   </div>
   <div id="id01" class="modal"style="z-index: 5555;">
-    <form class="modal-content animate" action="" >
+    <form class="modal-content animate" action="" method="POST" >
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-        <img src="images/Logo_login.png" alt="logo" style="width:300px" class="avatar">
+        <img src="images/Logo_login.png" alt="logo" style="width:250px" class="avatar">
       </div>
-  
+<div class="status"><?php echo @$response;?></div>
       <div class=" col-md-offset-4 col-md-4">
         <label><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="uname" required>
@@ -76,7 +83,7 @@
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
           
-        <button type="submit">Login</button>
+        <input type="submit" style="z-index:9999999" />
         <input type="checkbox" checked="checked"> Remember me
         <span class="new" style="float: right;">forgot <a href="#" onclick="document.getElementById('id03').style.display='block';
           document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='none';" style="color:blue;font-weight:bolder;" >password?</a></span>
@@ -108,23 +115,22 @@
         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
   
-      <div class="form col-md-offset-4 col-md-4">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+      <div class="form col-md-offset-4 col-md-4 register">
+        <input type="text" placeholder="First Name" name="fname" required>
   
-        <label><b>Email</b></label>
-        <input type="email" placeholder="Enter Emial" name="email" required>
+        <input type="text" placeholder="Last Name" name="lname" required>
   
-        <label><b>Phone Number</b></label>
-        <input type="text" placeholder="Enter Phone" name="phone" required>
+        <input type="text" placeholder="Username" name="uname" required>
   
-        <label><b>Password</b></label>
+        <input type="email" placeholder="Email" name="email" required>
+  
+        <input type="text" placeholder="Phone Number" name="phone" required>
+  
         <input type="password" placeholder="Enter Password" name="psw" required>
-  
-        <label><b>Confirm Password</b></label>
+
         <input type="password" placeholder="Confirm Password" name="cpsw" required>
           
-        <button type="submit">Register</button>
+        <button type="submit" name="submit" value="Register">Register</button>
          <hr style="border-bottom: 2px solid grey;" />
       </div>
   
@@ -145,21 +151,21 @@
   <div id="id03" class="modal"style="z-index: 5555;">
     <form class="modal-content animate" action="" >
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="images/Logo_login.png" alt="logo" style="width:300px" class="avatar">
       </div>
   
       <div class=" col-md-offset-4 col-md-4">
-        <label><b>email</b></label>
-        <input type="text" placeholder="email" name="email" required>
+        <label><b>Email</b></label>
+        <input type="email" placeholder="e.g info@imakapp.co.za" name="email" required>
 
-        <button type="submit">Send</button>
+        <button type="submit">Send email</button>
     
         <div class="col-md-6 navbar-right">
           <a href="#" class="fomrLink" onclick="document.getElementById('id02').style.display='block';
-        document.getElementById('id01').style.display='none';document.getElementById('id03').style.display='none'" style="color:blue;font-weight:bolder;padding-right:20px">Register</a>
+        document.getElementById('id01').style.display='none';document.getElementById('id03').style.display='none'" style="color:blue;font-weight:bolder;padding-right:15px">Register</a>
          |  <a href="#" class="fomrLink" onclick="document.getElementById('id01').style.display='block';
-        document.getElementById('id02').style.display='none';document.getElementById('id03').style.display='none';" style="color:blue;font-weight:bolder;">Login</a>
+        document.getElementById('id02').style.display='none';document.getElementById('id03').style.display='none';" style="color:blue;font-weight:bolder;padding-left:15px">Login</a>
         </div>
       </div>
       </div>
@@ -1088,5 +1094,6 @@
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script> 
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script> 
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+
 </body>
 </html>
