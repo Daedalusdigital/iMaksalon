@@ -77,7 +77,7 @@ if(isset($_POST['submit']) == 'Login'){
           
       if($pass == $password_login_md5){
           $_SESSION["user_login"] = $user_login;
-          $results = 'user logged in';
+          header('location:Home.php');
 
       }    
       else{

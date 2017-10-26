@@ -57,38 +57,55 @@
 <?php
 include("inc/connection.php");
 
-if(isset($_POST['submit']) == 'Login'){
-  $user_login = $_POST["uname"];
-  $password_login = $_POST["psw"];
-  $password_login_md5 = md5($password_login);
+if(isset($_POST['submit']) == 'Register'){
+  $reg = @$_POST['reg'];
   
-  $pass = "";
+  //declareing variables to prevent errors
+  $fn = "";//First name
+  $ln = "";//Last name
+  $un = "";//Username
+  $em = "";//Email
+  $em2 = "";//Email2
+  $pswd = "";//Password
+  $pswd2 = "";//password2
+  $d = "";//Sign Up Date
+  $u_check = ""; //cjeck if username exists
+   $error_msg = "";
+   
+  //registration form
+  $fn = strip_tags(@$_POST["fname"]);
+  $ln = strip_tags(@$_POST["lname"]);
+  $un = strip_tags(@$_POST["uname"]);
+  $em = strip_tags(@$_POST["email"]);
+  $phone = strip_tags(@$_POST["phone"]);
+  $pswd = strip_tags(@$_POST["psw"]);
+  $pswd2 = strip_tags(@$_POST["cpsw"]);
   
-  $sql = $conn->query("SELECT * 
-                          FROM users 
-                          WHERE `username` = '$user_login' LIMIT 1");
-  
-  if($sql->num_rows > 0){
-      while($row = $sql->fetch_assoc()){
-          $pass = $row["password"]; 
-          $_SESSION['first_name'] = $row['firstname'];
-          $_SESSION['last_name'] = $row['lastname'];
 
-      }
+          $u_check = $conn->query("SELECT username FROM users WHERE username = '$un'");
           
-      if($pass == $password_login_md5){
-          $_SESSION["user_login"] = $user_login;
-          $results = 'user logged in';
+          if($u_check->num_rows == 0){
 
-      }    
-      else{
-        $results =  "incorrect password";
-
-      }
-  }
-  else{
-    $results =  "User doesn't exists";
-  } 
+                      if(strlen($pswd) > 30 ||strlen($pswd) < 5)
+                      {
+                         $error_msg =  "Your password must be between 5 and 30 characters long!";
+                      }
+                      else{
+                          $pswd = md5($pswd);
+                          $pswd2 = md5($pswd2);
+                          $query = $conn->query("INSERT INTO users VALUES('','$fn','$ln','$un','$pswd','$em','0','Empty..','img/default_pic.jpg')");
+                      }
+                      
+                  }
+                  else{
+                       $error_msg =  "Your password don't match!";
+                  }
+              
+          }
+          else{
+               $error_msg =  "Username alredy exists";
+          }
+  
 }
 
 echo '
@@ -127,11 +144,10 @@ echo '
 
   <input type="password" placeholder="Confirm Password" name="cpsw" required>
     
-  <button type="submit" name="submit" value="Register">Register</button>
+  <input type="submit" name="submit" value="Register" />
    <hr style="border-bottom: 2px solid grey;" />
 </div>
 <div class="col-md-4 text-center">
-
 </div>
 <div class="col-md-offset-4 col-md-6">
   <div class="row">
