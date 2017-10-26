@@ -85,17 +85,13 @@ if(isset($_POST['submit']) == 'Register'){
           $u_check = $conn->query("SELECT username FROM users WHERE username = '$un'");
           
           if($u_check->num_rows == 0){
-
-                      if(strlen($pswd) > 30 ||strlen($pswd) < 5)
-                      {
-                         $error_msg =  "Your password must be between 5 and 30 characters long!";
-                      }
-                      else{
+                  if($pswd == $pswd2){
+                
                           $pswd = md5($pswd);
                           $pswd2 = md5($pswd2);
                           $query = $conn->query("INSERT INTO users VALUES('','$fn','$ln','$un','$pswd','$em','0','Empty..','img/default_pic.jpg')");
-                      }
-                      
+                    
+                    
                   }
                   else{
                        $error_msg =  "Your password don't match!";
