@@ -44,10 +44,11 @@
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
 <link href="css/loader.css" rel="stylesheet" type="text/css">
 <link href="css/modal.css" rel="stylesheet" type="text/css">
+<link href="css/modalss.css" rel="stylesheet" type="text/css">
 <link  href="js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css"/>
 <link  href="js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css"/>
 <link  href="js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css"/>
-<link  href="css/modalss.css" rel="stylesheet" type="text/css"/>
+
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -57,95 +58,10 @@
 <script src="js/modal.js"></script>
 </head>
 <body class="">
-<?php
 
-include("inc/connection.php");
-
-if(isset($_POST['uname']) && isset($_POST['psw'])){
-    @$response =  "Username : ".$_POST['uname']."<br/>Password : ".$_POST['psw'];
-}
-?>
 <div id="wrapper">
   <div id="preloader">
     <div id="loader"></div>
-  </div>
-  <div id="id01" class="modal"style="z-index: 5555;">
-    <form class="modal-content animate" action="" method="POST" >
-      <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-        <img src="images/Logo_login.png" alt="logo" style="width:250px" class="avatar">
-      </div>
-<div class="status"><?php echo @$response;?></div>
-      <div class=" col-md-offset-4 col-md-4">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
-  
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-          
-        <input type="submit" style="z-index:9999999" />
-        <input type="checkbox" checked="checked"> Remember me
-        <span class="new" style="float: right;">forgot <a href="#" onclick="document.getElementById('id03').style.display='block';
-          document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='none';" style="color:blue;font-weight:bolder;" >password?</a></span>
-      </div>
-  
-      <div class=" col-md-offset-4 col-md-4">
-       
-      
-      <hr style="border-bottom: 2px solid grey;" />
-      </div>
-  
-         <div class=" col-md-offset-4 col-md-6">
-        <div class="row">
-        <div class="col-md-6">
-           Don't have an Account? 
-        </div> 
-        <div class="col-md-6 navbar-right">
-          <a href="#" class="fomrLink" onclick="document.getElementById('id02').style.display='block';
-        document.getElementById('id01').style.display='none';" style="color:blue;font-weight:bolder;margin-left:-15px;" >Register</a>
-        </div>
-      </div>
-      </div>
-    </form>
-  </div>
-  
-  <div id="id02" class="modal" style="z-index: 5555;height: 660px;margin-bottom: 20px;margin-top: -10px;">
-    <form class="modal-content animate" action="" >
-      <div class="imgcontainer">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      </div>
-  
-      <div class="form col-md-offset-4 col-md-4 register">
-        <input type="text" placeholder="First Name" name="fname" required>
-  
-        <input type="text" placeholder="Last Name" name="lname" required>
-  
-        <input type="text" placeholder="Username" name="uname" required>
-  
-        <input type="email" placeholder="Email" name="email" required>
-  
-        <input type="text" placeholder="Phone Number" name="phone" required>
-  
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <input type="password" placeholder="Confirm Password" name="cpsw" required>
-          
-        <button type="submit" name="submit" value="Register">Register</button>
-         <hr style="border-bottom: 2px solid grey;" />
-      </div>
-  
-      <div class=" col-md-offset-4 col-md-6">
-        <div class="row">
-        <div class="col-md-6">
-           Already have an Account? 
-        </div> 
-        <div class="col-md-6 navbar-right">
-          <a href="#" onclick="document.getElementById('id01').style.display='block';
-        document.getElementById('id02').style.display='none';" style="color:blue;font-weight:bolder;" >Login</a>
-        </div>
-      </div>
-      </div>
-    </form>
   </div>
 
   <div id="id03" class="modal"style="z-index: 5555;">
@@ -171,30 +87,7 @@ if(isset($_POST['uname']) && isset($_POST['psw'])){
       </div>
     </form>
   </div>
-  <script>
-  // Get the modal
-  var modal = document.getElementById('id01');
-  var modal1 = document.getElementById('id02');
-  var modal2 = document.getElementById('id03');
   
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
-  
-  window.onclick = function(event) {
-      if (event.target == modal1) {
-          modal1.style.display = "none";
-      }
-  }
-  window.onclick = function(event) {
-      if (event.target == modal2) {
-          modal2.style.display = "none";
-      }
-  }
-  </script>
   <header id="header" class="header">
     <div class="header-nav navbar-fixed-top navbar-dark navbar-transparent navbar-sticky-animated animated-active">
       <div class="header-nav-wrapper">
@@ -208,8 +101,8 @@ if(isset($_POST['uname']) && isset($_POST['psw'])){
               <li><a href="#about">About Us</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#stylists">Stylists</a></li>
-              <li><a href="#" class="btn btn-success" onclick="document.getElementById('id01').style.display='block'">Login</a></li>
-              <li style="margin-left:5px;"><a href="javascript:void(0)" class="btn btn-success" onclick="document.getElementById('id02').style.display='block'" >Sign Up</a></li>
+              <li><a href="Login.php" class="btn btn-success" >Login</a></li>
+              <li style="margin-left:5px;"><a href="Register.php" class="btn btn-success" >Sign Up</a></li>
             </ul>
           </nav>
         </div>
@@ -415,7 +308,7 @@ if(isset($_POST['uname']) && isset($_POST['psw'])){
                   data-splitin="none" 
                   data-splitout="none" 
                   data-responsive_offset="on"
-                  style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-default btn-lg btn-circled mr-10" href="#" onclick="document.getElementById('id02').style.display='block'">Register</a> <a class="btn btn-colored btn-lg btn-circled btn-theme-colored" href="#" onclick="document.getElementById('id01').style.display='block'">Login</a>
+                  style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-default btn-lg btn-circled mr-10" href="Register.php" >Register</a> <a class="btn btn-colored btn-lg btn-circled btn-theme-colored" href="Login.php" >Login</a>
                 </div>
               </li>
 
@@ -994,7 +887,7 @@ if(isset($_POST['uname']) && isset($_POST['psw'])){
             <!-- Mailchimp Subscription Form Starts Here -->
             <form id="mailchimp-subscription-form-footer" class="newsletter-form">
               <div class="input-group">
-                <input type="email" value="" name="EMAIL" placeholder="Your Email" class="form-control input-lg font-16" data-height="45px" id="mce-EMAIL-footer" >
+                <input style="margin-top:0px;" type="email" value="" name="EMAIL" placeholder="Your Email" class="form-control input-lg font-16" data-height="45px" id="mce-EMAIL-footer" >
                 <span class="input-group-btn">
                   <button data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit">Subscribe</button>
                 </span>
@@ -1094,6 +987,8 @@ if(isset($_POST['uname']) && isset($_POST['psw'])){
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script> 
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script> 
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
-
+<script type="text/javascript">
+  setTimeout(function(){ $('#preloader').fadeOut('slow') }, 1000);
+</script>
 </body>
 </html>
