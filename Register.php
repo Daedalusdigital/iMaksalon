@@ -89,7 +89,7 @@ if(isset($_POST['submit']) == 'Register'){
                 
                           $pswd = md5($pswd);
                           $pswd2 = md5($pswd2);
-                          $query = $conn->query("INSERT INTO users VALUES('','$fn','$ln','$un','$pswd','$em','0','Empty..','img/default_pic.jpg')");
+                          $query = $conn->query("INSERT INTO users VALUES('','$fn','$ln','$un','$pswd','$em',''");
                     
                     
                   }
