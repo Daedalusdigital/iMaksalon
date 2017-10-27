@@ -21,8 +21,8 @@
   <body>
     <div id="map"></div>
     <script>
-var latitude ="";
-var longitude ="";
+var latitude =0;
+var longitude =0;
 
       function geoFindMe() {
   var output = document.getElementById("out");
