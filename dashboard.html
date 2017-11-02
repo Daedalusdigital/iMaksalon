@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="assets/libraries/slick/slick.css" rel="stylesheet" type="text/css">
+    <link href="assets/libraries/slick/slick-theme.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/trackpad-scroll-emulator.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/chartist.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jquery.raty.css" rel="stylesheet" type="text/css">
+    <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/nouislider.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/explorer.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <title>Dashboard</title>
+  </head>
+  <body class="">
+    <div class="page-wrapper">
+      <div class="header-wrapper header-transparent header-light">
+        <div class="header">
+          <div class="container">
+            <div class="header-inner">
+              <div class="navigation-toggle toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <!-- /.header-toggle -->
+               <div class="header-logo">
+            
+                <a href="index.html" class="header-title"> <img src="images/logo-wide-white.png" alt=""></a>
+              </div>
+
+              <!-- /.header-logo -->
+            
+                   
+              <div class="header-toggle toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <!-- /.header-toggle -->
+              <div class="header-actions">
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link modal-submit" id="modal-action-submit" data-toggle="modal" data-target="#modal-submit">
+                      <i class="fa fa-plus"></i> <span>Add Booking</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.header-actions -->
+            </div>
+            <!-- /.header-inner -->
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.header -->
+      </div>
+      <!-- /.header-wrapper -->
+      <div class="hero-image-wrapper">
+        <div class="hero-image-src" style="background-image: url('assets/img/tmp/hero-classified.jpg');">
+        </div>
+        <!-- /.hero-image-src -->
+        <div class="hero-image">
+          <div class="hero-image-inner">
+            <div class="hero-image-content">
+              <div class="container">
+                <div class="center">
+                  <h1 class="hero-image-content-title-simple float-none">Durban Kwazulu-Natal</h1>
+                  <p class="float-none">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                  <form method="post" action="?">
+                    <div class="row justify-content-sm-center">
+                      <div class="col-sm-4">
+                        <div class="input-group">
+                          <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
+                          <input type="text" class="form-control no-border form-control-xl" placeholder="Search from your City...">
+                        </div>
+                        <!-- /.form-group -->
+                      </div>
+                      <!-- /.col-* -->
+                      <div class="col-sm-2">
+                        <button type="submit" class="btn btn-primary btn-xl">
+                          <i class="fa fa-search"></i> Search
+                        </button>
+                      </div>
+                      <!-- /.col-* -->
+                    </div>
+                    <!-- /.row -->
+                  </form>
+                </div>
+              </div>
+              <!-- /.container -->
+            </div>
+            <!-- /.hero-image-content -->
+          </div>
+          <!-- /.hero-image-inner -->
+          <div class="hero-image-categories">
+            <a href="listings-google-map.html" class="hero-image-category">
+              <i class="fa fa-map-o"></i>
+              <strong>Map</strong>
+            </a><!-- /.hero-image-category -->
+            <a href="#" class="hero-image-category">
+              <i class="fa fa-building"></i>
+              <strong>Salons</strong>
+            </a><!-- /.hero-image-category -->
+            <a href="#" class="hero-image-category">
+              <i class="fa fa-users"></i>
+              <strong>Stylists</strong>
+            </a><!-- /.hero-image-category -->
+            <a href="#" class="hero-image-category">
+              <i class="fa fa-calendar-check-o"></i>
+              <strong>Bookings</strong>
+            </a><!-- /.hero-image-category -->
+            <a href="#" class="hero-image-category">
+              <i class="fa fa-picture-o"></i>
+              <strong>Gallery</strong>
+            </a><!-- /.hero-image-category -->
+            <a href="#" class="hero-image-category">
+              <i class="fa fa-bell-o""></i>
+              <strong>Notification</strong>
+            </a><!-- /.hero-image-category -->
+            <a href="#" class="hero-image-category">
+              <i class="fa fa-frown-o"></i>
+              <strong>Report</strong>
+            </a><!-- /.hero-image-category -->
+          </div>
+          <!-- /.hero-image-categories -->
+        </div>
+        <!-- /.hero-image -->
+      </div>
+      <!-- /.hero-image-wrapper -->
+      <div class="main-wrapper">
+        <div class="main">
+          <div class="main-inner">
+            <div class="container">
+              <div class="content">
+                <div class="page-header">
+                  <h2>iMakapp avalible at these Locations</h2>
+                  <p>See the most recent listings available in directory catalogue added by our users. All listings are verified by our editors staff.</p>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-1.jpg')"></span>
+                      <strong>Durban</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-2.jpg')"></span>
+                      <strong>Pietermaritzburg</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-3.jpg')"></span>
+                      <strong>East London</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-4.jpg')"></span>
+                      <strong>Johannesburg</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-5.jpg')"></span>
+                      <strong>Pretoria</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-6.jpg')"></span>
+                      <strong>Cape Town</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
+                </div>
+                <!-- /.row -->
+                <div class="block mb0">
+                  <div class="block-inner">
+                    <div class="page-header">
+                      <h2>Favorite Listing Categories</h2>
+                      <p>Easily assign categories &amp; tags to approved listings and then display categories with icons for better user experience.</p>
+                    </div>
+                    
+                    <!-- /.categories-wrapper -->
+                  </div>
+                  <!-- /.block-inner -->
+                </div>
+                <!-- /.block-inner -->
+                <div class="carousel-fullwidth">
+                  <div class="carousel-fullwidth-inner">
+                    <div class="listing-boxes">
+                      <div class="row mb-30 carousel-items">
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <span class="listing-box-featured">Featured</span>
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-1.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Education</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Ideal Garden Maintenance</a></h2>
+                                <h3>2813 Preston Street Wichita</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-24.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Business</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Little Tavern</a></h2>
+                                <h3>2164 Hilltop Haven Drive Newark</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <div class="listing-box-info">
+                                Currently viewing <strong>8</strong> people.
+                              </div>
+                              <!-- /.listing-box-info -->
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-2.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Gastronomy</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Piano Lessons For Beginners</a></h2>
+                                <h3>3071 Ash Avenue Saint Louis</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-8.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Cooking</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Paris Museum</a></h2>
+                                <h3>2858 Neuport Lane Norcross</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <div class="listing-box-info">
+                                Most visited monthly trendsetter.
+                              </div>
+                              <!-- /.listing-box-info -->
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-2.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Events</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Griff's Hamburgers</a></h2>
+                                <h3>3228 Hillview Street Columbia</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-4.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Courses</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Custom Lawn Care</a></h2>
+                                <h3>2287 Maple Avenue Stockton</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-4.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Workshops</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Healthy Breakfast</a></h2>
+                                <h3>1148 Elk Rd Little Tucson</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-3.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Museum</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Erb Lumber</a></h2>
+                                <h3>2155 Philli Lane Mcalester</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <div class="listing-box-info">
+                                <strong>120</strong> people already purchased.
+                              </div>
+                              <!-- /.listing-box-info -->
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-16.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Health</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Tower Excursion</a></h2>
+                                <h3>1081 Woodside Circle Crestview</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-15.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Driving</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Royal Hall</a></h2>
+                                <h3>3690 Tecumsah Lane Cedar Rapids</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <div class="listing-box-info">
+                                Great price for first <strong>10</strong> buyers.
+                              </div>
+                              <!-- /.listing-box-info -->
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-20.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Finance</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Tasty Pizza Restaurant</a></h2>
+                                <h3>2653 Cost Avenue College Park</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-22.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Law</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Freelance Office</a></h2>
+                                <h3>4458 Thompson Drive Richmond</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <span class="listing-box-featured">Featured</span>
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-13.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Gastronomy</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">SUV Cars Reseller</a></h2>
+                                <h3>4692 Arbutus Drive Miami Springs</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <span class="listing-box-featured">Featured</span>
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(assets/img/tmp/listing-1.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Luxury Cars</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Cozzy Coffee Shop</a></h2>
+                                <h3>4700 Hart Country Lane Blue Ridge</h3>
+                                <div class="actions">
+                                  <div class="actions-button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <!-- /.actions-button -->
+                                  <ul class="actions-list">
+                                    <li><a href="#">Add to compare</a></li>
+                                    <li><a href="#">Add to favorites</a></li>
+                                    <li><a href="#">Report listing</a></li>
+                                  </ul>
+                                  <!-- /.actions-list -->
+                                </div>
+                                <!-- /.actions -->
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Miles</dt>
+                                  <dd>128K</dd>
+                                  <dt>Engine</dt>
+                                  <dd>Diesel</dd>
+                                  <dt>Type</dt>
+                                  <dd>Aston Martin</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                      </div>
+                      <!-- /.row -->
+                    </div>
+                    <!-- /.listing-boxes -->
+                  </div>
+                  <!-- /.carousel-fullwidth-inner -->
+                </div>
+                <!-- /.carousel-fullwidth -->
+                <div class="page-header">
+                  <h2>Most Robust Directory Template Ever Made</h2>
+                  <p>Duis eget ornare purus, feugiat consequat sem. Nullam non nisl blandit, tincidunt diam id, consequat elit. Nunc augue libero, viverra a odio</p>
+                </div>
+                <div class="posts-small">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                      <div class="post-small">
+                        <div class="post-small-image">
+                          <a href="#">
+                            <img src="assets/img/tmp/listing-1.jpg" alt="">
+                          </a>
+                        </div>
+                        <!-- /.post-small-image -->
+                        <h3><a href="#">Vestibulum suscipit mauris</a></h3>
+                        <div class="post-small-attribute">
+                          22/11/2017 18:32
+                        </div>
+                        <!-- /.post-small-attribute -->
+                        <p>
+                          Phasellus et vulputate orci, vitae mollis ligula. Etiam ut tempor tellus, eu hendrerit
+                        </p>
+                        <a href="#" class="btn btn-simple">Read Post</a>
+                      </div>
+                      <!-- /.post-small -->
+                    </div>
+                    <!-- /.col-* -->
+                    <div class="col-md-6 col-lg-3">
+                      <div class="post-small">
+                        <div class="post-small-image">
+                          <a href="#">
+                            <img src="assets/img/tmp/listing-2.jpg" alt="">
+                          </a>
+                        </div>
+                        <!-- /.post-small-image -->
+                        <h3><a href="#">Vestibulum suscipit mauris</a></h3>
+                        <div class="post-small-attribute">
+                          22/11/2017 18:32
+                        </div>
+                        <!-- /.post-small-attribute -->
+                        <p>
+                          Phasellus et vulputate orci, vitae mollis ligula. Etiam ut tempor tellus, eu hendrerit
+                        </p>
+                        <a href="#" class="btn btn-simple">Read Post</a>
+                      </div>
+                      <!-- /.post-small -->
+                    </div>
+                    <!-- /.col-* -->
+                    <div class="col-md-6 col-lg-3">
+                      <div class="post-small">
+                        <div class="post-small-image">
+                          <a href="#">
+                            <img src="assets/img/tmp/listing-3.jpg" alt="">
+                          </a>
+                        </div>
+                        <!-- /.post-small-image -->
+                        <h3><a href="#">Vestibulum suscipit mauris</a></h3>
+                        <div class="post-small-attribute">
+                          22/11/2017 18:32
+                        </div>
+                        <!-- /.post-small-attribute -->
+                        <p>
+                          Phasellus et vulputate orci, vitae mollis ligula. Etiam ut tempor tellus, eu hendrerit
+                        </p>
+                        <a href="#" class="btn btn-simple">Read Post</a>
+                      </div>
+                      <!-- /.post-small -->
+                    </div>
+                    <!-- /.col-* -->
+                    <div class="col-md-6 col-lg-3">
+                      <div class="post-small">
+                        <div class="post-small-image">
+                          <a href="#">
+                            <img src="assets/img/tmp/listing-4.jpg" alt="">
+                          </a>
+                        </div>
+                        <!-- /.post-small-image -->
+                        <h3><a href="#">Vestibulum suscipit mauris</a></h3>
+                        <div class="post-small-attribute">
+                          22/11/2017 18:32
+                        </div>
+                        <!-- /.post-small-attribute -->
+                        <p>
+                          Phasellus et vulputate orci, vitae mollis ligula. Etiam ut tempor tellus, eu hendrerit
+                        </p>
+                        <a href="#" class="btn btn-simple">Read Post</a>
+                      </div>
+                      <!-- /.post-small -->
+                    </div>
+                    <!-- /.col-* -->
+                  </div>
+                  <!-- /.row -->
+                </div>
+                <div class="page-header">
+                  <h2>Most Robust Directory Template Ever Made</h2>
+                  <p>Duis eget ornare purus, feugiat consequat sem. Nullam non nisl blandit, tincidunt diam id, consequat elit. Nunc augue libero, viverra a odio</p>
+                </div>
+                <div class="pricing">
+                  <div class="row">
+                    <div class="pricing-col-wrapper col-lg-4">
+                      <div class="pricing-col">
+                        <h2 class="pricing-title">Startup</h2>
+                        <div class="pricing-price">
+                          <span class="pricing-currency">$</span> <span class="pricing-value">8.90</span>
+                        </div>
+                        <!-- /.pricing-price -->
+                        <ul class="pricing-features">
+                          <li>10 Properties</li>
+                          <li>Up To 3 Agents</li>
+                          <li>Agency Management</li>
+                          <li>1 Year Updates</li>
+                          <li>Mail Support</li>
+                        </ul>
+                        <!-- /.pricing-featured -->
+                        <a href="#" class="pricing-btn">Select Pricing Plan</a>
+                      </div>
+                      <!-- /.pricing-col -->
+                    </div>
+                    <!-- /.pricing-col-wrapper-->
+                    <div class="pricing-col-wrapper col-lg-4">
+                      <div class="pricing-col pricing-col-light" style="background-image: url('assets/img/tmp/pricing-1.jpg');">
+                        <h2 class="pricing-title">Business</h2>
+                        <div class="pricing-price">
+                          <span class="pricing-currency">$</span> <span class="pricing-value">19.90</span>
+                        </div>
+                        <!-- /.pricing-price -->
+                        <ul class="pricing-features">
+                          <li>100 Properties</li>
+                          <li>Up To 10 Agents</li>
+                          <li>Agency Management</li>
+                          <li>2 Year Updates</li>
+                          <li>Mail Support</li>
+                        </ul>
+                        <!-- /.pricing-featured -->
+                        <a href="#" class="pricing-btn">Select Pricing Plan</a>
+                      </div>
+                      <!-- /.pricing-col -->
+                    </div>
+                    <!-- /.pricing-col-wrapper -->
+                    <div class="pricing-col-wrapper col-lg-4">
+                      <div class="pricing-col">
+                        <h2 class="pricing-title">Professional</h2>
+                        <div class="pricing-price">
+                          <span class="pricing-currency">$</span> <span class="pricing-value">49.90</span>
+                        </div>
+                        <!-- /.pricing-price -->
+                        <ul class="pricing-features">
+                          <li>Unlimited Properties</li>
+                          <li>Unlimited Agents</li>
+                          <li>Agency Management</li>
+                          <li>Updates Forever</li>
+                          <li>Mail Support</li>
+                        </ul>
+                        <!-- /.pricing-featured -->
+                        <a href="#" class="pricing-btn">Select Pricing Plan</a>
+                      </div>
+                      <!-- /.pricing-col -->
+                    </div>
+                    <!-- /.pricing-col-wrapper -->
+                  </div>
+                  <!-- /.row -->
+                </div>
+                
+                    </div>
+                    <!-- /.col-* -->
+                  </div>
+                  <!-- /.row -->
+                </div>
+                <!-- /.testimonials-wrapper  -->
+                <div class="partners">
+                  <a href="#" class="btn btn-primary">View Project Partners</a>
+                  <div class="row">
+                    <div class="col-md-3 col-lg-2">
+                      <div class="partner">
+                        <img src="assets/img/tmp/partner-1.png" alt="">
+                      </div>
+                      <!-- /.partner -->
+                    </div>
+                    <!-- /.col-* -->
+                    <div class="col-md-3 col-lg-2">
+                      <div class="partner">
+                        <img src="assets/img/tmp/partner-2.png" alt="">
+                      </div>
+                      <!-- /.partner -->
+                    </div>
+                    <!-- /.col-* -->
+                    <div class="col-md-3 col-lg-2">
+                      <div class="partner">
+                        <img src="assets/img/tmp/partner-3.png" alt="">
+                      </div>
+                      <!-- /.partner -->
+                    </div>
+                    <!-- /.col-* -->
+                    <div class="col-md-3 col-lg-2">
+                      <div class="partner">
+                        <img src="assets/img/tmp/partner-4.png" alt="">
+                      </div>
+                      <!-- /.partner -->
+                    </div>
+                    <!-- /.col-* -->
+                    <div class="col-md-3 col-lg-2">
+                      <div class="partner">
+                        <img src="assets/img/tmp/partner-5.png" alt="">
+                      </div>
+                      <!-- /.partner -->
+                    </div>
+                    <!-- /.col-* -->
+                    <div class="col-md-3 col-lg-2">
+                      <div class="partner">
+                        <img src="assets/img/tmp/partner-1.png" alt="">
+                      </div>
+                      <!-- /.partner -->
+                    </div>
+                    <!-- /.col-* -->
+                  </div>
+                  <!-- /.row -->
+                </div>
+                <!-- /.partners -->
+                <div class="cta-price">
+                  <h3>Get Everything<br>
+                     Exlusively on iMakapp</h3>
+                </div>
+                <!-- /.cta-price -->
+              </div>
+              <!-- /.content -->
+            </div>
+            <!-- /.container -->
+          </div>
+          <!-- /.main-inner -->
+        </div>
+        <!-- /.main -->
+      </div>
+      <!-- /.main-wrapper -->
+      <div class="footer-wrapper">
+        <div class="footer">
+          <div class="footer-inner">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4">
+                 
+                </div>
+                <!-- /.col-* -->
+                <div class="col-lg-4">
+                
+                  <!-- /.widget -->
+                </div>
+                <!-- /.col-* -->
+                <div class="col-lg-4">
+                  <div class="widget">
+                    <h3>Best deals in your inbox</h3>
+                    <p>
+                      Join our newsletter for the most recent information.
+                    <form method="post">
+                      <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your e-mail address">
+                      </div>
+                      <!-- /.form-group -->
+                      <div class="form-group clearfix">
+                        <button type="submit" class="btn btn-primary pull-right">Join Newsletter</button>
+                      </div>
+                      <div class="widget">
+                
+                    <ul class="social">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google"></i></a></li>
+                    </ul>
+                  </div>
+                      <!-- /.form-group -->
+                    </form>
+                  </div>
+                  <!-- /.widget -->
+                </div>
+                <!-- /.col-* -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.container -->
+          </div>
+          <!-- /.footer-inner -->
+        </div>
+        <!-- /.footer -->
+      </div>
+      <!-- /.footer-wrapper -->
+    </div>
+    <!-- /.page-wrapper -->
+    <div id="modal-submit" class="modal fade">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Submit New Listing</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="post" action="?" class="mb80">
+              <fieldset>
+                <legend>Basic Information</legend>
+                <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" class="form-control">
+                </div>
+                <!-- /.form-group -->
+                <div class="form-group">
+                  <label>Description</label>
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+                <!-- /.form-group -->
+              </fieldset>
+              <fieldset>
+                <legend>Payment Information</legend>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Package</label>
+                      <select class="form-control">
+                        <option value="">Bronze + $10</option>
+                      </select>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Payment Method</label>
+                      <select class="form-control">
+                        <option value="">Paypal</option>
+                      </select>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Duration</label>
+                      <select class="form-control">
+                        <option value="">1 Year (Save 10%)</option>
+                      </select>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                </div>
+                <!-- /.row -->
+              </fieldset>
+              <fieldset>
+                <legend>Location</legend>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div id="location-google-map" style="height: 450px;"></div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Address</label>
+                      <input type="text" class="form-control location-google-map-search">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Latitude</label>
+                      <input type="text" class="form-control" id="listing_location_latitude">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Longitude</label>
+                      <input type="text" class="form-control" id="listing_location_longitude">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Country</label>
+                      <select class="form-control"></select>
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Location</label>
+                      <select class="form-control"></select>
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Sublocation</label>
+                      <select class="form-control"></select>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                </div>
+                <!-- /.row -->
+              </fieldset>
+              <fieldset>
+                <legend>Contact Information</legend>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Country</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>City</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Address</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Phone</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>E-mail</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Website</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Amenities</legend>
+                <div class="checkbox-list">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Air conditioning
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Balcony
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Bedding
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Cable TV
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Cleaning after exit
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Cofee pot
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                </div>
+                <!-- /.checkbox-list -->
+              </fieldset>
+              <fieldset>
+                <legend>Additional Information</legend>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"> Send me newsletter
+                  </label>
+                </div>
+                <!-- /.form-check -->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"> I agree with terms &amp; conditions
+                  </label>
+                </div>
+                <!-- /.form-check -->
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side-wrapper">
+      <div class="side">
+        <div class="side-inner">
+          <div class="side-user">
+            <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
+            <span class="side-user-avatar-name">
+              <strong>User Name</strong>
+              <span>Surname</span>
+            </span>
+            <a href="https://login.microsoftonline.com/imakapplication.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_editing&client_id=4771ecd1-5d20-499e-a84f-6e6066b9062d&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fimakapp.com%2Fdashboard.html&scope=openid&response_type=id_token&prompt=login" class="side-user-avatar-action">
+              <i class="fa fa-cog"></i>
+            </a>
+          </div>
+          <!-- /.side-user -->
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
+            <li class="nav-item"><a href="imakapp.com" class="nav-link">Sign Out</a></li>
+          </ul>
+          <h3>Stylist Login</h3>
+          <form class="form-dark" method="post" action="?">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Username">
+            </div>
+            <!-- /.form-group -->
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="password">
+            </div>
+            <!-- /.form-group -->
+            <button class="btn btn-primary pull-right" type="submit">Login</button>
+          </form>
+        </div>
+        <!-- /.side-inner -->
+      </div>
+      <!-- /.side -->
+    </div>
+    <!-- /.side-wrapper -->
+    <div class="side-overlay"></div>
+    <!-- /.side-overlay -->
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyDmXybAJzoPZ6hH-Jhv7QMCSGgQ6MY8WqY" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/tether.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/chartist.min.js"></script>
+    <script type="text/javascript" src="assets/js/google-map-richmarker.min.js"></script>
+    <script type="text/javascript" src="assets/js/google-map-infobox.min.js"></script>
+    <script type="text/javascript" src="assets/js/google-map-markerclusterer.js"></script>
+    <script type="text/javascript" src="assets/js/google-map.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.inlinesvg.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.affix.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="assets/libraries/slick/slick.min.js"></script>
+    <script type="text/javascript" src="assets/js/nouislider.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.raty.js"></script>
+    <script type="text/javascript" src="assets/js/wNumb.js"></script>
+    <script type="text/javascript" src="assets/js/particles.min.js"></script>
+    <script type="text/javascript" src="assets/js/explorer.js"></script>
+    <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+  </body>
+</html>
