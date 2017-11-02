@@ -4775,7 +4775,7 @@ funfactstyle-1 h4 {
 /* -------- Btn-Default ---------- */
 .btn-default {
   color: #333;
-  background-color: #fff;
+  background-color: #5cb85c;
   border-color: #ccc;
 }
 .btn-default:focus,
@@ -5051,7 +5051,7 @@ fieldset[disabled] .btn-gray.focus {
 }
 /* -------- Btn-transparent ---------- */
 .btn-transparent {
-  background-color: transparent;
+  background-color: #5cb85c;
   color: #fff;
 }
 .hvr-shutter-out-horizontal::before {

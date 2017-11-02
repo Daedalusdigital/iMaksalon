@@ -7,7 +7,7 @@ COLOR CODE: #abc502
 ----------------------------------------- */
 /* text-theme-color */
 .text-theme-colored {
-  color: #abc502 !important;
+  color: #5cb85c !important;
 }
 .widget .twitter-feed li::after {
   color: #abc502;
@@ -77,7 +77,7 @@ COLOR CODE: #abc502
 .bg-theme-colored,
 .drop-caps.colored-square p:first-child::first-letter,
 .drop-caps.colored-rounded p:first-child::first-letter {
-  background-color: #abc502 !important;
+  background-color: #5cb85c !important;
 }
 /* bg-hover-theme-color */
 .bg-hover-theme-colored:hover {
@@ -290,7 +290,7 @@ COLOR CODE: #abc502
 .icon-box .icon.icon-border-effect::after {
   -webkit-box-shadow: #abc502;
   -moz-box-shadow: #abc502;
-  box-shadow: 0 0 0 3px #abc502;
+  box-shadow: 0 0 0 3px #5cb85c;
 }
 .outline-border,
 .clients-logo img {
@@ -339,7 +339,7 @@ COLOR CODE: #abc502
 .line-top-right::after,
 .icon-switcher,
 .title-dots span {
-  background: #abc502;
+  background: #5cb85c;
 }
 .stylish-header,
 .stylish-header:before {
@@ -367,7 +367,7 @@ COLOR CODE: #abc502
 .title,
 ul.list li::before,
 .post .entry-content .entry-title {
-  color: #abc502;
+  color: #5cb85c;
 }
 /*
  * border: theme-color
@@ -414,8 +414,8 @@ blockquote {
 }
 .btn-default.btn-theme-colored:hover {
   color: #abc502;
-  background-color: #e6e6e6;
-  border-color: #768801;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
 }
 .btn-default.btn-theme-colored:active,
 .btn-default.btn-theme-colored.active,
@@ -618,8 +618,8 @@ fieldset[disabled] .btn-dark.btn-theme-colored.focus {
 .btn-gray.btn-theme-colored.active,
 .open > .dropdown-toggle.btn-gray.btn-theme-colored {
   color: #fff;
-  background-color: #abc502;
-  border-color: #a2bb02;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
 }
 .btn-gray.btn-theme-colored:active:hover,
 .btn-gray.btn-theme-colored.active:hover,
@@ -661,8 +661,8 @@ fieldset[disabled] .btn-gray.btn-theme-colored.focus {
 */
 .btn-theme-colored {
   color: #fff;
-  background-color: #abc502;
-  border-color: #abc502;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
 }
 .btn-theme-colored:focus,
 .btn-theme-colored.focus {
@@ -721,7 +721,7 @@ fieldset[disabled] .btn-theme-colored.focus {
  * -----------------------------------------------
 */
 .btn-transparent {
-  background-color: transparent;
+  background-color: #5cb85c;
   color: #fff;
 }
 .btn-transparent.btn-theme-colored {
