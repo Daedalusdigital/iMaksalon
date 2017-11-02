@@ -8,7 +8,15 @@
 <meta name="author" content="Daedalus Digital" />
 <title>iMakApp</title>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
+    function hideURLbar(){ window.scrollTo(0,1); } 
+    
+    
+  $('ul>.menuzord-menu li').clcik(function(){
+      $('ul>.menuzord-menu li').removeClass('active');
+      $(this).addClass('active');
+  });
+
+    </script>
 <!-- //for-mobile-apps -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- pop-up -->
@@ -103,7 +111,7 @@
               <img src="images/logo-wide-white.png" alt="">
             </a>
             <ul class="menuzord-menu">
-              <li class="active"><a href="#home">Home</a></li>
+              <li class="active"><a href="#home" >Home</a></li>
               <li><a href="#about">About Us</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#stylists">Stylists</a></li>
@@ -895,7 +903,7 @@
               <div class="input-group">
                 <input ng-model="testing" type="email"  placeholder="Your Email" class="form-control input-lg font-16" data-height="45px">
                 <span class="input-group-btn">
-                  <input ng-click="subscribe()" data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit" value="Subscribe" />
+                  <input style="margin-top:5px;" ng-click="subscribe()" data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit" value="Subscribe" />
                 </span>
               </div>
             </form>
@@ -993,6 +1001,8 @@
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
 <script type="text/javascript">
   setTimeout(function(){ $('#preloader').fadeOut('slow') }, 1000);
+
+
 </script>
 </body>
 </html>
