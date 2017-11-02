@@ -6,7 +6,7 @@
 "thumbnail": "assets/img/tmp/listing-1.jpg",
 "verified": false,
 "longitude": 30.9307498,
-"latitude": -29.835074
+"latitude": -29.835075
 }
 ,
 {
@@ -15,8 +15,8 @@
 "address": "G15, 10 Mathews Meyiwa Rd, Greyville, Durban",
 "thumbnail": "assets/img/tmp/listing-2.jpg",
 "verified": true,
-"longitude" : 30.951455,
-"latitude":   -29.8415724
+"longitude": 30.951455,
+"latitude": -29.8415724
 }
 ,
 {
@@ -25,8 +25,8 @@
 "address": "892 Umgeni road, Lion Match Office Park, Windermere, Durban",
 "thumbnail": "assets/img/tmp/listing-3.jpg",
 "verified": false,
-"longitude" :30.9575238,
-"latitude":   -29.8241475
+"longitude":30.9575238,
+"latitude":  -29.8241475
 }
 ,
 {
@@ -35,8 +35,8 @@
 "address": "Shop No.3, 237 O R Tambo Parade, North Beach, Durban",
 "thumbnail": "assets/img/tmp/listing-4.jpg",
 "verified": true,
-"longitude" :30.9575238,
-"latitude":   -29.8509272
+"longitude":30.9575238,
+"latitude":  -29.8509272
 }
 ,
 {
@@ -45,8 +45,8 @@
 "address": "234 St. Thomas Rd, Musgrave, Durban",
 "thumbnail": "assets/img/tmp/listing-5.jpg",
 "verified": false,
-"longitude" :30.9296978,
-"latitude":   -29.8445445
+"longitude":30.9296978,
+"latitude":  -29.8445445
 }
 ,
 {
@@ -55,8 +55,8 @@
 "address": "2 Interstate Ave, Umgeni Business Park, Durban",
 "thumbnail": "assets/img/tmp/listing-6.jpg",
 "verified": false,
-"longitude" :30.9305911,
-"latitude":   -29.8132011
+"longitude":30.9305911,
+"latitude":  -29.8132011
 }
 ,
 {
@@ -65,8 +65,8 @@
 "address": "Shop No. 269, Inanda Rd, Springfield, Durban",
 "thumbnail": "assets/img/tmp/listing-7.jpg",
 "verified": false,
-"longitude" :30.9147398,
-"latitude":   -29.8046965
+"longitude":30.9147398,
+"latitude":  -29.8046965
 }
 ,
 {
@@ -75,8 +75,8 @@
 "address": "247 Wandsbeck Rd, Palmiet, Durban",
 "thumbnail": "assets/img/tmp/listing-8.jpg",
 "verified": true,
-"longitude" :-29.8205355,
-"latitude":   30.8970278
+"longitude":30.8970278,
+"latitude":  -29.8205355
 }
 ,
 {
@@ -85,8 +85,8 @@
 "address": "1st Floor, 3rd Rock Entrance, Smith Street, 494, Durban Central",
 "thumbnail": "assets/img/tmp/listing-9.jpg",
 "verified": true,
-"longitude" :30.9462001,
-"latitude":   -29.860532
+"longitude":30.9462001,
+"latitude":  -29.860532
 }
 ,
 {
@@ -95,8 +95,8 @@
 "address": "417 Lilian Ngoyi Rd, Windermere, Berea",
 "thumbnail": "assets/img/tmp/listing-10.jpg",
 "verified": false,
-"longitude" :30.9522874,
-"latitude":   -29.823636
+"longitude":30.9522874,
+"latitude":  -29.823636
 }
 ,
 {
@@ -105,8 +105,8 @@
 "address": "Shop No. 9, 14 Sylvester Ntuli Rd, Durban",
 "thumbnail": "assets/img/tmp/listing-11.jpg",
 "verified": false,
-"longitude" :30.9658708,
-"latitude":   -29.8560185
+"longitude":30.9658708,
+"latitude":  -29.8560185
 }
 ,
 {
@@ -115,8 +115,8 @@
 "address": "109B, Musgrave Centre, 115 Musgrave Rd, Berea, Durban",
 "thumbnail": "assets/img/tmp/listing-12.jpg",
 "verified": false,
-"longitude" :30.9289618,
-"latitude":   -29.848843
+"longitude":30.9289618,
+"latitude":  -29.848843
 }
 ,
 {
@@ -125,8 +125,8 @@
 "address": "255 Wakesleigh Rd, Bellair, Durban",
 "thumbnail": "assets/img/tmp/listing-13.jpg",
 "verified": false,
-"longitude" :30.8826288,
-"latitude":   -29.8844705
+"longitude":30.8826288,
+"latitude":  -29.8844705
 }
 ,
 {
@@ -135,8 +135,8 @@
 "address": "Shop 39, Montclair Mall, Montclair, Durban",
 "thumbnail": "assets/img/tmp/listing-14.jpg",
 "verified": true,
-"longitude" :30.898714,
-"latitude":   -29.9236234
+"longitude":30.898714,
+"latitude":  -29.9236234
 }
 ,
 {
@@ -145,8 +145,8 @@
 "address": "139 Stephen Dlamini Rd, Berea, Durban",
 "thumbnail": "assets/img/tmp/listing-15.jpg",
 "verified": false,
-"longitude" :30.9280788,
-"latitude":   -29.8473935
+"longitude":30.9280788,
+"latitude":  -29.8473935
 }
 ,
 {
@@ -155,8 +155,8 @@
 "address": "1081 Woodside Circle Crestview",
 "thumbnail": "assets/img/tmp/listing-16.jpg",
 "verified": true,
-"longitude" :30.981021,
-"latitude":   -29.7938337
+"longitude":30.981021,
+"latitude":  -29.7938337
 }
 
 ]
