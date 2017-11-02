@@ -2,7 +2,7 @@ $(document).ready(function() {
     'use strict';
 
     if ($('#map-object').length !== 0) {
-        var mapCenter = new google.maps.LatLng(47.603138, -122.332302);
+        var mapCenter = new google.maps.LatLng(-29.8595013,31.0094353);
 
         var map = new google.maps.Map(document.getElementById('map-object'), {
             zoom: 13,
