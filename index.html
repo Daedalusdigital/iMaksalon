@@ -899,11 +899,11 @@
           <div class="widget dark">
             <h5 class="widget-title mb-10">Subscribe Us</h5>
             <!-- Mailchimp Subscription Form Starts Here -->
-            <form id="mailchimp-subscription-form-footer" class="newsletter-form">
+            <form class="newsletter-form" ng-controller="emailController">
               <div class="input-group">
-                <input ng-model="testing" type="email"  placeholder="Your Email" class="form-control input-lg font-16" data-height="45px">
+                <input style="margin-top:0px;" ng-model="testing" type="email"  placeholder="Your Email" class="form-control input-lg font-16" data-height="45px">
                 <span class="input-group-btn">
-                  <input style="margin-top:5px;" ng-click="subscribe()" data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit" value="Subscribe" />
+                  <input ng-click="subscribe()" data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit" value="Subscribe" />
                 </span>
               </div>
             </form>
@@ -970,7 +970,7 @@
                 </li>
                 <li>|</li>
                 <li>
-                  <a href="#">Support</a>
+                  <a href="#" onclick="document.getElementById('id01').style.display='block'">Support</a>
                 </li>
               </ul>
             </div>
@@ -980,6 +980,90 @@
     </div>
   </footer>
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  <div id="wrapper">
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
+    <div id="id01" class="modal"style="z-index: 5555;background-color:white;">
+      <form class="modal-content animate" action="" >
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="images/logo-wide-white.png" alt="logo" style="width:400px" class="avatar">
+        </div>
+    
+        <div class=" col-md-offset-4 col-md-4">
+          <label><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+    
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+            
+          <button type="submit">Login</button>
+          <input type="checkbox" checked="checked"> Remember me
+          <span class="new" style="float: right;">forgot <a href="#" style="color:blue;font-weight:bolder;" >password?</a></span>
+        </div>
+    
+        <div class=" col-md-offset-4 col-md-4">
+         
+        
+        <hr style="border-bottom: 2px solid grey;" />
+        </div>
+    
+           <div class=" col-md-offset-4 col-md-6">
+          <div class="row">
+          <div class="col-md-6">
+             Don't have an Account? 
+          </div> 
+          <div class="col-md-6 navbar-right">
+            <a href="#" class="fomrLink" onclick="document.getElementById('id02').style.display='block';
+          document.getElementById('id01').style.display='none';" style="color:blue;font-weight:bolder;margin-left:-15px;" >Register</a>
+          </div>
+        </div>
+        </div>
+      </form>
+    </div>
+    
+    <div id="id02" class="modal" style="z-index: 5555;height: 660px;margin-bottom: 20px;margin-top: -10px;">
+      <form class="modal-content animate" action="" >
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+    
+        <div class="form col-md-offset-4 col-md-4">
+          <label><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+    
+          <label><b>Email</b></label>
+          <input type="email" placeholder="Enter Emial" name="email" required>
+    
+          <label><b>Phone Number</b></label>
+          <input type="text" placeholder="Enter Phone" name="phone" required>
+    
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+    
+          <label><b>Confirm Password</b></label>
+          <input type="password" placeholder="Confirm Password" name="cpsw" required>
+            
+          <button type="submit">Register</button>
+           <hr style="border-bottom: 2px solid grey;" />
+        </div>
+    
+        <div class=" col-md-offset-4 col-md-6">
+          <div class="row">
+          <div class="col-md-6">
+             Already have an Account? 
+          </div> 
+          <div class="col-md-6 navbar-right">
+            <a href="#" onclick="document.getElementById('id01').style.display='block';
+          document.getElementById('id02').style.display='none';" style="color:blue;font-weight:bolder;" >Login</a>
+          </div>
+        </div>
+        </div>
+      </form>
+    </div>
+    
+  
 </div>
 <!-- end wrapper --> 
 
@@ -1001,8 +1085,24 @@
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
 <script type="text/javascript">
   setTimeout(function(){ $('#preloader').fadeOut('slow') }, 1000);
-
-
 </script>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    var modal1 = document.getElementById('id02');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal1) {
+            modal1.style.display = "none";
+        }
+    }
+    </script>
 </body>
 </html>
