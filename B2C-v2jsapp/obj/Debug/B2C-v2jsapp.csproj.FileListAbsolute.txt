@@ -1,0 +1,4 @@
+C:\Users\zondi_000\Downloads\active-directory-b2c-javascript-hellojs-singlepageapp-master\active-directory-b2c-javascript-hellojs-singlepageapp-master\B2C-v2jsapp\bin\B2C_v2jsapp.dll
+C:\Users\zondi_000\Downloads\active-directory-b2c-javascript-hellojs-singlepageapp-master\active-directory-b2c-javascript-hellojs-singlepageapp-master\B2C-v2jsapp\bin\B2C_v2jsapp.pdb
+C:\Users\zondi_000\Downloads\active-directory-b2c-javascript-hellojs-singlepageapp-master\active-directory-b2c-javascript-hellojs-singlepageapp-master\B2C-v2jsapp\obj\Debug\B2C_v2jsapp.dll
+C:\Users\zondi_000\Downloads\active-directory-b2c-javascript-hellojs-singlepageapp-master\active-directory-b2c-javascript-hellojs-singlepageapp-master\B2C-v2jsapp\obj\Debug\B2C_v2jsapp.pdb
