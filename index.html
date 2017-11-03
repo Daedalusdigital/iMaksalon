@@ -239,7 +239,7 @@
                   data-splitin="none" 
                   data-splitout="none" 
                   data-responsive_offset="on"
-                  style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-default btn-transparent btn-circled mr-10" href="addBooking.html" data-target="#BSParentModal" data-toggle="modal">Booking Now</a>
+                  style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-default btn-transparent btn-circled mr-10" href="ajax-load/reservation-form.html" data-target="#BSParentModal" data-toggle="modal">SIGN UP FOR FREE</a>
                 </div>
               </li>
 
@@ -322,7 +322,7 @@
                   data-splitin="none" 
                   data-splitout="none" 
                   data-responsive_offset="on"
-                  style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-default btn-lg btn-circled mr-10" href="Register.php" >Register</a> <a class="btn btn-colored btn-lg btn-circled btn-theme-colored" href="Login.php" >Login</a>
+                  style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-default btn-lg btn-circled mr-10" href="Register.php" >SIGN UP</a> <a class="btn btn-colored btn-lg btn-circled btn-theme-colored" href="Login.php" >SIGN IN</a>
                 </div>
               </li>
 
@@ -428,7 +428,11 @@
                   data-splitin="none" 
                   data-splitout="none" 
                   data-responsive_offset="on"
+<<<<<<< HEAD
                   style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-theme-colored btn-circled mr-10" href="addBooking.html">Booking Now</a>
+=======
+                  style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-theme-colored btn-circled mr-10" href="#">SIGN UP FOR FREE </a>
+>>>>>>> 4e72988e6a91cb9ffcf4eda74797e15cf62febcc
                 </div>
               </li>
 
@@ -567,7 +571,7 @@
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                   <h2 class="text-uppercase title" >About <span class="text-black font-weight-300"> <b>iMakapp</b></span></h2>
-                  <p class="text-uppercase letter-space-4">WHY SHOULD YOU DOWNLOAD IMAKAPP?</p>
+                  <p class="text-uppercase letter-space-4">WHY SHOULD YOU SIGN UP FOR IMAKAPP?</p>
                 </div>
               </div>
             </div>
@@ -576,7 +580,7 @@
             <div class="col-md-6 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
               <h5 class="letter-space-8 text-uppercase text-theme-colored"></h5>
               <p><span class="dropcap">i</span>MakeApp is a mobile beauty and stylist service, using an application platform to connect the client and iMakeApp beautician and stylist. iMakeApp beautician will provide the service of make-up, hair styling, manicure and pedicure in the comfort of their home. iMakeApp is created to give a platform for professional women who do not have time to spend at the salon and prefer the service to come to them at the comfort of their homes and give the beauticians a platform where they don’t need to go out looking for clients but clients are available on the platform..</p>
-              <a href="" class="btn btn-theme-colored btn-flat mt-10"> Read More</a>
+              <a href="" class="btn btn-theme-colored btn-flat mt-10">SIGN UP FOR FREE</a>
             </div>
             <div class="col-md-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
               <img class="img-fullwidth" src="images/about/1.png" alt="">
@@ -592,8 +596,8 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
             <div class="section-content text-center">
-              <h2 class="text-white letter-space-4 font-36">Your Favourite <span class="text-theme-colored">Items</span></h2>
-              <h3 class="text-white text-uppercase font-weight-300 mt-0">I have no regrets about launching Salon. for the life of me, I can't imagine doing anything else</h3>
+              <h2 class="text-white letter-space-4 font-36">The Best <span class="text-theme-colored">Salon</span> Management Software</h2>
+              <h3 class="text-white text-uppercase font-weight-300 mt-0">Trusted by the best in the beauty industry</h3>
               <a href="" class="btn btn-theme-colored btn-flat mt-10 btn-xl text-uppercase"> Contact Us</a>
             </div>
           </div>
@@ -608,7 +612,7 @@
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <h2 class="text-uppercase title" >Special <span class="text-black font-weight-300"> Services</span></h2>
-              <p class="text-uppercase letter-space-4">Best Hair Care Theme on Themeforest.</p>
+              <p class="text-uppercase letter-space-4">Best Hair Care on <span class="text-black font-weight-300"> iMakapp</span></p>
             </div>
           </div>
         </div>
@@ -899,11 +903,11 @@
           <div class="widget dark">
             <h5 class="widget-title mb-10">Subscribe Us</h5>
             <!-- Mailchimp Subscription Form Starts Here -->
-            <form id="mailchimp-subscription-form-footer" class="newsletter-form">
+            <form class="newsletter-form" ng-controller="emailController">
               <div class="input-group">
-                <input ng-model="testing" type="email"  placeholder="Your Email" class="form-control input-lg font-16" data-height="45px">
+                <input style="margin-top:0px;" ng-model="testing" type="email"  placeholder="Your Email" class="form-control input-lg font-16" data-height="45px">
                 <span class="input-group-btn">
-                  <input style="margin-top:5px;" ng-click="subscribe()" data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit" value="Subscribe" />
+                  <input ng-click="subscribe()" data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit" value="Subscribe" />
                 </span>
               </div>
             </form>
@@ -966,11 +970,15 @@
                 </li>
                 <li>|</li>
                 <li>
-                  <a href="#">Help Desk</a>
+                  <a href="#">CAREERS</a>
                 </li>
                 <li>|</li>
                 <li>
-                  <a href="#">Support</a>
+<<<<<<< HEAD
+                  <a href="#" onclick="document.getElementById('id01').style.display='block'">Support</a>
+=======
+                  <a href="#">SUPPORT</a>
+>>>>>>> origin/master
                 </li>
               </ul>
             </div>
@@ -980,6 +988,90 @@
     </div>
   </footer>
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  <div id="wrapper">
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
+    <div id="id01" class="modal"style="z-index: 5555;background-color:white;">
+      <form class="modal-content animate" action="" >
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="images/logo-wide-white.png" alt="logo" style="width:400px" class="avatar">
+        </div>
+    
+        <div class=" col-md-offset-4 col-md-4">
+          <label><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+    
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+            
+          <button type="submit">Login</button>
+          <input type="checkbox" checked="checked"> Remember me
+          <span class="new" style="float: right;">forgot <a href="#" style="color:blue;font-weight:bolder;" >password?</a></span>
+        </div>
+    
+        <div class=" col-md-offset-4 col-md-4">
+         
+        
+        <hr style="border-bottom: 2px solid grey;" />
+        </div>
+    
+           <div class=" col-md-offset-4 col-md-6">
+          <div class="row">
+          <div class="col-md-6">
+             Don't have an Account? 
+          </div> 
+          <div class="col-md-6 navbar-right">
+            <a href="#" class="fomrLink" onclick="document.getElementById('id02').style.display='block';
+          document.getElementById('id01').style.display='none';" style="color:blue;font-weight:bolder;margin-left:-15px;" >Register</a>
+          </div>
+        </div>
+        </div>
+      </form>
+    </div>
+    
+    <div id="id02" class="modal" style="z-index: 5555;height: 660px;margin-bottom: 20px;margin-top: -10px;">
+      <form class="modal-content animate" action="" >
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+    
+        <div class="form col-md-offset-4 col-md-4">
+          <label><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+    
+          <label><b>Email</b></label>
+          <input type="email" placeholder="Enter Emial" name="email" required>
+    
+          <label><b>Phone Number</b></label>
+          <input type="text" placeholder="Enter Phone" name="phone" required>
+    
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+    
+          <label><b>Confirm Password</b></label>
+          <input type="password" placeholder="Confirm Password" name="cpsw" required>
+            
+          <button type="submit">Register</button>
+           <hr style="border-bottom: 2px solid grey;" />
+        </div>
+    
+        <div class=" col-md-offset-4 col-md-6">
+          <div class="row">
+          <div class="col-md-6">
+             Already have an Account? 
+          </div> 
+          <div class="col-md-6 navbar-right">
+            <a href="#" onclick="document.getElementById('id01').style.display='block';
+          document.getElementById('id02').style.display='none';" style="color:blue;font-weight:bolder;" >Login</a>
+          </div>
+        </div>
+        </div>
+      </form>
+    </div>
+    
+  
 </div>
 <!-- end wrapper --> 
 
@@ -1001,8 +1093,24 @@
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
 <script type="text/javascript">
   setTimeout(function(){ $('#preloader').fadeOut('slow') }, 1000);
-
-
 </script>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    var modal1 = document.getElementById('id02');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal1) {
+            modal1.style.display = "none";
+        }
+    }
+    </script>
 </body>
 </html>
