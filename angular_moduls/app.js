@@ -35,8 +35,7 @@ Imakapp.controller("viewingController",['$scope','BookingService',function($scop
                console.log(error.data);
          });
     };
-  
-    
+
     $scope.testings = example;
 }]);
 
@@ -52,5 +51,4 @@ Imakapp.factory('BookingService',['$http',function($http){
             
             return promise;
         };
-        return service;
 }]);

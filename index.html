@@ -9,30 +9,14 @@
 <title>iMakApp</title>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
     function hideURLbar(){ window.scrollTo(0,1); } 
-    
-    
-  $('ul>.menuzord-menu li').clcik(function(){
-      $('ul>.menuzord-menu li').removeClass('active');
-      $(this).addClass('active');
-  });
-
-    </script>
+</script>
 <!-- //for-mobile-apps -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!-- pop-up -->
-<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-<!-- //pop-up -->
+
 <link href="css/mislider.css" rel="stylesheet" type="text/css" />
 <link href="css/mislider-custom.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="css/zoomslider.css" />
 <link href="css/font-awesome.css" rel="stylesheet"> 
-<script type="text/javascript" src="js/modernizr-2.6.2.min.js"></script>
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
 
-<!--/web-fonts-->
-<link href="//fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-<!--//web-fonts-->
 <!--font awesome-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -62,46 +46,20 @@
 
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+
 <script src="js/jquery-plugin-collection.js"></script>
 <script src="js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
 <script src="js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
 <script src="js/modal.js"></script>
 
-<script src="js/angular.min.js"></script>
-<script src="js/app.js"></script>
 </head>
-<body class="" >
+<body ng-app="Imakapp">
 
 <div id="wrapper">
   <div id="preloader">
     <div id="loader"></div>
   </div>
 
-  <div id="id03" class="modal"style="z-index: 5555;">
-    <form class="modal-content animate" action="" >
-      <div class="imgcontainer">
-        <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-        <img src="images/Logo_login.png" alt="logo" style="width:300px" class="avatar">
-      </div>
-  
-      <div class=" col-md-offset-4 col-md-4">
-        <label><b>Email</b></label>
-        <input type="email" placeholder="e.g info@imakapp.co.za" name="email" required>
-
-        <button type="submit">Send email</button>
-    
-        <div class="col-md-6 navbar-right">
-          <a href="#" class="fomrLink" onclick="document.getElementById('id02').style.display='block';
-        document.getElementById('id01').style.display='none';document.getElementById('id03').style.display='none'" style="color:blue;font-weight:bolder;padding-right:15px">Register</a>
-         |  <a href="#" class="fomrLink" onclick="document.getElementById('id01').style.display='block';
-        document.getElementById('id02').style.display='none';document.getElementById('id03').style.display='none';" style="color:blue;font-weight:bolder;padding-left:15px">Login</a>
-        </div>
-      </div>
-      </div>
-    </form>
-  </div>
-  
   <header id="header" class="header">
     <div class="header-nav navbar-fixed-top navbar-dark navbar-transparent navbar-sticky-animated animated-active">
       <div class="header-nav-wrapper">
@@ -138,7 +96,7 @@
             <ul>
 
               <!-- SLIDE 1 -->
-              <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="images/bg/bg10.jpg" data-rotate="0" data-saveperformance="off" data-title="Web Show" data-description="">
+              <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" bg data-rotate="0" data-saveperformance="off" data-title="Web Show" data-description="">
                 <!-- MAIN IMAGE -->
                 <img src="images/slider/bg6.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="6" data-no-retina>
                 <!-- LAYERS -->
@@ -244,7 +202,7 @@
               </li>
 
               <!-- SLIDE 2 -->
-              <li data-index="rs-2" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="images/bg/bg1.jpg" data-rotate="0" data-saveperformance="off" data-title="Web Show" data-description="">
+              <li data-index="rs-2" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-title="Web Show" data-description="">
                 <!-- MAIN IMAGE -->
                 <img src="images/slider/NEW.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="6" data-no-retina>
                 <!-- LAYERS -->
@@ -327,7 +285,7 @@
               </li>
 
               <!-- SLIDE 3 -->
-              <li data-index="rs-3" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="images/bg/bg16.jpg" data-rotate="0" data-saveperformance="off" data-title="Web Show" data-description="">
+              <li data-index="rs-3" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-title="Web Show" data-description="">
                 <!-- MAIN IMAGE -->
                 <img src="images/slider/bg16.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="6" data-no-retina>
                 <!-- LAYERS -->
@@ -563,7 +521,7 @@
     </section>
 
     <!-- Section: Divider  -->
-    <section class="divider parallax layer-overlay overlay-black" data-bg-img="images/bg/bg2.jpg" data-parallax-ratio="0.7">
+    <section class="divider parallax layer-overlay overlay-black" data-parallax-ratio="0.7">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
@@ -634,7 +592,7 @@
     </section>
 
     <!-- Divider: Funfact -->
-    <section class="divider parallax layer-overlay overlay-dark-8" data-bg-img="images/bg/bg7.jpg" data-parallax-ratio="0.7">
+    <section class="divider parallax layer-overlay overlay-dark-8" data-parallax-ratio="0.7">
       <div class="container pt-80 pb-70 pb-md-20">
         <div class="row">
           <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 mb-md-50">
@@ -834,7 +792,7 @@
   <!-- end main-content -->
   
   <!-- Footer -->
-  <footer id="footer" class="footer divider parallax layer-overlay overlay-dark-9" data-bg-img="images/bg/bg7.jpg" data-parallax-ratio="0.7">
+  <footer id="footer" class="footer divider parallax layer-overlay overlay-dark-9" data-parallax-ratio="0.7">
     <div class="container pt-70 pb-40">
       <div class="row mt-30">
         <div class="col-md-5">
@@ -923,31 +881,31 @@
   </footer>
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
  
-    <div id="id01" class="modal"style="z-index: 5555;" style="background-color:rgb(255,255,255);">
+    <div id="id01" class="modal" style="z-index: 5555;" ng-controller="emailController">
       <form class="modal-content animate" action="" >
     
-        <div class="col-md-offset-3 col-md-5">
+          <div class="col-md-3"></div>
+        <div class=" col-md-5" style="background-color:rgb(255,255,255);padding:30px;">
 
           <label><b>Firstname</b></label>
-          <input type="text" placeholder="Your Firstname" name="firstname" required>
-
+          <input type="text" ng-model="guest_name" placeholder="Your firstname" name="firstname" required>
+          {{tes}}
           <label><b>Lastname</b></label>
-          <input type="password" placeholder="Your Lastname" name="lastname" required>    
+          <input type="text" ng-model="guest_surname" placeholder="Your lastname" name="lastname" required>    
 
           <label><b>Email</b></label>
-          <input type="email" placeholder="Your email" name="email" required>
+          <input type="email" ng-model="guest_email" placeholder="Your email" name="email" required>
 
           <label><b>Comment</b></label>
-          <textarea style="width:100%;height:100px;" placeholder="Empty..."></textarea>
+          <textarea style="width:100%;height:100px;" ng-model="guest_description" placeholder="Empty..."></textarea>
             
           <div class="col-md-6">
-            <button type="submit" class="btn btn-success">Send</button>
+            <button ng-click="support()" class=" btn-success">Send</button>
           </div>
           <div class="col-md-6">
-              <button onclick="document.getElementById('id01').style.display='none'" type="submit" class="btn btn-danger">Cancel</button>
+              <button onclick="$('#id01').fadeOut(500);" class=" btn-danger">Cancel</button>
           </div>
-          
-          
+        
         </div>
       </form>
     </div>
@@ -973,6 +931,7 @@
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script> 
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script> 
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+
 <script type="text/javascript">
   setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
 </script>
