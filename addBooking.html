@@ -51,7 +51,18 @@
 <link  href="js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css"/>
 <link  href="js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css"/>
 <link  href="js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css"/>
-
+<style>
+  html { 
+  background: url('images/about/2.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#header{
+  background: rgba(255, 255, 255, 0.5)
+}
+</style>
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -61,7 +72,7 @@
 <script src="js/modal.js"></script>
 </head>
     <body ng-app="Imakapp" ng-controller="BookingController">
-            <header id="header" class="header">
+            <header id="header" class="header" style="background: rgba(255, 255, 255, 0.5)">
                     <div class="header-nav navbar-fixed-top navbar-dark navbar-transparent navbar-sticky-animated animated-active">
                       <div class="header-nav-wrapper">
                         <div class="container">
@@ -72,9 +83,7 @@
                             <ul class="menuzord-menu navbar-right">
                                 <h2>Make Booking</h2>
                             </ul>
-                           
                           </nav>
-                          
                         </div>
                       </div>
                     </div>
@@ -82,7 +91,7 @@
         <div class="col-md-4">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-bg-img="images/bg/bg7.jpg" data-parallax-ratio="0.7">
             <form novalidate="novalidate" style="margin-top:90px;">
                     <input type="text" ng-model="bookingStatus" placeholder="Booking Status" required/><br>
                     <input type="text" ng-model="bookedService" placeholder="Booked Service" required/><br>
