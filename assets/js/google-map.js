@@ -66,7 +66,7 @@ $(document).ready(function() {
         });
 
         $.ajax({
-            'url': 'assets/data/listings.json',
+            'url': 'https://customisepage.blob.core.windows.net/%24root/listings.json',
             'success': function (data) {
                 var markers = [];
                 var infobox = new InfoBox({
