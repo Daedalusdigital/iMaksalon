@@ -51,6 +51,7 @@
 <script src="js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
 <script src="js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
 <script src="js/modal.js"></script>
+<script src="js/app.js" type="text/javascript"></script>
 
 </head>
 <body ng-app="Imakapp">
@@ -472,7 +473,7 @@
                 <div class="p-20 pl-50 pr-50">
                   <h3 class="text-white text-uppercase">How to find your local<br>Salons location.</h3>
        
-                  <a href="#" class="btn btn-dark btn-md btn-flat mt-10 hvr-bounce-to-left no-border">View Map</a>
+                  <a href="map.html" class="btn btn-dark btn-md btn-flat mt-10 hvr-bounce-to-left no-border">View Map</a>
                 </div>
               </div>
             </div>
@@ -558,7 +559,7 @@
                 <a href="#" class="icon bg-theme-colored icon-circled icon-border-effect effect-circle icon-xl">
                   <i class="flaticon-salon-hairdresser-washing-the-hair-of-a-client-with-bubbles-shampoo text-white"></i>
                 </a>
-                <h4 class="icon-box-title mt-15 mb-10 letter-space-4 text-uppercase"><strong>Nail Treatments</strong></h4>
+                <h4 class="icon-box-title mt-15 mb-10 letter-space-4 text-uppercase"><strong>Online Booking</strong></h4>
                 <p>We offer care services such as manicure, pedicure and nail enhancement.</p>
               </div>
             </div>
@@ -567,7 +568,7 @@
                 <a href="#" class="icon bg-theme-colored icon-circled icon-border-effect effect-circle icon-xl">
                   <i class="flaticon-salon-razors text-white"></i>
                 </a>
-                <h4 class="icon-box-title mt-15 mb-10 letter-space-4 text-uppercase"><strong>Facials</strong></h4>
+                <h4 class="icon-box-title mt-15 mb-10 letter-space-4 text-uppercase"><strong>Sales & Products</strong></h4>
                 <p>We offer a complete range of beauty treatment to relax, revitalization and invigorate.</p>
               </div>
             </div>
@@ -576,7 +577,7 @@
                 <a href="#" class="icon bg-theme-colored icon-circled icon-border-effect effect-circle icon-xl">
                   <i class="flaticon-salon-female-hair-shape-and-face-silhouette text-white"></i>
                 </a>
-                <h4 class="icon-box-title mt-15 mb-10 letter-space-4 text-uppercase"><strong>Hairstying</strong></h4>
+                <h4 class="icon-box-title mt-15 mb-10 letter-space-4 text-uppercase"><strong>Client Management</strong></h4>
                 <p>We focus on providing high quality services with customer satification, we will do everything we can to exceed your expectations.</p>
               </div>
             </div>
@@ -585,7 +586,7 @@
                 <a href="#" class="icon bg-theme-colored icon-circled icon-border-effect effect-circle icon-xl">
                   <i class="flaticon-salon-hairdresser-with-combs text-white"></i>
                 </a>
-                <h4 class="icon-box-title mt-15 mb-10 letter-space-4 text-uppercase"><strong>Makeup</strong></h4>
+                <h4 class="icon-box-title mt-15 mb-10 letter-space-4 text-uppercase"><strong>mMrketing</strong></h4>
                 <p>We ensure that you look like you and feeling relaxed on the choice of your favourite makeup. </p>
               </div>
             </div>
@@ -797,14 +798,14 @@
   <!-- end main-content -->
   
   <!-- Footer -->
-  <footer ng-controller="emailController" id="footer" class="footer divider parallax layer-overlay overlay-dark-9" data-bg-img="images/bg/bg7.jpg" data-parallax-ratio="0.7">
+  <footer  id="footer" class="footer divider parallax layer-overlay overlay-dark-9" data-bg-img="images/bg/bg7.jpg" data-parallax-ratio="0.7">
     <div class="container pt-70 pb-40">
       <div class="row mt-30">
         <div class="col-md-5">
           <div class="widget dark">
             <h5 class="widget-title mb-10">Subscribe Us</h5>
             <!-- Mailchimp Subscription Form Starts Here -->
-            <form class="newsletter-form" >
+            <form ng-controller="emailController" class="newsletter-form" >
               <div class="input-group">
                 <input style="margin-top: 0px;" ng-model="testing" type="email"  placeholder="Your Email" class="form-control input-lg font-16" data-height="45px">
                 <span class="input-group-btn">
@@ -812,26 +813,6 @@
                 </span>
               </div>
             </form>
-            <!-- Mailchimp Subscription Form Validation-->
-            <script type="text/javascript">
-              $('#mailchimp-subscription-form-footer').ajaxChimp({
-                  callback: mailChimpCallBack,
-                  url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
-              });
-
-              function mailChimpCallBack(resp) {
-                  // Hide any previous response text
-                  var $mailchimpform = $('#mailchimp-subscription-form-footer'),
-                      $response = '';
-                  $mailchimpform.children(".alert").remove();
-                  if (resp.result === 'success') {
-                      $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
-                  } else if (resp.result === 'error') {
-                      $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
-                  }
-                  $mailchimpform.prepend($response);
-              }
-            </script>
             <!-- Mailchimp Subscription Form Ends Here -->
           </div>
         </div>
