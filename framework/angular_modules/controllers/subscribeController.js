@@ -12,7 +12,7 @@ app.controller("subscribeController", ['$scope','SubscribeService',function($sco
         console.log(object);
         
         SubscribeService.sendSubsciption(object).then(function(res){
-            alert(res.data);
+            alert(res.data.response);
             console.log(res.data);
         });
     };
