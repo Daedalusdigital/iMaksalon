@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="assets/libraries/slick/slick.css" rel="stylesheet" type="text/css">
+    <link href="images/icon.png" rel="shortcut icon" type="image/png">
     <link href="assets/libraries/slick/slick-theme.css" rel="stylesheet" type="text/css">
     <link href="assets/css/trackpad-scroll-emulator.css" rel="stylesheet" type="text/css">
     <link href="assets/css/chartist.min.css" rel="stylesheet" type="text/css">
@@ -67,24 +68,27 @@
         <div class="hero-image">
           <div class="hero-image-inner">
             <div class="hero-image-content">
-              <div class="container">
+              <div class="container" ng-app="places">
                 <div class="center">
                   <h1 class="hero-image-content-title-simple float-none">Durban Kwazulu-Natal</h1>
-                  <p class="float-none">Search South Africas Play Ground For Beauty Salons And Stylist, Aswell as products.</p>
+                  <p class="float-none">Search South Africas Play Ground For Beauty Salons And Stylist, As well as products.</p>
                   <form method="post" action="?">
                     <div class="row justify-content-sm-center">
                       <div class="col-sm-4">
                         <div class="input-group">
                           <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
-                          <input type="text" class="form-control no-border form-control-xl" placeholder="Search from your City...">
+                          <input type="text" class="form-control no-border form-control-xl" ej-search-places-input
+         search-results-limit="10"
+         complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
                         <!-- /.form-group -->
                       </div>
                       <!-- /.col-* -->
                       <div class="col-sm-2">
-                        <button type="submit" class="btn btn-primary btn-xl">
-                          <i class="fa fa-search"></i> Search
+                        <button type="submit" ng-click="search.go() " class="btn btn-primary btn-xl">
+                          <i class="fa fa-search" ></i> Search
                         </button>
+
                       </div>
                       <!-- /.col-* -->
                     </div>
@@ -106,7 +110,7 @@
               <i class="fa fa-building"></i>
               <strong>Salons</strong>
             </a><!-- /.hero-image-category -->
-            <a href="framework/views.html#!/stylist" class="hero-image-category">
+            <a href="stylist.html" class="hero-image-category">
               <i class="fa fa-users"></i>
               <strong>Stylists</strong>
             </a><!-- /.hero-image-category -->
@@ -139,7 +143,7 @@
               <div class="content">
                 <div class="page-header">
                   <h2>iMakapp avalible at these Locations</h2>
-                  <p>See the most recent additions available in these provinces. All additions are verified by our editors staff.</p>
+                  <p>See the most recent additions available in these provinces. All additions are verified by our editing staff.</p>
                 </div>
                 <div class="row">
                   <div class="col-sm-4">
@@ -208,7 +212,7 @@
                               <span class="listing-box-featured">Featured</span>
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-1.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Sallon</span>
+                                <span class="listing-box-category tag">Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -218,8 +222,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Ideal Garden Maintenance</a></h2>
-                                <h3>2813 Preston Street Wichita</h3>
+                                <h2><a href="listings-detail.html">Salon @800</a></h2>
+                                <h3>500 Peter Mokaba Ridge, Essenwood, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -239,12 +243,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>15 </dd>
+                                  <dt>Nail & Makeup Artist</dt>
+                                  <dd>10 </dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -276,8 +278,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Little Tavern</a></h2>
-                                <h3>2164 Hilltop Haven Drive Newark</h3>
+                                <h2><a href="listings-detail.html">Beauty and Balance</a></h2>
+                                <h3>G15, 10 Mathews Meyiwa Rd, Greyville, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -297,12 +299,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>24</dd>
+                                  <dt>Nail & Makeup Artist</dt>
+                                  <dd>15</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -338,8 +338,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Piano Lessons For Beginners</a></h2>
-                                <h3>3071 Ash Avenue Saint Louis</h3>
+                                <h2><a href="listings-detail.html">Bespoke Hair</a></h2>
+                                <h3>892 Umgeni road, Lion Match Office Park, Windermere, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -359,12 +359,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>55</dd>
+                                  <dt>Nail & Makeup Artists</dt>
+                                  <dd>63</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -396,8 +394,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Paris Museum</a></h2>
-                                <h3>2858 Neuport Lane Norcross</h3>
+                                <h2><a href="listings-detail.html">Sisters Hair & Beauty Salon</a></h2>
+                                <h3>Shop No.3, 237 O R Tambo Parade, North Beach, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -417,12 +415,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>45</dd>
+                                  <dt>Nail & Makeup Artists</dt>
+                                  <dd>68</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -458,8 +454,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Griff's Hamburgers</a></h2>
-                                <h3>3228 Hillview Street Columbia</h3>
+                                <h2><a href="listings-detail.html">B Scene Hair Designs by Donne</a></h2>
+                                <h3>234 St. Thomas Rd, Musgrave, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -479,12 +475,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail & Makeup Artists</dt>
+                                  <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -1165,7 +1159,7 @@
                 <!-- /.partners -->
                 <div class="cta-price">
                   <h3>Get Everything<br>
-                     Exlusively on iMakapp</h3>
+                     Exclusively on iMakApp</h3>
                 </div>
                 <!-- /.cta-price -->
               </div>
@@ -1208,8 +1202,8 @@
                       <div class="widget">
                 
                     <ul class="social">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="https://www.facebook.com/ImakApp/"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="https://twitter.com/ImakApp"><i class="fa fa-twitter"></i></a></li>
                       <li><a href="#"><i class="fa fa-google"></i></a></li>
                     </ul>
                   </div>
@@ -1459,7 +1453,7 @@
               <strong>User Name</strong>
               <span>Surname</span>
             </span>
-            <a href="https://www.imakapp.com/book-stylist.html" class="side-user-avatar-action">
+            <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
               <i class="fa fa-cog"></i>
             </a>
           </div>
@@ -1510,5 +1504,9 @@
     <script type="text/javascript" src="assets/js/particles.min.js"></script>
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js'></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
   </body>
 </html>

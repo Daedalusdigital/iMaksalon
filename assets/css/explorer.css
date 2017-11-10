@@ -11927,6 +11927,41 @@ ul.sort-order {
     .admin-sidebar-footer {
       display: none; } }
 
+search-places-results {
+  position: absolute;
+  display: block;
+  background: white;
+  text-align: left;
+  width: 325px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.search-places-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.search-places-results ul li {
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+.search-places-results ul li > div {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+.search-places-results ul li:hover {
+  background: #ddd;
+  cursor: pointer;
+}
+.search-places-results ul li:last-of-type {
+  border-bottom: none;
+}
+.search-places-results .result-vicinity {
+  font-size: 0.7em;
+  color: #aaa;
+}
+
 .admin-footer {
   background-color: #fff;
   box-shadow: 0 0 3px rgba(50, 50, 50, 0.2);
