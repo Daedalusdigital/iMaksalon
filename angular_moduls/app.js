@@ -12,7 +12,7 @@ Imakapp.controller("BookingController",['$scope','BookingService',function($scop
         BookingService.sendBooking(object).then(function(res){
                 alert(object);
       },function(error){
-          
+            
       });
     };
     var response = BookingService.viewBooking().then(function(res){

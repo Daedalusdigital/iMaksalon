@@ -5,27 +5,14 @@ app.controller("emailController",['$scope','SubscribeService', function($scope,S
     
     $scope.subscribe=function(){
 
-        var object = angular.toJson({subscriber_email: $scope.testing}); 
-        alert($scope.testing);
+        var object = angular.toJson({subscriber_email: $scope.subscriber_email}); 
+        alert($scope.subscriber_email);
         SubscribeService.sendSubscription(object).then(function(res){
-              console.log(res.data)
+              console.log(res.data);
         },function(error){
             console.log("Message "+ error);
         });
     };
-
-    $scope.support = function(){
-        $scope.tes = "Melusi";
-           /*   
-           var supportObj = angular.toJson({name : $scope.guest_name, surname : $scope.guest_surname, email_to : $scope.guest_email, discripttion : $scope.guest_description});
-               console.log(res.data);
-           SubscribeService.guestSupport(supportObj).then(function(res){
-               alert(res.data);
-           },function(error){
-               console.log("Message "+ error);
-           });*/
-       };
-
 }]);
 
 app.factory('SubscribeService', ['$http', function($http){

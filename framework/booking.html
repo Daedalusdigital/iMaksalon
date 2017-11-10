@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="bookingApp">
+    <head>
+        <title>Bookings</title>
+        <link rel="shortcut icon" href="#"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-controller="bookingController">
+        <div id="main">
+            <div ng-view="">
+                <h3>{{heading}}</h3>
+                 <form novalidate="novalidate" style="margin-top:90px;">
+                    <input type="text" ng-model="bookedService" placeholder="Booked Service" required/><br>
+                    <input type="text" ng-model="stylistId" placeholder="Stylist Id" required/><br>
+                    <input type="text" ng-model="clientId" placeholder="Client Id" required/><br>
+                    <input type="text" ng-model="serviceDate" placeholder="Service Date" required/><br>
+                    <input type="text" ng-model="service_time" placeholder="Service Time" required/><br>
+                    <input type="text" ng-model="serviceLocation" placeholder="Client Address" required/><br>
+                    <input ng-click="makeBooking()" type="submit" value="Submit Booking" class="btn btn-success" />
+                </form>
+                <h6>{{results}}</h6>
+            </div>
+        </div>
+        
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/angular-route.js" type="text/javascript"></script>
+        <script src="angular_modules/controllers/bookingsController.js" type="text/javascript"></script>
+    </body>
+</html>
