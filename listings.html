@@ -28,16 +28,47 @@
                 <span></span>
                 <span></span>
               </div>
-              <!-- /.header-toggle -->
+             <!-- /.header-toggle -->
               <div class="header-logo">
-                <a href="index.html">
-                  <img src="assets/img/logo.svg" class="svg" alt="Home">
-                </a>
-                <a href="index.html" class="header-title">Imakapp</a>
+               <a href="dashboard.html" class="header-title"> <img src="images/logo-wide-white.png" alt=""></a>
               </div>
-              <!-- /.header-logo -->
+        <!-- /.header-logo -->
               <div class="header-nav">
-                
+                <div class="primary-nav-wrapper">
+                  <ul class="nav">
+                    <li class="nav-item ">
+                      <a href="dashboard.html" class="nav-link ">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a href="listings-google-map.html" class="nav-link ">Map</a>
+                    </li>
+                    <li class="nav-item has-sub-menu">
+                      <a href="#" class="nav-link ">Salons &amp; Stylists</a>
+                        <ul class="sub-menu">
+                        <li><a href="salons.html" class="">Salons</a></li>
+                        <li><a href="stylists.html" class="">Stylists</a></li>
+                         </ul> 
+                    </li>
+                    <li class="nav-item">
+                      <a href="bookings.html" class="nav-link ">Bookings</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a href="gallery.html" class="nav-link ">Gallery</a>
+                      <!-- /.mega-menu -->
+                    </li>
+                    <li class="nav-item ">
+                      <a href="notifications.html" class="nav-link ">Notification</a>
+                    
+                    </li>
+                  </ul>
+                </div>
+                <!-- /.primary-nav-wrapper -->
+              </div>
+              <div class="header-toggle toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
               <!-- /.header-toggle -->
               <div class="header-actions">
                 <ul class="nav nav-pills">
@@ -62,26 +93,11 @@
           <div class="main-inner">
             <div class="page-title">
               <div class="container-fluid">
-                <h1>Listings Grid
+                <h1>Salons 
                 </h1>
                 <div class="page-title-actions">
-                  <div class="switcher">
-                    <strong>Currency</strong>
-                    <ul>
-                      <li class="active"><a href="#">USD</a></li>
-                      <li><a href="#">EUR</a></li>
-                    </ul>
-                  </div>
-                  <!-- /.switcher -->
-                  <div class="switcher">
-                    <strong>Language</strong>
-                    <ul>
-                      <li class="active"><a href="#">EN</a></li>
-                      <li><a href="#">FR</a></li>
-                      <li><a href="#">DE</a></li>
-                    </ul>
-                  </div>
-                  <!-- /.switcher -->
+                 
+                  
                 </div>
                 <!-- /.page-title-actions -->
               </div>
@@ -95,19 +111,19 @@
                     <div class="filter">
                       <h2>Search criteria</h2>
                       <div class="form-group">
-                        <label>Keyword</label>
-                        <input type="text" class="form-control" placeholder="Search by keyword ...">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Search by Name ...">
                       </div>
                       <!-- /.form-group -->
                       <div class="form-group">
                         <label>City</label>
                         <select class="form-control">
-                          <option>Location</option>
-                          <option>Chicago</option>
-                          <option>San Francisco</option>
-                          <option>Seattle</option>
-                          <option>New York</option>
-                          <option>Washington</option>
+                          <option>Durban</option>
+                          <option>Pietermaritzburg</option>
+                          <option>East London</option>
+                          <option>Johannesburg</option>
+                          <option>Pretoria</option>
+                          <option>Cape Town</option>
                         </select>
                       </div>
                       <!-- /.form-group -->
@@ -1208,29 +1224,28 @@
               <i class="fa fa-cog"></i>
             </a>
           </div>
-          <!-- /.side-user -->
-          <ul class="nav flex-column">
-            <li class="nav-item"><a href="admin-dashboard.html" class="nav-link">Author Dashboard</a></li>
-            <li class="nav-item"><a href="admin-listings.html" class="nav-link">Listings Queue</a></li>
-            <li class="nav-item"><a href="admin-projects.html" class="nav-link">Running Projects</a></li>
-            <li class="nav-item"><a href="admin-tasks.html" class="nav-link">Tasks Management</a></li>
-            <li class="nav-item"><a href="admin-users.html" class="nav-link">User Accounts</a></li>
+        !-- /.side-user -->
+            <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
+            <li class="nav-item"><a href="https://" class="nav-link">Sign Out</a></li>
           </ul>
-          <h3>Welcome Back</h3>
+          <h3>Stylist Login</h3>
           <form class="form-dark" method="post" action="?">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Username">
             </div>
             <!-- /.form-group -->
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" class="form-control" placeholder="password">
             </div>
             <!-- /.form-group -->
             <button class="btn btn-primary pull-right" type="submit">Login</button>
           </form>
         </div>
-        <!-- /.side-inner -->
       </div>
+    
       <!-- /.side -->
     </div>
     <!-- /.side-wrapper -->
