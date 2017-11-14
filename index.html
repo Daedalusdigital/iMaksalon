@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" ng-app="app">
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -806,7 +806,7 @@
               <div class="input-group">
                 <input style="margin-top: 0px;" ng-model="testing" type="email"  placeholder="Your Email" class="form-control input-lg font-16" data-height="45px">
                 <span class="input-group-btn">
-                  <input ng-click="subscribe()" data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit" value="Subscribe" />
+                  <input onclick="document.getElementById('id01').style.display='block'" data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit" value="Subscribe" />
                 </span>
               </div>
             </form>
@@ -863,7 +863,7 @@
   </footer>
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
  
-    <div id="id01" class="modal" style="z-index: 5555;" ng-controller="emailController">
+    <div id="id01" class="modal" style="z-index: 5555;">
       <form class="modal-content animate" action="" >
     
           <div class="col-md-3"></div>
