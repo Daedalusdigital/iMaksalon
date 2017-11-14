@@ -14,7 +14,12 @@
     <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/nouislider.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/explorer.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets//favicon.png">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+      <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
+      <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js'></script>
+        <script src='js/index.js'></script>
     <title>Dashboard</title>
   </head>
   <body class="">
@@ -69,7 +74,7 @@
           <div class="hero-image-inner">
             <div class="hero-image-content">
               <div class="container" ng-app="places">
-                <div class="center">
+                <div class="center" ng-controller="PlacesSearchController as search">
                   <h1 class="hero-image-content-title-simple float-none">Durban Kwazulu-Natal</h1>
                   <p class="float-none">Search South Africas Play Ground For Beauty Salons And Stylist, As well as products.</p>
                   <form method="post" action="?">
@@ -81,6 +86,26 @@
          search-results-limit="10"
          complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
+
+
+                           
+                            <div class="search-places-results" ng-show="ngModel">
+                                <ul>
+                                    <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
+                                    <div>
+                                        <span ng-bind-html="result.name | highlightSearchTerms:ngModel"></span>&nbsp;&nbsp;
+                                          <span class="result-vicinity">{{ result.vicinity }}</span>
+                                     </div>
+                                     </li>
+                                </ul>
+                              <div ng-show="queryInProgress" class="ball-clip-rotate">
+                            <div>
+                              
+                            </div>
+                          </div>
+                            
+</div>
+
                         <!-- /.form-group -->
                       </div>
                       <!-- /.col-* -->
@@ -1474,12 +1499,9 @@
     <!-- /.side-wrapper -->
     <div class="side-overlay"></div>
     <!-- /.side-overlay -->
-      <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
-          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyDmXybAJzoPZ6hH-Jhv7QMCSGgQ6MY8WqY" type="text/javascript"></script>
+ 
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/chartist.min.js"></script>
     <script type="text/javascript" src="assets/js/google-map-richmarker.min.js"></script>
     <script type="text/javascript" src="assets/js/google-map-infobox.min.js"></script>
@@ -1487,6 +1509,7 @@
     <script type="text/javascript" src="assets/js/jquery.inlinesvg.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.affix.js"></script>
     <script type="text/javascript" src="assets/js/jquery.scrollTo.js"></script>
+       <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/libraries/slick/slick.min.js"></script>
     <script type="text/javascript" src="assets/js/nouislider.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.raty.js"></script>

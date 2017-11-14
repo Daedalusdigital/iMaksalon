@@ -614,6 +614,109 @@ mark,
   font-size: 90%;
   color: #636c72; }
 
+
+
+.container input[type='text'] {
+  border: none;
+  padding: 0.5em;
+  width: 325px;
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+.container input[type='text']:focus {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5), 0 0 15px 2px #00ad79;
+}
+.container input[type='submit'] {
+  display: inline-block;
+  padding: 0.5em 1em;
+  max-width: 200px;
+  background: #f93;
+  border: 3px solid #f93;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+.container input[type='submit']:hover, .container input[type='submit']:active {
+  color: #f93;
+  background: none;
+}
+
+/* _search_results.scss */
+.search-places-results {
+  position: absolute;
+  display: block;
+  background: white;
+  text-align: left;
+  width: 325px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.search-places-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.search-places-results ul li {
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+.search-places-results ul li > div {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+.search-places-results ul li:hover {
+  background: #ddd;
+  cursor: pointer;
+}
+.search-places-results ul li:last-of-type {
+  border-bottom: none;
+}
+.search-places-results .result-vicinity {
+  font-size: 0.7em;
+  color: #aaa;
+}
+
+.ball-clip-rotate {
+  display: inline-block;
+}
+.ball-clip-rotate > div {
+  display: inline-block;
+  background-color: #f93;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 2px;
+  border: 2px solid #f93;
+  border-bottom-color: transparent;
+  height: 25px;
+  width: 25px;
+  background: transparent !important;
+  animation-fill-mode: both;
+  animation: rotate 0.75s 0s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.6);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+
 code,
 kbd,
 pre,
