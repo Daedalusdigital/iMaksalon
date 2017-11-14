@@ -9,13 +9,14 @@
     <body>
         <div ng-controller="subscribeController">
             <div ng-view="">
-                <h1>{{message}}</h1>
-                <form name="subscribeForm">
-                    <input type="text" ng-model="subscriberName" placeholder="Enter Firstname" required/><br>
-                    <input type="text" ng-model="subscriberSurname" placeholder="Enter Surname" required/><br>
-                    <input type="email" ng-model="subscriberEmail" placeholder="Email Address" required/><br>
-                    <input ng-click="subscribe()" type="submit" value="Subscribe" class="btn btn-success" />
+                <h1>{{heading}}</h1>
+                <form name="subscribeForm" ng-submit="subscribe(obj)">
+                    <input type="text" ng-model="obj.subscriberName" placeholder="Enter Firstname" required/><br>
+                    <input type="text" ng-model="obj.subscriberSurname" placeholder="Enter Surname" required/><br>
+                    <input type="email" ng-model="obj.subscriberEmail" placeholder="Email Address" required/><br>
+                    <input type="submit" value="Subscribe" class="btn btn-success" />
                 </form>
+                <h4>{{results}}</h4>
             </div>
         </div>
         
