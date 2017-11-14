@@ -10,14 +10,20 @@
         <div id="main">
             <div ng-view="">
                 <h3>{{heading}}</h3>
-                 <form novalidate="novalidate" style="margin-top:90px;">
-                    <input type="text" ng-model="bookedService" placeholder="Booked Service" required/><br>
-                    <input type="text" ng-model="stylistId" placeholder="Stylist Id" required/><br>
-                    <input type="text" ng-model="clientId" placeholder="Client Id" required/><br>
-                    <input type="text" ng-model="serviceDate" placeholder="Service Date" required/><br>
-                    <input type="text" ng-model="service_time" placeholder="Service Time" required/><br>
-                    <input type="text" ng-model="serviceLocation" placeholder="Client Address" required/><br>
-                    <input ng-click="makeBooking()" type="submit" value="Submit Booking" class="btn btn-success" />
+                <form name="bookingForm" ng-submit="makeBooking(obj)">
+                    <select ng-model="obj.bookedService" ng-options="service.service_id as service.service_name for service in serviceList">
+                        <option value="" disabled>Select Service</option>
+                    </select> <br>
+
+                    <select ng-model="obj.stylistId" ng-options="stylist.id as stylist.firstname for stylist in stylistList">
+                        <option value="" disabled>Select Stylist</option>
+                    </select> 
+                    <br>
+                    <input type="text" ng-model="obj.clientId" placeholder="Client Id" required/><br>
+                    <input type="date" ng-model="obj.serviceDate" placeholder="Service Date" required/><br>
+                    <input type="text" ng-model="obj.service_time" placeholder="Service Time" required/><br>
+                    <input type="text" ng-model="obj.serviceLocation" placeholder="Client Address" required/><br>
+                    <input  type="submit" value="Submit Booking" class="btn btn-success" />
                 </form>
                 <h6>{{results}}</h6>
             </div>
