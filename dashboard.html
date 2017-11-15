@@ -14,7 +14,12 @@
     <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/nouislider.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/explorer.css" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets//favicon.png">
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+      <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
+      <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js'></script>
+        <script src='js/index.js'></script>
     <title>Dashboard</title>
   </head>
   <body class="">
@@ -46,7 +51,7 @@
               <div class="header-actions">
                 <ul class="nav nav-pills">
                   <li class="nav-item">
-                    <a href="https://www.imakapp.com/framework/booking.html" class="nav-link modal-submit" >
+                    <a href="https://www.imakapp.com/addBooking.html" class="nav-link modal-submit" >
                       <i class="fa fa-plus"></i> <span>Add Booking</span>
                     </a>
                   </li>
@@ -69,20 +74,44 @@
           <div class="hero-image-inner">
             <div class="hero-image-content">
               <div class="container" ng-app="places">
-                <div class="center">
+                <div class="center" ng-controller="PlacesSearchController as search">
                   <h1 class="hero-image-content-title-simple float-none">Durban Kwazulu-Natal</h1>
                   <p class="float-none">Search South Africas Play Ground For Beauty Salons And Stylist, As well as products.</p>
                   <form method="post" action="?">
                     <div class="row justify-content-sm-center">
                       <div class="col-sm-4">
                         <div class="input-group">
-                          <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
+                          <span class=""><i class="fa fa-location-arrow"></i></span>
                           <input type="text" class="form-control no-border form-control-xl" ej-search-places-input
          search-results-limit="10"
          complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
+
+
+                           <script type="text/ng-template" id="search-results.html">
+                            <div class="search-places-results" ng-show="ngModel">
+                                <ul>
+                                    <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
+                                    <div>
+                                        <span ng-bind-html="result.name | highlightSearchTerms:ngModel"></span>&nbsp;&nbsp;
+                                          <span class="result-vicinity">{{ result.vicinity }}</span>
+                                     </div>
+                                     </li>
+                                </ul>
+                              <div ng-show="queryInProgress" class="ball-clip-rotate">
+   
+                            <div>
+                              
+                            </div>
+
+                          </div>
+                            
+  </div>
+
+    </script> 
                         <!-- /.form-group -->
                       </div>
+
                       <!-- /.col-* -->
                       <div class="col-sm-2">
                         <button type="submit" ng-click="search.go() " class="btn btn-primary btn-xl">
@@ -106,7 +135,7 @@
               <i class="fa fa-map-o"></i>
               <strong>Map</strong>
             </a><!-- /.hero-image-category -->
-            <a href="framework/views.html#!/salons" class="hero-image-category">
+            <a href="salons.html" class="hero-image-category">
               <i class="fa fa-building"></i>
               <strong>Salons</strong>
             </a><!-- /.hero-image-category -->
@@ -191,12 +220,131 @@
                 </div>
                 <!-- /.row -->
                 <div class="block mb0">
-                  <div class="block-inner">
                     <div class="page-header">
-                      <h2>Favorite Listing Categories</h2>
+                      <h2>Imakapp Articles and Promotions For Your Area</h2>
                       <p>Easily assign categories &amp; tags to approved listings and then display categories with icons for better user experience.</p>
                     </div>
-                    
+                     <div class="main__wrapper">
+      <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="https://customisepage.blob.core.windows.net/images/608.jpeg" alt="">
+
+              <div class="card__overlay card__overlay--indigo">
+                <div class="card__overlay-content">
+                  <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i> Updates</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i> 2 min ago</a></li>
+                  </ul>
+
+                  <a href="#0" class="card__title">The Imakapp Finally availible on Android</a>
+
+                  <ul class="card__meta card__meta--last">
+                    <li><a href="#0"><i class="fa fa-user"></i> Notification</a></li>
+                    <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="https://customisepage.blob.core.windows.net/images/300.jpeg" alt="">
+
+              <div class="card__overlay card__overlay--blue">
+                <div class="card__overlay-content">
+                  <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i>News</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i> 2 days ago</a></li>
+                  </ul>
+
+                  <a href="#0" class="card__title">December Price specials Updates </a>
+
+                  <ul class="card__meta card__meta--last">
+                    <li><a href="#0"><i class="fa fa-user"></i> Azalia Hair</a></li>
+                    <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="https://customisepage.blob.core.windows.net/images/301.jpeg" alt="">
+
+              <div class="card__overlay card__overlay--indigo">
+                <div class="card__overlay-content">
+                <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i> Promotions</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i> 2 days ago</a></li>
+                  </ul>
+
+                  <a href="#0" class="card__title">Promo codes coming to 2018</a>
+
+                  <ul class="card__meta card__meta--last">
+                    <li><a href="#0"><i class="fa fa-user"></i> Notification</a></li>
+                    <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
+                  </ul>    
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="https://customisepage.blob.core.windows.net/images/111.jpeg" alt="">
+
+              <div class="card__overlay card__overlay--indigo">
+                <div class="card__overlay-content">
+                  <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i> Promotions</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i> 5 days ago</a></li>
+                  </ul>
+
+                  <a href="#0" class="card__title">New Service coming to Imakapp</a>
+
+                  <ul class="card__meta card__meta--last">
+                    <li><a href="#0"><i class="fa fa-user"></i> Notification</a></li>
+                    <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
+                  </ul>   
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="https://customisepage.blob.core.windows.net/images/122.jpeg" alt="">
+
+              <div class="card__overlay card__overlay--blue">
+                <div class="card__overlay-content">
+                  <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i> Tutorials</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i> 1 days ago</a></li>
+                  </ul>
+
+                  <a href="#0" class="card__title">What hair Products Should you use and why</a>
+
+                  <ul class="card__meta card__meta--last">
+                    <li><a href="#0"><i class="fa fa-user"></i> African Hair Salons</a></li>
+                    <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
+                  </ul>   
+                </div>
+              </div>
+            </div>
+          </div>
+      </div> 
+   </div>
                     <!-- /.categories-wrapper -->
                   </div>
                   <!-- /.block-inner -->
@@ -222,7 +370,7 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Salon @800</a></h2>
+                                <h2><a href="listings-detail.html">Salon @500</a></h2>
                                 <h3>500 Peter Mokaba Ridge, Essenwood, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
@@ -252,9 +400,7 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -308,9 +454,7 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -368,9 +512,7 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -424,9 +566,7 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -484,9 +624,7 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -1035,88 +1173,7 @@
                   <!-- /.carousel-fullwidth-inner -->
                 </div>
                 <!-- /.carousel-fullwidth -->
-                
-                <div class="pricing">
-                  <div class="row">
-                    <div class="pricing-col-wrapper col-lg-4">
-                      <div class="pricing-col">
-                        <h2 class="pricing-title">Startup</h2>
-                        <div class="pricing-price">
-                          <span class="pricing-currency">$</span> <span class="pricing-value">8.90</span>
-                        </div>
-                        <!-- /.pricing-price -->
-                        <ul class="pricing-features">
-                          <li>10 Properties</li>
-                          <li>Up To 3 Agents</li>
-                          <li>Agency Management</li>
-                          <li>1 Year Updates</li>
-                          <li>Mail Support</li>
-                        </ul>
-                        <!-- /.pricing-featured -->
-                        <a href="#" class="pricing-btn">Select Pricing Plan</a>
-                      </div>
-                      <!-- /.pricing-col -->
-                    </div>
-                    <!-- /.pricing-col-wrapper-->
-                    <div class="pricing-col-wrapper col-lg-4">
-                      <div class="pricing-col pricing-col-light" style="background-image: url('assets/img/tmp/pricing-1.jpg');">
-                        <h2 class="pricing-title">Business</h2>
-                        <div class="pricing-price">
-                          <span class="pricing-currency">$</span> <span class="pricing-value">19.90</span>
-                        </div>
-                        <!-- /.pricing-price -->
-                        <ul class="pricing-features">
-                          <li>100 Properties</li>
-                          <li>Up To 10 Agents</li>
-                          <li>Agency Management</li>
-                          <li>2 Year Updates</li>
-                          <li>Mail Support</li>
-                        </ul>
-                        <!-- /.pricing-featured -->
-                        <a href="#" class="pricing-btn">Select Pricing Plan</a>
-                      </div>
-                      <!-- /.pricing-col -->
-                    </div>
-                    <!-- /.pricing-col-wrapper -->
-                    <div class="pricing-col-wrapper col-lg-4">
-                      <div class="pricing-col">
-                        <h2 class="pricing-title">Professional</h2>
-                        <div class="pricing-price">
-                          <span class="pricing-currency">$</span> <span class="pricing-value">49.90</span>
-                        </div>
-                        <!-- /.pricing-price -->
-                        <ul class="pricing-features">
-                          <li>Unlimited Properties</li>
-                          <li>Unlimited Agents</li>
-                          <li>Agency Management</li>
-                          <li>Updates Forever</li>
-                          <li>Mail Support</li>
-                        </ul>
-                        <!-- /.pricing-featured -->
-                        <a href="#" class="pricing-btn">Select Pricing Plan</a>
-                      </div>
-                      <!-- /.pricing-col -->
-                    </div>
-                    <!-- /.pricing-col-wrapper -->
-                  </div>
-                  <!-- /.row -->
-                </div>
-                
-                    </div>
-                    <!-- /.col-* -->
-                  </div>
-                  <!-- /.row -->
-                </div>
-                <!-- /.testimonials-wrapper  -->
-                
-                <div class="cta-price">
-                  <h3>Get Everything<br>
-                     Exclusively on iMakApp</h3>
-                </div>
-                <!-- /.cta-price -->
-              </div>
-              <!-- /.content -->
-            </div>
+        
             <!-- /.container -->
           </div>
           <!-- /.main-inner -->
@@ -1436,19 +1493,17 @@
     <!-- /.side-wrapper -->
     <div class="side-overlay"></div>
     <!-- /.side-overlay -->
-    <script src="http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyDmXybAJzoPZ6hH-Jhv7QMCSGgQ6MY8WqY" type="text/javascript"></script>
+ 
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/chartist.min.js"></script>
     <script type="text/javascript" src="assets/js/google-map-richmarker.min.js"></script>
     <script type="text/javascript" src="assets/js/google-map-infobox.min.js"></script>
-    <script type="text/javascript" src="assets/js/google-map-markerclusterer.js"></script>
-    <script type="text/javascript" src="assets/js/google-map.js"></script>
     <script type="text/javascript" src="assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.inlinesvg.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.affix.js"></script>
     <script type="text/javascript" src="assets/js/jquery.scrollTo.js"></script>
+       <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/libraries/slick/slick.min.js"></script>
     <script type="text/javascript" src="assets/js/nouislider.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.raty.js"></script>
@@ -1456,9 +1511,13 @@
     <script type="text/javascript" src="assets/js/particles.min.js"></script>
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js'></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+=======
+
+>>>>>>> cb0a72cd5b3332bae1acf173571fcb02091f4bee
 
   </body>
 </html>
