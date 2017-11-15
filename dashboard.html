@@ -16,7 +16,7 @@
     <link href="assets/css/explorer.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets//favicon.png">
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyAHzar27m19dE956UTNhYJ0hQP4AgHfPdY"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
       <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
       <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js'></script>
         <script src='js/index.js'></script>
@@ -36,7 +36,7 @@
               <!-- /.header-toggle -->
                <div class="header-logo">
             
-                <a href="index.html" class="header-title"> <img src="images/logo-wide-white.png" alt=""></a>
+                <a href="dashboard.html" class="header-title"> <img src="images/logo-wide-white.png" alt=""></a>
               </div>
 
               <!-- /.header-logo -->
@@ -86,28 +86,23 @@
          search-results-limit="10"
          complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
-
-
-                           
-                            <div class="search-places-results" ng-show="ngModel">
-                                <ul>
-                                    <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
+                           <script type="text/ng-template" id="search-results.html">
+                          </div>
+                                </div>
+                                      <br><br><div class="search-places-results" ng-show="ngModel">
+                                      <ul>
+                                        <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
                                     <div>
-                                        <span ng-bind-html="result.name | highlightSearchTerms:ngModel"></span>&nbsp;&nbsp;
+                                            <span ng-bind-html="result.name | highlightSearchTerms:ngModel"></span>&nbsp;&nbsp;
                                           <span class="result-vicinity">{{ result.vicinity }}</span>
                                      </div>
                                      </li>
                                 </ul>
                               <div ng-show="queryInProgress" class="ball-clip-rotate">
-                            <div>
-                              
-                            </div>
-                          </div>
-                            
-</div>
-
+    </script> 
                         <!-- /.form-group -->
                       </div>
+
                       <!-- /.col-* -->
                       <div class="col-sm-2">
                         <button type="submit" ng-click="search.go() " class="btn btn-primary btn-xl">
@@ -366,7 +361,7 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Salon @500</a></h2>
+                                <h2><a href="listings-detail.html">Salon @800</a></h2>
                                 <h3>500 Peter Mokaba Ridge, Essenwood, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
@@ -396,7 +391,9 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><button type="View">View</button></li>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -450,7 +447,9 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><button type="View">View</button></li>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -508,7 +507,9 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><button type="View">View</button></li>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -562,7 +563,9 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><button type="View">View</button></li>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -620,7 +623,9 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><button type="View">View</button></li>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -1449,11 +1454,11 @@
         </div>
       </div>
     </div>
-    <div class="side-wrapper">
+    <div class="side-wrapper" ng-app="stylistApp" ng-controller="stylistController">
       <div class="side">
         <div class="side-inner">
           <div class="side-user">
-            <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
+            <span class="avatar"></span>
             <span class="side-user-avatar-name">
               <strong>User Name</strong>
               <span>Surname</span>
@@ -1470,7 +1475,7 @@
             <li class="nav-item"><a href="https://www.imakeapp.com" class="nav-link">Sign Out</a></li>
           </ul>
           <h3>Stylist Login</h3>
-          <form class="form-dark" method="post" action="?">
+          <form class="form-dark">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Username">
             </div>
@@ -1479,7 +1484,7 @@
               <input type="password" class="form-control" placeholder="password">
             </div>
             <!-- /.form-group -->
-            <button class="btn btn-primary pull-right" type="submit"><a href="https://www.imakapp.com/book-stylist.html">Login</a></button>
+            <button class="btn btn-primary pull-right" type="submit"><a href="https://www.imakapp.com/book-stylist.html">{{button}}</a></button>
           </form>
         </div>
         <!-- /.side-inner -->
@@ -1507,7 +1512,13 @@
     <script type="text/javascript" src="assets/js/particles.min.js"></script>
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+<<<<<<< HEAD
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js'></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+=======
 
+>>>>>>> cb0a72cd5b3332bae1acf173571fcb02091f4bee
 
   </body>
 </html>

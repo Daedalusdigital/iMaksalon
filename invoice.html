@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Quick Invoice</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+   
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="control-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-2-4">
+        <div class="slogan">Imakapp InvoiceTool</div>
+
+        <label for="config_tax">Vat:
+          <input type="checkbox" id="config_tax" />
+        </label>
+        <label for="config_tax_rate" class="taxrelated">Rate:
+          <input type="text" id="config_tax_rate" value="16.3"/>%
+        </label>
+        <label for="config_note">Remark:
+          <input type="checkbox" id="config_note" />
+        </label>
+        <label for="config_date">Date:
+          <input type="checkbox" id="config_date" />
+        </label>
+      </div>
+      <div class="col-4 text-right">
+        <a href="javascript:window.print()">Print</a>
+      </div><!--.col-->
+    </div><!--.row-->
+  </div><!--.container-->
+</div><!--.control-bar-->
+
+<header class="row">
+  <div class="logoholder text-center" contenteditable>
+    <img src="https://customisepage.blob.core.windows.net/%24root/logo.png" alt=""><!--.logo-->
+  </div><!--.logoholder-->
+
+
+  <div class="me" contenteditable>
+    <p>
+      <strong>Cosmetic Back</strong><br>
+      Straße Nr<br>
+      385 Smith Street<br>
+      Durban
+    </p>
+  </div><!--.col-->
+  <div class="info">
+  	<p contenteditable>
+      Web: <a href="http://imakapp.com">www.imakapp.com</a><br>
+      Mail: <a href="mailto:info@imakapp.com">info@imakapp.com</a><br>
+      Tel: +27 (0)31 400 07 34<br>
+      Twitter: @imakapp
+  	</p>
+  </div>
+
+  <div class="col-3 bank" contenteditable>
+    <p>
+      Bank details: <br>
+      Account holder: <br>
+      Branch Code: <br>
+      Tax:
+    </p>
+  </div><!--.col-->
+</header>
+
+
+<div class="row section">
+  
+  <div class="col-1">
+    <p contenteditable class="smallme">Cosmetic Back · 385 Smith Street·Durban</p>
+
+    <p contenteditable class="client">
+      <strong>Welcome King</strong><br>
+      Stylist ID: 0132<br>
+      Mustgrave Salon
+    </p>
+  </div><!--.col-->
+  <div class="col-2">
+    <h1 contenteditable>Invoice</h1>
+  </div><!--.col-->
+  <div class="col-2 text-right details">
+    <p contenteditable>
+      Date of Invoice: <input type="text" class="datePicker" /><br>
+      Invoice Number: <input type="text" value="#" /><br>
+      Payable To: <input class="twoweeks" type="text"/>
+    </p>
+  </div><!--.col-->
+
+</div><!--.row-->
+
+<div class="invoicelist-body">
+  <table>
+    <thead contenteditable>
+      <th>Service</th>
+      <th>Description</th>
+      <th class="daterelated">Date</th>
+      <th width="10%">Qty</th>
+      <th width="12%">Rate</th>
+      <th class="taxrelated">Vat</th>
+      <th width="10%">Price</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="control removeRow" href="#">x</a> <span contenteditable>Hair Style</span></td>
+        <td><span contenteditable>Soft Dred</span></td>
+        <td class="daterelated"><span contenteditable>Date</span></td>
+        <td class="amount"><input type="text" value="1"/></td>
+        <td class="rate"><input type="text" value="60" /></td>
+        <td class="tax taxrelated"></td>
+        <td class="sum"></td>
+      </tr>
+    </tbody>
+  </table>
+  <a class="control newRow" href="#">+ New Entry</a>
+</div><!--.invoice-body-->
+
+<div class="invoicelist-footer">
+  <table>
+    <tr class="taxrelated">
+      <td>Vat:</td>
+      <td id="total_tax"></td>
+    </tr>
+    <tr>
+      <td><strong>Total:</strong></td>
+      <td id="total_price"></td>
+    </tr>
+  </table>
+</div>
+
+<div class="note" contenteditable>
+  <h2>Remark:</h2>
+</div><!--.note-->
+
+<footer class="row">
+  <div class="col-1 text-center">
+    <p class="notaxrelated" contenteditable>According to Cosmetic bag the invoice amount does not include VAT..</p>
+    <p contenteditable class="notdaterelated">
+      Performance date is the invoice date.
+    </p>
+  </div>
+</footer>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>

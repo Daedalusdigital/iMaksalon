@@ -85,7 +85,7 @@ angular.module('angularSearchPlaces', [])
     $scope.results = [];
 
     // Grab the search results template and place it into the DOM
-    var templatePath = 'search-results';
+    var templatePath = 'search-results.html';
     $templateRequest(templatePath).then(function(content) {
       var $results = $compile(content)($scope);
       $el.after($results);
