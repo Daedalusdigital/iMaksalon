@@ -101,9 +101,7 @@
         <!-- /.admin-header -->
         <div class="admin-page-title">
           <div class="container-fluid">
-            <a href="admin-dashboard.html" class="admin-page-title-back">
-              <i class="fa fa-long-arrow-left"></i>
-            </a>
+
             <h1>Stylist View <small>Your Bookings</small></h1>
             <!-- /.admin-page-title-actions -->
           </div>
@@ -120,6 +118,7 @@
                 <th>Service Location</th>
                 <th>Service Time</th>
                 <th>Service Date</th>
+                <th colsopan="2">Service Date</th>
             </tr>
             <tr ng-repeat="booking in bookinglist">
                 <td>{{booking.booking_status}}</td>
@@ -129,6 +128,10 @@
                 <td>{{booking.service_date}}</td>
                 <td>{{booking.service_time}}</td>
                 <td>{{booking.service_location}}</td>
+                <td colsopan="2">
+                  <button ng-click="alterBooking(booking.id,'Approved')" class="btn btn-success">Approve</button> | 
+                  <button ng-click="alterBooking(booking.id,'Declined')" class="btn btn-danger">Decline</button>
+                </td>
             </tr>
         </table>
       </div>
@@ -159,7 +162,7 @@
     <script type="text/javascript">
         var app = angular.module('Imakapp',[]);
         app.controller('viewingController',['$scope','$http', function($scope,$http){
-                 var obj = angular.toJson({stylist_id: "1"});
+                 var obj = angular.toJson({stylist_id: "6"});
                  
             $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
                     .then(function(response){
@@ -168,6 +171,10 @@
                     },function(error){
                         console.log(error);
                     });
+          $scope.alterBooking = function(id,btnName){
+              alert(id+" | "+btnName);
+          }
+                      
         }]);
     </script>
   </body>
