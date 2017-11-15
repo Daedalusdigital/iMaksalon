@@ -29,30 +29,15 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="../images/icon.png" rel="shortcut icon" type="image/png">
-        <link href="../images/apple-touch-icon.png" rel="apple-touch-icon">
-        <link href="../images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-        <link href="../images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-        <link href="../images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css">
-        <link href="../css/animate.css" rel="stylesheet" type="text/css">
-        <link href="../css/css-plugin-collections.css" rel="stylesheet"/>
-        <link id="menuzord-menu-skins" href="../css/menuzord-skins/menuzord-rounded-boxed.css" rel="stylesheet"/>
-        <link href="../css/style-main.css" rel="stylesheet" type="text/css">
-        <link href="../css/colors/theme-skin-lemon.css" rel="stylesheet" type="text/css">
+       <link href="../css/style-main.css" rel="stylesheet" type="text/css">
         <link href="../css/preloader.css" rel="stylesheet" type="text/css">
-        <link href="../css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
-        <link href="../css/responsive.css" rel="stylesheet" type="text/css">
         <link href="../css/loader.css" rel="stylesheet" type="text/css">
         <link href="../css/modal.css" rel="stylesheet" type="text/css">
         <link href="../css/modalss.css" rel="stylesheet" type="text/css">
-        <link  href="../js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css"/>
-        <link  href="../js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css"/>
-        <link  href="../js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css"/>
-        <style>
-          html{ 
+       <style>
+          html,#mobileView{ 
           background: url('../images/about/2.jpg') no-repeat center center fixed; 
           -webkit-background-size: cover;
           -moz-background-size: cover;
@@ -61,6 +46,15 @@
         }
         #header{
           background: rgba(255, 255, 255, 0.5)
+        }
+
+        .col-xs-8{
+          margin-top:-30px;
+        }
+
+        #makeBookingText{
+          background-color: transparent !important;
+          color:white;
         }
         </style>
         <script src="js/jquery-2.2.4.min.js"></script>
@@ -76,18 +70,22 @@
                     <div id="loader"></div>
                   </div>
         <div id="main">
-            <div ng-view="">
+            <div ng-view="" id="mobileView">
                 <header id="header" class="header" style="background: rgba(255, 255, 255, 0.5)">
                     <div class="header-nav navbar-fixed-top navbar-dark navbar-transparent navbar-sticky-animated animated-active">
                       <div class="header-nav-wrapper">
                         <div class="container">
                           <nav id="menuzord-right" class="menuzord">
+                            <div class="col-xs-4">
                             <a class="menuzord-brand pull-left flip" href="javascript:void(0)">
                               <a href="dashboard.html" class="header-title"> <img src="../images/logo-wide-white.png" alt=""> </a>
                             </a>
-                            <ul class="menuzord-menu navbar-right">
-                                <h2>Make Booking</h2>
+                          </div>
+                          <div class="col-xs-8">
+                            <ul class="menuzord-menu navbar-right" style="background-color:transparent">
+                                <h2 id="makeBookingText" >Make Booking</h2>
                             </ul>
+                          </div>
                           </nav>
                         </div>
                       </div>
@@ -96,7 +94,7 @@
         <div class="col-md-4">
 
         </div>
-        <div class="col-md-4" data-bg-img="../images/bg/bg7.jpg" data-parallax-ratio="0.7">
+        <div class="col-md-4 col-sm-12" data-bg-img="../images/bg/bg7.jpg" data-parallax-ratio="0.7">
            <form style="margin-top:90px;" name="bookingForm" ng-submit="makeBooking(obj)">
                     <select ng-model="obj.bookedService" ng-options="service.service_id as service.service_name for service in serviceList">
                         <option value="" disabled>Select Service</option>
