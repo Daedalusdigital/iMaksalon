@@ -22,14 +22,14 @@
       }
     </style>
   </head>
-  <body ng-app="Imakapp" ng-controller="viewingController">
+  <body ng-app="Imakapp" ng-controller="viewingController" ng-init="loadContent()">
     <div class="admin-wrapper">
       <div class="admin-sidebar">
         <div class="admin-sidebar-header">
           <div class="admin-sidebar-logo">
             <a href="#" class="admin-sidebar-logo-title">
               <strong>iMakApp</strong>
-              <img src="images/logo-wide-white.png" alt="">
+              <a href="dashboard.html" class="header-title"> <img src="images/logo-wide-white.png" alt=""> </a>
             </a>
           </div>
           <!-- /.admin-sidebar-logo -->
@@ -101,9 +101,7 @@
         <!-- /.admin-header -->
         <div class="admin-page-title">
           <div class="container-fluid">
-            <a href="admin-dashboard.html" class="admin-page-title-back">
-              <i class="fa fa-long-arrow-left"></i>
-            </a>
+
             <h1>Stylist View <small>Your Bookings</small></h1>
             <!-- /.admin-page-title-actions -->
           </div>
@@ -120,6 +118,7 @@
                 <th>Service Location</th>
                 <th>Service Time</th>
                 <th>Service Date</th>
+                <th colsopan="2">Service Date</th>
             </tr>
             <tr ng-repeat="booking in bookinglist">
                 <td>{{booking.booking_status}}</td>
@@ -127,8 +126,15 @@
                 <td>{{booking.stylist_id}} (Your ID)</td>
                 <td>{{booking.client_id}}</td>
                 <td>{{booking.service_location}}</td>
+<<<<<<< HEAD
                 <td>{{booking.service_time}}</td>
                 <td>{{booking.service_date}}</td>
+=======
+                <td colsopan="2">
+                  <button ng-click="alterBooking('booking.id','Approved',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-success">Approve</button> | 
+                  <button ng-click="alterBooking(booking.id,'Declined',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-danger">Decline</button>
+                </td>
+>>>>>>> c9a0d8b6d7a324cce545324ad5ffdf7147b187d0
             </tr>
         </table>
       </div>
@@ -162,8 +168,37 @@
         var app = angular.module('Imakapp',[]);
         alert(stylistId);
         app.controller('viewingController',['$scope','$http', function($scope,$http){
+<<<<<<< HEAD
                 alert(stylistId.loginId);
                  var obj = angular.toJson({stylist_id: stylistId});
+=======
+        
+
+          $scope.alterBooking = function(_id,btn_name,clientId,stylistId,booked_ser){
+              var obj = angular.toJson({        id: _id,
+                                                btnName: btn_name,
+                                                booked_service: booked_ser,
+                                                client_id:clientId,
+                                                stylist_id : stylistId
+                                        });
+                 
+            $http.post("https://prod-18.southcentralus.logic.azure.com:443/workflows/e6a5f9eca53e4eb085d9765bd8bdc995/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VMSIYNHfpk3uCm7wrEr4jRtubaNDxCBc5Z0q4TL5A54",obj)
+                    .then(function(response){
+                        //$scope.bookings = response.data.records;
+                      console.log( response.data);
+                    },function(error){
+                        console.log(error);
+                    });
+
+
+                    $scope.loadContent();
+                    alert("Sent");
+          }
+                      
+
+          $scope.loadContent = function(){
+            var obj = angular.toJson({stylist_id: "6"});
+>>>>>>> c9a0d8b6d7a324cce545324ad5ffdf7147b187d0
                  
             $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
                     .then(function(response){
@@ -172,6 +207,7 @@
                     },function(error){
                         console.log(error);
                     });
+          }
         }]);
     </script>-->
     
