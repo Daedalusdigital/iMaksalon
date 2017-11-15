@@ -22,7 +22,7 @@
       }
     </style>
   </head>
-  <body ng-app="Imakapp" ng-controller="viewingController">
+  <body ng-app="Imakapp" ng-controller="viewingController" ng-init="loadContent()">
     <div class="admin-wrapper">
       <div class="admin-sidebar">
         <div class="admin-sidebar-header">
@@ -129,8 +129,8 @@
                 <td>{{booking.service_time}}</td>
                 <td>{{booking.service_location}}</td>
                 <td colsopan="2">
-                  <button ng-click="alterBooking(booking.id,'Approved')" class="btn btn-success">Approve</button> | 
-                  <button ng-click="alterBooking(booking.id,'Declined')" class="btn btn-danger">Decline</button>
+                  <button ng-click="alterBooking('booking.id','Approved',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-success">Approve</button> | 
+                  <button ng-click="alterBooking(booking.id,'Declined',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-danger">Decline</button>
                 </td>
             </tr>
         </table>
@@ -162,7 +162,32 @@
     <script type="text/javascript">
         var app = angular.module('Imakapp',[]);
         app.controller('viewingController',['$scope','$http', function($scope,$http){
-                 var obj = angular.toJson({stylist_id: "6"});
+        
+
+          $scope.alterBooking = function(_id,btn_name,clientId,stylistId,booked_ser){
+              var obj = angular.toJson({        id: _id,
+                                                btnName: btn_name,
+                                                booked_service: booked_ser,
+                                                client_id:clientId,
+                                                stylist_id : stylistId
+                                        });
+                 
+            $http.post("https://prod-18.southcentralus.logic.azure.com:443/workflows/e6a5f9eca53e4eb085d9765bd8bdc995/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VMSIYNHfpk3uCm7wrEr4jRtubaNDxCBc5Z0q4TL5A54",obj)
+                    .then(function(response){
+                        //$scope.bookings = response.data.records;
+                      console.log( response.data);
+                    },function(error){
+                        console.log(error);
+                    });
+
+
+                    $scope.loadContent();
+                    alert("Sent");
+          }
+                      
+
+          $scope.loadContent = function(){
+            var obj = angular.toJson({stylist_id: "6"});
                  
             $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
                     .then(function(response){
@@ -171,10 +196,7 @@
                     },function(error){
                         console.log(error);
                     });
-          $scope.alterBooking = function(id,btnName){
-              alert(id+" | "+btnName);
           }
-                      
         }]);
     </script>
   </body>
