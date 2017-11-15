@@ -15,6 +15,7 @@ function PlacesSearchController($window) {
 
 angular.module('angularSearchPlaces', [])
 
+
 /***** Search Places Input Directive *****
  *
  * A directive that when added to an input field, searches a city

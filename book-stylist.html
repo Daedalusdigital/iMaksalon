@@ -126,9 +126,9 @@
                 <td>{{booking.booked_service}}</td>
                 <td>{{booking.stylist_id}} (Your ID)</td>
                 <td>{{booking.client_id}}</td>
-                <td>{{booking.service_date}}</td>
-                <td>{{booking.service_time}}</td>
                 <td>{{booking.service_location}}</td>
+                <td>{{booking.service_time}}</td>
+                <td>{{booking.service_date}}</td>
             </tr>
         </table>
       </div>
@@ -156,10 +156,14 @@
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
     <script src="js/angular.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
+    <script src="framework/angular_modules/controllers/stylistLoginController.js"></script>
+    <!--<script type="text/javascript">
+    
         var app = angular.module('Imakapp',[]);
+        alert(stylistId);
         app.controller('viewingController',['$scope','$http', function($scope,$http){
-                 var obj = angular.toJson({stylist_id: "1"});
+                alert(stylistId.loginId);
+                 var obj = angular.toJson({stylist_id: stylistId});
                  
             $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
                     .then(function(response){
@@ -169,6 +173,7 @@
                         console.log(error);
                     });
         }]);
-    </script>
+    </script>-->
+    
   </body>
 </html>
