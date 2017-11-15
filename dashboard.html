@@ -14,6 +14,10 @@
     <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/nouislider.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/explorer.css" rel="stylesheet" type="text/css">
+    <link href="css/preloader.css" rel="stylesheet" type="text/css">
+    <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="css/loader.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets//favicon.png">
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
@@ -23,6 +27,9 @@
     <title>Dashboard</title>
   </head>
   <body class="">
+      <div id="preloader">
+          <div id="loader"></div>
+        </div>
     <div class="page-wrapper">
       <div class="header-wrapper header-transparent header-light">
         <div class="header">
@@ -50,8 +57,8 @@
               <!-- /.header-toggle -->
               <div class="header-actions">
                 <ul class="nav nav-pills">
-                  <li class="nav-item">
-                    <a href="https://www.imakapp.com/addBooking.html" class="nav-link modal-submit" >
+                  <li class="nav-item" id="btnBooking" style="display:none;">
+                    <a href="framework/booking.html" class="nav-link modal-submit" >
                       <i class="fa fa-plus"></i> <span>Add Booking</span>
                     </a>
                   </li>
@@ -1512,13 +1519,12 @@
     <script type="text/javascript" src="assets/js/particles.min.js"></script>
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
-<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js'></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-=======
-
->>>>>>> cb0a72cd5b3332bae1acf173571fcb02091f4bee
-
+    <script type="text/javascript">
+      
+      setTimeout(function(){ $('#preloader').fadeOut('slow'); $('#btnBooking').fadeIn('slow'); }, 2000);
+    </script>
   </body>
 </html>

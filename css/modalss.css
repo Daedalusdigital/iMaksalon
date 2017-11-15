@@ -8,6 +8,7 @@
         border: 1px solid #ccc;
         box-sizing: border-box;
         height: 40px;
+        border-radius:10px;
     }
 
     /* Set a style for all buttons */
