@@ -81,33 +81,24 @@
                     <div class="row justify-content-sm-center">
                       <div class="col-sm-4">
                         <div class="input-group">
-                          <span class=""><i class="fa fa-location-arrow"></i></span>
+                          <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
                           <input type="text" class="form-control no-border form-control-xl" ej-search-places-input
          search-results-limit="10"
          complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
-
-
                            <script type="text/ng-template" id="search-results.html">
-                            <div class="search-places-results" ng-show="ngModel">
-                                <ul>
-                                    <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
+                          </div>
+                                </div>
+                                      <br><br><div class="search-places-results" ng-show="ngModel">
+                                      <ul>
+                                        <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
                                     <div>
-                                        <span ng-bind-html="result.name | highlightSearchTerms:ngModel"></span>&nbsp;&nbsp;
+                                            <span ng-bind-html="result.name | highlightSearchTerms:ngModel"></span>&nbsp;&nbsp;
                                           <span class="result-vicinity">{{ result.vicinity }}</span>
                                      </div>
                                      </li>
                                 </ul>
                               <div ng-show="queryInProgress" class="ball-clip-rotate">
-   
-                            <div>
-                              
-                            </div>
-
-                          </div>
-                            
-  </div>
-
     </script> 
                         <!-- /.form-group -->
                       </div>
@@ -370,7 +361,7 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Salon @500</a></h2>
+                                <h2><a href="listings-detail.html">Salon @800</a></h2>
                                 <h3>500 Peter Mokaba Ridge, Essenwood, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
@@ -400,7 +391,9 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><button type="View">View</button></li>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -454,7 +447,9 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><button type="View">View</button></li>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -512,7 +507,9 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><button type="View">View</button></li>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -566,7 +563,9 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><button type="View">View</button></li>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -624,7 +623,9 @@
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><button type="View">View</button></li>
+                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
+                                  <li><i class="fa fa-car"></i> <span>1</span></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
