@@ -98,7 +98,9 @@
                            <script type="text/ng-template" id="search-results.html">
                           </div>
                                 </div>
-                                      <br><br><div class="search-places-results" ng-show="ngModel">
+                                <div class="row">
+                                      <br><br>
+                                      <div class="search-places-results" ng-show="ngModel">
                                       <ul>
                                         <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
                                     <div>
@@ -106,7 +108,8 @@
                                           <span class="result-vicinity">{{ result.vicinity }}</span>
                                      </div>
                                      </li>
-                                </ul>
+                                </ul></div>
+                              </div>
                               <div ng-show="queryInProgress" class="ball-clip-rotate">
     </script> 
                         <!-- /.form-group -->
