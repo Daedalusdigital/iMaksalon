@@ -126,15 +126,10 @@
                 <td>{{booking.stylist_id}} (Your ID)</td>
                 <td>{{booking.client_id}}</td>
                 <td>{{booking.service_location}}</td>
-<<<<<<< HEAD
-                <td>{{booking.service_time}}</td>
-                <td>{{booking.service_date}}</td>
-=======
                 <td colsopan="2">
                   <button ng-click="alterBooking('booking.id','Approved',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-success">Approve</button> | 
                   <button ng-click="alterBooking(booking.id,'Declined',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-danger">Decline</button>
                 </td>
->>>>>>> c9a0d8b6d7a324cce545324ad5ffdf7147b187d0
             </tr>
         </table>
       </div>
@@ -168,10 +163,6 @@
         var app = angular.module('Imakapp',[]);
         alert(stylistId);
         app.controller('viewingController',['$scope','$http', function($scope,$http){
-<<<<<<< HEAD
-                alert(stylistId.loginId);
-                 var obj = angular.toJson({stylist_id: stylistId});
-=======
         
 
           $scope.alterBooking = function(_id,btn_name,clientId,stylistId,booked_ser){
@@ -198,7 +189,6 @@
 
           $scope.loadContent = function(){
             var obj = angular.toJson({stylist_id: "6"});
->>>>>>> c9a0d8b6d7a324cce545324ad5ffdf7147b187d0
                  
             $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
                     .then(function(response){
