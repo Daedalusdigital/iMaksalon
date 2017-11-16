@@ -84,13 +84,13 @@
                         <div class="input-group">
                           <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
                           <input type="text" class="form-control no-border form-control-xl" ej-search-places-input
-         search-results-limit="10"
-         complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
+                                search-results-limit="10"
+                                complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
                            <script type="text/ng-template" id="search-results.html">
                           </div>
                                 </div>
-                                      <br><br><div class="search-places-results" ng-show="ngModel">
+                                      <div class="search-places-results" ng-show="ngModel" style="margin-left: 23px; margin-top: 45px;">
                                       <ul>
                                         <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
                                     <div>
@@ -1236,6 +1236,7 @@
       <!-- /.footer-wrapper -->
     </div>
     <!-- /.page-wrapper -->
+<<<<<<< HEAD
     <div id="modal-submit" class="modal fade">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -1486,12 +1487,50 @@
             </div>
             <!-- /.form-group -->
             <button class="btn btn-primary pull-right" type="submit">Login</button>
+=======
+
+    <div class="side-wrapper" ng-app="stylistApp">
+      <div class="side">
+        <div class="side-inner">
+          <div class="side-user">
+            <span class="avatar"></span>
+            <span class="side-user-avatar-name">
+              <strong>User Name</strong>
+              <span>Surname</span>
+            </span>
+            <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
+              <i class="fa fa-cog"></i>
+            </a>
+          </div>
+          <!-- /.side-user -->
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
+            <li class="nav-item"><a href="https://www.imakeapp.com" class="nav-link">Sign Out</a></li>
+          </ul>
+          <h3>Stylist Login</h3>
+          <form class="form-dark" ng-controller="stylistController">
+            <!-- /.side-user
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Username">
+            </div>
+            /.form-group
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="password">
+            </div> -->
+            <!-- /.form-group -->
+            <button class="btn btn-primary pull-right" type="submit"><a href="framework/stylistLogin.html">Login</a></button>
+>>>>>>> origin/master
           </form>
         </div>
         <!-- /.side-inner -->
       </div>
+<<<<<<< HEAD
         <!-- /.side-inner -->
       </div>
+=======
+>>>>>>> origin/master
       <!-- /.side -->
     </div>
     <!-- /.side-wrapper -->
