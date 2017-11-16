@@ -3,7 +3,6 @@
 var app = angular.module('subscribeApp',[]);
 
 app.controller("subscribeController", ['$scope','SubscribeService',function($scope,SubscribeService){
-    $scope.heading = "Subscribe";
     
     $scope.subscribe = function(values){
         var object = angular.toJson({subscriber_email:values.subscriberEmail, firstname:values.subscriberName , surname:values.subscriberSurname});
