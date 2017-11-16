@@ -2,7 +2,7 @@
 var stylistId;
 var app = angular.module('Imakapp',[]);
 app.controller("testingController", ['$scope','loginService','SessionService',function($scope,loginService,SessionService){
-    $scope.heading = "Stylist Login";
+    
     console.log("Controller Loaded");
     
     $scope.login = function(values){
