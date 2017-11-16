@@ -7,13 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body ng-controller="testingController">
-        <h1 ng-bind="heading"></h1>
+        <h1>Stylist Login</h1>
         <form name="loginForm" ng-submit="login(obj)">
             <input type="text" ng-model="obj.username" placeholder="Username"><br><br>
             <input type="password" ng-model="obj.password" placeholder="Password"><br>
             <input type="submit" value="Login">
         </form>
-        {{result}}
         <script src="js/angular.min.js" type="text/javascript"></script>
 
         <script src="angular_modules/controllers/stylistLoginController.js" type="text/javascript"></script>
