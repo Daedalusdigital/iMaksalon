@@ -127,15 +127,12 @@
                 <td>{{booking.stylist_id}} (Your ID)</td>
                 <td>{{booking.client_id}}</td>
                 <td>{{booking.service_location}}</td>
-<<<<<<< HEAD
-                <td colsopan="2">
-                  <button ng-click="alterBooking('booking.id','Approved',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-success">Approve</button> | 
-                  <button ng-click="alterBooking(booking.id,'Declined',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-danger">Decline</button>
-                </td>
-=======
                 <td>{{booking.service_time}}</td>
                 <td>{{booking.service_date}}</td>
->>>>>>> parent of a632813... Merge branch 'master' of https://github.com/Daedalusdigital/iMaksalon
+                <td colsopan="2">
+                    <button ng-click="alterBooking('booking.id','Approved',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-success">Approve</button> | 
+                    <button ng-click="alterBooking(booking.id,'Declined',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-danger">Decline</button>
+                  </td>
             </tr>
         </table>
       </div>
