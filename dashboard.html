@@ -84,13 +84,13 @@
                         <div class="input-group">
                           <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
                           <input type="text" class="form-control no-border form-control-xl" ej-search-places-input
-         search-results-limit="10"
-         complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
+                                search-results-limit="10"
+                                complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
                            <script type="text/ng-template" id="search-results.html">
                           </div>
                                 </div>
-                                      <br><br><div class="search-places-results" ng-show="ngModel">
+                                      <div class="search-places-results" ng-show="ngModel" style="margin-left: 23px; margin-top: 45px;">
                                       <ul>
                                         <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
                                     <div>
@@ -1236,7 +1236,7 @@
       <!-- /.footer-wrapper -->
     </div>
     <!-- /.page-wrapper -->
-    
+
     <div class="side-wrapper" ng-app="stylistApp">
       <div class="side">
         <div class="side-inner">
