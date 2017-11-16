@@ -120,6 +120,7 @@
                 <th>Service Location</th>
                 <th>Service Time</th>
                 <th>Service Date</th>
+                <th>Booking Response</th>
             </tr>
             <tr ng-repeat="booking in bookinglist">
                 <td>{{booking.booking_status}}</td>
@@ -130,7 +131,7 @@
                 <td>{{booking.service_time}}</td>
                 <td>{{booking.service_date}}</td>
                 <td colsopan="2">
-                    <button ng-click="alterBooking('booking.id','Approved',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-success">Approve</button> | 
+                    <button ng-click="alterBooking(booking.id,'Approved',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-success">Approve</button> | 
                     <button ng-click="alterBooking(booking.id,'Declined',booking.client_id,booking.stylist_id,booking.booked_service)" class="btn btn-danger">Decline</button>
                   </td>
             </tr>
@@ -166,7 +167,6 @@
         var app = angular.module('Imakapp',[]);
         alert(stylistId);
         app.controller('viewingController',['$scope','$http', function($scope,$http){
-<<<<<<< HEAD
         
 
           $scope.alterBooking = function(_id,btn_name,clientId,stylistId,booked_ser){
@@ -193,10 +193,6 @@
 
           $scope.loadContent = function(){
             var obj = angular.toJson({stylist_id: "6"});
-=======
-                alert(stylistId.loginId);
-                 var obj = angular.toJson({stylist_id: stylistId});
->>>>>>> parent of a632813... Merge branch 'master' of https://github.com/Daedalusdigital/iMaksalon
                  
             $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
                     .then(function(response){
