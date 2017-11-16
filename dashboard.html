@@ -52,7 +52,7 @@
               <div class="header-actions">
                 <ul class="nav nav-pills">
                   <li class="nav-item">
-                    <a href="framework/booking.html" class="nav-link modal-submit" >
+                    <a href="https://www.imakapp.com/addBooking.html" class="nav-link modal-submit" >
                       <i class="fa fa-plus"></i> <span>Add Booking</span>
                     </a>
                   </li>
@@ -84,13 +84,13 @@
                         <div class="input-group">
                           <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
                           <input type="text" class="form-control no-border form-control-xl" ej-search-places-input
-         search-results-limit="10"
-         complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
+                                search-results-limit="10"
+                                complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
                            <script type="text/ng-template" id="search-results.html">
                           </div>
                                 </div>
-                                      <br><br><div class="search-places-results" ng-show="ngModel">
+                                      <div class="search-places-results" ng-show="ngModel" style="margin-left: 23px; margin-top: 45px;">
                                       <ul>
                                         <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
                                     <div>
@@ -123,39 +123,39 @@
           </div>
           <!-- /.hero-image-inner -->
           <div class="hero-image-categories">
-            <a href="listings-google-map.html" class="hero-image-category">
-              <i class="fa fa-map-o"></i>
-              <strong>Map</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="salons.html" class="hero-image-category">
-              <i class="fa fa-building"></i>
-              <strong>Salons</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="stylist.html" class="hero-image-category">
-              <i class="fa fa-users"></i>
-              <strong>Stylists</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="framework/views.html#!/bookings" class="hero-image-category">
-              <i class="fa fa-calendar-check-o"></i>
-              <strong>Bookings</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="framework/views.html#!/gallery" class="hero-image-category">
-              <i class="fa fa-money"></i>
-              <strong>Prices List</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="framework/views.html#!/notifications" class="hero-image-category">
-              <i class="fa fa-bell-o"></i>
-              <strong>Notification</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="framework/views.html#!/reports" class="hero-image-category">
-              <i class="fa fa-frown-o"></i>
-              <strong>Report</strong>
-            </a><!-- /.hero-image-category -->
+              <a href="listings-google-map.html" class="hero-image-category">
+                <i class="fa fa-map-o"></i>
+                <strong>Map</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="framework/views.html#!/salons" class="hero-image-category">
+                <i class="fa fa-building"></i>
+                <strong>Salons</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="stylist.html" class="hero-image-category">
+                <i class="fa fa-users"></i>
+                <strong>Stylists</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="framework/views.html#!/bookings" class="hero-image-category">
+                <i class="fa fa-calendar-check-o"></i>
+                <strong>Bookings</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="framework/views.html#!/gallery" class="hero-image-category">
+                <i class="fa fa-picture-o"></i>
+                <strong>Gallery</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="framework/views.html#!/notifications" class="hero-image-category">
+                <i class="fa fa-bell-o"></i>
+                <strong>Notification</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="framework/views.html#!/reports" class="hero-image-category">
+                <i class="fa fa-frown-o"></i>
+                <strong>Report</strong>
+              </a><!-- /.hero-image-category -->
+            </div>
+            <!-- /.hero-image-categories -->
           </div>
-          <!-- /.hero-image-categories -->
+          <!-- /.hero-image -->
         </div>
-        <!-- /.hero-image -->
-      </div>
       <!-- /.hero-image-wrapper -->
       <div class="main-wrapper">
         <div class="main">
@@ -964,50 +964,306 @@
       <!-- /.footer-wrapper -->
     </div>
     <!-- /.page-wrapper -->
-    
-    <div class="side-wrapper">
-        <div class="side">
-          <div class="side-inner">
-            <div class="side-user">
-              <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
-              <span class="side-user-avatar-name">
-                <strong>William F. Kane</strong>
-                <span>System administrator</span>
-              </span>
-              <a href="#" class="side-user-avatar-action">
-                <i class="fa fa-cog"></i>
-              </a>
-            </div>
-            <!-- /.side-user -->
-              <ul class="nav flex-column">
-              <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
-              <li class="nav-item"><a href="https://" class="nav-link">Sign Out</a></li>
-            </ul>
-            <h3>Stylist Login</h3>
-            <form class="form-dark" method="post" action="?">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Username">
-              </div>
-              <!-- /.form-group -->
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="password">
-              </div>
-              <!-- /.form-group -->
-              <button class="btn btn-primary pull-right" type="submit" onclick="location.href='framework/stylistLogin.html';">Login</button>
+<<<<<<< HEAD
+    <div id="modal-submit" class="modal fade">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Submit New Listing</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="post" action="?" class="mb80">
+              <fieldset>
+                <legend>Basic Information</legend>
+                <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" class="form-control">
+                </div>
+                <!-- /.form-group -->
+                <div class="form-group">
+                  <label>Description</label>
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+                <!-- /.form-group -->
+              </fieldset>
+              <fieldset>
+                <legend>Payment Information</legend>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Package</label>
+                      <select class="form-control">
+                        <option value="">Bronze + $10</option>
+                      </select>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Payment Method</label>
+                      <select class="form-control">
+                        <option value="">Paypal</option>
+                      </select>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Duration</label>
+                      <select class="form-control">
+                        <option value="">1 Year (Save 10%)</option>
+                      </select>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                </div>
+                <!-- /.row -->
+              </fieldset>
+              <fieldset>
+                <legend>Location</legend>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div id="location-google-map" style="height: 450px;"></div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Address</label>
+                      <input type="text" class="form-control location-google-map-search">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Latitude</label>
+                      <input type="text" class="form-control" id="listing_location_latitude">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Longitude</label>
+                      <input type="text" class="form-control" id="listing_location_longitude">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Country</label>
+                      <select class="form-control"></select>
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Location</label>
+                      <select class="form-control"></select>
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Sublocation</label>
+                      <select class="form-control"></select>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                </div>
+                <!-- /.row -->
+              </fieldset>
+              <fieldset>
+                <legend>Contact Information</legend>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Country</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>City</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Address</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Phone</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>E-mail</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Website</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col-* -->
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Amenities</legend>
+                <div class="checkbox-list">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Air conditioning
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Balcony
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Bedding
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Cable TV
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Cleaning after exit
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input"> Cofee pot
+                    </label>
+                  </div>
+                  <!-- /.form-check -->
+                </div>
+                <!-- /.checkbox-list -->
+              </fieldset>
+              <fieldset>
+                <legend>Additional Information</legend>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"> Send me newsletter
+                  </label>
+                </div>
+                <!-- /.form-check -->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"> I agree with terms &amp; conditions
+                  </label>
+                </div>
+                <!-- /.form-check -->
+              </fieldset>
             </form>
           </div>
-          <!-- /.side-inner -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
-          <!-- /.side-inner -->
+      </div>
+    </div>
+    <div class="side-wrapper">
+      <div class="side">
+        <div class="side-inner">
+          <div class="side-user">
+            <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
+            <span class="side-user-avatar-name">
+              <strong>William F. Kane</strong>
+              <span>System administrator</span>
+            </span>
+            <a href="#" class="side-user-avatar-action">
+              <i class="fa fa-cog"></i>
+            </a>
+          </div>
+          <!-- /.side-user -->
+            <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
+            <li class="nav-item"><a href="https://" class="nav-link">Sign Out</a></li>
+          </ul>
+          <h3>Stylist Login</h3>
+          <form class="form-dark" method="post" action="?">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Username">
+            </div>
+            <!-- /.form-group -->
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="password">
+            </div>
+            <!-- /.form-group -->
+            <button class="btn btn-primary pull-right" type="submit">Login</button>
+=======
+
+    <div class="side-wrapper" ng-app="stylistApp">
+      <div class="side">
+        <div class="side-inner">
+          <div class="side-user">
+            <span class="avatar"></span>
+            <span class="side-user-avatar-name">
+              <strong>User Name</strong>
+              <span>Surname</span>
+            </span>
+            <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
+              <i class="fa fa-cog"></i>
+            </a>
+          </div>
+          <!-- /.side-user -->
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
+            <li class="nav-item"><a href="https://www.imakeapp.com" class="nav-link">Sign Out</a></li>
+          </ul>
+          <h3>Stylist Login</h3>
+          <form class="form-dark" ng-controller="stylistController">
+            <!-- /.side-user
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Username">
+            </div>
+            /.form-group
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="password">
+            </div> -->
+            <!-- /.form-group -->
+            <button class="btn btn-primary pull-right" type="submit"><a href="framework/stylistLogin.html">Login</a></button>
+>>>>>>> origin/master
+          </form>
         </div>
+        <!-- /.side-inner -->
+      </div>
+<<<<<<< HEAD
+        <!-- /.side-inner -->
+      </div>
+=======
+>>>>>>> origin/master
       <!-- /.side -->
     </div>
     <!-- /.side-wrapper -->
     <div class="side-overlay"></div>
     <!-- /.side-overlay -->
- 
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
     <script type="text/javascript" src="assets/js/chartist.min.js"></script>

@@ -58,7 +58,7 @@ app.controller('viewingController',['$scope','$http','loginService','SessionServ
                       console.log(error);
                   });
 
-                  setInterval(function(){ $scope.loadContent(); }, 3000);
+                  $scope.loadContent();
                   
                   $('#preloader').show();
                   setTimeout(function(){ $('#preloader').fadeOut('slow') }, 5000);
