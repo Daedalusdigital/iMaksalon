@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="assets/libraries/slick/slick.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="images/icon.png" rel="shortcut icon" type="image/png">
     <link href="assets/libraries/slick/slick-theme.css" rel="stylesheet" type="text/css">
     <link href="assets/css/trackpad-scroll-emulator.css" rel="stylesheet" type="text/css">
@@ -30,14 +31,14 @@
     <title>Dashboard</title>
   </head>
   <body class="" ng-app="places">
-      <div id="preloader">
+      <div id="preloader" >
           <div id="loader"></div>
         </div>
-    <div class="page-wrapper">
+    <div class="page-wrapper" >
       <div class="header-wrapper header-transparent header-light">
         <div class="header">
           <div class="container">
-            <div class="header-inner">
+            <div class="header-inner" id="btnAddBooking" style="display:none">
               <div class="navigation-toggle toggle">
                 <span></span>
                 <span></span>
@@ -61,7 +62,7 @@
               <div class="header-actions">
                 <ul class="nav nav-pills">
                   <li class="nav-item">
-                    <a href="https://www.imakapp.com/addBooking.html" class="nav-link modal-submit" >
+                    <a href="framework/booking.html" class="nav-link modal-submit" >
                       <i class="fa fa-plus"></i> <span>Add Booking</span>
                     </a>
                   </li>
@@ -91,8 +92,8 @@
                     <div class="row justify-content-sm-center">
                       <div class="col-sm-4">
                         <div class="input-group">
-                          <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
-                          <input type="text" class="form-control no-border form-control-xl" ej-search-places-input
+                          <span  style="width:20%;height:43px;margin-top:1px;" class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
+                          <input style="margin-left:0px;" type="text" class="form-control no-border form-control-xl" ej-search-places-input
                                 search-results-limit="10"
                                 complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
@@ -109,7 +110,7 @@
                                      </li>
                                 </ul>
                               <div ng-show="queryInProgress" class="ball-clip-rotate">
-    </script> 
+    </script> 0
                         <!-- /.form-group -->
                       </div>
 
@@ -1034,7 +1035,8 @@
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
     <script type="text/javascript">
-      setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
+
+      setTimeout(function(){ $('#preloader').fadeOut('slow');$('#btnAddBooking').show(); }, 2000);
     </script>
   </body>
 </html>

@@ -8,11 +8,18 @@
 
    
       <link rel="stylesheet" href="css/invoice.css">
-
+      <link href="css/preloader.css" rel="stylesheet" type="text/css">
+      <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+      <link href="css/responsive.css" rel="stylesheet" type="text/css">
+      <link href="css/loader.css" rel="stylesheet" type="text/css">
   
 </head>
 
 <body>
+  <link href="css/preloader.css" rel="stylesheet" type="text/css">
+<link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+<link href="css/loader.css" rel="stylesheet" type="text/css">
   <div class="control-bar">
   <div class="container">
     <div class="row">
@@ -151,6 +158,9 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
     <script  src="js/invoice.js"></script>
+    <script type="text/javascript">
+      setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
+    </script>
 
 </body>
 </html>
