@@ -52,7 +52,7 @@
               <div class="header-actions">
                 <ul class="nav nav-pills">
                   <li class="nav-item">
-                    <a href="framework/booking.html" class="nav-link modal-submit" >
+                    <a href="https://www.imakapp.com/addBooking.html" class="nav-link modal-submit" >
                       <i class="fa fa-plus"></i> <span>Add Booking</span>
                     </a>
                   </li>
@@ -1237,43 +1237,42 @@
     </div>
     <!-- /.page-wrapper -->
     
-    <div class="side-wrapper">
-        <div class="side">
-          <div class="side-inner">
-            <div class="side-user">
-              <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
-              <span class="side-user-avatar-name">
-                <strong>William F. Kane</strong>
-                <span>System administrator</span>
-              </span>
-              <a href="#" class="side-user-avatar-action">
-                <i class="fa fa-cog"></i>
-              </a>
-            </div>
-            <!-- /.side-user -->
-              <ul class="nav flex-column">
-              <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
-              <li class="nav-item"><a href="https://" class="nav-link">Sign Out</a></li>
-            </ul>
-            <h3>Stylist Login</h3>
-            <form class="form-dark" method="post" action="?">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Username">
-              </div>
-              <!-- /.form-group -->
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="password">
-              </div>
-              <!-- /.form-group -->
-              <button class="btn btn-primary pull-right" type="submit" onclick="location.href='framework/stylistLogin.html';">Login</button>
-            </form>
+    <div class="side-wrapper" ng-app="stylistApp">
+      <div class="side">
+        <div class="side-inner">
+          <div class="side-user">
+            <span class="avatar"></span>
+            <span class="side-user-avatar-name">
+              <strong>User Name</strong>
+              <span>Surname</span>
+            </span>
+            <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
+              <i class="fa fa-cog"></i>
+            </a>
           </div>
-          <!-- /.side-inner -->
+          <!-- /.side-user -->
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
+            <li class="nav-item"><a href="https://www.imakeapp.com" class="nav-link">Sign Out</a></li>
+          </ul>
+          <h3>Stylist Login</h3>
+          <form class="form-dark" ng-controller="stylistController">
+            <!-- /.side-user
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Username">
+            </div>
+            /.form-group
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="password">
+            </div> -->
+            <!-- /.form-group -->
+            <button class="btn btn-primary pull-right" type="submit"><a href="framework/stylistLogin.html">Login</a></button>
+          </form>
         </div>
-          <!-- /.side-inner -->
-        </div>
+        <!-- /.side-inner -->
+      </div>
       <!-- /.side -->
     </div>
     <!-- /.side-wrapper -->
