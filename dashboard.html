@@ -52,7 +52,7 @@
               <div class="header-actions">
                 <ul class="nav nav-pills">
                   <li class="nav-item">
-                    <a href="https://www.imakapp.com/addBooking.html" class="nav-link modal-submit" >
+                    <a href="framework/booking.html" class="nav-link modal-submit" >
                       <i class="fa fa-plus"></i> <span>Add Booking</span>
                     </a>
                   </li>
@@ -84,13 +84,13 @@
                         <div class="input-group">
                           <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
                           <input type="text" class="form-control no-border form-control-xl" ej-search-places-input
-                                search-results-limit="10"
-                                complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
+         search-results-limit="10"
+         complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
                            <script type="text/ng-template" id="search-results.html">
                           </div>
                                 </div>
-                                      <div class="search-places-results" ng-show="ngModel" style="margin-left: 23px; margin-top: 45px;">
+                                      <br><br><div class="search-places-results" ng-show="ngModel">
                                       <ul>
                                         <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
                                     <div>
@@ -221,7 +221,6 @@
           <div class="card">
             <div class="card__image">
               <img src="https://customisepage.blob.core.windows.net/images/608.jpeg" alt="">
-
               <div class="card__overlay card__overlay--indigo">
                 <div class="card__overlay-content">
                   <ul class="card__meta">
@@ -408,7 +407,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-24.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Business</span>
+                                <span class="listing-box-category tag">Beauty Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star-o"></i>
@@ -468,7 +467,7 @@
                               <!-- /.listing-box-info -->
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-2.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Gastronomy</span>
+                                <span class="listing-box-category tag">Hair Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -524,7 +523,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-8.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Cooking</span>
+                                <span class="listing-box-category tag">Hair & Beauty</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -584,7 +583,7 @@
                               <!-- /.listing-box-info -->
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-2.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Events</span>
+                                <span class="listing-box-category tag">Hair Designer</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -640,7 +639,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-4.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Courses</span>
+                                <span class="listing-box-category tag">Beauty Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -650,8 +649,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Custom Lawn Care</a></h2>
-                                <h3>2287 Maple Avenue Stockton</h3>
+                                <h2><a href="listings-detail.html">Hair @ Mel's</a></h2>
+                                <h3>2 Interstate Ave, Umgeni Business Park, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -671,12 +670,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>84</dd>
+                                  <dt>Nail & Makeup Artists</dt>
+                                  <dd>100</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -698,7 +695,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-4.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Workshops</span>
+                                <span class="listing-box-category tag">Hair Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -708,8 +705,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Healthy Breakfast</a></h2>
-                                <h3>1148 Elk Rd Little Tucson</h3>
+                                <h2><a href="listings-detail.html">Salon Lisa</a></h2>
+                                <h3>Shop No. 269, Inanda Rd, Springfield, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -729,12 +726,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylist</dt>
+                                  <dd>120</dd>
+                                  <dt>Nail & MakeUp Artists</dt>
+                                  <dd>98</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -756,7 +751,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-3.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Museum</span>
+                                <span class="listing-box-category tag">Hair Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -766,8 +761,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Erb Lumber</a></h2>
-                                <h3>2155 Philli Lane Mcalester</h3>
+                                <h2><a href="listings-detail.html">Salon Nishani</a></h2>
+                                <h3>247 Wandsbeck Rd, Palmiet, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -787,12 +782,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Styists</dt>
+                                  <dd>89</dd>
+                                  <dt>Nail & MakeUp Artists</dt>
+                                  <dd>68</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -818,7 +811,7 @@
                               <!-- /.listing-box-info -->
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-16.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Health</span>
+                                <span class="listing-box-category tag">Beauty Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star-o"></i>
@@ -828,8 +821,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Tower Excursion</a></h2>
-                                <h3>1081 Woodside Circle Crestview</h3>
+                                <h2><a href="listings-detail.html">Heaven On Earth Beauty Salon</a></h2>
+                                <h3>1st Floor, 3rd Rock Entrance, Smith Street, 494, Durban Central</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -849,12 +842,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>80</dd>
+                                  <dt>Nail & MakeUp Artists</dt>
+                                  <dd>69</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -876,7 +867,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-15.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Driving</span>
+                                <span class="listing-box-category tag">Beauty Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -886,8 +877,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Royal Hall</a></h2>
-                                <h3>3690 Tecumsah Lane Cedar Rapids</h3>
+                                <h2><a href="listings-detail.html">The Beauty Bar</a></h2>
+                                <h3>417 Lilian Ngoyi Rd, Windermere, Berea</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -907,12 +898,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>79</dd>
+                                  <dt>Nail & MakeUp Artists</dt>
+                                  <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -938,7 +927,7 @@
                               <!-- /.listing-box-info -->
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-20.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Finance</span>
+                                <span class="listing-box-category tag">Hair Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -948,8 +937,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Tasty Pizza Restaurant</a></h2>
-                                <h3>2653 Cost Avenue College Park</h3>
+                                <h2><a href="listings-detail.html">Happiness Hair Salon</a></h2>
+                                <h3>Shop No. 9, 14 Sylvester Ntuli Rd, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -969,12 +958,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>98</dd>
+                                  <dt>Nail & MakeUp</dt>
+                                  <dd>84</dd0>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -996,7 +983,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-22.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Law</span>
+                                <span class="listing-box-category tag">Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star-o"></i>
@@ -1006,8 +993,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Freelance Office</a></h2>
-                                <h3>4458 Thompson Drive Richmond</h3>
+                                <h2><a href="listings-detail.html">Phophotha</a></h2>
+                                <h3>109B, Musgrave Centre, 115 Musgrave Rd, Berea, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -1027,12 +1014,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>95</dd>
+                                  <dt>Nail & MakeUp Artists</dt>
+                                  <dd>67</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -1055,7 +1040,7 @@
                               <span class="listing-box-featured">Featured</span>
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-13.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Gastronomy</span>
+                                <span class="listing-box-category tag">Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -1065,8 +1050,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">SUV Cars Reseller</a></h2>
-                                <h3>4692 Arbutus Drive Miami Springs</h3>
+                                <h2><a href="listings-detail.html">Sixtythree Hairstudio</a></h2>
+                                <h3>255 Wakesleigh Rd, Bellair, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -1086,12 +1071,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>125</dd>
+                                  <dt>Nails & MakeUp Artists</dt>
                                   <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -1114,7 +1097,7 @@
                               <span class="listing-box-featured">Featured</span>
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-1.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Luxury Cars</span>
+                                <span class="listing-box-category tag">Beauty Salon</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star-o"></i>
@@ -1124,8 +1107,8 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Cozzy Coffee Shop</a></h2>
-                                <h3>4700 Hart Country Lane Blue Ridge</h3>
+                                <h2><a href="listings-detail.html">Imvelo Beauty Square Hair Salon & Nail bar</a></h2>
+                                <h3>Shop 39, Montclair Mall, Montclair, Durban</h3>
                                 <div class="actions">
                                   <div class="actions-button">
                                     <span></span>
@@ -1145,12 +1128,10 @@
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Miles</dt>
-                                  <dd>128K</dd>
-                                  <dt>Engine</dt>
-                                  <dd>Diesel</dd>
-                                  <dt>Type</dt>
-                                  <dd>Aston Martin</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>84</dd>
+                                  <dt>Nail & MakeUp Artists</dt>
+                                  <dd>78</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -1236,43 +1217,44 @@
       <!-- /.footer-wrapper -->
     </div>
     <!-- /.page-wrapper -->
-
-    <div class="side-wrapper" ng-app="stylistApp">
-      <div class="side">
-        <div class="side-inner">
-          <div class="side-user">
-            <span class="avatar"></span>
-            <span class="side-user-avatar-name">
-              <strong>User Name</strong>
-              <span>Surname</span>
-            </span>
-            <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
-              <i class="fa fa-cog"></i>
-            </a>
-          </div>
-          <!-- /.side-user -->
-          <ul class="nav flex-column">
-            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
-            <li class="nav-item"><a href="https://www.imakeapp.com" class="nav-link">Sign Out</a></li>
-          </ul>
-          <h3>Stylist Login</h3>
-          <form class="form-dark" ng-controller="stylistController">
-            <!-- /.side-user
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Username">
+    
+    <div class="side-wrapper">
+        <div class="side">
+          <div class="side-inner">
+            <div class="side-user">
+              <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
+              <span class="side-user-avatar-name">
+                <strong>William F. Kane</strong>
+                <span>System administrator</span>
+              </span>
+              <a href="#" class="side-user-avatar-action">
+                <i class="fa fa-cog"></i>
+              </a>
             </div>
-            /.form-group
-            <div class="form-group">
-              <input type="password" class="form-control" placeholder="password">
-            </div> -->
-            <!-- /.form-group -->
-            <button class="btn btn-primary pull-right" type="submit"><a href="framework/stylistLogin.html">Login</a></button>
-          </form>
+            <!-- /.side-user -->
+              <ul class="nav flex-column">
+              <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
+              <li class="nav-item"><a href="https://" class="nav-link">Sign Out</a></li>
+            </ul>
+            <h3>Stylist Login</h3>
+            <form class="form-dark" method="post" action="?">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username">
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="password">
+              </div>
+              <!-- /.form-group -->
+              <button class="btn btn-primary pull-right" type="submit">Login</button>
+            </form>
+          </div>
+          <!-- /.side-inner -->
         </div>
-        <!-- /.side-inner -->
-      </div>
+          <!-- /.side-inner -->
+        </div>
       <!-- /.side -->
     </div>
     <!-- /.side-wrapper -->
