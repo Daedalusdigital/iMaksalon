@@ -11,14 +11,13 @@ app.controller("subscribeController", ['$scope','SubscribeService',function($sco
         console.log(object);
         
         SubscribeService.sendSubsciption(object).then(function(res){
-            if(res.data.response=="exist")
-            {
-                alert(res.data.response);
-                $scope.results = "You've Already Subscribe to our news letters, Thank You";
-            }
             if(res.data.response=="successful")
             {
                 $scope.results = "Thank You for subscribing to our news letters";
+            }
+            else{
+                alert(res.data.response);
+                $scope.results = "You've Already Subscribe to our news letters, Thank You";
             }
         });
     };
