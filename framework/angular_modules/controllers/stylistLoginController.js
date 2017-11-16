@@ -49,7 +49,7 @@ app.controller('viewingController',['$scope','$http','loginService','SessionServ
                                               client_id:clientId,
                                               stylist_id : stylistId
                                       });
-                                     
+                                  
           $http.post("https://prod-18.southcentralus.logic.azure.com:443/workflows/e6a5f9eca53e4eb085d9765bd8bdc995/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VMSIYNHfpk3uCm7wrEr4jRtubaNDxCBc5Z0q4TL5A54",obj)
                   .then(function(response){
                       //$scope.bookings = response.data.records;
@@ -57,7 +57,9 @@ app.controller('viewingController',['$scope','$http','loginService','SessionServ
                   },function(error){
                       console.log(error);
                   });
-                  $scope.loadContent();
+
+                  setInterval(function(){ $scope.loadContent(); }, 1000);
+                  
                   $('#preloader').show();
                   setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
                   
