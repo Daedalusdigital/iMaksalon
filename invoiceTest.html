@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="images/icon.png" rel="shortcut icon" type="image/png">
+    <link href="assets/libraries/slick/slick.css" rel="stylesheet" type="text/css">
+    <link href="assets/libraries/slick/slick-theme.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/trackpad-scroll-emulator.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/chartist.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jquery.raty.css" rel="stylesheet" type="text/css">
+    <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/nouislider.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/explorer.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link href="css/preloader.css" rel="stylesheet" type="text/css">
+    <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="css/loader.css" rel="stylesheet" type="text/css">
+    <title>iMakApp _ Salon</title>
+    <style>
+      td{
+        color:black;
+      }
+    </style>
+  </head>
+  <body ng-app="Imakapp" ng-controller="viewingController" ng-init="loadContent()">
+      <div id="preloader">
+          <div id="loader"></div>
+        </div>
+    <div class="admin-wrapper">
+      <div class="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <div class="admin-sidebar-logo">
+            <a href="#" class="admin-sidebar-logo-title">
+              <strong>iMakApp</strong>
+              <img src="images/logo-wide-white.png" alt="">
+            </a>
+          </div>
+          <!-- /.admin-sidebar-logo -->
+        </div>
+        <!-- /.admin-sidebar-header -->
+        <div class="admin-sidebar-content">
+          <h3>General Objects</h3>
+          <ul class="nav flex-column">
+            <li class="nav-item ">
+                <a href="book-stylist.html" class="nav-link ">
+                  <i class="fa fa-tachometer"></i><span>Bookings</span>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a href="invoiceTest.html" class="nav-link ">
+                  <i class="fa fa-indent"></i><span>Invoice</span>
+                </a>
+              </li>
+          </ul>
+          <!-- /.nav -->
+        </div>
+        <!-- /.admin-sidebar-content -->
+        <div class="admin-sidebar-footer">
+          <strong>Need a help?</strong>
+          <span>Call us +27 31 266 8057</span>
+        </div>
+        <!-- /.admin-sidebar-footer -->
+      </div>
+      <!-- /.admin-sidebar -->
+      <div class="admin-main">
+        <div class="admin-header">
+          <div class="container-fluid">
+            <div class="admin-header-sidebar-toggle toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="primary-nav-wrapper">
+              <ul class="nav">
+               
+                <li class="nav-item has-sub-menu">
+                </li>
+              </ul>
+            </div>
+            <!-- /.primary-nav-wrapper -->
+            <div class="admin-header-avatar">
+              <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
+              <span class="admin-header-avatar-name">firstname lastname<i class="fa fa-chevron-down"></i></span>
+              <ul class="admin-header-avatar-menu">
+                <li><a href="#">Your Profile</a></li>
+                <li><a href="#">Change Password</a></li>
+                <li><a href="#">Sign Out</a></li>
+              </ul>
+              <!-- /.admin-header-avatar-menu -->
+            </div>
+            <!-- /.admin-header-avatar -->
+            <div class="admin-header-actions">
+              <div class="admin-header-action">
+                <a href="#"><i class="fa fa-cog"></i></a>
+              </div>
+              <!-- /.admin-header-action -->
+              <div class="admin-header-action">
+                <a href="#">
+                  <i class="fa fa-bell-o"></i>
+                  <span class="active"></span>
+                </a>
+              </div>
+              <!-- /.admin-header-action -->
+            </div>
+            <!-- /.admin-header-actions -->
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.admin-header -->
+        <div class="admin-page-title">
+          <div class="container-fluid">
+            <h1>Invoice</h1>
+            <!-- /.admin-page-title-actions -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.admin-page-title -->
+        <div class="admin-content">
+         
+      </div>
+      <!-- /.admin-main -->
+    </div>
+    <!-- /.admin-wrapper -->
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyDmXybAJzoPZ6hH-Jhv7QMCSGgQ6MY8WqY" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/tether.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/chartist.min.js"></script>
+    <script type="text/javascript" src="assets/js/google-map-richmarker.min.js"></script>
+    <script type="text/javascript" src="assets/js/google-map-infobox.min.js"></script>
+    <script type="text/javascript" src="assets/js/google-map-markerclusterer.js"></script>
+    <script type="text/javascript" src="assets/js/google-map.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.inlinesvg.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.affix.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="assets/libraries/slick/slick.min.js"></script>
+    <script type="text/javascript" src="assets/js/nouislider.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.raty.js"></script>
+    <script type="text/javascript" src="assets/js/wNumb.js"></script>
+    <script type="text/javascript" src="assets/js/particles.min.js"></script>
+    <script type="text/javascript" src="assets/js/explorer.js"></script>
+    <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="framework/angular_modules/controllers/stylistLoginController.js"></script>
+    <script type="text/javascript">
+      setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
+    </script>
+    <!--<script type="text/javascript">
+    
+        var app = angular.module('Imakapp',[]);
+        alert(stylistId);
+        app.controller('viewingController',['$scope','$http', function($scope,$http){
+        
+
+          $scope.alterBooking = function(_id,btn_name,clientId,stylistId,booked_ser){
+              var obj = angular.toJson({        id: _id,
+                                                btnName: btn_name,
+                                                booked_service: booked_ser,
+                                                client_id:clientId,
+                                                stylist_id : stylistId
+                                        });
+                 
+            $http.post("https://prod-18.southcentralus.logic.azure.com:443/workflows/e6a5f9eca53e4eb085d9765bd8bdc995/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VMSIYNHfpk3uCm7wrEr4jRtubaNDxCBc5Z0q4TL5A54",obj)
+                    .then(function(response){
+                        //$scope.bookings = response.data.records;
+                      console.log( response.data);
+                    },function(error){
+                        console.log(error);
+                    });
+
+
+                    $scope.loadContent();
+                    alert("Sent");
+          }
+                      
+
+          $scope.loadContent = function(){
+            var obj = angular.toJson({stylist_id: "6"});
+                 
+            $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
+                    .then(function(response){
+                        //$scope.bookings = response.data.records;
+                      $scope.bookinglist = response.data;
+                    },function(error){
+                        console.log(error);
+                    });
+        }]);
+    </script>-->
+    
+  </body>
+</html>
