@@ -22,14 +22,12 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
                 SessionService.set("stylestID", res.data[0].id);
                 window.location.href = "../book-stylist.html";
             }
-            console.log(res);
-            alert($scope.stylistId);
+            console.log($scope.stylistId);
         });
     };
 }]);
 app.controller('viewingController',['$scope','$http','loginService','SessionService', function($scope,$http,loginService,SessionService){
      var stylistIds = SessionService.get("stylestID");
-     alert("Got It " + stylistIds);
      var obj = angular.toJson({stylist_id: stylistIds});
      
 $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
