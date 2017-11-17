@@ -5,23 +5,33 @@
         <link rel="shortcut icon" href="#"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/preloader.css" rel="stylesheet" type="text/css">
+        <link href="../css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+        <link href="../css/responsive.css" rel="stylesheet" type="text/css">
+        <link href="../css/loader.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+            <div id="preloader">
+                    <div id="loader"></div>
+                    </div>
         <div ng-controller="subscribeController">
             <div ng-view="">
-                <h1>{{message}}</h1>
-                <form novalidate="novalidate" style="margin-top:90px;">
-                    <input type="text" ng-model="subscriberName" placeholder="Enter Firstname" required/><br>
-                    <input type="text" ng-model="subscriberSurname" placeholder="Enter Surname" required/><br>
-                    <input type="email" ng-model="subscriberEmail" placeholder="Email Address" required/><br>
-                    <input ng-click="subscribe()" type="submit" value="Subscribe" class="btn btn-success" />
+                <h1>Subscribe</h1>
+                <form novalidate="novalidate" ng-submit="subscribe(obj)">
+                    <input type="text" ng-model="obj.subscriberName" placeholder="Enter Firstname" required/><br>
+                    <input type="text" ng-model="obj.subscriberSurname" placeholder="Enter Surname" required/><br>
+                    <input type="email" ng-model="obj.subscriberEmail" placeholder="Email Address" required/><br>
+                    <input type="submit" value="Subscribe" class="btn btn-success" />
                 </form>
                 <h4>{{results}}</h4>
             </div>
         </div>
-        
+        <script src="../js/jquery-3.2.1.min.js"></script>
         <script src="js/angular.min.js" type="text/javascript"></script>
         <script src="js/angular-route.js" type="text/javascript"></script>
         <script src="angular_modules/controllers/subscribeController.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
+          </script>
     </body>
 </html>
