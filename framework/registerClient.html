@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="registerApp">
+    <head>
+        <title>Register</title>
+        <link rel="shortcut icon" href="#"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-controller="registerUserController">
+        <div ng-view="">
+            <form name="bookingForm" ng-submit="clientRegister(obj)">
+                <input type="text" ng-model="obj.firstname" placeholder="Firstname" required/><br>
+                <input type="text" ng-model="obj.surname" placeholder="Surname" required/><br>
+                <input type="text" ng-model="obj.contact_number" placeholder="Contact Number" required/><br>
+                <input type="email" ng-model="obj.email_address" placeholder="Email Address" required/><br>
+                <input type="text" ng-model="obj.physical_address" placeholder="Physical Address" required/><br>
+                <input type="text" ng-model="obj.client_username" placeholder="Choose Username" required/><span ng-bind="exist" style="color: red;"></span><br>
+                <input type="password" ng-model="obj.client_password" placeholder="Password" required/><br>
+                <input  type="submit" value="Register" class="btn btn-success" />
+            </form>
+            <h1 ng-bind="result"></h1>
+        </div>
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/angular-route.js" type="text/javascript"></script>
+        <script src="angular_modules/controllers/registerClientController.js" type="text/javascript"></script>
+    </body>
+</html>
