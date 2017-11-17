@@ -19,15 +19,21 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
                 alert("Successfully Login");
                 $scope.stylistId = res.data[0].style_id;
                 SessionService.set("stylestID", res.data[0].style_id);
+                SessionService.set("stylestFname", res.data[0].firstname);
+                SessionService.set("stylestSname", res.data[0].surname);
                 window.location.href = "../book-stylist.html";
             }
-            console.log($scope.stylistId);
+            
         });
     };
 }]);
 app.controller('viewingController',['$scope','$http','loginService','SessionService', function($scope,$http,loginService,SessionService){
      var stylistIds = SessionService.get("stylestID");
-    alert(stylistIds);
+     var stylistName = SessionService.get("stylestFname");
+     var stylistSname = SessionService.get("stylestSname");
+
+     $scope.stylistNames = stylistName;
+     $scope.stylistSnames = stylistSname;
      $scope.loadContent = function(){
         var obj = angular.toJson({stylist_id: stylistIds});
         
