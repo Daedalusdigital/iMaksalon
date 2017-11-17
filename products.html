@@ -19,7 +19,7 @@
     <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
     <link href="css/responsive.css" rel="stylesheet" type="text/css">
     <link href="css/loader.css" rel="stylesheet" type="text/css">
-    <title>PriceList- iMakeapp</title>
+    <title>Products- iMakeapp</title>
   </head>
   <body class="">
       <div id="preloader">
@@ -53,18 +53,18 @@
                       <a href="#" class="nav-link ">Salons &amp; Stylists</a>
                         <ul class="sub-menu">
                         <li><a href="salons.html" class="">Salons</a></li>
-                        <li><a href="stylist.html" class="">Stylists</a></li>
+                        <li><a href="stylists.html" class="">Stylists</a></li>
                          </ul> 
                     </li>
                     <li class="nav-item">
-                      <a href="framework/booking.html" class="nav-link ">Bookings</a>
+                      <a href="#.html" class="nav-link ">Products</a>
                     </li>
                     <li class="nav-item ">
-                      <a href="#" class="nav-link ">Product</a>
+                      <a href="pricelist.html" class="nav-link ">Pricelist</a>
                       <!-- /.mega-menu -->
                     </li>
                     <li class="nav-item ">
-                      <a href="PriceList.html" class="nav-link ">Pricelist</a>
+                      <a href="notifications.html" class="nav-link ">Notification</a>
                     
                     </li>
                   </ul>
@@ -80,7 +80,9 @@
               <div class="header-actions">
                 <ul class="nav nav-pills">
                   <li class="nav-item">
-                    <a href="framework/booking.html" class="nav-link modal-submit">Add Booking</a>
+                    <a href="#" class="nav-link modal-submit" id="modal-action-submit" data-toggle="modal" data-target="#modal-submit">
+                      <i class="fa fa-plus"></i> <span>Add Booking</span>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -98,120 +100,68 @@
           <div class="main-inner">
             <div class="page-title">
               <div class="container">
-                <h1>Notifications</h1>
+                <h1>Products</h1>
                 </div>
                 <!-- /.page-title-actions -->
               </div>
               <!-- /.container-->
             </div>
             <!-- /.page-title -->
-           <div class="container">
-  <header class="page-header">
-  </header>
-  <div class="alert alert-warning">
-    <strong>Notice: </strong>Any issues and questions about Notifications Can be found <a href="faq.html">here</a>.
-  </div>
-  <main id="app">
-    <router-view></router-view>
-  </main>
-</div>
+            <div class="container" ng-app="csvApp">
+              <div class="box">
+                <div class="box-inner">
+                  <h3 class="page-title-small">Imakapp Products</h3>
+                  <div class="row">
+                    <div class="form-group col-sm-6">
+                     <div ng-controller="csvController" class="container" ng-cloack>
 
-<template id="product-list">
- 
-  <div class="filters row">
-    <div class="form-group col-sm-3">
-      <label for="search-element">Notifcation name</label>
-      <input v-model="searchKey" class="form-control" id="search-element" requred/>
-    </div>
-  </div>
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th class="col-sm-2">Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr v-for="product in products | filterBy searchKey in 'name'">
-      <td>
-        <a v-link="{name: 'product', params: {product_id: product.id}}">{{ product.name }}</a>
-      </td>
-      <td>{{ product.description }}</td>
-      <td>
-        {{ product.Date }}
-      </td>
-      <td>
-        <a class="btn btn-default" v-link="{path: '/add-product'}">Reply</a>
-        <a class="btn btn-danger btn-xs" v-link="{name: 'product-delete', params: {product_id: product.id}}">Delete</a>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</template>
-
-<template id="add-product">
-  <h2>Send reply</h2>
-  <form v-on:submit="createProduct">
-    <div class="form-group">
-      <label for="add-name">Name</label>
-      <input class="form-control" id="add-name" v-model="product.name" required/>
-    </div>
-    <div class="form-group">
-      <label for="add-description">Description</label>
-      <textarea class="form-control" id="add-description" rows="10" v-model="product.description"></textarea>
-    </div>
- 
-    <button type="submit" class="btn btn-primary">Send</button>
-    <a v-link="'/'" class="btn btn-default">Cancel</a>
-  </form>
-</template>
-
-<template id="product">
-  <h2>{{ product.name }}</h2>
-  <b>Description: </b>
-  <div>{{ product.description }}</div>
-  <b>details:</b>
-   <div>{{ product.details }}</div>
-  <b>Date:</b>
-  <div>{{ product.Date }}</div>
-  <br/>
-  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-  <a v-link="'/'">Back to Notifications</a>
-</template>
-
-<template id="product-edit">
-  <h2>Edit product</h2>
-  <form v-on:submit="updateProduct">
-    <div class="form-group">
-      <label for="edit-name">Name</label>
-      <input class="form-control" id="edit-name" v-model="product.name" required/>
-    </div>
-    <div class="form-group">
-      <label for="edit-description">Description</label>
-      <textarea class="form-control" id="edit-description" rows="3" v-model="product.description"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="edit-Date">Date</label>
-      <input type="number" class="form-control" id="edit-Date" v-model="product.Date"/>
-    </div>
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a v-link="'/'" class="btn btn-default">Cancel</a>
-  </form>
-</template>
-
-<template id="product-delete">
-  <h2>Delete product {{ product.name }}</h2>
-  <form v-on:submit="deleteProduct">
-    <p>The action cannot be undone.</p>
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <a v-link="'/'" class="btn btn-default">Cancel</a>
-  </form>
-</template>
-
-
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Service</th>
+              <th>Price</th>
+              <th>Availability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat='reg in data1'>
+              <td>{{reg.id}}</td>
+              <td>{{reg.name}}</td>
+              <td>{{reg.service}}</td>
+              <td>{{reg.price}}</td>
+              <td>{{reg.availability}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><br>
+    <button type="button" class="btn btn-default" ng-csv="data1" filename="Prices.csv" csv-header="['Id', 'Name', 'Service', 'Price', 'Availability']" charset="utf-8"><span class="glyphicon glyphicon-download-alt">&nbsp;</span>Download Price Table</button>
     
+    <br>
+    <p>
+      <small>
+      More information and other Queries please Mail <a href="# target="_blank">Info@imakapp.com</a>
+    </small>
+    </p>
+  </div>
+</div>
+                <!-- /.box-inner -->
+              </div>
+              <!-- /.box -->
+            </div>
+            <!-- /.container-fluid -->
+          </div>
+          <!-- /.main-inner -->
+        </div>
+        <!-- /.main -->
+      </div>
+      <!-- /.main-wrapper -->
+      
       <!-- /.footer-wrapper -->
     </div>
     <!-- /.page-wrapper -->
@@ -224,8 +174,8 @@
           <div class="side-user">
             <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
             <span class="side-user-avatar-name">
-              <strong>William F. Kane</strong>
-              <span>System administrator</span>
+              <strong></strong>
+              <span></span>
             </span>
             <a href="#" class="side-user-avatar-action">
               <i class="fa fa-cog"></i>
@@ -234,21 +184,22 @@
           <!-- /.side-user -->
             <ul class="nav flex-column">
             <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-            <li class="nav-item"><a href="framework/booking.html" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="bookings.html" class="nav-link">Bookings</a></li>
             <li class="nav-item"><a href="notification.html" class="nav-link">Notification</a></li>
-            <li class="nav-item"><a href="https://" class="nav-link">Sign Out</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link">Sign Out</a></li>
           </ul>
-          <h3>Stylist Login</h3>
-          <form class="form-dark" method="post" action="?">
+       <h3>Stylist Login</h3>
+          <form class="form-dark" ng-controller="stylistController">
+            <!-- /.side-user
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Username">
             </div>
-            <!-- /.form-group -->
+            /.form-group
             <div class="form-group">
               <input type="password" class="form-control" placeholder="password">
-            </div>
+            </div> -->
             <!-- /.form-group -->
-            <button class="btn btn-primary pull-right" type="submit">Login</button>
+            <button class="btn btn-primary pull-right" type="submit"><a href="framework/stylistLogin.html">Login</a></button>
           </form>
         </div>
       </div>
@@ -264,10 +215,8 @@
 <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.3/ng-csv.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.13/vue-router.min.js'></script>
 
-    <script  src="js/notification.js"></script>
+    <script  src="js/pricelist.js"></script>
 
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
