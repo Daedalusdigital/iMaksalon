@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="images/icon.png" rel="shortcut icon" type="image/png">
+    <link href="assets/libraries/slick/slick.css" rel="stylesheet" type="text/css">
+    <link href="assets/libraries/slick/slick-theme.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/trackpad-scroll-emulator.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/chartist.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jquery.raty.css" rel="stylesheet" type="text/css">
+    <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/nouislider.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/explorer.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link href="css/preloader.css" rel="stylesheet" type="text/css">
+    <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="css/loader.css" rel="stylesheet" type="text/css">
+    <title>PriceList- iMakeapp</title>
+  </head>
+  <body class="">
+      <div id="preloader">
+          <div id="loader"></div>
+        </div>
+    <div class="page-wrapper">
+      <div class="header-wrapper">
+        <div class="header">
+          <div class="container">
+            <div class="header-inner">
+              <div class="navigation-toggle toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <!-- /.header-toggle -->
+              <div class="header-logo">
+               <a href="dashboard.html" class="header-title"> <img src="images/logo-wide-white.png" alt=""></a>
+              </div>
+              <!-- /.header-logo -->
+              <div class="header-nav">
+                <div class="primary-nav-wrapper">
+                  <ul class="nav">
+                    <li class="nav-item ">
+                      <a href="dashboard.html" class="nav-link ">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a href="listings-google-map.html" class="nav-link ">Map</a>
+                    </li>
+                    <li class="nav-item has-sub-menu">
+                      <a href="#" class="nav-link ">Salons &amp; Stylists</a>
+                        <ul class="sub-menu">
+                        <li><a href="salons.html" class="">Salons</a></li>
+                        <li><a href="stylists.html" class="">Stylists</a></li>
+                         </ul> 
+                    </li>
+                    <li class="nav-item">
+                      <a href="bookings.html" class="nav-link ">Bookings</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a href="gallery.html" class="nav-link ">Gallery</a>
+                      <!-- /.mega-menu -->
+                    </li>
+                    <li class="nav-item ">
+                      <a href="notifications.html" class="nav-link ">Notification</a>
+                    
+                    </li>
+                  </ul>
+                </div>
+                <!-- /.primary-nav-wrapper -->
+              </div>
+              <div class="header-toggle toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <!-- /.header-toggle -->
+              <div class="header-actions">
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link modal-submit" id="modal-action-submit" data-toggle="modal" data-target="#modal-submit">
+                      <i class="fa fa-plus"></i> <span>Add Booking</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.header-actions -->
+            </div>
+            <!-- /.header-inner -->
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.header -->
+      </div>
+      <!-- /.header-wrapper -->
+      <div class="main-wrapper">
+        <div class="main">
+          <div class="main-inner">
+            <div class="page-title">
+              <div class="container">
+                <h1>Styles Pricelist</h1>
+                </div>
+                <!-- /.page-title-actions -->
+              </div>
+              <!-- /.container-->
+            </div>
+            <!-- /.page-title -->
+           <div class="container">
+  <header class="page-header">
+    <div class="branding">
+      
+      <h1>Notifications</h1>
+    </div>
+  </header>
+  <div class="alert alert-warning">
+    <strong>Notice: </strong>Any issues and questions about Notifications Can be found <a href="faq.html">here</a>.
+  </div>
+  <main id="app">
+    <router-view></router-view>
+  </main>
+</div>
+
+<template id="product-list">
+ 
+  <div class="filters row">
+    <div class="form-group col-sm-3">
+      <label for="search-element">Notifcation name</label>
+      <input v-model="searchKey" class="form-control" id="search-element" requred/>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th class="col-sm-2">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="product in products | filterBy searchKey in 'name'">
+      <td>
+        <a v-link="{name: 'product', params: {product_id: product.id}}">{{ product.name }}</a>
+      </td>
+      <td>{{ product.description }}</td>
+      <td>
+        {{ product.Date }}
+      </td>
+      <td>
+        <a class="btn btn-default" v-link="{path: '/add-product'}">Reply</a>
+        <a class="btn btn-danger btn-xs" v-link="{name: 'product-delete', params: {product_id: product.id}}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</template>
+
+<template id="add-product">
+  <h2>Send reply</h2>
+  <form v-on:submit="createProduct">
+    <div class="form-group">
+      <label for="add-name">Name</label>
+      <input class="form-control" id="add-name" v-model="product.name" required/>
+    </div>
+    <div class="form-group">
+      <label for="add-description">Description</label>
+      <textarea class="form-control" id="add-description" rows="10" v-model="product.description"></textarea>
+    </div>
+ 
+    <button type="submit" class="btn btn-primary">Send</button>
+    <a v-link="'/'" class="btn btn-default">Cancel</a>
+  </form>
+</template>
+
+<template id="product">
+  <h2>{{ product.name }}</h2>
+  <b>Description: </b>
+  <div>{{ product.description }}</div>
+  <b>details:</b>
+   <div>{{ product.details }}</div>
+  <b>Date:</b>
+  <div>{{ product.Date }}</div>
+  <br/>
+  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+  <a v-link="'/'">Back to Notifications</a>
+</template>
+
+<template id="product-edit">
+  <h2>Edit product</h2>
+  <form v-on:submit="updateProduct">
+    <div class="form-group">
+      <label for="edit-name">Name</label>
+      <input class="form-control" id="edit-name" v-model="product.name" required/>
+    </div>
+    <div class="form-group">
+      <label for="edit-description">Description</label>
+      <textarea class="form-control" id="edit-description" rows="3" v-model="product.description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="edit-Date">Date</label>
+      <input type="number" class="form-control" id="edit-Date" v-model="product.Date"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a v-link="'/'" class="btn btn-default">Cancel</a>
+  </form>
+</template>
+
+<template id="product-delete">
+  <h2>Delete product {{ product.name }}</h2>
+  <form v-on:submit="deleteProduct">
+    <p>The action cannot be undone.</p>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a v-link="'/'" class="btn btn-default">Cancel</a>
+  </form>
+</template>
+
+
+    
+      <!-- /.footer-wrapper -->
+    </div>
+    <!-- /.page-wrapper -->
+        </div>
+      </div>
+    </div>
+    <div class="side-wrapper">
+      <div class="side">
+        <div class="side-inner">
+          <div class="side-user">
+            <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
+            <span class="side-user-avatar-name">
+              <strong>William F. Kane</strong>
+              <span>System administrator</span>
+            </span>
+            <a href="#" class="side-user-avatar-action">
+              <i class="fa fa-cog"></i>
+            </a>
+          </div>
+          <!-- /.side-user -->
+            <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Notification/a></li>
+            <li class="nav-item"><a href="https://" class="nav-link">Sign Out</a></li>
+          </ul>
+          <h3>Stylist Login</h3>
+          <form class="form-dark" method="post" action="?">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Username">
+            </div>
+            <!-- /.form-group -->
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="password">
+            </div>
+            <!-- /.form-group -->
+            <button class="btn btn-primary pull-right" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+      <!-- /.side -->
+    </div>
+    <!-- /.side-wrapper -->
+    <div class="side-overlay"></div>
+    <!-- /.side-overlay -->
+
+
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.3/ng-csv.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.13/vue-router.min.js'></script>
+
+    <script  src="js/notification.js"></script>
+
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/tether.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/chartist.min.js"></script>
+    <script type="text/javascript" src="assets/js/google-map-richmarker.min.js"></script>
+    <script type="text/javascript" src="assets/js/google-map-infobox.min.js"></script>
+    <script type="text/javascript" src="assets/js/google-map-markerclusterer.js"></script>
+    <script type="text/javascript" src="assets/js/google-map.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.inlinesvg.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.affix.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="assets/libraries/slick/slick.min.js"></script>
+    <script type="text/javascript" src="assets/js/nouislider.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.raty.js"></script>
+    <script type="text/javascript" src="assets/js/wNumb.js"></script>
+    <script type="text/javascript" src="assets/js/particles.min.js"></script>
+    <script type="text/javascript" src="assets/js/explorer.js"></script>
+    <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+    <script type="text/javascript">
+      setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
+    </script>
+  </body>
+</html>
