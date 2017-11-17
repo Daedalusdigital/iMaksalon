@@ -1,6 +1,6 @@
 var app = angular.module('loginApp',[]);
-
-app.controller('loginClientController',['$scope','loginService',function($scope,loginService){
+var clientId;
+app.controller('loginClientController',['$scope','loginService','SessionService',function($scope,loginService,SessionService){
         console.log("Loading");
         $scope.clientLogin = function(values){
             var object = angular.toJson({client_username:values.username,client_password:values.password});
@@ -9,11 +9,14 @@ app.controller('loginClientController',['$scope','loginService',function($scope,
             
             loginService.sendLogin(object).then(function(res){
                if(res.data.response=='notfound'){
-                   console.log("User not found");
+                   $scope.result="User Not Found, Please check your details";
                }
                else{
                    console.log(res);
+                   $scope.clientId = res.data[0].id;
+                   SessionService.set("clientId", res.data[0].id);
                }
+               console.log($scope.clientId);
             });
         };
 }]);
@@ -25,4 +28,23 @@ app.factory('loginService',['$http',function($http){
             return promise;
         };
         return service;
+}]);
+
+app.factory('SessionService',[function(){
+    var service={};
+    
+    service.set=function(key,value)
+    {
+       return sessionStorage.setItem(key,value);
+        
+    }
+    service.get=function(key)
+    {
+        return sessionStorage.getItem(key);
+    }
+    service.destroy=function(key)
+    {
+        return sessionStorage.removeItem(key);
+    }
+    return service;
 }]);
