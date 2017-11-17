@@ -981,8 +981,8 @@
           <div class="side-user">
             <span class="avatar"></span>
             <span class="side-user-avatar-name">
-              <strong>Username</strong>
-              <span>{{clientfname}}</span>
+              <strong ng-bind="clientfname"></strong>
+              <span ng-bind="clientSname"></span>
             </span>
             <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
               <i class="fa fa-cog"></i>
@@ -1048,10 +1048,10 @@
 
           var clientId = SessionService.get("clientId");
           var clientName = SessionService.get("clientName");
+          var clientSname = SessionService.get("clientSurname");
           console.log(clientId);
-          alert(clientId);
-          alert(clientName);
           $scope.clientfname = clientName;
+          $scope.clientSname = clientSname;
       }]);
 
       app.factory('SessionService',[function(){

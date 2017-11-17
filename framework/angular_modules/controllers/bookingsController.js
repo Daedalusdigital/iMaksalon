@@ -2,9 +2,10 @@
 
 var app = angular.module('bookingApp',[]);
 
-app.controller("bookingController",['$scope','BookingService','populateServices','populateStylistService', function($scope,BookingService,populateServices,populateStylistService){
+app.controller("bookingController",['$scope','BookingService','populateServices','populateStylistService', 'SessionService', function($scope,BookingService,populateServices,populateStylistService,SessionService){
         $scope.heading = "Bookings";
-        
+        var clientId = SessionService.get("clientId");
+        alert(clientId);
         $scope.makeBooking = function(values){
             
             var object = angular.toJson({booked_service: values.bookedService, stylist_id: values.stylistId, client_id: values.clientId, service_date: values.serviceDate, service_time: values.service_time, service_location: values.serviceLocation});
@@ -53,4 +54,23 @@ app.factory('populateStylistService',['$http',function($http){
             return promise;
         };
         return service;
+}]);
+
+app.factory('SessionService',[function(){
+    var service={};
+    
+    service.set=function(key,value)
+    {
+      return sessionStorage.setItem(key,value);
+        
+    }
+    service.get=function(key)
+    {
+        return sessionStorage.getItem(key);
+    }
+    service.destroy=function(key)
+    {
+        return sessionStorage.removeItem(key);
+    }
+    return service;
 }]);
