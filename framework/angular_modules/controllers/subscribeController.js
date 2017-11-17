@@ -7,16 +7,18 @@ app.controller("subscribeController", ['$scope','SubscribeService',function($sco
     $scope.subscribe = function(values){
         var object = angular.toJson({subscriber_email:values.subscriberEmail, firstname:values.subscriberName , surname:values.subscriberSurname});
         
-        
+        $scope.subscribeForm = false;
         console.log(object);
         
         SubscribeService.sendSubsciption(object).then(function(res){
             if(res.data.response=="successful")
             {
                 $scope.results = "Thank You for subscribing to our news letters";
+                
             }
             else{
                 $scope.results = "You've Already Subscribe to our news letters, Thank You";
+                
             }
         });
     };
