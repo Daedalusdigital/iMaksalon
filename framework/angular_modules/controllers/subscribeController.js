@@ -9,10 +9,12 @@ app.controller("subscribeController", ['$scope','SubscribeService',function($sco
         
         
         console.log(object);
-        
+        $('#preloader').show();
+        setTimeout(function(){ $('#preloader').fadeOut('slow') }, 3000);
         SubscribeService.sendSubsciption(object).then(function(res){
             if(res.data.response=="successful")
             {
+               
                 $scope.results = "Thank You for subscribing to our news letters";
             }
             else{

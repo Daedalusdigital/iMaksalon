@@ -7,9 +7,7 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
     
     $scope.login = function(values){
         var object = angular.toJson({login_username:values.username, login_password:values.password});
-        
-        console.log(object);
-        
+ 
         loginService.sendLogin(object).then(function(res){
             if(res.data.response == "notfound")
             {
@@ -17,9 +15,10 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
             }
             else
             {
+                console.log(res);
                 alert("Successfully Login");
-                $scope.stylistId = res.data[0].id;
-                SessionService.set("stylestID", res.data[0].id);
+                $scope.stylistId = res.data[0].style_id;
+                SessionService.set("stylestID", res.data[0].style_id);
                 window.location.href = "../book-stylist.html";
             }
             console.log($scope.stylistId);
@@ -28,7 +27,7 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
 }]);
 app.controller('viewingController',['$scope','$http','loginService','SessionService', function($scope,$http,loginService,SessionService){
      var stylistIds = SessionService.get("stylestID");
-
+    alert(stylistIds);
      $scope.loadContent = function(){
         var obj = angular.toJson({stylist_id: stylistIds});
         
@@ -53,7 +52,7 @@ app.controller('viewingController',['$scope','$http','loginService','SessionServ
           $http.post("https://prod-18.southcentralus.logic.azure.com:443/workflows/e6a5f9eca53e4eb085d9765bd8bdc995/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VMSIYNHfpk3uCm7wrEr4jRtubaNDxCBc5Z0q4TL5A54",obj)
                   .then(function(response){
                       //$scope.bookings = response.data.records;
-                    console.log( response.data);
+                    console.log(response.data);
                   },function(error){
                       console.log(error);
                   });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" ng-app="registerApp">
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -11,11 +11,9 @@
 function hideURLbar(){ window.scrollTo(0,1); } 
 </script>
 <!-- //for-mobile-apps -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
-<link href="css/mislider.css" rel="stylesheet" type="text/css" />
-<link href="css/mislider-custom.css" rel="stylesheet" type="text/css" />
-<link href="css/font-awesome.css" rel="stylesheet"> 
+
 
 <!--font awesome-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -58,7 +56,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
     }
 </style>
 </head>
-<body ng-app="registerApp" ng-controller="registerUserController">
+<body  ng-controller="registerUserController">
 <div id="wrapper">
 <div id="preloader">
 <div id="loader"></div>
@@ -67,6 +65,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
     <div class="row">
         <div class="col-md-6">
             <img src="../images/imgLogo.png" width="500px;"alt="logo" style="margin-top:20px;"/>
+            <div ng-bind="result" class="text-center" style="color:white"></div>
         </div>
         <div class="col-md-6">
             <form name="bookingForm" ng-submit="clientRegister(obj)">
@@ -78,7 +77,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
                 <input type="text" ng-model="obj.physical_address" placeholder="Physical Address" required/><br>
                 <input type="text" ng-model="obj.client_username" placeholder="Choose Username" required/><span ng-bind="exist" style="color: red;"></span><br>
                 <input type="password" ng-model="obj.client_password" placeholder="Password" required/><br>
-                <input type="password" ng-model="obj.c_password" placeholder="Password Confirm" required/><br>
+               
                 <input  type="submit" value="Register" class="btn btn-success" />
             </form>
             <p ng-bind="result"></h1>
