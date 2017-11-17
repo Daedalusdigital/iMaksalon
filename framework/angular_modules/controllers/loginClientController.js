@@ -15,6 +15,7 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
                    console.log(res);
                    $scope.clientId = res.data[0].clnt_id;
                    SessionService.set("clientId", res.data[0].clnt_id);
+                   SessionService.set("clientName",res.data[0].fname);
                    window.location.href = '../dashboard.html';
                }
                console.log($scope.clientId);

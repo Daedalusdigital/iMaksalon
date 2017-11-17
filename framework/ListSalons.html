@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="listApp">
+    <head>
+        <title>List of Stylists</title>
+        <link rel="shortcut icon" href="#"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-controller="listSalonController">
+        <div ng-view="">
+            <h1 ng-bind="message"></h1>
+            <table>
+                <tr>
+                    <th>Salon Name</th>
+                    <th>Salon Address</th>
+                    <th>Salon Contact</th>
+                </tr>
+                <tr ng-repeat="salon in salonList">
+                    <td>{{salon.salon_name}}</td>
+                    <td>{{salon.physical_address}}</td>
+                    <td>{{salon.contact_number}}</td>
+                </tr>
+            </table>
+        </div>
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/angular-route.js" type="text/javascript"></script>
+        <script src="angular_modules/controllers/listController.js" type="text/javascript"></script>
+    </body>
+</html>

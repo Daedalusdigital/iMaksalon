@@ -975,14 +975,14 @@
     </div>
     <!-- /.page-wrapper -->
 
-    <div class="side-wrapper" ng-app="stylistApp">
+    <div class="side-wrapper" ng-app="stylistApp" ng-controller="stylistController">
       <div class="side">
         <div class="side-inner">
           <div class="side-user">
             <span class="avatar"></span>
             <span class="side-user-avatar-name">
-              <strong>User Name</strong>
-              <span>Surname</span>
+              <strong>Username</strong>
+              <span>{{clientfname}}</span>
             </span>
             <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
               <i class="fa fa-cog"></i>
@@ -996,7 +996,7 @@
             <li class="nav-item"><a href="https://www.imakeapp.com" class="nav-link">Sign Out</a></li>
           </ul>
           <h3>Stylist Login</h3>
-          <form class="form-dark" ng-controller="stylistController">
+          <form class="form-dark">
             <!-- /.side-user
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Username">
@@ -1037,8 +1037,42 @@
     <script type="text/javascript" src="assets/js/particles.min.js"></script>
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+    
     <script type="text/javascript">
+    
       setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
+    </script>
+    <script type="text/javascript">
+      app.controller('stylistController',['$scope','SessionService',function($scope,SessionService){
+          console.log("Working");
+
+          var clientId = SessionService.get("clientId");
+          var clientName = SessionService.get("clientName");
+          console.log(clientId);
+          alert(clientId);
+          alert(clientName);
+          $scope.clientfname = clientName;
+      }]);
+
+      app.factory('SessionService',[function(){
+          var service={};
+          
+          service.set=function(key,value)
+          {
+            return sessionStorage.setItem(key,value);
+              
+          }
+          service.get=function(key)
+          {
+              return sessionStorage.getItem(key);
+          }
+          service.destroy=function(key)
+          {
+              return sessionStorage.removeItem(key);
+          }
+          return service;
+      }]);
+
     </script>
   </body>
 </html>
