@@ -117,7 +117,18 @@
                     <br>
                     <input type="text" ng-model="obj.clientId" placeholder="Client Id" required/><br>
                     <input type="date" ng-model="obj.serviceDate" placeholder="Service Date" required/><br>
-                    <input type="text" ng-model="obj.service_time" placeholder="Service Time" required/><br>
+                    <select ng-model="obj.servservice_timeiceDate">
+                        <option value="" disabled>Select Service Time</option>
+                        <option value="08:00" disabled>08:00</option>
+                        <option value="08:00" disabled>09:00</option>
+                        <option value="08:00" disabled>010:00</option>
+                        <option value="08:00" disabled>11:00</option>
+                        <option value="08:00" disabled>12:00</option>
+                        <option value="08:00" disabled>13:00</option>
+                        <option value="08:00" disabled>14:00</option>
+                        <option value="08:00" disabled>15:00</option>
+                        <option value="08:00" disabled>16:00</option>
+                    </select> 
                     <input type="text" ng-model="obj.serviceLocation" placeholder="Client Address" required/><br>
                     <div class="col-md-6">
                         <input type="submit" value="Submit Booking" class="btn btn-success" />
