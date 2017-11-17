@@ -78,6 +78,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
                 <input type="text" ng-model="obj.physical_address" placeholder="Physical Address" required/><br>
                 <input type="text" ng-model="obj.client_username" placeholder="Choose Username" required/><span ng-bind="exist" style="color: red;"></span><br>
                 <input type="password" ng-model="obj.client_password" placeholder="Password" required/><br>
+                <input type="password" ng-model="obj.c_password" placeholder="Password Confirm" required/><br>
                 <input  type="submit" value="Register" class="btn btn-success" />
             </form>
             <h1 ng-bind="result"></h1>

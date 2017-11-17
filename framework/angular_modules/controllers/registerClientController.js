@@ -4,18 +4,22 @@ app.controller('registerUserController',['$scope','registerService',function($sc
         console.log("Loading");
         $scope.clientRegister = function(values){
             var object = angular.toJson({firstname:values.firstname, surname:values.surname, contact_number:values.contact_number, email:values.email_address, physical_address:values.physical_address, client_password:values.client_password, client_username:values.client_username});
-            
-            console.log(object);
-            alert(object);
-            registerService.sendRegister(object).then(function(res){
-               if(res.data.response=='exist'){
-                   $scope.exist = "Username Already Taken, Please choose another one";
-               }
-               else{
-                   $scope.result = "You have succcessfully registered";
-                   console.log(res);
-               }
-            });
+            if(values.client_password == values.c_password){
+                console.log(object);
+                alert(object);
+                registerService.sendRegister(object).then(function(res){
+                   if(res.data.response=='exist'){
+                       $scope.exist = "Username Already Taken, Please choose another one";
+                   }
+                   else{
+                       $scope.result = "You have succcessfully registered";
+                       console.log(res);
+                   }
+                });
+            }else{
+                $scope.result = "password does not match";
+            }
+           
         };
 }]);
 
