@@ -56,7 +56,7 @@ html,
 }
 
 .calendar_right {
-  background: #00ad79;
+  background: #00cf96;
   width: 350px;
   height: 415px;
   border-top-right-radius: 5px;
@@ -117,7 +117,7 @@ html,
 }
 
 .calendar_right select {
-  background: #007fb0;
+  background: #00ad73;
   border: none;
   padding: 1.2em;
   outline: none;
@@ -183,7 +183,7 @@ html,
   padding: 0.95em !important;
   color: #00A8E8 !important;
   z-index: 0;
-  box-shadow: 10px 10px 5px #009dd9;
+  box-shadow: 10px 10px 5px #00ad79;
   -webkit-animation: bounce-button-in 0.45s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   animation: bounce-button-in 0.45s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
