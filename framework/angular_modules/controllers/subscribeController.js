@@ -3,8 +3,7 @@
 var app = angular.module('subscribeApp',[]);
 
 app.controller("subscribeController", ['$scope','SubscribeService',function($scope,SubscribeService){
-    $scope.heading = "Subscribe";
-    
+    console.log("loaded");
     $scope.subscribe = function(values){
         var object = angular.toJson({subscriber_email:values.subscriberEmail, firstname:values.subscriberName , surname:values.subscriberSurname});
         
@@ -12,14 +11,12 @@ app.controller("subscribeController", ['$scope','SubscribeService',function($sco
         console.log(object);
         
         SubscribeService.sendSubsciption(object).then(function(res){
-            if(res.data.response=="exist")
-            {
-                alert(res.data.response);
-                $scope.results = "You've Already Subscribe to our news letters, Thank You";
-            }
             if(res.data.response=="successful")
             {
                 $scope.results = "Thank You for subscribing to our news letters";
+            }
+            else{
+                $scope.results = "You've Already Subscribe to our news letters, Thank You";
             }
         });
     };

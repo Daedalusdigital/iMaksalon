@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="assets/libraries/slick/slick.css" rel="stylesheet" type="text/css">
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="images/icon.png" rel="shortcut icon" type="image/png">
     <link href="assets/libraries/slick/slick-theme.css" rel="stylesheet" type="text/css">
     <link href="assets/css/trackpad-scroll-emulator.css" rel="stylesheet" type="text/css">
@@ -17,26 +16,28 @@
     <link href="assets/css/explorer.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets//favicon.png">
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js'></script>
     <link href="css/preloader.css" rel="stylesheet" type="text/css">
     <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
     <link href="css/responsive.css" rel="stylesheet" type="text/css">
     <link href="css/loader.css" rel="stylesheet" type="text/css">
+    <link href="css/modal.css" rel="stylesheet" type="text/css">
+    <link href="css/modalss.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js'></script>
     <script src='js/index.js'></script>
     <script scr='js/stylistLoginController.js'></script>
     <title>Dashboard</title>
   </head>
   <body class="" ng-app="places">
-      <div id="preloader" >
+      <div id="preloader">
           <div id="loader"></div>
         </div>
-    <div class="page-wrapper" >
+    <div class="page-wrapper">
       <div class="header-wrapper header-transparent header-light">
         <div class="header">
           <div class="container">
-            <div class="header-inner" id="btnAddBooking" style="display:none">
+            <div class="header-inner">
               <div class="navigation-toggle toggle">
                 <span></span>
                 <span></span>
@@ -60,7 +61,7 @@
               <div class="header-actions">
                 <ul class="nav nav-pills">
                   <li class="nav-item">
-                    <a href="framework/booking.html" class="nav-link modal-submit" >
+                    <a href="https://www.imakapp.com/addBooking.html" class="nav-link modal-submit" >
                       <i class="fa fa-plus"></i> <span>Add Booking</span>
                     </a>
                   </li>
@@ -85,13 +86,13 @@
               <div class="container" >
                 <div class="center" ng-controller="PlacesSearchController as search">
                   <h1 class="hero-image-content-title-simple float-none">Durban Kwazulu-Natal</h1>
-                  <p class="float-none">Search South Africas Play Ground For Beauty Salons And Stylist, As well as products.</p>
+                  <p class="float-none">Search South Africa's play ground for Beauty Salons and Stylist, As well as products.</p>
                   <form method="post" action="?">
                     <div class="row justify-content-sm-center">
                       <div class="col-sm-4 col-xs-12">
                         <div class="input-group">
-                          <span  style="width:20%;height:43px;margin-top:1px;" class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
-                          <input style="margin-left:0px;" type="text" class="form-control no-border form-control-xl" ej-search-places-input
+                          <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
+                          <input type="text" class="form-control no-border form-control-xl" ej-search-places-input
                                 search-results-limit="10"
                                 complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
                         </div>
@@ -108,7 +109,7 @@
                                           <span class="result-vicinity">{{ result.vicinity }}</span>
                                      </div>
                                      </li>
-                                </ul></div>
+                                </ul>
                               <div ng-show="queryInProgress" class="ball-clip-rotate">
     </script> 
                         <!-- /.form-group -->
@@ -133,39 +134,39 @@
           </div>
           <!-- /.hero-image-inner -->
           <div class="hero-image-categories">
-            <a href="listings-google-map.html" class="hero-image-category">
-              <i class="fa fa-map-o"></i>
-              <strong>Map</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="salons.html" class="hero-image-category">
-              <i class="fa fa-building"></i>
-              <strong>Salons</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="stylist.html" class="hero-image-category">
-              <i class="fa fa-users"></i>
-              <strong>Stylists</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="framework/views.html#!/bookings" class="hero-image-category">
-              <i class="fa fa-calendar-check-o"></i>
-              <strong>Bookings</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="framework/views.html#!/gallery" class="hero-image-category">
-              <i class="fa fa-picture-o"></i>
-              <strong>Gallery</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="framework/views.html#!/notifications" class="hero-image-category">
-              <i class="fa fa-bell-o"></i>
-              <strong>Notification</strong>
-            </a><!-- /.hero-image-category -->
-            <a href="framework/views.html#!/reports" class="hero-image-category">
-              <i class="fa fa-frown-o"></i>
-              <strong>Report</strong>
-            </a><!-- /.hero-image-category -->
+              <a href="listings-google-map.html" class="hero-image-category">
+                <i class="fa fa-map-o"></i>
+                <strong>Map</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="framework/views.html#!/salons" class="hero-image-category">
+                <i class="fa fa-building"></i>
+                <strong>Salons</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="stylist.html" class="hero-image-category">
+                <i class="fa fa-users"></i>
+                <strong>Stylists</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="framework/views.html#!/bookings" class="hero-image-category">
+                <i class="fa fa-calendar-check-o"></i>
+                <strong>Bookings</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="framework/views.html#!/gallery" class="hero-image-category">
+                <i class="fa fa-product-hunt"></i>
+                <strong>Produts</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="pricelist.html" class="hero-image-category">
+                <i class="fa fa-money"></i>
+                <strong>Pricelist</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="framework/views.html#!/reports" class="hero-image-category">
+                <i class="fa fa-frown-o"></i>
+                <strong>Report</strong>
+              </a><!-- /.hero-image-category -->
+            </div>
+            <!-- /.hero-image-categories -->
           </div>
-          <!-- /.hero-image-categories -->
+          <!-- /.hero-image -->
         </div>
-        <!-- /.hero-image -->
-      </div>
       <!-- /.hero-image-wrapper -->
       <div class="main-wrapper">
         <div class="main">
@@ -173,7 +174,7 @@
             <div class="container">
               <div class="content">
                 <div class="page-header">
-                  <h2>iMakapp avalible at these Locations</h2>
+                  <h2>iMakApp available at these locations</h2>
                   <p>See the most recent additions available in these provinces. All additions are verified by our editing staff.</p>
                 </div>
                 <div class="row">
@@ -222,15 +223,17 @@
                 </div>
                 <!-- /.row -->
                 <div class="block mb0">
+                  <center>
                     <div class="page-header">
-                      <h2>Imakapp Articles and Promotions For Your Area</h2>
-                      <p>Easily assign categories &amp; tags to approved listings and then display categories with icons for better user experience.</p>
+                      <h2>iMakApp Articles and Promotions</h2>
+                      <p>News and promotions based on the iMakApp salons near you!</p>
                     </div>
                      <div class="main__wrapper">
       <div class="grid">
           <div class="card">
             <div class="card__image">
               <img src="https://customisepage.blob.core.windows.net/images/608.jpeg" alt="">
+
               <div class="card__overlay card__overlay--indigo">
                 <div class="card__overlay-content">
                   <ul class="card__meta">
@@ -238,7 +241,7 @@
                     <li><a href="#0"><i class="fa fa-clock-o"></i> 2 min ago</a></li>
                   </ul>
 
-                  <a href="#0" class="card__title">The Imakapp Finally availible on Android</a>
+                  <a href="#0" class="card__title">The iMakApp finally Available on Android</a>
 
                   <ul class="card__meta card__meta--last">
                     <li><a href="#0"><i class="fa fa-user"></i> Notification</a></li>
@@ -310,7 +313,7 @@
                     <li><a href="#0"><i class="fa fa-clock-o"></i> 5 days ago</a></li>
                   </ul>
 
-                  <a href="#0" class="card__title">New Service coming to Imakapp</a>
+                  <a href="#0" class="card__title">New Service coming to iMakApp</a>
 
                   <ul class="card__meta card__meta--last">
                     <li><a href="#0"><i class="fa fa-user"></i> Notification</a></li>
@@ -334,7 +337,7 @@
                     <li><a href="#0"><i class="fa fa-clock-o"></i> 1 days ago</a></li>
                   </ul>
 
-                  <a href="#0" class="card__title">What hair Products Should you use and why</a>
+                  <a href="#0" class="card__title">What hair products should you use and why</a>
 
                   <ul class="card__meta card__meta--last">
                     <li><a href="#0"><i class="fa fa-user"></i> African Hair Salons</a></li>
@@ -361,7 +364,7 @@
                               <span class="listing-box-featured">Featured</span>
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-1.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Salon</span>
+                                <span class="listing-box-category tag">Durban</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -373,37 +376,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">Salon @800</a></h2>
                                 <h3>500 Peter Mokaba Ridge, Essenwood, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
                                   <dd>15 </dd>
-                                  <dt>Nail & Makeup Artist</dt>
+                                  <dt>Nail &amp; Makeup Artist</dt>
                                   <dd>10 </dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="view">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -417,7 +403,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-24.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Beauty Salon</span>
+                                <span class="listing-box-category tag">Greyville</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star-o"></i>
@@ -429,37 +415,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">Beauty and Balance</a></h2>
                                 <h3>G15, 10 Mathews Meyiwa Rd, Greyville, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
                                   <dd>24</dd>
-                                  <dt>Nail & Makeup Artist</dt>
+                                  <dt>Nail &amp; Makeup Artist</dt>
                                   <dd>15</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -471,13 +440,9 @@
                         <div class="col">
                           <div class="listing-box">
                             <div class="listing-box-inner">
-                              <div class="listing-box-info">
-                                Currently viewing <strong>8</strong> people.
-                              </div>
-                              <!-- /.listing-box-info -->
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-2.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Hair Salon</span>
+                                <span class="listing-box-category tag">Durban</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -489,37 +454,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">Bespoke Hair</a></h2>
                                 <h3>892 Umgeni road, Lion Match Office Park, Windermere, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
                                   <dd>55</dd>
-                                  <dt>Nail & Makeup Artists</dt>
+                                  <dt>Nail &amp; Makeup Artists</dt>
                                   <dd>63</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -533,7 +481,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-8.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Hair & Beauty</span>
+                                <span class="listing-box-category tag">Durban</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -543,39 +491,22 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Sisters Hair & Beauty Salon</a></h2>
+                                <h2><a href="listings-detail.html">Sisters Hair &amp; Beauty Salon</a></h2>
                                 <h3>Shop No.3, 237 O R Tambo Parade, North Beach, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
                                   <dd>45</dd>
-                                  <dt>Nail & Makeup Artists</dt>
+                                  <dt>Nail &amp; Makeup Artists</dt>
                                   <dd>68</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -587,13 +518,9 @@
                         <div class="col">
                           <div class="listing-box">
                             <div class="listing-box-inner">
-                              <div class="listing-box-info">
-                                Most visited monthly trendsetter.
-                              </div>
-                              <!-- /.listing-box-info -->
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-2.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Hair Designer</span>
+                                <span class="listing-box-category tag">Musgrave</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -605,37 +532,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">B Scene Hair Designs by Donne</a></h2>
                                 <h3>234 St. Thomas Rd, Musgrave, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
                                   <dd>70</dd>
-                                  <dt>Nail & Makeup Artists</dt>
+                                  <dt>Nail &amp; Makeup Artists</dt>
                                   <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -649,7 +559,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-4.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Beauty Salon</span>
+                                <span class="listing-box-category tag">Durban</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -661,37 +571,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">Hair @ Mel's</a></h2>
                                 <h3>2 Interstate Ave, Umgeni Business Park, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
-                                  <dd>84</dd>
-                                  <dt>Nail & Makeup Artists</dt>
-                                  <dd>100</dd>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -705,7 +598,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-4.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Hair Salon</span>
+                                <span class="listing-box-category tag">Springfield</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -717,37 +610,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">Salon Lisa</a></h2>
                                 <h3>Shop No. 269, Inanda Rd, Springfield, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Hair Stylist</dt>
-                                  <dd>120</dd>
-                                  <dt>Nail & MakeUp Artists</dt>
-                                  <dd>98</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -761,7 +637,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-3.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Hair Salon</span>
+                                <span class="listing-box-category tag">Durban</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -773,37 +649,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">Salon Nishani</a></h2>
                                 <h3>247 Wandsbeck Rd, Palmiet, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Hair Styists</dt>
-                                  <dd>89</dd>
-                                  <dt>Nail & MakeUp Artists</dt>
-                                  <dd>68</dd>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -815,13 +674,9 @@
                         <div class="col">
                           <div class="listing-box">
                             <div class="listing-box-inner">
-                              <div class="listing-box-info">
-                                <strong>120</strong> people already purchased.
-                              </div>
-                              <!-- /.listing-box-info -->
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-16.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Beauty Salon</span>
+                                <span class="listing-box-category tag">Durban Central</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star-o"></i>
@@ -833,37 +688,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">Heaven On Earth Beauty Salon</a></h2>
                                 <h3>1st Floor, 3rd Rock Entrance, Smith Street, 494, Durban Central</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
-                                  <dd>80</dd>
-                                  <dt>Nail & MakeUp Artists</dt>
-                                  <dd>69</dd>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -877,7 +715,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-15.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Beauty Salon</span>
+                                <span class="listing-box-category tag">Berea</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -889,37 +727,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">The Beauty Bar</a></h2>
                                 <h3>417 Lilian Ngoyi Rd, Windermere, Berea</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
-                                  <dt>Hair Stylists</dt>
-                                  <dd>79</dd>
-                                  <dt>Nail & MakeUp Artists</dt>
+                                 <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
                                   <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -931,13 +752,9 @@
                         <div class="col">
                           <div class="listing-box">
                             <div class="listing-box-inner">
-                              <div class="listing-box-info">
-                                Great price for first <strong>10</strong> buyers.
-                              </div>
-                              <!-- /.listing-box-info -->
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-20.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Hair Salon</span>
+                                <span class="listing-box-category tag">Durban</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -949,37 +766,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">Happiness Hair Salon</a></h2>
                                 <h3>Shop No. 9, 14 Sylvester Ntuli Rd, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
-                                  <dd>98</dd>
-                                  <dt>Nail & MakeUp</dt>
-                                  <dd>84</dd0>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -993,7 +793,7 @@
                             <div class="listing-box-inner">
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-22.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Salon</span>
+                                <span class="listing-box-category tag">Berea</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star-o"></i>
@@ -1005,37 +805,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">Phophotha</a></h2>
                                 <h3>109B, Musgrave Centre, 115 Musgrave Rd, Berea, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
-                                  <dd>95</dd>
-                                  <dt>Nail & MakeUp Artists</dt>
-                                  <dd>67</dd>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -1050,7 +833,7 @@
                               <span class="listing-box-featured">Featured</span>
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-13.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Salon</span>
+                                <span class="listing-box-category tag">Bellair</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star"></i>
@@ -1062,37 +845,20 @@
                               <div class="listing-box-content">
                                 <h2><a href="listings-detail.html">Sixtythree Hairstudio</a></h2>
                                 <h3>255 Wakesleigh Rd, Bellair, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
-                                  <dd>125</dd>
-                                  <dt>Nails & MakeUp Artists</dt>
-                                  <dd>Diesel</dd>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -1107,7 +873,7 @@
                               <span class="listing-box-featured">Featured</span>
                               <a href="listings-detail.html" class="listing-box-image">
                                 <span class="listing-box-image-content" style="background-image: url(https://customisepage.blob.core.windows.net/images/listing-1.jpg)"></span><!-- /.listing-box-image-content -->
-                                <span class="listing-box-category tag">Beauty Salon</span>
+                                <span class="listing-box-category tag">Montclair</span>
                                 <span class="listing-box-rating">
                                   <i class="fa fa-star"></i>
                                   <i class="fa fa-star-o"></i>
@@ -1117,39 +883,22 @@
                                 </span>
                               </a><!-- /.listing-box-image -->
                               <div class="listing-box-content">
-                                <h2><a href="listings-detail.html">Imvelo Beauty Square Hair Salon & Nail bar</a></h2>
+                                <h2><a href="listings-detail.html">Imvelo Beauty Square Hair Salon &amp; Nail bar</a></h2>
                                 <h3>Shop 39, Montclair Mall, Montclair, Durban</h3>
-                                <div class="actions">
-                                  <div class="actions-button">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <!-- /.actions-button -->
-                                  <ul class="actions-list">
-                                    <li><a href="#">Add to compare</a></li>
-                                    <li><a href="#">Add to favorites</a></li>
-                                    <li><a href="#">Report listing</a></li>
-                                  </ul>
-                                  <!-- /.actions-list -->
-                                </div>
-                                <!-- /.actions -->
                               </div>
                               <!-- /.listing-box-content -->
                               <div class="listing-box-attributes">
                                 <dl>
                                   <dt>Hair Stylists</dt>
-                                  <dd>84</dd>
-                                  <dt>Nail & MakeUp Artists</dt>
-                                  <dd>78</dd>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
                                 </dl>
                               </div>
                               <!-- /.listing-box-attributes -->
                               <div class="listing-box-attributes-icons">
                                 <ul>
-                                  <li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
-                                  <li><i class="fa fa-shower"></i> <span>2</span></li>
-                                  <li><i class="fa fa-car"></i> <span>1</span></li>
+                                  <li><button type="View">View</button></li>
                                 </ul>
                               </div>
                               <!-- /.listing-box-attributes -->
@@ -1174,7 +923,7 @@
         <!-- /.main -->
       </div>
       <!-- /.main-wrapper -->
-      <div class="footer-wrapper">
+      <div class="footer-wrapper footer divider parallax layer-overlay overlay-dark-9" data-bg-img="images/bg/bg7.jpg" data-parallax-ratio="0.7">
         <div class="footer">
           <div class="footer-inner">
             <div class="container">
@@ -1189,7 +938,7 @@
                 </div>
                 <!-- /.col-* -->
                 <div class="col-lg-4">
-                  <div class="widget">
+                  <div class="widget dark">
                     <h3>Best deals in your inbox</h3>
                     <p>
                       Join our newsletter for the most recent information.
@@ -1201,12 +950,12 @@
                       <div class="form-group clearfix">
                         <button type="submit" class="btn btn-primary pull-right">Join Newsletter</button>
                       </div>
-                      <div class="widget">
+                      <div class="widget dark">
                 
                     <ul class="social">
                       <li><a href="https://www.facebook.com/ImakApp/"><i class="fa fa-facebook"></i></a></li>
                       <li><a href="https://twitter.com/ImakApp"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google"></i></a></li>
+                      <li><a href="#https://www.instagram.com/imakapp"/><i class="fa fa-instagram"></i></a></li>
                     </ul>
                   </div>
                       <!-- /.form-group -->
@@ -1227,50 +976,52 @@
       <!-- /.footer-wrapper -->
     </div>
     <!-- /.page-wrapper -->
-    
-    <div class="side-wrapper">
-        <div class="side">
-          <div class="side-inner">
-            <div class="side-user">
-              <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
-              <span class="side-user-avatar-name">
-                <strong>William F. Kane</strong>
-                <span>System administrator</span>
-              </span>
-              <a href="#" class="side-user-avatar-action">
-                <i class="fa fa-cog"></i>
-              </a>
-            </div>
-            <!-- /.side-user -->
-              <ul class="nav flex-column">
-              <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
-              <li class="nav-item"><a href="https://" class="nav-link">Sign Out</a></li>
-            </ul>
-            <h3>Stylist Login</h3>
-            <form class="form-dark" method="post" action="?">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Username">
-              </div>
-              <!-- /.form-group -->
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="password">
-              </div>
-              <!-- /.form-group -->
-              <button class="btn btn-primary pull-right" type="submit">Login</button>
-            </form>
+
+    <div class="side-wrapper" ng-app="stylistApp">
+      <div class="side">
+        <div class="side-inner">
+          <div class="side-user">
+            <span class="avatar"></span>
+            <span class="side-user-avatar-name">
+              <strong>User Name</strong>
+              <span>Surname</span>
+            </span>
+            <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
+              <i class="fa fa-cog"></i>
+            </a>
           </div>
-          <!-- /.side-inner -->
+          <!-- /.side-user -->
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Notification</a></li>
+            <li class="nav-item"><a href="https://www.imakeapp.com" class="nav-link">Sign Out</a></li>
+          </ul>
+          <h3>Stylist Login</h3>
+          <form class="form-dark" ng-controller="stylistController">
+            <!-- /.side-user
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Username">
+            </div>
+            /.form-group
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="password">
+            </div> -->
+            <!-- /.form-group -->
+            <button class="btn btn-primary pull-right" type="submit"><a href="framework/stylistLogin.html">Login</a></button>
+          </form>
         </div>
-          <!-- /.side-inner -->
-        </div>
+        <!-- /.side-inner -->
+      </div>
       <!-- /.side -->
     </div>
     <!-- /.side-wrapper -->
     <div class="side-overlay"></div>
+  </p>
+</div>
+</div>
+</div>
     <!-- /.side-overlay -->
- 
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
     <script type="text/javascript" src="assets/js/chartist.min.js"></script>
@@ -1289,8 +1040,7 @@
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
     <script type="text/javascript">
-
-      setTimeout(function(){ $('#preloader').fadeOut('slow');$('#btnAddBooking').show(); }, 2000);
+      setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
     </script>
   </body>
 </html>

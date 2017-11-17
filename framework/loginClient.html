@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="loginApp">
+    <head>
+        <title>Login</title>
+        <link rel="shortcut icon" href="#"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-controller="loginClientController">
+        <div ng-view="">
+            <form name="bookingForm" ng-submit="clientLogin(obj)">
+                <input type="text" ng-model="obj.username" placeholder="Username" required/><br>
+                <input type="password" ng-model="obj.password" placeholder="Password" required/><br>
+                <input  type="submit" value="Login" class="btn btn-success" />
+            </form>
+        </div>
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/angular-route.js" type="text/javascript"></script>
+        <script src="angular_modules/controllers/loginClientController.js" type="text/javascript"></script>
+    </body>
+</html>
