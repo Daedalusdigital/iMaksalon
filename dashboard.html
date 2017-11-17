@@ -975,14 +975,14 @@
     </div>
     <!-- /.page-wrapper -->
 
-    <div class="side-wrapper" ng-app="stylistApp" ng-controller="stylistController">
+    <div class="side-wrapper" ng-app="stylistApp">
       <div class="side">
         <div class="side-inner">
           <div class="side-user">
             <span class="avatar"></span>
             <span class="side-user-avatar-name">
-              <strong ng-bind="clientfname"></strong>
-              <span ng-bind="clientSname"></span>
+              <strong>User Name</strong>
+              <span>Surname</span>
             </span>
             <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
               <i class="fa fa-cog"></i>
@@ -996,7 +996,7 @@
             <li class="nav-item"><a href="https://www.imakeapp.com" class="nav-link">Sign Out</a></li>
           </ul>
           <h3>Stylist Login</h3>
-          <form class="form-dark">
+          <form class="form-dark" ng-controller="stylistController">
             <!-- /.side-user
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Username">
@@ -1009,16 +1009,23 @@
             <button class="btn btn-primary pull-right" type="submit"><a href="framework/stylistLogin.html">Login</a></button>
           </form>
         </div>
+      </div>
+    </div>
         <!-- /.side-inner -->
       </div>
       <!-- /.side -->
     </div>
     <!-- /.side-wrapper -->
-    <div class="side-overlay"></div>
-  </p>
+    
+  
 </div>
 </div>
 </div>
+</p>
+</div>
+</div>
+</div>
+<div class="side-overlay"></div>
     <!-- /.side-overlay -->
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
@@ -1029,7 +1036,7 @@
     <script type="text/javascript" src="assets/js/jquery.inlinesvg.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.affix.js"></script>
     <script type="text/javascript" src="assets/js/jquery.scrollTo.js"></script>
-       <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/libraries/slick/slick.min.js"></script>
     <script type="text/javascript" src="assets/js/nouislider.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.raty.js"></script>
@@ -1037,42 +1044,8 @@
     <script type="text/javascript" src="assets/js/particles.min.js"></script>
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
-    
     <script type="text/javascript">
-    
       setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
-    </script>
-    <script type="text/javascript">
-      app.controller('stylistController',['$scope','SessionService',function($scope,SessionService){
-          console.log("Working");
-
-          var clientId = SessionService.get("clientId");
-          var clientName = SessionService.get("clientName");
-          var clientSname = SessionService.get("clientSurname");
-          console.log(clientId);
-          $scope.clientfname = clientName;
-          $scope.clientSname = clientSname;
-      }]);
-
-      app.factory('SessionService',[function(){
-          var service={};
-          
-          service.set=function(key,value)
-          {
-            return sessionStorage.setItem(key,value);
-              
-          }
-          service.get=function(key)
-          {
-              return sessionStorage.getItem(key);
-          }
-          service.destroy=function(key)
-          {
-              return sessionStorage.removeItem(key);
-          }
-          return service;
-      }]);
-
     </script>
   </body>
 </html>
