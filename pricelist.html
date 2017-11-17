@@ -57,10 +57,10 @@
                          </ul> 
                     </li>
                     <li class="nav-item">
-                      <a href="bookings.html" class="nav-link ">Bookings</a>
+                      <a href="#.html" class="nav-link ">Products</a>
                     </li>
                     <li class="nav-item ">
-                      <a href="gallery.html" class="nav-link ">Gallery</a>
+                      <a href="pricelist.html" class="nav-link ">Pricelist</a>
                       <!-- /.mega-menu -->
                     </li>
                     <li class="nav-item ">
@@ -129,9 +129,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat='reg in datos'>
+            <tr ng-repeat='reg in data1'>
               <td>{{reg.id}}</td>
-              <td>{{reg.Name}}</td>
+              <td>{{reg.name}}</td>
               <td>{{reg.service}}</td>
               <td>{{reg.price}}</td>
               <td>{{reg.availability}}</td>
@@ -140,7 +140,7 @@
         </table>
       </div>
     </div><br>
-    <button type="button" class="btn btn-default" ng-csv="datos" filename="Prices.csv" csv-header="['Id', 'Name', 'Service', 'Price', 'Availability']" charset="utf-8"><span class="glyphicon glyphicon-download-alt">&nbsp;</span>Download Price Table</button>
+    <button type="button" class="btn btn-default" ng-csv="data1" filename="Prices.csv" csv-header="['Id', 'Name', 'Service', 'Price', 'Availability']" charset="utf-8"><span class="glyphicon glyphicon-download-alt">&nbsp;</span>Download Price Table</button>
     
     <br>
     <p>
@@ -161,40 +161,7 @@
         <!-- /.main -->
       </div>
       <!-- /.main-wrapper -->
-      <div class="footer-wrapper">
-        <div class="footer">
-          <div class="footer-inner">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="widget">
-                    <h3>
-                      <img src="assets/img/logo.svg" class="svg" alt="Home">
-                    </h3>
-                    
-                    <ul class="social">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- /.col-* -->
-                
-                  <!-- /.widget -->
-                </div>
-                <!-- /.col-* -->
-          
-                <!-- /.col-* -->
-              </div>
-              <!-- /.row -->
-            </div>
-            <!-- /.container -->
-          </div>
-          <!-- /.footer-inner -->
-        </div>
-        <!-- /.footer -->
-      </div>
+      
       <!-- /.footer-wrapper -->
     </div>
     <!-- /.page-wrapper -->
@@ -207,8 +174,8 @@
           <div class="side-user">
             <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
             <span class="side-user-avatar-name">
-              <strong>William F. Kane</strong>
-              <span>System administrator</span>
+              <strong></strong>
+              <span></span>
             </span>
             <a href="#" class="side-user-avatar-action">
               <i class="fa fa-cog"></i>
@@ -217,21 +184,22 @@
           <!-- /.side-user -->
             <ul class="nav flex-column">
             <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Customer Support</a></li>
-            <li class="nav-item"><a href="https://" class="nav-link">Sign Out</a></li>
+            <li class="nav-item"><a href="bookings.html" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="notification.html" class="nav-link">Notification</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link">Sign Out</a></li>
           </ul>
-          <h3>Stylist Login</h3>
-          <form class="form-dark" method="post" action="?">
+       <h3>Stylist Login</h3>
+          <form class="form-dark" ng-controller="stylistController">
+            <!-- /.side-user
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Username">
             </div>
-            <!-- /.form-group -->
+            /.form-group
             <div class="form-group">
               <input type="password" class="form-control" placeholder="password">
-            </div>
+            </div> -->
             <!-- /.form-group -->
-            <button class="btn btn-primary pull-right" type="submit">Login</button>
+            <button class="btn btn-primary pull-right" type="submit"><a href="framework/stylistLogin.html">Login</a></button>
           </form>
         </div>
       </div>
