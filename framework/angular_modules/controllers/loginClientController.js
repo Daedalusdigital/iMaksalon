@@ -13,8 +13,8 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
                }
                else{
                    console.log(res);
-                   $scope.clientId = res.data[0].id;
-                   SessionService.set("clientId", res.data[0].id);
+                   $scope.clientId = res.data[0].clnt_id;
+                   SessionService.set("clientId", res.data[0].clnt_id);
                }
                console.log($scope.clientId);
             });
