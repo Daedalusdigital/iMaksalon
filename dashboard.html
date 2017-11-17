@@ -88,7 +88,7 @@
                   <p class="float-none">Search South Africas Play Ground For Beauty Salons And Stylist, As well as products.</p>
                   <form method="post" action="?">
                     <div class="row justify-content-sm-center">
-                      <div class="col-sm-4">
+                      <div class="col-sm-4 col-xs-12">
                         <div class="input-group">
                           <span  style="width:20%;height:43px;margin-top:1px;" class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
                           <input style="margin-left:0px;" type="text" class="form-control no-border form-control-xl" ej-search-places-input
@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="row">
                                       <br><br>
-                                      <div class="search-places-results" ng-show="ngModel">
+                                      <div  style="margin-left:-300px;width:400px;margin-top:10px;" class="search-places-results" ng-show="ngModel">
                                       <ul>
                                         <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
                                     <div>
@@ -109,14 +109,13 @@
                                      </div>
                                      </li>
                                 </ul></div>
-                              </div>
                               <div ng-show="queryInProgress" class="ball-clip-rotate">
     </script> 
                         <!-- /.form-group -->
                       </div>
 
                       <!-- /.col-* -->
-                      <div class="col-sm-2">
+                      <div class="col-sm-2 col-xs-12">
                         <button type="submit" ng-click="search.go() " class="btn btn-primary btn-xl">
                           <i class="fa fa-search" ></i> Search
                         </button>
