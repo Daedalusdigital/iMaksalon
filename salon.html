@@ -728,7 +728,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form method="post" action="?" class="mb80">
+            <form method="post" action="?" class="mb80" ng-controller='bookingController'>
              
               <fieldset>
                 <legend>Booking Information</legend>
@@ -736,8 +736,14 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Stylist</label>
-                      <select class="form-control">
-                        <option value="">User</option>
+                      <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.firstname for stylist in stylistList">
+                          <option value="" disabled>Select Service</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Service</label>
+                      <select class="form-control" ng-model="obj.bookedService" ng-options="service.service_id as service.service_name for service in serviceList">
+                          <option value="" disabled>Select Service</option>
                       </select>
                     </div>
                     <div class="form-group">
