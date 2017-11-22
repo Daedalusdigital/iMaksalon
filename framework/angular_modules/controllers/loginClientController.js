@@ -23,7 +23,7 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
             });
         };
 }]);
-app.controller('viewingController',['$scope','SessionService',function($scope,SessionService){
+app.controller('viewingController',['$scope','$http','SessionService',function($scope,$http,SessionService){
     var clientIds = SessionService.get("clientId");
     var clientName = SessionService.get("clientName");
     var clientSname = SessionService.get("clientSurname");
@@ -32,8 +32,8 @@ app.controller('viewingController',['$scope','SessionService',function($scope,Se
     $scope.clientSnames = clientSname;
     $scope.loadContent = function(){
        var obj = angular.toJson({client_id: clientIds});
-       
-      $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
+       alert("Loaded");
+      $http.post("https://prod-11.southcentralus.logic.azure.com:443/workflows/11d6344af2e5400f8165a0f49d50b813/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=5HU7C4ioqfeR9gkRFjoEx1zGxnDLnfVY-JN7d74Sr50",obj)
           .then(function(response){
               //$scope.bookings = response.data.records;
             $scope.bookinglist = response.data;
