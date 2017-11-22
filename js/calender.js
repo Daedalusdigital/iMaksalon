@@ -3,9 +3,32 @@
 
     app.controller('calendarController', calendarController);
    
-    app.controller('bookingController', ['$scope', 'populateStylistService','populateServices','SessionService',function($scope,populateStylistService,populateServices,SessionService){
+    app.controller('bookingController', ['$scope', 'BookingService', 'populateStylistService','populateServices','SessionService',function($scope,BookingService,populateStylistService,populateServices,SessionService){
         console.log("Working");
 
+        var clientId = SessionService.get("clientId");
+        var clientName = SessionService.get("clientName");
+        var clientSname = SessionService.get("clientSurname");
+
+        alert(clientId);
+        $scope.clientid = clientId;
+        $scope.clientname = clientName;
+        $scope.clientsname = clientSname;
+        $scope.makeBooking = function(){
+            alert("Clicked");
+            // var object = angular.toJson({booked_service: values.bookedService, stylist_id: values.stylistId, client_id: clientId, service_date: values.serviceDate, service_time: values.service_time, service_location: values.serviceLocation});
+           
+            // console.log(object);
+            
+            // BookingService.sendBooking(object).then(function(res){
+            //    if(res.data.response=='1'){
+            //        $scope.results = "You've booked successfully";
+            //    }
+            //    else{
+            //        $scope.results = "Booking failed, please check your details";
+            //    }
+            // });
+        };
         
         populateStylistService.getStylists().then(function(res){
             $scope.stylistList = res.data;
@@ -15,6 +38,15 @@
             $scope.serviceList = res.data;
             console.log(res.data);
         });
+    }]);
+
+    app.factory('BookingService',['$http',function($http){
+          var service={};
+          service.sendBooking=function(object){
+              var promise=$http.post('https://prod-07.southcentralus.logic.azure.com:443/workflows/e56c907f3bd5481eafce38f606e1fe18/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=uxUIzpF9qyHfwNrVWSQWzMG7wyziqNpo3mqHUWjhKm0',object);
+              return promise;
+          };
+          return service;
     }]);
 
     app.factory('populateStylistService',['$http',function($http){
