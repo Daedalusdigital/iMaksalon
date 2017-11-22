@@ -8,6 +8,9 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
     $scope.login = function(values){
         var object = angular.toJson({login_username:values.username, login_password:values.password});
  
+
+        $('#preloader').fadeIn(500);
+        setTimeout(function(){ $('#preloader').fadeOut('slow') }, 3000);
         loginService.sendLogin(object).then(function(res){
             if(res.data.response == "notfound")
             {
@@ -28,13 +31,6 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
     };
 }]);
 
-app.controller('userDetails',['$scope','SessionService',function($scope,SessionService){
-    $scope.clientName = SessionService.get("clientName");
-    $scope.clientSurname = SessionService.get("clientSurname");
-    $scope.client_idd = $scope.clientName = SessionService.get("clientId");
-
-    alert($scope.client_idd);
-}]);
 
 
 app.controller('viewingController',['$scope','$http','loginService','SessionService', function($scope,$http,loginService,SessionService){
@@ -75,7 +71,7 @@ app.controller('viewingController',['$scope','$http','loginService','SessionServ
 
                   $scope.loadContent();
                   
-                  $('#preloader').show();
+                  $('#preloader').fadeIn(500);
                   setTimeout(function(){ $('#preloader').fadeOut('slow') }, 5000);
                   
                  
