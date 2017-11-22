@@ -14,20 +14,22 @@
         $scope.clientid = clientId;
         $scope.clientname = clientName;
         $scope.clientsname = clientSname;
+
+        
         $scope.makeBooking = function(){
             alert("Clicked");
-            // var object = angular.toJson({booked_service: values.bookedService, stylist_id: values.stylistId, client_id: clientId, service_date: values.serviceDate, service_time: values.service_time, service_location: values.serviceLocation});
+            var object = angular.toJson({booked_service: values.bookedService, stylist_id: values.stylistId, client_id: clientId, service_date: values.serviceDate, service_time: values.service_time, service_location: values.serviceLocation});
            
-            // console.log(object);
+            console.log(object);
             
-            // BookingService.sendBooking(object).then(function(res){
-            //    if(res.data.response=='1'){
-            //        $scope.results = "You've booked successfully";
-            //    }
-            //    else{
-            //        $scope.results = "Booking failed, please check your details";
-            //    }
-            // });
+            BookingService.sendBooking(object).then(function(res){
+               if(res.data.response=='1'){
+                   $scope.results = "You've booked successfully";
+               }
+               else{
+                   $scope.results = "Booking failed, please check your details";
+               }
+            });
         };
         
         populateStylistService.getStylists().then(function(res){
