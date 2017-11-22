@@ -3,6 +3,8 @@ var clientId;
 app.controller('loginClientController',['$scope','loginService','SessionService',function($scope,loginService,SessionService){
         console.log("Loading");
         $scope.clientLogin = function(values){
+            $('#preloader').fadeIn('slow');
+            setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
             var object = angular.toJson({client_username:values.username,client_password:values.password});
             
             console.log(object);
@@ -12,7 +14,7 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
                    $scope.result="User Not Found, Please check your details";
                }
                else{
-                   console.log(res);
+                   console.log(res.data[0]);
                    $scope.clientId = res.data[0].clnt_id;
                    SessionService.set("clientId", res.data[0].clnt_id);
                    SessionService.set("clientName",res.data[0].fname);

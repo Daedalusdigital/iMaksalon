@@ -27,6 +27,16 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
         });
     };
 }]);
+
+app.controller('userDetails',['$scope','SessionService',function($scope,SessionService){
+    $scope.clientName = SessionService.get("clientName");
+    $scope.clientSurname = SessionService.get("clientSurname");
+    $scope.client_idd = $scope.clientName = SessionService.get("clientId");
+
+    alert($scope.client_idd);
+}]);
+
+
 app.controller('viewingController',['$scope','$http','loginService','SessionService', function($scope,$http,loginService,SessionService){
      var stylistIds = SessionService.get("stylestID");
      var stylistName = SessionService.get("stylestFname");
