@@ -23,7 +23,26 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
             });
         };
 }]);
+app.controller('viewingController',['$scope','SessionService',function($scope,SessionService){
+    var clientIds = SessionService.get("clientId");
+    var clientName = SessionService.get("clientName");
+    var clientSname = SessionService.get("clientSurname");
 
+    $scope.clientNames = clientName;
+    $scope.clientSnames = clientSname;
+    $scope.loadContent = function(){
+       var obj = angular.toJson({client_id: clientIds});
+       
+      $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
+          .then(function(response){
+              //$scope.bookings = response.data.records;
+            $scope.bookinglist = response.data;
+            console.log(response.data);
+          },function(error){
+              console.log(error);
+          });
+    }
+}]);
 app.factory('loginService',['$http',function($http){
         var service={};
         service.sendLogin=function(object){
