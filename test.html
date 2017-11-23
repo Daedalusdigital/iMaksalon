@@ -380,10 +380,6 @@
                                                           <div class="cancel-button">CANCEL</div>
                                                           <div class="save-button">SAVE</div>
                                                         </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                             
               </fieldset>
               <fieldset>
                 
@@ -392,10 +388,15 @@
                     <div id="location-google-map" style="height: 450px;"></div>
                   </div>
                   <div class="col-sm-6">
-                    <div class="form-group" class="time" ng-class="{'time-active': edittime.active}">
+                    <div class="form-group">
                       <label>Booking Date</label>
-                      <select class="form-control" class="current-time">
-                        <option class="actual-time" value="">{{ time }}</option>
+                      <select class="form-control">
+                        <option date-picker
+                                                       picktime="true"
+                                                       pickdate="true"
+                                                       pickpast="false"
+                                                       mondayfirst="false"
+                                                       updatefn="ctrl.updateDate(newdate)" value="ctrl.selected_date">R0,00</option>
                       </select>
                     </div>
                     <!-- /.form-group -->

@@ -18,8 +18,8 @@ $(document).ready(function() {
         var mapCanvas = $('#location-google-map');
         var latitude = $('#listing_location_latitude');
         var longitude = $('#listing_location_longitude');
-        var latLng = new google.maps.LatLng(54.800685, -4.130859);
-        var zoom = 5;
+        var latLng = new google.maps.LatLng(-29.8502937,30.9855007);
+        var zoom = 13;
 
         // If we have saved values, let's set the position and zoom level
         if (latitude.val().length > 0 && longitude.val().length > 0) {
