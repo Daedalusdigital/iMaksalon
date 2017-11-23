@@ -10,7 +10,8 @@ app.controller('dateTimeCtrl', function ($scope) {
     ctrl.updateDate = function (newdate) {
         
         // Do something with the returned date here.
-        
+     
+
         console.log(newdate);
     };
 });
