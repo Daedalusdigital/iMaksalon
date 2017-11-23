@@ -231,14 +231,14 @@
                                                             </div>
                                                             <div class="modal-body">
                                                               <form ng-controller='bookingController' ng-submit="makeBooking(obj)">
-                                                               
+                                                                  
                                                                 <fieldset class="container-fluid" >
                                                                   <legend>Booking Information</legend>
                                                                   <div class="row">
                                                                     <div class="col-sm-6">
                                                                       <div class="form-group">
                                                                        <label>Stylist</label>
-                                                                        <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.firstname for stylist in stylistList">
+                                                                        <select ng-change="loadPicture(obj.stylistId)" class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.firstname for stylist in stylistList">
                                                                             <option value="" disabled>Select Stylist</option>
                                                                         </select>
                                                                       </div>
@@ -259,7 +259,14 @@
                                                                         <div class="listing-box">
                                                                           <div class="listing-box-inner">
                                                                             <a href="agents-detail.html" class="listing-box-image">
-                                                                              <span class="listing-box-image-content" ng-model="obj.stylistId" style="background-image: url()"></span><!-- /.listing-box-image-content -->
+                                                                                <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.profile_pic for stylist in stylistList" disabled/>
+                                                                                   <option value="">User</option>
+                                                                                  </select>
+                                                                              <span class="listing-box-image-content">
+                                                                                <img ng-src="{{profile_picture}}" style="width:100%;" alt="" />
+                                                                                
+                                                                              </span><!-- /.listing-box-image-content -->
+                                                                           
                                                                             </a><!-- /.listing-box-image -->
                                                                       
                                                                             <div class="listing-box-attributes" ng-model="obj.stylistId" >

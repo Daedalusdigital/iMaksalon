@@ -16,7 +16,7 @@ app.controller('dateTimeCtrl', function ($scope) {
     };
 });
  
- app.controller('bookingController', ['$scope', 'BookingService', 'populateStylistService','populateServices','SessionService',function($scope,BookingService,populateStylistService,populateServices,SessionService){
+ app.controller('bookingController', ['$scope','$http', 'BookingService', 'populateStylistService','populateServices','SessionService',function($scope,$http,BookingService,populateStylistService,populateServices,SessionService){
         console.log("Working");
 
         var clientId = SessionService.get("clientId");
@@ -26,6 +26,20 @@ app.controller('dateTimeCtrl', function ($scope) {
         $scope.clientid = clientId;
         $scope.clientname = clientName;
         $scope.clientsname = clientSname;
+
+        $scope.loadPicture = function(www){
+            var object = angular.toJson({stylist_id : www});
+            $http.post("https://prod-17.southcentralus.logic.azure.com:443/workflows/1f3031c319da4e7f9b2fa3835f1fb08e/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=w5KM05AdPC1PM0SM9fPwHKqsGymqQdL8bcZdMWEU_TE",object)
+            .then(function(response){
+                //$scope.bookings = response.data.records;
+              $scope.profile_picture = response.data[0].profile_pic;
+              console.log(response.data);
+            },function(error){
+                console.log(error);
+            });
+
+        };
+
         $scope.makeBooking = function(){
             alert("Clicked");
             var object = angular.toJson();
