@@ -19,28 +19,33 @@ app.controller('dateTimeCtrl', function ($scope) {
  app.controller('bookingController', ['$scope', 'BookingService', 'populateStylistService','populateServices','SessionService',function($scope,BookingService,populateStylistService,populateServices,SessionService){
         console.log("Working");
 
-        var clientId = SessionService.get("clientId");
+        var clientId =  SessionService.get("clientId");
         var clientName = SessionService.get("clientName");
         var clientSname = SessionService.get("clientSurname");
 
         $scope.clientid = clientId;
         $scope.clientname = clientName;
         $scope.clientsname = clientSname;
-        $scope.makeBooking = function(){
+
+        $scope.makeBooking = function(values){
             alert("Clicked");
-            var object = angular.toJson();
-            //  var object = angular.toJson({booked_service: values.bookedService, stylist_id: values.stylistId, client_id: clientId, service_date: values.serviceDate, service_time: values.service_time, service_location: values.serviceLocation});
+            var serviceDate = document.getElementById('serviceDate').innerHTML;
+            var serviceTime = document.getElementById('serviceTime').innerHTML;
+            console.log(values.stylistId.style_id);
+
+            alert("Booked Service "+values.bookedService.name+" Stylist Id "+values.stylistId.style_id+" Client Id "+clientId+" Service Date "+serviceDate+" Service Time "+serviceTime+" Service Price "+values.bookedService.price)
+            var object = angular.toJson({booked_service: values.bookedService.name, stylist_id: values.stylistId.style_id, client_id: clientId, service_date: serviceDate, service_time: serviceTime, service_location: values.serviceLocation});
            
-            //  console.log(object);
+             console.log(object);
             
-            //  BookingService.sendBooking(object).then(function(res){
-            //     if(res.data.response=='1'){
-            //         $scope.results = "You've booked successfully";
-            //     }
-            //     else{
-            //         $scope.results = "Booking failed, please check your details";
-            //     }
-            //  });
+             BookingService.sendBooking(object).then(function(res){
+                if(res.data.response=='1'){
+                    $scope.results = "You've booked successfully";
+                }
+                else{
+                    $scope.results = "Booking failed, please check your details";
+                }
+             });
         };
         
         populateStylistService.getStylists().then(function(res){
