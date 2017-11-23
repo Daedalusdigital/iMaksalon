@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link href="css/calender2.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="assets/libraries/slick/slick.css" rel="stylesheet" type="text/css">
     <link href="images/icon.png" rel="shortcut icon" type="image/png">
     <link href="assets/libraries/slick/slick-theme.css" rel="stylesheet" type="text/css">
@@ -12,34 +13,26 @@
     <link href="assets/css/chartist.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/jquery.raty.css" rel="stylesheet" type="text/css">
     <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/nouislider.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/explorer.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets//favicon.png">
     <link href="css/preloader.css" rel="stylesheet" type="text/css">
     <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
     <link href="css/responsive.css" rel="stylesheet" type="text/css">
     <link href="css/loader.css" rel="stylesheet" type="text/css">
-    <link href="css/calender.css" rel="stylesheet" type="text/css">
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='http://code.angularjs.org/1.3.14/angular-animate.js'></script>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/modal.css" rel="stylesheet" type="text/css">
     <link href="css/modalss.css" rel="stylesheet" type="text/css">
-    
-    <script src="js/jquery-2.2.4.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script  src="js/report.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyAKoSezP6EU1e2BUw5Es-8F5mT2yYgLp9o" type="text/javascript"></script>
+    <script  src="js/calender2.js"></script>
     <script src='js/index.js'></script>
     <script scr='js/stylistLoginController.js'></script>
-    <script  src="js/calender.js"></script>
+     <script  src="js/calender2.js"></script>
+    <script  src="js/report.js"></script>
     <title>Dashboard</title>
   </head>
-  <body class="" ng-app="places">
+  <body class="">
       <div id="preloader">
           <div id="loader"></div>
         </div>
@@ -53,8 +46,7 @@
                 <span></span>
                 <span></span>
               </div>
-              <!-- /.header-toggle -->
-               <div class="header-logo">
+             <div class="header-logo">
             
                 <a href="index.html" class="header-title"> <img src="images/logo-wide-white.png" alt=""></a>
               </div>
@@ -72,7 +64,7 @@
                   <ul class="nav nav-pills">
                     <li class="nav-item">
                       <a href="#" class="nav-link modal-submit" id="modal-action-submit" data-toggle="modal" data-target="#modal-submit">
-                        <i class="fa fa-plus"></i> <span>Submit Listing</span>
+                        <i class="fa fa-plus"></i> <span>Add Booking</span>
                       </a>
                     </li>
                   </ul>
@@ -85,10 +77,11 @@
         </div>
         <!-- /.header -->
       </div>
-
-
       <!-- /.header-wrapper -->
-      <div class="hero-image-wrapper">
+     
+
+
+     <div class="hero-image-wrapper" >
         <div class="hero-image-src" style="background-image: url('assets/img/tmp/hero-classified.jpg');">
         </div>
         <!-- /.hero-image-src -->
@@ -177,7 +170,12 @@
           </div>
           <!-- /.hero-image -->
         </div>
-      <!-- /.hero-image-wrapper -->
+      </script>
+    
+    </div>
+    <!-- /.page-wrapper -->
+
+<!-- /.hero-image-wrapper -->
       <div class="main-wrapper">
         <div class="main">
           <div class="main-inner">
@@ -937,224 +935,230 @@
       <!-- /.main-wrapper -->
  
     </div>
-    <!-- /.page-wrapper -->
-    <div id="modal-submit" class="modal fade"  ng-app='calendarApp' ng-cloak='true'>
-        <div class="modal-dialog" role="document" ng-controller='calendarController as calendar'>
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form method="post" action="?" class="mb80">
-               
-                <fieldset>
-                  <legend>Booking Information</legend>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Stylist</label>
-                        <select class="form-control">
-                          <option value="">User</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label>Location</label>
-                        <select class="form-control">
-                          <option value="">Default</option>
-                        </select>
-                    </div>
-                    
-                     <div class="form-group">
-                        <label>Email</label>
-                       <input name="states" id="states" type="text" placeholder="Enter Stylist" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
-                      </div>
-                      <!-- /.form-group -->
-                    
-                      <!-- /.form-g
-                    <!-- /.col-* -->
-                  </div>
-                  <!-- /.row -->
-                </fieldset>
-                <fieldset>
-                  <div class="form-group" >
-                    <div class="col-sm-4">
-                      <div class="row">
-                                                  <div class='calendar' >
-                                                    <div class='calendar_left'>
-                                                        <div class='header'>
-                                                            <i class='material-icons' ng-click='calendar.prev()'>navigate_before</i>
-                                                            <h1>{{calendar.month}}</h1>
-                                                            <i class='material-icons' ng-click='calendar.next()'>navigate_next</i>
+
+                                                     <div id="modal-submit" class="modal fade"  ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl">
+                                                        <div class="modal-dialog" role="document" >
+                                                          <div class="modal-content">
+                                                            <div class="modal-header">
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                              </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                              <form method="post" action="?" ng-controller='bookingController' ng-submit="makeBooking(obj)">
+                                                               
+                                                                <fieldset class="container-fluid" >
+                                                                  <legend>Booking Information</legend>
+                                                                  <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                      <div class="form-group">
+                                                                       <label>Stylist</label>
+                                                                        <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.firstname for stylist in stylistList">
+                                                                            <option value="" disabled>Select Stylist</option>
+                                                                        </select>
+                                                                      </div>
+                                                                      <div class="form-group">
+                                                                        <label>Email</label>
+                                                                        <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.email for stylist in stylistList">
+                                                                          <option value="">User</option>
+                                                                        </select>
+                                                                      </div>
+                                                                      <div class="form-group">
+                                                                        <label>Phone Number</label>
+                                                                       <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.contact_number for stylist in stylistList">
+                                                                          <option value="">Default</option>
+                                                                        </select>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="col-md-6 col-lg-4">
+                                                                        <div class="listing-box">
+                                                                          <div class="listing-box-inner">
+                                                                            <a href="agents-detail.html" class="listing-box-image">
+                                                                              <span class="listing-box-image-content" ng-model="obj.stylistId" style="background-image: url()"></span><!-- /.listing-box-image-content -->
+                                                                            </a><!-- /.listing-box-image -->
+                                                                      
+                                                                            <div class="listing-box-attributes" ng-model="obj.stylistId" >
+                                                                              <dl>
+                                                                                <dt >Full Name</dt>
+                                                                                <dd>User</dd>
+                                                                              </dl>
+                                                                            </div>
+                                                                            <!-- /.listing-box-attributes -->
+                                                                          </div>
+                                                                          <!-- /.listing-box-inner -->
+                                                                        </div>
+                                                                        <!-- /.listing-box -->
+                                                                      </div>
+                                                                  <!-- /.row -->
+                                                                </fieldset>
+                                                                <fieldset >
+                                                                  
+                                                                   
+                                                        <div  class="app-container"  ng-cloak>
+                                                      
+                                                    <div date-picker
+                                                       datepicker-title="Select Date"
+                                                       picktime="true"
+                                                       pickdate="true"
+                                                       pickpast="false"
+                                                       mondayfirst="false"
+                                                       custom-message="You have selected"
+                                                       selecteddate="ctrl.selected_date"
+                                                       updatefn="ctrl.updateDate(newdate)">
+                                                    
+                                                      <div class="datepicker"
+                                                         ng-class="{
+                                                          'am': timeframe == 'am',
+                                                          'pm': timeframe == 'pm',
+                                                          'compact': compact
+                                                        }">
+                                                        <div class="datepicker-header">
+                                                          <div class="datepicker-title" ng-if="datepicker_title">{{ datepickerTitle }}</div>
+                                                          <div class="datepicker-subheader">{{ customMessage }} {{ selectedDay }} {{ monthNames[localdate.getMonth()] }} {{ localdate.getDate() }}, {{ localdate.getFullYear() }}</div>
                                                         </div>
-                                                        <div class='days'>
-                                                            <div class='day_item'>Mon</div>
-                                                            <div class='day_item'>Tue</div>
-                                                            <div class='day_item'>Wed</div>
-                                                            <div class='day_item'>Thu</div>
-                                                            <div class='day_item'>Fri</div>
-                                                            <div class='day_item'>Sat</div>
-                                                            <div class='day_item'>Sun</div>
-                                                        </div>
-                                                          <div class='dates'>
+                                                        <div class="datepicker-calendar">
+                                                          <div class="calendar-header">
+                                                            <div class="goback" ng-click="moveBack()" ng-if="pickdate">
+                                                              <svg width="30" height="30">
+                                                                <path fill="none" stroke="#0DAD83" stroke-width="3" d="M19,6 l-9,9 l9,9"/>
+                                                              </svg>
+                                                            </div>
+                                                            <div class="current-month-container">{{ currentViewDate.getFullYear() }} {{ currentMonthName() }}</div>
+                                                            <div class="goforward" ng-click="moveForward()" ng-if="pickdate">
+                                                              <svg width="30" height="30">
+                                                                <path fill="none" stroke="#0DAD83" stroke-width="3" d="M11,6 l9,9 l-9,9" />
+                                                              </svg>
+                                                            </div>
                                                           </div>
-                                                      </div>
-                                                       <div class='calendar_right'>
-      <div class='list'>
-        <ul>
-          <li class='bounce-in' ng-repeat='events in calendar.events' ng-show='events.id === calendar.dataId'>
-            <span class='type'>It's a {{ events.type }} thing -</span>
-            <span class='description'>{{ events.description }}</span>
-            <table class="table">
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>lol</td>
-                <td>lol</td>
-              </tr>
-            </tbody>
-          </table>
-          </li>
-        </ul>
-      </div>
-      <form ng-submit='calendar.add()'>
-        </input>
-      </form>
-    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          
-  
-  
-  
-                </fieldset>
-                <fieldset>
-                  <legend>Location</legend>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div id="location-google-map" style="height: 450px;"></div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Address</label>
-                        <input type="text" class="form-control location-google-map-search">
-                      </div>
-                      <!-- /.form-group -->
-                      <div class="form-group">
-                        <label>Latitude</label>
-                        <input type="text" class="form-control" id="listing_location_latitude">
-                      </div>
-                      <!-- /.form-group -->
-                      <div class="form-group">
-                        <label>Longitude</label>
-                        <input type="text" class="form-control" id="listing_location_longitude">
-                      </div>
-                      <!-- /.form-group -->
-                      <div class="form-group">
-                        <label>Country</label>
-                        <select class="form-control"></select>
-                      </div>
-                      <!-- /.form-group -->
-                      <div class="form-group">
-                        <label>Location</label>
-                        <select class="form-control"></select>
-                      </div>
-                      <!-- /.form-group -->
-                      <div class="form-group">
-                        <label>Sublocation</label>
-                        <select class="form-control"></select>
-                      </div>
-                      <!-- /.form-group -->
-                    </div>
+                                                          <div class="calendar-day-header">
+                                                            <span ng-repeat="day in days" class="day-label">{{ day.short }}</span>
+                                                          </div>
+                                                          <div class="calendar-grid" ng-class="{false: 'no-hover'}[pickdate]">
+                                                            <div
+                                                              ng-class="{'no-hover': !day.showday}"
+                                                              ng-repeat="day in month"
+                                                              class="datecontainer"
+                                                              ng-style="{'margin-left': calcOffset(day, $index)}"
+                                                              track by $index>
+                                                              <div class="datenumber" ng-class="{'day-selected': day.selected }" ng-click="selectDate(day)">
+                                                                {{ day.daydate }}
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="timepicker" ng-if="picktime == 'true'">
+                                                          <div ng-class="{'am': timeframe == 'am', 'pm': timeframe == 'pm' }">
+                                                            <div class="timepicker-container-outer" selectedtime="time" timetravel>
+                                                              <div class="timepicker-container-inner">
+                                                                <div class="timeline-container" ng-mousedown="timeSelectStart($event)" sm-touchstart="timeSelectStart($event)">
+                                                                  <div class="current-time">
+                                                                    <div class="actual-time">{{ time }}</div>
+                                                                  </div>
+                                                                  <div class="timeline">
+                                                                  </div>
+                                                                  <div class="hours-container">
+                                                                    <div class="hour-mark" ng-repeat="hour in getHours() track by $index"></div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="display-time">
+                                                                  <div class="decrement-time" ng-click="adjustTime('decrease')">
+                                                                    <svg width="24" height="24">
+                                                                      <path stroke="white" stroke-width="2" d="M8,12 h8"/>
+                                                                    </svg>
+                                                                  </div>
+                                                                  <div class="time" ng-class="{'time-active': edittime.active}">
+                                                                    <input type="text" class="time-input" ng-model="edittime.input" ng-keydown="changeInputTime($event)" ng-focus="edittime.active = true; edittime.digits = [];" ng-blur="edittime.active = false"/>
+                                                                    <div class="formatted-time">{{ edittime.formatted }}</div>
+                                                                  </div>
+                                                                  <div class="increment-time" ng-click="adjustTime('increase')">
+                                                                    <svg width="24" height="24">
+                                                                      <path stroke="white" stroke-width="2" d="M12,7 v10 M7,12 h10"/>
+                                                                    </svg>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="am-pm-container">
+                                                                  <div class="am-pm-button" ng-click="changetime('am');">am</div>
+                                                                  <div class="am-pm-button" ng-click="changetime('pm');">pm</div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        
+                                                        <div class="buttons-container">
+                                                          <div class="cancel-button">CANCEL</div>
+                                                          <div class="save-button">SAVE</div>
+                                                        </div>
+              </fieldset>
+              <fieldset>
+                
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div id="location-google-map" style="height: 450px;"></div>
                   </div>
-                  <!-- /.row -->
-                </fieldset>
-                <fieldset>
-                  <legend>Contact Information</legend>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- /.form-group -->
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Booking Date</label>
+                      <select class="form-control">
+                        <option date-picker
+                                                       picktime="true"
+                                                       pickdate="true"
+                                                       pickpast="false"
+                                                       mondayfirst="false"
+                                                       updatefn="ctrl.updateDate(newdate)" value="ctrl.selected_date">R0,00</option>
+                      </select>
                     </div>
-                    <!-- /.col-* -->
-                    <div class="col-sm-4">
-                      <div class="form-group">
-                        <label>City</label>
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- /.form-group -->
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Booking Time</label>
+                      <input type="text" class="form-control" id="listing_location_latitude">
                     </div>
-                    <!-- /.col-* -->
-                    <div class="col-sm-4">
-                      <div class="form-group">
-                        <label></label>
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- /.form-group -->
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Service</label>
+                      <select class="form-control" ng-model="obj.bookedService" ng-options="service.id as service.name for service in serviceList">
+                          <option value="" disabled>Select Service</option>
+                      </select>
                     </div>
-                    <!-- /.col-* -->
-                    <div class="col-sm-4">
-                      <div class="form-group">
-                        <label>Phone</label>
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- /.form-group -->
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Total Cost</label>
+                      <select class="form-control" ng-model="obj.bookedService" ng-options="service.id as service.price for service in serviceList">
+                        <option value="">R0,00</option>
+                      </select>
                     </div>
-                    <!-- /.col-* -->
-                    <div class="col-sm-4">
-                      <div class="form-group">
-                        <label>E-mail</label>
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- /.form-group -->
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Payment Method</label>
+                      <select class="form-control">
+                        <option value="">Cash</option>
+                      </select>
                     </div>
-                    <!-- /.col-* -->
-                    <div class="col-sm-4">
-                      <div class="form-group">
-                        <label>Website</label>
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- /.form-group -->
-                    </div>
-                    <!-- /.col-* -->
-                  </div>
-                </fieldset>
-               
-                <fieldset>
-                  <!-- /.form-check -->
+                    <!-- /.form-group -->
                   <div class="form-check">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input"> I agree with terms &amp; conditions
-                    </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"> I agree with terms &amp; conditions
+                  </label>
+                </div>
                   </div>
-                  <!-- /.form-check -->
-                </fieldset>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Request Booking</button>
-            </div>
+
+                </div>
+                <!-- /.row -->
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Request Booking</button>
           </div>
         </div>
       </div>
-      
-    <div class="side-wrapper" ng-app="stylistApp">
+    </div>
+    <div class="side-wrapper">
       <div class="side">
         <div class="side-inner">
           <div class="side-user">
-            <span class="avatar"></span>
-            <span class="side-user-avatar-name">
+            <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
+          <span class="side-user-avatar-name">
               <strong>User Name</strong>
               <span>Surname</span>
             </span>
@@ -1183,60 +1187,26 @@
             <button class="btn btn-primary pull-right" type="submit"><a href="framework/stylistLogin.html">Login</a></button>
           </form>
         </div>
+        <!-- /.side-inner -->
       </div>
       <!-- /.side -->
-  
-    <!-- /.side-wrapper -->
-    
-  
-</div>
-<div id="id01" class="modal" style="z-index: 5555;" ng-app="reportApp">
-  <form class="modal-content animate" ng-controller="reportCtl">
-
-      <div class="col-md-3"></div>
-    <div class=" col-md-5" style="background-color:rgb(255,255,255);padding:30px;">
-
-      <label><b>Firstname</b></label>
-      <input type="text" ng-model="obj.guest_name" placeholder="Your firstname" name="firstname" required>
-      
-      <label><b>Lastname</b></label>
-      <input type="text" ng-model="obj.guest_surname" placeholder="Your lastname" name="lastname" required>    
-
-      <label><b>Email</b></label>
-      <input type="email" ng-model="obj.guest_email" placeholder="Your email" name="email" required>
-
-      <label><b>Comment</b></label>
-      <textarea style="width:100%;height:100px;" ng-model="obj.guest_comment" placeholder="Empty..."></textarea>
-        
-      <div class="col-md-6">
-        <button type="button" ng-click="support(obj)" class="btn btn-success">Send</button>
-      </div>
-      <div class="col-md-6">
-          <button onclick="$('#id01').fadeOut(500);" class="btn btn-danger">Cancel</button>
-      </div>
     </div>
-  </form>
-</div>
-<div class="side-overlay"></div>
+    <!-- /.side-wrapper -->
+    <div class="side-overlay"></div>
     <!-- /.side-overlay -->
+
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.js"></script>
-    <script type="text/javascript" src="assets/js/tether.min.js"></script>
-    <script type="text/javascript" src="assets/js/chartist.min.js"></script>
-    <script type="text/javascript" src="assets/js/google-map-richmarker.min.js"></script>
-    <script type="text/javascript" src="assets/js/google-map-infobox.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/google-map.js"></script>
     <script type="text/javascript" src="assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.inlinesvg.min.js"></script>
-     <script type="text/javascript" src="assets/js/tether.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/libraries/slick/slick.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.raty.js"></script>
+
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
-    <script  src="js/calender.js"></script>
-
     <script type="text/javascript">
       setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
     </script>
