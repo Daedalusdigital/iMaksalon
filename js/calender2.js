@@ -43,6 +43,7 @@ app.controller('dateTimeCtrl', function ($scope) {
         
         populateStylistService.getStylists().then(function(res){
             $scope.stylistList = res.data;
+            //$scope.stylistImage = res.data[0].profile_pic;
             console.log(res.data);
         });
         populateServices.getServices().then(function(res){

@@ -249,6 +249,12 @@
                                                                         </select>
                                                                       </div>
                                                                       <div class="form-group">
+                                                                        <label>Image Test</label>
+                                                                        <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.profile_pic for stylist in stylistList">
+                                                                          <option value="">User</option>
+                                                                        </select>
+                                                                      </div>
+                                                                      <div class="form-group">
                                                                         <label>Phone Number</label>
                                                                        <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.contact_number for stylist in stylistList">
                                                                           <option value="">Default</option>
