@@ -22,24 +22,23 @@ app.controller('dateTimeCtrl', function ($scope) {
         var clientName = SessionService.get("clientName");
         var clientSname = SessionService.get("clientSurname");
 
-        alert(clientId);
         $scope.clientid = clientId;
         $scope.clientname = clientName;
         $scope.clientsname = clientSname;
         $scope.makeBooking = function(){
             alert("Clicked");
-            // var object = angular.toJson({booked_service: values.bookedService, stylist_id: values.stylistId, client_id: clientId, service_date: values.serviceDate, service_time: values.service_time, service_location: values.serviceLocation});
+             var object = angular.toJson({booked_service: values.bookedService, stylist_id: values.stylistId, client_id: clientId, service_date: values.serviceDate, service_time: values.service_time, service_location: values.serviceLocation});
            
-            // console.log(object);
+             console.log(object);
             
-            // BookingService.sendBooking(object).then(function(res){
-            //    if(res.data.response=='1'){
-            //        $scope.results = "You've booked successfully";
-            //    }
-            //    else{
-            //        $scope.results = "Booking failed, please check your details";
-            //    }
-            // });
+             BookingService.sendBooking(object).then(function(res){
+                if(res.data.response=='1'){
+                    $scope.results = "You've booked successfully";
+                }
+                else{
+                    $scope.results = "Booking failed, please check your details";
+                }
+             });
         };
         
         populateStylistService.getStylists().then(function(res){
@@ -73,7 +72,7 @@ app.controller('dateTimeCtrl', function ($scope) {
     app.factory('populateServices',['$http',function($http){
           var service={};
           service.getServices=function(object){
-              var promise=$http.get('https://prod-29.southcentralus.logic.azure.com:443/workflows/83965d3d70f3411398dfd6df9b0c7821/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=maRWUv8dFgMIw7uUlYJ9X2oAEKpd3r34ZL3UvBqAFd4');
+              var promise=$http.get('https://prod-19.southcentralus.logic.azure.com:443/workflows/03520c6f053b40f3b917e3695cdcdcf8/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=9Lm3IX8yB9vMpyCA2p2I2fKJcr5behrTCOecT4w8Rdw');
               return promise;
           };
           return service;

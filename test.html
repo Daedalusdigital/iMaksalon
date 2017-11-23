@@ -221,7 +221,7 @@
     
     </div>
     <!-- /.page-wrapper -->
-                                                     <div id="modal-submit" class="modal fade"  >
+                                                     <div id="modal-submit" class="modal fade"  ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl">
                                                         <div class="modal-dialog" role="document" >
                                                           <div class="modal-content">
                                                             <div class="modal-header">
@@ -230,25 +230,27 @@
                                                               </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                              <form method="post" action="?" class="mb80">
+                                                              <form method="post" action="?" ng-controller='bookingController' ng-submit="makeBooking(obj)">
                                                                
-                                                                <fieldset class ="container-fluid" >
+                                                                <fieldset class="container-fluid" >
                                                                   <legend>Booking Information</legend>
                                                                   <div class="row">
                                                                     <div class="col-sm-6">
                                                                       <div class="form-group">
-                                                                        <label>Stylist</label>
-                                                                       <input name="states" id="states" type="text" placeholder="Enter Stylist" n class="form-control">
+                                                                       <label>Stylist</label>
+                                                                        <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.firstname for stylist in stylistList">
+                                                                            <option value="" disabled>Select Stylist</option>
+                                                                        </select>
                                                                       </div>
                                                                       <div class="form-group">
                                                                         <label>Email</label>
-                                                                        <select class="form-control">
+                                                                        <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.email for stylist in stylistList">
                                                                           <option value="">User</option>
                                                                         </select>
                                                                       </div>
                                                                       <div class="form-group">
                                                                         <label>Phone Number</label>
-                                                                        <select class="form-control">
+                                                                       <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.contact_number for stylist in stylistList">
                                                                           <option value="">Default</option>
                                                                         </select>
                                                                     </div>
@@ -257,12 +259,12 @@
                                                                         <div class="listing-box">
                                                                           <div class="listing-box-inner">
                                                                             <a href="agents-detail.html" class="listing-box-image">
-                                                                              <span class="listing-box-image-content" style="background-image: url()"></span><!-- /.listing-box-image-content -->
+                                                                              <span class="listing-box-image-content" ng-model="obj.stylistId" style="background-image: url()"></span><!-- /.listing-box-image-content -->
                                                                             </a><!-- /.listing-box-image -->
                                                                       
-                                                                            <div class="listing-box-attributes">
+                                                                            <div class="listing-box-attributes" ng-model="obj.stylistId" >
                                                                               <dl>
-                                                                                <dt>Full Name</dt>
+                                                                                <dt >Full Name</dt>
                                                                                 <dd>User</dd>
                                                                               </dl>
                                                                             </div>
@@ -277,7 +279,7 @@
                                                                 <fieldset >
                                                                   
                                                                    
-                                                        <div ng-app="dateTimeApp" class="app-container" ng-controller="dateTimeCtrl as ctrl" ng-cloak>
+                                                        <div  class="app-container"  ng-cloak>
                                                       
                                                     <div date-picker
                                                        datepicker-title="Select Date"
@@ -384,9 +386,11 @@
                     <div id="location-google-map" style="height: 450px;"></div>
                   </div>
                   <div class="col-sm-6">
-                    <div class="form-group">
+                    <div class="form-group" class="time" ng-class="{'time-active': edittime.active}">
                       <label>Booking Date</label>
-                      <input type="text" class="form-control location-google-map-search">
+                      <select class="form-control" class="current-time">
+                        <option class="actual-time" value="">{{ time }}</option>
+                      </select>
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group">
@@ -396,12 +400,14 @@
                     <!-- /.form-group -->
                     <div class="form-group">
                       <label>Service</label>
-                      <input type="text" class="form-control" id="listing_location_longitude">
+                      <select class="form-control" ng-model="obj.bookedService" ng-options="service.id as service.name for service in serviceList">
+                          <option value="" disabled>Select Service</option>
+                      </select>
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group">
                       <label>Total Cost</label>
-                      <select class="form-control">
+                      <select class="form-control" ng-model="obj.bookedService" ng-options="service.id as service.price for service in serviceList">
                         <option value="">R0,00</option>
                       </select>
                     </div>
