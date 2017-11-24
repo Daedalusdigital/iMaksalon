@@ -13,6 +13,12 @@ app.controller('dateTimeCtrl', function ($scope) {
      
 
         console.log(newdate);
+        var timee = newdate.toString();
+        var newTime = timee.substring(16,21);
+        var newDate = timee.substring(0,15);
+
+        $scope.newTimeSelected = newTime;
+        $scope.newDateSelected = newDate;
     };
 });
  
@@ -29,16 +35,18 @@ app.controller('dateTimeCtrl', function ($scope) {
 
         $scope.makeBooking = function(values){
             //alert("Clicked");
-            var serviceDate = document.getElementById('serviceDate').innerHTML;
-            var serviceTime = document.getElementById('serviceTime').innerHTML;
+            var serviceDate = $scope.newDateSelected;
+            var serviceTime = $scope.newTimeSelected;
 
             //alert("Booked Service "+values.bookedService.name+" Stylist Id "+values.stylistId.style_id+" Client Id "+clientId+" Service Date "+serviceDate+" Service Time "+serviceTime+" Service Price "+values.bookedService.price+" Stylist Location "+values.stylistId.salon_physical_address)
             var object = angular.toJson({booked_service: values.bookedService.name, stylist_id: values.stylistId.style_id, client_id: clientId, service_date: serviceDate, service_time: serviceTime, service_location: values.stylistId.salon_physical_address});
            
+            console.log(object);
              BookingService.sendBooking(object).then(function(res){
                 if(res.data.response=='1'){
                     $scope.results = "You've booked successfully";
                     console.log("You've booked successfully");
+                    window.location.href = '../#';
                 }
                 else{
                     $scope.results = "Booking failed, please check your details";

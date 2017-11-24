@@ -12,6 +12,7 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
             if(res.data.response == "notfound")
             {
                 $scope.result = "Failed to Login, Please Check Your Details";
+                alert("Failed to login, Please Check Your Details");
             }
             else
             {
