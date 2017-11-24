@@ -71,7 +71,17 @@
               <li><a href="#about">About Us</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#stylists">Stylists</a></li>
-              <li><a href="framework/loginClient.html" class="btn btn-success" >Login</a></li>
+              <li id="dropdownLogin">
+                <a href="#" class="btn btn-success dropdownLogin" onclick="
+                $('#dropdownLogin-content').slideToggle('slow',function(){
+
+                });
+                ">Login</a>
+                <ul class="dropdownLogin-content" id="dropdownLogin-content">
+                  <li><a href="framework/loginClient.html" class="btn btn-success" >Customer</a></li>
+                  <li><a href="framework/stylistLogin.html" class="btn btn-success" >Stylist</a></li>
+                </ul>
+              </li>
               <li style="margin-left:5px;"><a href="framework/registerClient.html" class="btn btn-success" >Sign Up</a></li>
             </ul>
           </nav>
@@ -881,6 +891,7 @@
 
 <script type="text/javascript">
   setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
+
 </script>
 </body>
 </html>
