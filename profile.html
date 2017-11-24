@@ -30,13 +30,14 @@
     <script scr='js/stylistLoginController.js'></script>
      <script  src="js/calender2.js"></script>
     <script  src="js/report.js"></script>
+    <script src="framework/angular_modules/controllers/stylistLoginController.js"></script>
     <title>Profile - iMakeapp</title>
    </head>
-  <body class="">
+  <body class="" ng-app="Imakapp">
       <div id="preloader">
           <div id="loader"></div>
         </div>
-    <div class="page-wrapper">
+    <div class="page-wrapper" ng-controller="testingController">
       <div class="header-wrapper">
         <div class="header">
           <div class="container">
@@ -110,7 +111,7 @@
               <!-- /.container-->
             </div>
             <!-- /.page-title -->
-            <div class="container">
+            <div class="container" ng-view="">
              
               <div class="box">
                 <div class="box-inner">
@@ -118,7 +119,7 @@
                   <div class="row">
                     <div class="form-group col-sm-6">
                       <label>Name</label>
-                      <input type="text" class="form-control" value="John">
+                      <input type="text" class="form-control" ng-model="stylistName">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">

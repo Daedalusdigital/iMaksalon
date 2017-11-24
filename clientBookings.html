@@ -121,7 +121,6 @@
                 <th>Booking Status</th>
                 <th>Booked Service</th>
                 <th>Stylist ID</th>
-                <th>Client ID</th>
                 <th>Service Location</th>
                 <th>Service Time</th>
                 <th>Service Date</th>
@@ -129,8 +128,7 @@
             <tr ng-repeat="booking in bookinglist">
                 <td>{{booking.booking_status}}</td>
                 <td>{{booking.booked_service}}</td>
-                <td>{{booking.stylist_id}} (Your ID)</td>
-                <td>{{booking.client_id}}</td>
+                <td>{{booking.stylist_id}}</td>
                 <td>{{booking.service_location}}</td>
                 <td>{{booking.service_time}}</td>
                 <td>{{booking.service_date}}</td>

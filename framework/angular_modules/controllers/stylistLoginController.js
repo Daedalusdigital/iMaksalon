@@ -21,6 +21,11 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
                 SessionService.set("stylestID", res.data[0].style_id);
                 SessionService.set("stylestFname", res.data[0].firstname);
                 SessionService.set("stylestSname", res.data[0].surname);
+                SessionService.set("stylestEmail", res.data[0].email);
+                SessionService.set("stylestContact", res.data[0].contact_number);
+                SessionService.set("stylestPhysicalAddress", res.data[0].physical_address);
+
+                $scope.stylistName = SessionService.get("stylestSname");
                 window.location.href = "../book-stylist.html";
             }
             

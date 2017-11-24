@@ -24,6 +24,7 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
     <script  src="js/calender2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <title>Pricing Tables - Explorer</title>
   </head>
   <body class="">
@@ -244,19 +245,23 @@
                                                                       </div>
                                                                       <div class="form-group">
                                                                         <label>Email</label>
-                                                                        <input type="text" ng-model="obj.stylistId.email" class="form-control" placeholder="Email Address"/>
+                                                                        <input type="text" ng-model="obj.stylistId.stylist_email" class="form-control" placeholder="Email Address"/>
                                                                       </div>
                                                                       <div class="form-group">
                                                                         <label>Phone Number</label>
-                                                                        <input type="text" ng-model="obj.stylistId.contact_number" class="form-control" placeholder="Email Address"/>
+                                                                        <input type="text" ng-model="obj.stylistId.stylist_contact_number" class="form-control" placeholder="Email Address"/>
                                                                     </div>
+                                                                    <div class="form-group">
+                                                                      <label>Stylist Location</label>
+                                                                      <input type="text" ng-model="obj.stylistId.salon_physical_address" class="form-control" placeholder="Email Address"/>
+                                                                  </div>
                                                                   </div>
                                                                   <div class="col-md-6 col-lg-4">
                                                                         <div class="listing-box">
                                                                           <div class="listing-box-inner">
                                                                             <a href="agents-detail.html" class="listing-box-image">
                                                                               <span class="listing-box-image-content" ng-model="obj.stylistId.profile">
-                                                                                <img ng-src="{{obj.stylistId.profile_pic}}" alt="" />
+                                                                                <img ng-src="{{obj.stylistId.stylist_profile_pic}}" alt="" />
                                                                                 </span><!-- /.listing-box-image-content -->
                                                                             </a><!-- /.listing-box-image -->
                                                                       

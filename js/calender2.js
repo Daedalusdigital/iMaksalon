@@ -27,25 +27,23 @@ app.controller('dateTimeCtrl', function ($scope) {
         $scope.clientname = clientName;
         $scope.clientsname = clientSname;
 
-        $scope.makeBooking = function(){
-            alert("Clicked");
+        $scope.makeBooking = function(values){
+            //alert("Clicked");
             var serviceDate = document.getElementById('serviceDate').innerHTML;
             var serviceTime = document.getElementById('serviceTime').innerHTML;
-            console.log(values.stylistId.style_id);
 
-            alert("Booked Service "+values.bookedService.name+" Stylist Id "+values.stylistId.style_id+" Client Id "+clientId+" Service Date "+serviceDate+" Service Time "+serviceTime+" Service Price "+values.bookedService.price)
-            // var object = angular.toJson({booked_service: values.bookedService.name, stylist_id: values.stylistId.style_id, client_id: clientId, service_date: serviceDate, service_time: serviceTime, service_location: values.serviceLocation});
+            //alert("Booked Service "+values.bookedService.name+" Stylist Id "+values.stylistId.style_id+" Client Id "+clientId+" Service Date "+serviceDate+" Service Time "+serviceTime+" Service Price "+values.bookedService.price+" Stylist Location "+values.stylistId.salon_physical_address)
+            var object = angular.toJson({booked_service: values.bookedService.name, stylist_id: values.stylistId.style_id, client_id: clientId, service_date: serviceDate, service_time: serviceTime, service_location: values.stylistId.salon_physical_address});
            
-            //  console.log(object);
-            
-            //  BookingService.sendBooking(object).then(function(res){
-            //     if(res.data.response=='1'){
-            //         $scope.results = "You've booked successfully";
-            //     }
-            //     else{
-            //         $scope.results = "Booking failed, please check your details";
-            //     }
-            //  });
+             BookingService.sendBooking(object).then(function(res){
+                if(res.data.response=='1'){
+                    $scope.results = "You've booked successfully";
+                    console.log("You've booked successfully");
+                }
+                else{
+                    $scope.results = "Booking failed, please check your details";
+                }
+             });
         };
         
         populateStylistService.getStylists().then(function(res){
@@ -71,7 +69,7 @@ app.controller('dateTimeCtrl', function ($scope) {
     app.factory('populateStylistService',['$http',function($http){
           var service={};
           service.getStylists=function(object){
-              var promise=$http.get('https://prod-21.southcentralus.logic.azure.com:443/workflows/1f070dd37cff4e6c8d4e0bdd11fe97ac/triggers/request/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Frequest%2Frun&sv=1.0&sig=HN0ZFaXjcR2dqzRs8TKF9NJDzMx-52IFcAPNSE1ul24');
+              var promise=$http.get('https://prod-14.southcentralus.logic.azure.com:443/workflows/ddfbff4cd859434897cf388edee47955/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=k5pJbHXL04UUSW4tqaiB38pGbI195PuLkqQ81yVeUoo');
               return promise;
           };
           return service;

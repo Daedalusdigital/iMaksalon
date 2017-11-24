@@ -30,6 +30,7 @@ app.controller('viewingController',['$scope','$http','SessionService',function($
 
     $scope.clientNames = clientName;
     $scope.clientSnames = clientSname;
+    
     $scope.loadContent = function(){
        var obj = angular.toJson({client_id: clientIds});
        alert("Loaded");
