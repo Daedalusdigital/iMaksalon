@@ -1,6 +1,6 @@
  
     /* Full-width input fields */
-    input[type=text],select, input[type=date] , input[type=password],input[type=email] {
+    input[type=text],select, input[type=date] ,textarea, input[type=password],input[type=email] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;

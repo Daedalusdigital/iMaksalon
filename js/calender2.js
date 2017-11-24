@@ -29,7 +29,7 @@ app.controller('reportCtl',['$scope','$http',function($scope,$http){
   
   
       $scope.support = function(obj){
-          alert("In.");
+          $scope.loading = "Loading...";
           var object = angular.toJson(
               {
                   firstname:obj.guest_name,
@@ -43,7 +43,14 @@ app.controller('reportCtl',['$scope','$http',function($scope,$http){
               .then(function(response){
                   //$scope.bookings = response.data.records;
                 console.log(response.data);
+                obj.guest_name = "";
+                obj.guest_surname = "";
+                obj.guest_email = "";
+                obj.guest_comment = "";
+
                 alert("report was sent successfully.Please check your emails for confirmation.");
+                location.reload();
+
               },function(error){
                   console.log(error);
               });
