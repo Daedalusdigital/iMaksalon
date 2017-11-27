@@ -399,16 +399,15 @@
                     <!-- /.form-group -->
                     <div class="form-group">
                       <label>Service</label>
-                      <select class="form-control" ng-model="obj.bookedService" ng-options="service.id as service.name for service in serviceList">
+                      <select class="form-control" ng-model="obj.bookedService" ng-options="service.name for service in serviceList track by service.id">
                           <option value="" disabled>Select Service</option>
                       </select>
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group">
                       <label>Total Cost</label>
-                      <select class="form-control" disabled ng-model="obj.bookedService" ng-options="service.id as service.price for service in serviceList">
-                        <option value="">R0,00</option>
-                      </select>
+                      <input type="text" class="form-control" disabled ng-model="obj.bookedService.price" disabled/>
+                      
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group">

@@ -33,10 +33,28 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
         });
     };
 }]);
+app.controller('profileController',['$scope','$http','SessionService',function($scope,$http,SessionService){
+    var stylistIds = SessionService.get("stylestID");
+    var stylistName = SessionService.get("stylestFname");
+    var stylistSname = SessionService.get("stylestSname");
+    var stylistEmail = SessionService.get("stylestEmail");
+    var stylistContact = SessionService.get("stylestContact");
+    var stylistAddress = SessionService.get("stylestPhysicalAddress");
+
+    $scope.stylistIds = stylistIds;
+    $scope.stylistName = stylistName;
+    $scope.stylistSname = stylistSname;
+    $scope.stylistEmail = stylistEmail;
+    $scope.stylistContact = stylistContact;
+    $scope.stylistAddress = stylistAddress;
+}]);
 app.controller('viewingController',['$scope','$http','loginService','SessionService', function($scope,$http,loginService,SessionService){
      var stylistIds = SessionService.get("stylestID");
      var stylistName = SessionService.get("stylestFname");
      var stylistSname = SessionService.get("stylestSname");
+     var stylistEmail = SessionService.get("stylestEmail");
+     var stylistContact = SessionService.get("stylestContact");
+     var stylistAddress = SessionService.get("stylestPhysicalAddress");
 
      $scope.stylistNames = stylistName;
      $scope.stylistSnames = stylistSname;

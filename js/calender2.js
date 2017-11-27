@@ -46,7 +46,8 @@ app.controller('dateTimeCtrl', function ($scope) {
                 if(res.data.response=='1'){
                     $scope.results = "You've booked successfully";
                     console.log("You've booked successfully");
-                    window.location.href = '../#';
+                    alert("You've booked successfully");
+                    location.reload();
                 }
                 else{
                     $scope.results = "Booking failed, please check your details";
