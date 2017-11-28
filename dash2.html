@@ -953,9 +953,7 @@
                                                                     <div class="col-sm-6">
                                                                       <div class="form-group">
                                                                        <label>Stylist</label>
-                                                                        <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.style_id as stylist.firstname for stylist in stylistList">
-                                                                            <option value="" disabled>Select Stylist</option>
-                                                                        </select>
+                                                                       <input class="form-control" ng-model="obj.stylistId" placeholder="enter a state" typeahead="service.id as service.name for service in serviceList">
                                                                       </div>
                                                                       <div class="form-group">
                                                                         <label>Email</label>
@@ -1116,7 +1114,7 @@
                     <!-- /.form-group -->
                     <div class="form-group">
                       <label>Service</label>
-                      <select class="form-control" ng-model="obj.bookedService" ng-options="service.id as service.name for service in serviceList">
+                      <select class="form-control" ng-model="obj.bookedService" placeholder="enter a state" ng-options="service.id as service.name for service in serviceList">
                           <option value="" disabled>Select Service</option>
                       </select>
                     </div>
