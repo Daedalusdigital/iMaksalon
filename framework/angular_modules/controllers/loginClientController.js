@@ -1,15 +1,22 @@
 var app = angular.module('loginApp',[]);
 var clientId;
 app.controller('loginClientController',['$scope','loginService','SessionService',function($scope,loginService,SessionService){
-        console.log("Loading");
+       
+    var values = {
+        username : "",
+        password : ""
+    };
+    
+    console.log("Loading");
         $scope.clientLogin = function(values){
+            $scope.result = "Loading....";
             var object = angular.toJson({client_username:values.username,client_password:values.password});
             
-            $scope.results = "Loading....";
+           
             console.log(object);
             
             loginService.sendLogin(object).then(function(res){
-               if(res.data.response=='notfound'){
+               if(res.data.response == 'notfound'){
                    $scope.result="User Not Found, Please check your details";
                }
                else{
@@ -20,7 +27,10 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
                    SessionService.set("clientSurname",res.data[0].Sname);
                    window.location.href = "../dashboard.html";
                }
-            });
+            },
+        function(error){
+            $scope.result="User not found";
+        });
         };
 }]);
 app.controller('viewingController',['$scope','$http','SessionService',function($scope,$http,SessionService){
