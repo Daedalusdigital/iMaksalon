@@ -1,6 +1,6 @@
 var app = angular.module('loginApp',[]);
 var clientId;
-app.controller('loginClientController',['$scope','loginService','SessionService',function($scope,loginService,SessionService){
+app.controller('loginClientController',['$scope','loginService','SessionService','$location',function($scope,loginService,SessionService,$location){
         console.log("Loading");
         $scope.clientLogin = function(values){
             var object = angular.toJson({client_username:values.username,client_password:values.password});
@@ -17,7 +17,7 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
                    SessionService.set("clientId", res.data[0].clnt_id);
                    SessionService.set("clientName",res.data[0].fname);
                    SessionService.set("clientSurname",res.data[0].Sname);
-                   window.location.href = "booking.html";
+                   window.location.href = "../dashboard.html";
                }
             });
         };

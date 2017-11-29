@@ -1,6 +1,6 @@
 var app = angular.module('registerApp',[]);
 
-app.controller('registerUserController',['$scope','registerService',function($scope,registerService){
+app.controller('registerUserController',['$scope','registerService','SessionService',function($scope,registerService,SessionService){
         console.log("Loading");
         $scope.clientRegister = function(values){
             var object = angular.toJson({firstname:values.firstname, surname:values.surname, contact_number:values.contact_number, email:values.email_address, physical_address:values.physical_address, client_password:values.client_password, client_username:values.client_username});
@@ -13,6 +13,7 @@ app.controller('registerUserController',['$scope','registerService',function($sc
                    else{
                        $scope.result = "You have succcessfully registered";
                        console.log(res);
+                       window.location.href = "loginClient.html";
                    }
                 });
             
@@ -27,4 +28,22 @@ app.factory('registerService',['$http',function($http){
             return promise;
         };
         return service;
+}]);
+app.factory('SessionService',[function(){
+    var service={};
+    
+    service.set=function(key,value)
+    {
+       return sessionStorage.setItem(key,value);
+        
+    }
+    service.get=function(key)
+    {
+        return sessionStorage.getItem(key);
+    }
+    service.destroy=function(key)
+    {
+        return sessionStorage.removeItem(key);
+    }
+    return service;
 }]);
