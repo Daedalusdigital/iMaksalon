@@ -64,7 +64,7 @@ app.controller('reportCtl',['$scope','$http',function($scope,$http){
         $scope.clientid = clientId;
         $scope.clientname = clientName;
         $scope.clientsname = clientSname;
-
+        
         $scope.makeBooking = function(values){
             //alert("Clicked");
             var serviceDate = $scope.newDateSelected;

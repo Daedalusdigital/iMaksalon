@@ -1182,14 +1182,14 @@
 
 </div>
 </div>
-</div>    <div class="side-wrapper">
+</div>    <div class="side-wrapper" ng-controller="bookingController">
       <div class="side">
         <div class="side-inner">
           <div class="side-user">
             <span class="avatar" style="background-image: url('');"></span>
           <span class="side-user-avatar-name">
-              <strong>User Name</strong>
-              <span>Surname</span>
+              <strong ng-bind="clientname"></strong>
+              <span ng-bind="clientsname"></span>
             </span>
             <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
               <i class="fa fa-cog"></i>
