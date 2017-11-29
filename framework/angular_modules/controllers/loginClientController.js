@@ -1,6 +1,6 @@
 var app = angular.module('loginApp',[]);
 var clientId;
-app.controller('loginClientController',['$scope','loginService','SessionService','$location',function($scope,loginService,SessionService,$location){
+app.controller('loginClientController',['$scope','loginService','SessionService',function($scope,loginService,SessionService){
         console.log("Loading");
         $scope.clientLogin = function(values){
             var object = angular.toJson({client_username:values.username,client_password:values.password});
