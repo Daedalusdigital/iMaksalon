@@ -111,7 +111,7 @@
             </div>
             <!-- /.page-title -->
             <div class="container" ng-view="">
-             
+             <form>
               <div class="box">
                 <div class="box-inner">
                   <h3 class="page-title-small">Contact Information</h3>
@@ -123,17 +123,17 @@
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>Surname</label>
-                      <input type="text" class="form-control" value="{{stylistSname}}">
+                      <input type="text" class="form-control" ng-model="stylistSname" value="{{stylistSname}}">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>E-mail</label>
-                      <input type="text" class="form-control" value="{{stylistEmail}}">
+                      <input type="text" class="form-control" ng-model="stylistEmail" value="{{stylistEmail}}">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>Phone</label>
-                      <input type="text" class="form-control" value="{{stylistContact}}">
+                      <input type="text" class="form-control" ng-model="stylistContact" value="{{stylistContact}}">
                     </div>
                     <!-- /.form-group -->
                   </div>
@@ -163,9 +163,6 @@
                     </div>
                     <!-- /.form-group -->
                   </div>
-                  <!-- /.row -->
-                  <h3 class="page-title-small">Biography</h3>
-                  <textarea class="form-control" rows="7"></textarea>
                 </div>
                 <!-- /.box-inner -->
               </div>
@@ -194,7 +191,9 @@
                     <label>Instagram</label>
                     <input type="text" class="form-control" value="http://instagram.com/">
                   </div>
+                  <input type="submit" value="Update" ng-click="updateProfile()">
               <!-- /.box -->
+            </form>
             </div>
             <!-- /.container-fluid -->
           </div>

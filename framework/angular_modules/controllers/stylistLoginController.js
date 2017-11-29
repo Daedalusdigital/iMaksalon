@@ -33,7 +33,7 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
         });
     };
 }]);
-app.controller('profileController',['$scope','$http','SessionService',function($scope,$http,SessionService){
+app.controller('profileController',['$scope','$http','SessionService','updateProfileServices',function($scope,$http,SessionService,updateProfileServices){
     var stylistIds = SessionService.get("stylestID");
     var stylistName = SessionService.get("stylestFname");
     var stylistSname = SessionService.get("stylestSname");
@@ -47,7 +47,33 @@ app.controller('profileController',['$scope','$http','SessionService',function($
     $scope.stylistEmail = stylistEmail;
     $scope.stylistContact = stylistContact;
     $scope.stylistAddress = stylistAddress;
+
+    $scope.updateProfile = function(){
+        alert("Clicked"+stylistName+" "+stylistSname);
+        var object = angular.toJson({firstname:stylistName,surname:stylistSname,email:stylistEmail,contact_number:stylistContact,style_id:stylistIds});
+        alert(object);
+
+        updateProfileServices.updateProfile(object).then(function(res){
+            if(res.data.response == "successful")
+            {
+                alert("Your Profile Was Updated Successfully");
+            }
+            else{
+                alert("Failed to Update, please check your updates");
+            }
+        });
+    }
 }]);
+//Service to update Stylist Profile
+app.factory('updateProfileServices',['$http',function($http){
+    var service={};
+    service.updateProfile=function(obj){
+        var promise=$http.post('https://prod-19.southcentralus.logic.azure.com:443/workflows/b2c38f6388bf409f905d8695b43bad96/triggers/request/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Frequest%2Frun&sv=1.0&sig=JMPUFWbNdvP2vr02hju-mriPrMI-B2uU53CC5Datxu8',obj);
+        return promise;
+    };
+    return service;
+}]);
+
 app.controller('viewingController',['$scope','$http','loginService','SessionService', function($scope,$http,loginService,SessionService){
      var stylistIds = SessionService.get("stylestID");
      var stylistName = SessionService.get("stylestFname");
