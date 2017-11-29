@@ -1,6 +1,5 @@
 // Bootstrap app with top-level controller
-var app = angular.module('places', ['ngSanitize', 'angularSearchPlaces'])
-  .controller('PlacesSearchController', ['$window', PlacesSearchController]);
+app.controller('PlacesSearchController', ['$window', PlacesSearchController]);
 
 function PlacesSearchController($window) {
   this.city = "San Francisco";

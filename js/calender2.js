@@ -1,4 +1,4 @@
-var app = angular.module('dateTimeApp', []);
+var app = angular.module('dateTimeApp', ['ngSanitize', 'angularSearchPlaces']);
 
 app.controller('dateTimeCtrl', function ($scope) {
     var ctrl = this;
@@ -10,8 +10,6 @@ app.controller('dateTimeCtrl', function ($scope) {
     ctrl.updateDate = function (newdate) {
         
         // Do something with the returned date here.
-     alert(newdate)
-
         console.log(newdate);
         var timee = newdate.toString();
         var newTime = timee.substring(16,21);
@@ -47,8 +45,6 @@ app.controller('reportCtl',['$scope','$http',function($scope,$http){
                 obj.guest_surname = "";
                 obj.guest_email = "";
                 obj.guest_comment = "";
-
-                alert("report was sent successfully.Please check your emails for confirmation.");
                 location.reload();
 
               },function(error){
