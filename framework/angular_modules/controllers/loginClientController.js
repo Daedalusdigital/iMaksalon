@@ -5,6 +5,7 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
         $scope.clientLogin = function(values){
             var object = angular.toJson({client_username:values.username,client_password:values.password});
             
+            $scope.results = "Loading...";
             console.log(object);
             
             loginService.sendLogin(object).then(function(res){
