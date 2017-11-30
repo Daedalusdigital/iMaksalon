@@ -132,13 +132,14 @@ app.controller('viewingController',['$scope','$http','loginService','SessionServ
                   .then(function(response){
                       //$scope.bookings = response.data.records;
                     console.log(response.data);
+                    
+                  $scope.loadContent();
                   },function(error){
                       console.log(error);
                   });
 
 
                   
-                  $scope.loadContent();
                   
                   
                  
