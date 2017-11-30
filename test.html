@@ -21,14 +21,19 @@
     <link href="css/modal.css" rel="stylesheet" type="text/css">
     <link href="css/modalss.css" rel="stylesheet" type="text/css">
     
+    <link rel="stylesheet" href="css/angucomplete.css"/>
     
  <script src="https://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyAKoSezP6EU1e2BUw5Es-8F5mT2yYgLp9o" type="text/javascript"></script>
  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
- <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+ <script src='js/angular.js'></script>
+ <script src="js/angular-touch.min.js"></script>
  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.js'></script>
  <script  src="js/calender2.js"></script>
  <script src='js/index.js'></script>
- 
+
+ <script src="js/main-controller.js"></script>
+ <script src="js/angucomplete.js"></script>
+
     <title>Dashboard</title>
   </head>
   <body class="">
@@ -988,9 +993,17 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                      <label>Stylist</label>
+                     <div ng-app="app" >
+                       <div ng-controller="MainController">
+                         Testing
+                        <angucomplete id="style_id" ng-model="obj.stylistId" ng-change="onChangeSelectedUser(selectedStylist)" placeholder="Search people" pause="300" selectedobject="selectedPerson" localdata="people" searchfields="firstname,surname" titlefield="firstname,surname" descriptionfield="login_username" imagefield="stylist_profile_pic" minlength="1" inputclass="form-control form-control-small" matchclass="highlight"/>   
+                        </div>
+                        </div>
+                     <!--
                       <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.firstname for stylist in stylistList track by stylist.style_id" ng-change="onChangeSelectedUser(selectedStylist)">
                           <option value="" disabled>Select Stylist</option>
                       </select>
+                    -->
                     </div>
                     <div class="form-group">
                       <label>Email</label>
