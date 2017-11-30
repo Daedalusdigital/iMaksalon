@@ -43,7 +43,7 @@ app.controller('viewingController',['$scope','$http','SessionService',function($
     
     $scope.loadContent = function(){
        var obj = angular.toJson({client_id: clientIds});
-       alert("Loaded");
+       
       $http.post("https://prod-11.southcentralus.logic.azure.com:443/workflows/11d6344af2e5400f8165a0f49d50b813/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=5HU7C4ioqfeR9gkRFjoEx1zGxnDLnfVY-JN7d74Sr50",obj)
           .then(function(response){
               //$scope.bookings = response.data.records;
