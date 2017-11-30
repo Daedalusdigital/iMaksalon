@@ -74,9 +74,9 @@ function hideURLbar(){ window.scrollTo(0,1); }
         <form name="loginForm" ng-submit="login(obj)">
             <h2 style="text-align:center;margin-top:-10px;">Stylist Login</h2>
             <label>Username</label>
-            <input type="text" ng-model="obj.username" placeholder="e.g Siphoh"><br>
+            <input type="text" ng-model="obj.username" placeholder="e.g Siphoh" required><br>
             <label>Password</label>
-            <input type="password" ng-model="obj.password" placeholder="*********"><br>
+            <input type="password" ng-model="obj.password" placeholder="*********" required><br>
             <input type="submit" value="Login">
             <div class="row" ng-if="loading">
                 <center>
