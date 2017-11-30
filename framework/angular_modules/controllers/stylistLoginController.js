@@ -3,24 +3,27 @@ var stylistId;
 var app = angular.module('Imakapp',[]);
 app.controller("testingController", ['$scope','loginService','SessionService',function($scope,loginService,SessionService){
     
-    $scope.result = "Loading...";
+    $scope.loading = false;
     
     console.log("Controller Loaded");
     
     $scope.login = function(values){
-        $scope.result = "Loading.....";
+        $scope.loading = true;
+        $scope.result = "";
         var object = angular.toJson({login_username:values.username, login_password:values.password});
  
         loginService.sendLogin(object).then(function(res){
             if(res.data.response == "notfound")
             {
+                $scope.loading = false;
                 $scope.result = "Failed to Login, Please Check Your Details";
-                alert("Failed to login, Please Check Your Details");
             }
             else
             {
                 console.log(res);
-                alert("Successfully Login");
+                
+                $scope.loading = false;
+                $scope.result = "Successfully Login";
                 $scope.stylistId = res.data[0].style_id;
                 SessionService.set("stylestID", res.data[0].style_id);
                 SessionService.set("stylestFname", res.data[0].firstname);

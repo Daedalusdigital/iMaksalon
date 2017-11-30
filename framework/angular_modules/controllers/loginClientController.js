@@ -1,15 +1,14 @@
 var app = angular.module('loginApp',[]);
 var clientId;
 app.controller('loginClientController',['$scope','loginService','SessionService',function($scope,loginService,SessionService){
-       
-    var values = {
-        username : "",
-        password : ""
-    };
-    
+
     console.log("Loading");
+    
+    $scope.loading = false;
         $scope.clientLogin = function(values){
-            $scope.result = "Loading....";
+            $scope.result = "";
+            
+            $scope.loading = true;
             var object = angular.toJson({client_username:values.username,client_password:values.password});
             
            
@@ -17,10 +16,14 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
             
             loginService.sendLogin(object).then(function(res){
                if(res.data.response == 'notfound'){
+                   
+                   $scope.loading = false;
                    $scope.result="User Not Found, Please check your details";
                }
                else{
                    console.log(res);
+                   $scope.loading = false;
+                   $scope.result = "Successfully logged in";
                    $scope.clientId = res.data[0].clnt_id;
                    SessionService.set("clientId", res.data[0].clnt_id);
                    SessionService.set("clientName",res.data[0].fname);

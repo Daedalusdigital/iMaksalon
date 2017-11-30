@@ -2,16 +2,22 @@ var app = angular.module('registerApp',[]);
 
 app.controller('registerUserController',['$scope','registerService','SessionService',function($scope,registerService,SessionService){
         console.log("Loading");
+        $scope.loading = false;
         $scope.clientRegister = function(values){
-            $scope.result = "Loading....";
+            $scope.result = "";
+            $scope.loading = true;
             var object = angular.toJson({firstname:values.firstname, surname:values.surname, contact_number:values.contact_number, email:values.email_address, physical_address:values.physical_address, client_password:values.client_password, client_username:values.client_username});
            
                 console.log(object);
                 registerService.sendRegister(object).then(function(res){
                    if(res.data.response=='exist'){
+                       
+                       $scope.loading = false;
                        $scope.exist = "Username Already Taken, Please choose another one";
                    }
                    else{
+                       
+                       $scope.loading = false;
                        $scope.result = "You have succcessfully registered";
                        console.log(res);
                        window.location.href = "loginClient.html";

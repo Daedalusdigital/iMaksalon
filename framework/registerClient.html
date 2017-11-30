@@ -77,8 +77,12 @@ function hideURLbar(){ window.scrollTo(0,1); }
                 <input type="password" ng-model="obj.client_password" placeholder="Password" required/><br>
                
                 <input  type="submit" value="Register" class="btn btn-success" />
-                
-            <p ng-bind="result"></h1>
+                <div class="row" ng-if="loading">
+                        <center>
+                            <img style="width: 50px;margin-top:20px;" src="../css/lightbox/loading.gif" alt="logo"/>
+                        </center>
+                </div>
+                <div ng-bind="result"></div>
             </form>
             </div></div>
         </div>
