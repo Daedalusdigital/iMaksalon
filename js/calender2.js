@@ -10,11 +10,6 @@ app.controller('dateTimeCtrl', function ($scope) {
     ctrl.updateDate = function (newdate) {
         
         // Do something with the returned date here.
-<<<<<<< Updated upstream
-=======
-     
-
->>>>>>> Stashed changes
         console.log(newdate);
         var timee = newdate.toString();
         var newTime = timee.substring(16,21);
@@ -24,6 +19,7 @@ app.controller('dateTimeCtrl', function ($scope) {
         $scope.newDateSelected = newDate;
     };
 });
+
 app.controller('reportCtl',['$scope','$http',function($scope,$http){
     /*  var client__id = SessionService.get("client__ID");    
       var firstname = SessionService.get("fname");
@@ -59,6 +55,7 @@ app.controller('reportCtl',['$scope','$http',function($scope,$http){
       };
   
   }]);
+  
  app.controller('bookingController', ['$scope','$http', 'BookingService', 'populateStylistService','populateServices','SessionService',function($scope,$http,BookingService,populateStylistService,populateServices,SessionService){
         console.log("Working");
 
