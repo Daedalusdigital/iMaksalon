@@ -8,6 +8,7 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
     console.log("Controller Loaded");
     
     $scope.login = function(values){
+        $scope.result = "Loading.....";
         var object = angular.toJson({login_username:values.username, login_password:values.password});
  
         loginService.sendLogin(object).then(function(res){

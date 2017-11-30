@@ -9,7 +9,6 @@ app.controller('dateTimeCtrl', function ($scope) {
     
     ctrl.updateDate = function (newdate) {
         
-        // Do something with the returned date here.
         console.log(newdate);
         var timee = newdate.toString();
         var newTime = timee.substring(16,21);

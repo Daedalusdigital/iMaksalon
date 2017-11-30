@@ -78,6 +78,16 @@ function hideURLbar(){ window.scrollTo(0,1); }
             <label>Password</label>
             <input type="password" ng-model="obj.password" placeholder="*********"><br>
             <input type="submit" value="Login">
+            <div class="row">
+                <center>
+                    <div class="col-md-offset-4 col-md-2">
+                            <img src="../css/lightbox/loading.gif" alt="logo"/>
+                    </div>
+                    <div clas="col-md-1">
+                            <div ng-bind="result"></div>
+                    </div>
+                </center>
+            </div>
         </form>
     </div>
 </div>
