@@ -87,23 +87,28 @@ app.controller('viewingController',['$scope','$http','loginService','SessionServ
      var stylistEmail = SessionService.get("stylestEmail");
      var stylistContact = SessionService.get("stylestContact");
      var stylistAddress = SessionService.get("stylestPhysicalAddress");
-
+     $scope.loading = false;
      $scope.stylistNames = stylistName;
      $scope.stylistSnames = stylistSname;
      $scope.loadContent = function(){
+        $scope.loading = true;
         var obj = angular.toJson({stylist_id: stylistIds});
         
        $http.post("https://prod-29.southcentralus.logic.azure.com:443/workflows/2aeb751e26da433db142414354443c7a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggufLib2UUpQ2NRQ1GU6RopnvdFOPa0k4SicG-HTYJs",obj)
            .then(function(response){
                //$scope.bookings = response.data.records;
+               $scope.loading = false;
              $scope.bookinglist = response.data;
              console.log(response.data);
            },function(error){
+            $scope.loading = false;
                console.log(error);
            });
      }
 
         $scope.alterBooking = function(_id,btn_name,clientId,stylistId,booked_ser){
+            
+        $scope.loading = true;
             var obj = angular.toJson({        id: _id,
                                               btnName: btn_name,
                                               booked_service: booked_ser,
@@ -119,10 +124,10 @@ app.controller('viewingController',['$scope','$http','loginService','SessionServ
                       console.log(error);
                   });
 
+
+                  
                   $scope.loadContent();
                   
-                  $('#preloader').show();
-                  setTimeout(function(){ $('#preloader').fadeOut('slow') }, 5000);
                   
                  
         }
