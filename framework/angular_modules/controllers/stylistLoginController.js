@@ -30,7 +30,11 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
                 SessionService.set("stylestSname", res.data[0].surname);
                 SessionService.set("stylestEmail", res.data[0].email);
                 SessionService.set("stylestContact", res.data[0].contact_number);
-                SessionService.set("stylestPhysicalAddress", res.data[0].physical_address);
+                SessionService.set("stylistState",res.data[0].state);
+                SessionService.set("stylistCity",res.data[0].city);
+                SessionService.set("stylistStreet",res.data[0].street);
+                SessionService.set("stylistHouse",res.data[0].house_unit_number);
+                SessionService.set("facebookUrl",res.data[0].facebook_url);
 
                 $scope.stylistName = SessionService.get("stylestSname");
                 window.location.href = "../book-stylist.html";
@@ -45,14 +49,22 @@ app.controller('profileController',['$scope','$http','SessionService','updatePro
     var stylistSname = SessionService.get("stylestSname");
     var stylistEmail = SessionService.get("stylestEmail");
     var stylistContact = SessionService.get("stylestContact");
-    var stylistAddress = SessionService.get("stylestPhysicalAddress");
+    var stylistState = SessionService.get("stylistState");
+    var stylistCity = SessionService.get("stylistCity");
+    var stylistStreet = SessionService.get("stylistStreet");
+    var stylistHouse = SessionService.get("stylistHouse");
+    var facebookUrl = SessionService.get("facebookUrl");
 
     $scope.stylistIds = stylistIds;
     $scope.stylistName = stylistName;
     $scope.stylistSname = stylistSname;
     $scope.stylistEmail = stylistEmail;
     $scope.stylistContact = stylistContact;
-    $scope.stylistAddress = stylistAddress;
+    $scope.stylistState = stylistState;
+    $scope.stylistCity = stylistCity;
+    $scope.stylistStreet = stylistStreet;
+    $scope.stylistHouse = stylistHouse;
+    $scope.facebookUrl = facebookUrl;
 
     $scope.updateProfile = function(){
         alert("Clicked"+stylistName+" "+stylistSname);
