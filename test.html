@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="dateTimeApp">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,17 +20,57 @@
     <link href="css/loader.css" rel="stylesheet" type="text/css">
     <link href="css/modal.css" rel="stylesheet" type="text/css">
     <link href="css/modalss.css" rel="stylesheet" type="text/css">
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
-    <script  src="js/calender.js"></script>
-    <script src="js//angucomplete.js"></script>
-     <script src="js/angular-touch.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-    <title>Pricing Tables - Explorer</title>
+    
+ <script src="https://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyAKoSezP6EU1e2BUw5Es-8F5mT2yYgLp9o" type="text/javascript"></script>
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+ <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.js'></script>
+ <script  src="js/calender2.js"></script>
+ <script src='js/index.js'></script>
+    <title>Dashboard</title>
   </head>
   <body class="">
+      <div id="preloader">
+          <div id="loader"></div>
+        </div>
+        <div id="id01" class="modal" style="z-index: 22;" >
+        
+              <div class="modal-content animate" style="background-color: transparent;border:0;" ng-controller="reportCtl">
+                  <div class="row">
+                      <div class="col-md-3"></div>
+                      <div class="col-md-4" style="background-color:rgb(255,255,255);padding:30px;">
+              
+                        <label><b>Firstname</b></label>
+                        <input class="form-control" type="text"  ng-model="obj.guest_name" placeholder="Your firstname" name="firstname" required>
+                        
+                        <label><b>Lastname</b></label>
+                        <input class="form-control" type="text" ng-model="obj.guest_surname" placeholder="Your lastname" name="lastname" required>    
+              
+                        <label><b>Email</b></label>
+                        <input class="form-control" type="email" ng-model="obj.guest_email" placeholder="Your email" name="email" required>
+              
+                        <label><b>Comment</b></label>
+                        <textarea class="form-control" style="width:100%;height:100px;resize:none" ng-model="obj.guest_comment" placeholder="Empty..."></textarea>
+                          
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button ng-click="support(obj)" class="btn btn-success">Send</button>
+                              </div>
+                              <div class="col-md-6">
+                                  <button onclick="$('#id01').fadeOut(500);" class="btn btn-danger">Cancel</button>
+                              </div>
+                        </div>
+                        <div ng-bind="loading"></div>
+                      </div>
+                  </div>
+                      
+                    </div>
+          </div>
+            
+          </div>
     <div class="page-wrapper">
-      <div class="header-wrapper">
+      <div class="header-wrapper header-transparent header-light">
         <div class="header">
           <div class="container">
             <div class="header-inner">
@@ -39,162 +79,14 @@
                 <span></span>
                 <span></span>
               </div>
-              <!-- /.header-toggle -->
-              <div class="header-logo">
-                <a href="index.html">
-                  <img src="assets/img/logo.svg" class="svg" alt="Home">
-                </a>
-                <a href="index.html" class="header-title">Explorer</a>
+             <div class="header-logo">
+            
+                <a href="index.html" class="header-title"> <img src="images/logo-wide-white.png" alt=""></a>
               </div>
+
               <!-- /.header-logo -->
-              <div class="header-nav">
-                <div class="primary-nav-wrapper">
-                  <ul class="nav">
-                    <li class="nav-item has-sub-menu">
-                      <a href="#" class="nav-link ">Home</a>
-                      <ul class="sub-menu">
-                        <li><a href="index-directory.html"><b>1.</b> &nbsp;&nbsp;Directory Version</a></li>
-                        <li><a href="index-classified.html"><b>2.</b> &nbsp;&nbsp;Classified Version</a></li>
-                        <li><a href="index-job-board.html"><b>3.</b> &nbsp;&nbsp;Job Board Version</a></li>
-                        <li><a href="index-real-estate.html"><b>4.</b> &nbsp;&nbsp;Real Estate Version</a></li>
-                        <li><a href="index-automotive.html"><b>5.</b> &nbsp;&nbsp;Automotive Version</a></li>
-                        <li><a href="index-travel.html"><b>6.</b> &nbsp;&nbsp;Travel &amp; Hotel Version</a></li>
-                        <li><a href="index-restaurant.html"><b>7.</b> &nbsp;&nbsp;Restaurant Version</a></li>
-                        <li><a href="admin-dashboard.html"><b>8.</b> &nbsp;&nbsp;Admin Dashboard</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item has-sub-menu">
-                      <a href="#" class="nav-link ">Listings</a>
-                      <ul class="sub-menu">
-                        <li><a href="listings-google-map.html">Listings Google Map</a></li>
-                        <li><a href="listings-grid.html">Listings Grid</a></li>
-                        <li><a href="listings-rows.html">Listings Rows</a></li>
-                        <li><a href="listings-detail.html">Listing Detail</a></li>
-                        <li><a href="listings-my.html">My Listing</a></li>
-                        <li><a href="listings-compare.html">Listings Compare</a></li>
-                        <li><a href="listings-submit.html">Submit Listing</a></li>
-                        <li><a href="listings-claim.html">Claim Listing</a></li>
-                        <li><a href="listings-favorites.html">Favorite Listings</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item has-sub-menu">
-                      <a href="#" class="nav-link ">Agencies &amp; Agents</a>
-                      <ul class="sub-menu">
-                        <li><a href="agents-row.html">Agents Rows</a></li>
-                        <li><a href="agents-grid.html">Agents Grid</a></li>
-                        <li><a href="agents-submit.html">Agent Submit</a></li>
-                        <li><a href="agents-detail.html">Agent Detail</a></li>
-                        <li><a href="agencies-row.html">Agencies Rows</a></li>
-                        <li><a href="agencies-grid.html">Agencies Grid</a></li>
-                        <li><a href="agencies-submit.html">Agency Submit</a></li>
-                        <li><a href="agencies-detail.html">Agency Detail</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item has-sub-menu has-mega-menu">
-                      <a href="#" class="nav-link active">Pages</a>
-                      <div class="sub-menu mega-menu">
-                        <ul>
-                          <li><strong>Elements I.</strong></li>
-                          <li><a href="pricing.html">Pricing</a></li>
-                          <li><a href="services.html">Services</a></li>
-                          <li><a href="user-profile-edit.html">User Profile Edit</a></li>
-                          <li><a href="testimonials.html">Testimonials</a></li>
-                          <li><a href="author.html">Author Detail</a></li>
-                        </ul>
-                        <ul>
-                          <li><strong>Elements II.</strong></li>
-                          <li><a href="tables.html">Tables</a></li>
-                          <li><a href="invoice.html">Invoice</a></li>
-                          <li><a href="grid.html">Grid</a></li>
-                          <li><a href="filters.html">Filters</a></li>
-                          <li><a href="reservations-extra-features.html">Reservations Features</a></li>
-                        </ul>
-                        <ul>
-                          <li><strong>Elements III.</strong></li>
-                          <li><a href="faq.html">FAQ</a></li>
-                          <li><a href="contact.html">Contact</a></li>
-                          <li><a href="login.html">Login</a></li>
-                          <li><a href="registration.html">Registration</a></li>
-                          <li><a href="checkout.html">Checkout</a></li>
-                        </ul>
-                        <ul>
-                          <li><strong>Elements IV.</strong></li>
-                          <li><a href="forms.html">Forms</a></li>
-                          <li><a href="change-password.html">Change password</a></li>
-                          <li><a href="reset-password.html">Reset password</a></li>
-                          <li><a href="messages.html">Messages</a></li>
-                          <li><a href="sticky-footer.html">Sticky Footer</a></li>
-                        </ul>
-                        <ul>
-                          <li><strong>Elements V.</strong></li>
-                          <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
-                          <li><a href="403.html">403 - Access not allowed</a></li>
-                          <li><a href="404.html">404 - Page not found</a></li>
-                          <li><a href="500.html">500 - Internal server error</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="nav-item has-sub-menu has-mega-menu">
-                      <a href="#" class="nav-link ">Admin</a>
-                      <div class="sub-menu mega-menu">
-                        <ul>
-                          <li>
-                            <strong>Dashboards</strong>
-                          </li>
-                          <li><a href="admin-dashboard.html">Standard Version</a></li>
-                          <li><a href="admin-dashboard-minimal-sidebar.html">Compressed Sidebar</a></li>
-                          <li><a href="admin-dashboard-light-sidebar.html">Light Sidebar</a></li>
-                          <li><a href="admin-dashboard-light-minimal-sidebar.html">Compressed Light Sidebar</a></li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <strong>Listings</strong>
-                          </li>
-                          <li><a href="admin-listings.html">Listings</a></li>
-                          <li><a href="admin-agencies.html">Agencies</a></li>
-                          <li><a href="admin-agents.html">Agents</a></li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <strong>Workflow</strong>
-                          </li>
-                          <li><a href="admin-projects.html">Projects</a></li>
-                          <li><a href="admin-tasks.html">Tasks</a></li>
-                          <li><a href="admin-users.html">Users</a></li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <strong>Template Helpers</strong>
-                          </li>
-                          <li><a href="admin-messages.html">Messages</a></li>
-                          <li><a href="admin-cards.html">Cards</a></li>
-                          <li><a href="admin-forms.html">Forms</a></li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <strong>Template Helpers</strong>
-                          </li>
-                          <li><a href="admin-media.html">Media files</a></li>
-                          <li><a href="admin-tables.html">Tables</a></li>
-                        </ul>
-                      </div>
-                      <!-- /.mega-menu -->
-                    </li>
-                    <li class="nav-item has-sub-menu">
-                      <a href="#" class="nav-link ">Blog</a>
-                      <ul class="sub-menu">
-                        <li><a href="blog.html">Blog Right Sidebar</a></li>
-                        <li><a href="blog-left.html">Blog Left Sidebar</a></li>
-                        <li><a href="blog-grid.html">Blog Grid Right Sidebar</a></li>
-                        <li><a href="blog-grid-left.html">Blog Grid Left Sidebar</a></li>
-                        <li><a href="blog-detail.html">Blog Detail Right Sidebar</a></li>
-                        <li><a href="blog-detail-left.html">Blog Detail Left Sidebar</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <!-- /.primary-nav-wrapper -->
-              </div>
+            
+                   
               <div class="header-toggle toggle">
                 <span></span>
                 <span></span>
@@ -202,13 +94,13 @@
               </div>
               <!-- /.header-toggle -->
               <div class="header-actions">
-                <ul class="nav nav-pills">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link modal-submit" id="modal-action-submit" data-toggle="modal" data-target="#modal-submit">
-                      <i class="fa fa-plus"></i> <span>Submit Listing</span>
-                    </a>
-                  </li>
-                </ul>
+                  <ul class="nav nav-pills">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link modal-submit" id="modal-action-submit" data-toggle="modal" data-target="#modal-submit">
+                        <i class="fa fa-plus"></i> <span>Add Booking</span>
+                      </a>
+                    </li>
+                  </ul>
               </div>
               <!-- /.header-actions -->
             </div>
@@ -220,232 +112,1084 @@
       </div>
       <!-- /.header-wrapper -->
      
+
+
+     <div class="hero-image-wrapper" >
+        <div class="hero-image-src" style="background-image: url('assets/img/tmp/hero-classified.jpg');">
+        </div>
+        <!-- /.hero-image-src -->
+        <div class="hero-image">
+          <div class="hero-image-inner">
+            <div class="hero-image-content">
+              <div class="container" >
+                <div class="center" ng-controller="PlacesSearchController as search">
+                  <h1 class="hero-image-content-title-simple float-none">Durban KwaZulu-Natal</h1>
+                  <p class="float-none">Search South Africa's play ground for Beauty Salons and Stylist, As well as products.</p>
+                  <form method="post" action="?">
+                    <div class="row justify-content-sm-center">
+                      <div class="col-sm-4">
+                        <div class="input-group">
+                          <span class="input-group-addon no-border"><i class="fa fa-location-arrow"></i></span>
+                          <input type="text" class="form-control no-border form-control-xl" ej-search-places-input
+                                search-results-limit="10"
+                                complete-result="search.searchResult" placeholder="Search from your City..."  ng-model="search.searchTerms">
+                        </div>
+                           <script type="text/ng-template" id="search-results.html">
+                          </div>
+                                </div>
+                                      <div class="search-places-results" ng-show="ngModel" style="margin-left: 23px; margin-top: 45px;">
+                                      <ul>
+                                        <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
+                                    <div>
+                                            <span ng-bind-html="result.name | highlightSearchTerms:ngModel"></span>&nbsp;&nbsp;
+                                          <span class="result-vicinity">{{ result.vicinity }}</span>
+                                     </div>
+                                     </li>
+                                </ul>
+                              <div ng-show="queryInProgress" class="ball-clip-rotate">
+                      </script> 
+                        <!-- /.form-group -->
+                      </div>
+
+                      <!-- /.col-* -->
+                      <div class="col-sm-2">
+                        <button type="submit" ng-click="search.go() " class="btn btn-primary btn-xl" >
+                          <i class="fa fa-search" ></i> Search
+                        </button>
+
+                      </div>
+                      <!-- /.col-* -->
+                    </div>
+                    <!-- /.row -->
+                  </form>
+                </div>
+              </div>
+              <!-- /.container -->
+            </div>
+            <!-- /.hero-image-content -->
+          </div>
+          <!-- /.hero-image-inner -->
+          <div class="hero-image-categories">
+              <a href="listings-google-map.html" class="hero-image-category">
+                <i class="fa fa-map-o"></i>
+                <strong>Map</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="framework/views.html#!/salons" class="hero-image-category">
+                <i class="fa fa-building"></i>
+                <strong>Salons</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="stylist.html" class="hero-image-category">
+                <i class="fa fa-users"></i>
+                <strong>Stylists</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="clientBookings.html" class="hero-image-category">
+                <i class="fa fa-calendar-check-o"></i>
+                <strong>Bookings</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="products.html" class="hero-image-category">
+                <i class="fa fa-product-hunt"></i>
+                <strong>Products</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="pricelist.html" class="hero-image-category">
+                <i class="fa fa-money"></i>
+                <strong>Price list</strong>
+              </a><!-- /.hero-image-category -->
+              <a href="#" onclick="document.getElementById('id01').style.display='block'" class="hero-image-category">
+                <i class="fa fa-frown-o"></i>
+                <strong>Report</strong>
+              </a><!-- /.hero-image-category -->
+            </div>
+            <!-- /.hero-image-categories -->
+          </div>
+          <!-- /.hero-image -->
+        </div>
+      </script>
     
     </div>
     <!-- /.page-wrapper -->
-                                                     <div id="modal-submit" class="modal fade"  ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl">
-                                                        <div class="modal-dialog" role="document" >
-                                                          <div class="modal-content">
-                                                            <div class="modal-header">
-                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                              </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                              <form ng-controller='bookingController' ng-submit="makeBooking(obj)">
-                                                                  
-                                                                <fieldset class="container-fluid" >
-                                                                  <legend>Booking Information</legend>
-                                                                  <div class="row">
-                                                                    <div class="col-sm-6">
-                                                                      <div class="form-group">
 
-                                                                       <label>Stylist</label>
-                                                                        <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.firstname for stylist in stylistList track by stylist.style_id" ng-change="onChangeSelectedUser(selectedStylist)">
-                                                                            <option value="" disabled>Select Stylist</option>
-                                                                        </select>
-                                                                      </div>
-                                                                      <div class="form-group">
-                                                                        <label>Email</label>
-                                                                        <input type="text" ng-model="obj.stylistId.stylist_email" class="form-control" placeholder="Email Address" disabled/>
-                                                                      </div>
-                                                                      <div class="form-group">
-                                                                        <label>Phone Number</label>
-                                                                        <input type="text" ng-model="obj.stylistId.stylist_contact_number" class="form-control" placeholder="Phone Number" disabled/>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                      <label>Stylist Location</label>
-                                                                      <input type="text" ng-model="obj.stylistId.salon_physical_address" class="form-control" placeholder="Physical Address" disabled/>
-                                                                  </div>
-                                                                  </div>
-                                                                  <div class="col-md-6 col-lg-4">
-                                                                        <div class="listing-box">
-                                                                          <div class="listing-box-inner">
-                                                                            <a href="agents-detail.html" class="listing-box-image">
-                                                                              <span class="listing-box-image-content" ng-model="obj.stylistId.profile">
-                                                                                <img ng-src="{{obj.stylistId.stylist_profile_pic}}" alt="" />
-                                                                                </span><!-- /.listing-box-image-content -->
-                                                                            </a><!-- /.listing-box-image -->
-                                                                      
-                                                                            <div class="listing-box-attributes" ng-model="obj.stylistId" >
-                                                                              <dl>
-                                                                                <dt ><div ng-bind="obj.stylistId.firstname">Firstname</div></dt>
-                                                                                <dd><div ng-bind="obj.stylistId.surname">Lastname</div></dd>
-                                                                              </dl>
-                                                                            </div>
-                                                                            <!-- /.listing-box-attributes -->
-                                                                          </div>
-                                                                          <!-- /.listing-box-inner -->
-                                                                        </div>
-                                                                        <!-- /.listing-box -->
-                                                                      </div>
-                                                                  <!-- /.row -->
-                                                                </fieldset>
-                                                                <fieldset >
-                                                                  
-                                                                   
-                                                        <div  class="app-container"  ng-cloak>
-                                                      
-                                                    <div date-picker
-                                                       datepicker-title="Select Date"
-                                                       picktime="true"
-                                                       pickdate="true"
-                                                       pickpast="false"
-                                                       mondayfirst="false"
-                                                       custom-message="You have selected"
-                                                       selecteddate="ctrl.selected_date"
-                                                       updatefn="ctrl.updateDate(newdate)">
-                                                    
-                                                      <div class="datepicker"
-                                                         ng-class="{
-                                                          'am': timeframe == 'am',
-                                                          'pm': timeframe == 'pm',
-                                                          'compact': compact
-                                                        }">
-                                                        <div class="datepicker-header">
-                                                          <div class="datepicker-title" ng-if="datepicker_title">{{ datepickerTitle }}</div>
-                                                          <div class="datepicker-subheader">{{ localdate.getDate() }} {{ monthNames[localdate.getMonth()] }} {{ localdate.getFullYear() }}</div>
-                                                        </div>
-                                                        <div class="datepicker-calendar">
-                                                          <div class="calendar-header">
-                                                            <div class="goback" ng-click="moveBack()" ng-if="pickdate">
-                                                              <svg width="30" height="30">
-                                                                <path fill="none" stroke="#0DAD83" stroke-width="3" d="M19,6 l-9,9 l9,9"/>
-                                                              </svg>
-                                                            </div>
-                                                            <div class="current-month-container">{{ currentViewDate.getFullYear() }} {{ currentMonthName() }}</div>
-                                                            <div class="goforward" ng-click="moveForward()" ng-if="pickdate">
-                                                              <svg width="30" height="30">
-                                                                <path fill="none" stroke="#0DAD83" stroke-width="3" d="M11,6 l9,9 l-9,9" />
-                                                              </svg>
-                                                            </div>
-                                                          </div>
-                                                          <div class="calendar-day-header">
-                                                            <span ng-repeat="day in days" class="day-label">{{ day.short }}</span>
-                                                          </div>
-                                                          <div class="calendar-grid" ng-class="{false: 'no-hover'}[pickdate]">
-                                                            <div
-                                                              ng-class="{'no-hover': !day.showday}"
-                                                              ng-repeat="day in month"
-                                                              class="datecontainer"
-                                                              ng-style="{'margin-left': calcOffset(day, $index)}"
-                                                              track by $index>
-                                                              <div class="datenumber" ng-class="{'day-selected': day.selected }" ng-click="selectDate(day)">
-                                                                {{ day.daydate }}
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                        <div class="timepicker" ng-if="picktime == 'true'">
-                                                          <div ng-class="{'am': timeframe == 'am', 'pm': timeframe == 'pm' }">
-                                                            <div class="timepicker-container-outer" selectedtime="time" timetravel>
-                                                              <div class="timepicker-container-inner">
-                                                                <div class="timeline-container" ng-mousedown="timeSelectStart($event)" sm-touchstart="timeSelectStart($event)">
-                                                                  <div class="current-time">
-                                                                    <div class="actual-time" >{{ time }}</div>
-                                                                  </div>
-                                                                  <div class="timeline">
-                                                                  </div>
-                                                                  <div class="hours-container">
-                                                                    <div class="hour-mark" ng-repeat="hour in getHours() track by $index"></div>
-                                                                  </div>
-                                                                </div>
-                                                                <div class="display-time">
-                                                                  <div class="decrement-time" ng-click="adjustTime('decrease')">
-                                                                    <svg width="24" height="24">
-                                                                      <path stroke="white" stroke-width="2" d="M8,12 h8"/>
-                                                                    </svg>
-                                                                  </div>
-                                                                  <div class="time" ng-class="{'time-active': edittime.active}">
-                                                                    <input type="text" class="time-input" ng-model="edittime.input" ng-keydown="changeInputTime($event)" ng-focus="edittime.active = true; edittime.digits = [];" ng-blur="edittime.active = false"/>
-                                                                    <div class="formatted-time" contenteditable="false" ng-model="obj.date">{{ edittime.formatted }}</div>
-                                                                  </div>
-                                                                  <div class="increment-time" ng-click="adjustTime('increase')">
-                                                                    <svg width="24" height="24">
-                                                                      <path stroke="white" stroke-width="2" d="M12,7 v10 M7,12 h10"/>
-                                                                    </svg>
-                                                                  </div>
-                                                                </div>
-                                                                <div class="am-pm-container">
-                                                                  <div class="am-pm-button" ng-click="changetime('am');">am</div>
-                                                                  <div class="am-pm-button" ng-click="changetime('pm');">pm</div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                        
-                                                    
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                             
-              </fieldset>
-              <fieldset>
-                
+<!-- /.hero-image-wrapper -->
+      <div class="main-wrapper">
+        <div class="main">
+          <div class="main-inner">
+            <div class="container">
+              <div class="content">
+                <div class="page-header">
+                  <h2>iMakApp available at these locations</h2>
+                  <p>See the most recent additions available in these provinces. All additions are verified by our editing staff.</p>
+                </div>
                 <div class="row">
-                  <div class="col-sm-6">
-                    <div id="location-google-map" style="height: 450px;"></div>
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-1.jpg')"></span>
+                      <strong>Durban</strong>
+                    </a><!-- /.image-item -->
                   </div>
-                  <div class="col-sm-6">
-                    <div class="form-group" class="time" ng-class="{'time-active': edittime.active}">
-                      <label>Booking Date</label>
-                     <input type="text" id="serviceDate" ng-model="newDateSelected" class="form-control" disabled />
-                    </div>
-                    <!-- /.form-group -->
-                    <div class="form-group">
-                      <label>Booking Time</label>
-                      <input type="hidden"  class="form-control" id="listing_location_latitude">
-                      <input type="text" id="serviceTime" ng-model="newTimeSelected" class="form-control" disabled />
-                    </div>
-                    <!-- /.form-group -->
-                    <div class="form-group">
-                      <label>Service</label>
-                      <select class="form-control" ng-model="obj.bookedService" ng-options="service.name for service in serviceList track by service.id">
-                          <option value="" disabled>Select Service</option>
-                      </select>
-                    </div>
-                    <!-- /.form-group -->
-                    <div class="form-group">
-                      <label>Total Cost</label>
-                      <input type="text" class="form-control" disabled ng-model="obj.bookedService.price" disabled/>
-                      
-                    </div>
-                    <!-- /.form-group -->
-                    <div class="form-group">
-                      <label>Payment Method</label>
-                      <select class="form-control" disabled>
-                        <option value="">Cash</option>
-                      </select>
-                    </div>
-                    <!-- /.form-group -->
-                  <div class="form-check">
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input"> I agree with terms &amp; conditions
-                  </label>
-                </div>
-                </div>
-
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-2.jpg')"></span>
+                      <strong>Pietermaritzburg</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-3.jpg')"></span>
+                      <strong>East London</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-4.jpg')"></span>
+                      <strong>Johannesburg</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-5.jpg')"></span>
+                      <strong>Pretoria</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
+                  <div class="col-sm-4">
+                    <a class="image-item" href="listings-detail.html">
+                      <span class="image-item-background" style="background-image: url('assets/img/tmp/location-6.jpg')"></span>
+                      <strong>Cape Town</strong>
+                    </a><!-- /.image-item -->
+                  </div>
+                  <!-- /.col-* -->
                 </div>
                 <!-- /.row -->
-              </fieldset>
-              <div class="modal-footer row">
-                <input type="submit" class="btn btn-primary" value="Request Booking"/>
+                <div class="block mb0">
+                  <center>
+                    <div class="page-header">
+                      <h2>iMakApp Articles and Promotions</h2>
+                      <p>News and promotions based on the iMakApp salons near you!</p>
+                    </div>
+                     <div class="main__wrapper">
+      <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="https://customisepage.blob.core.windows.net/images/608.jpeg" alt="">
+
+              <div class="card__overlay card__overlay--indigo">
+                <div class="card__overlay-content">
+                  <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i> Updates</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i> 2 min ago</a></li>
+                  </ul>
+
+                  <a href="#0" class="card__title">The iMakApp finally Available on Android</a>
+
+                  <ul class="card__meta card__meta--last">
+                    <li><a href="#0"><i class="fa fa-user"></i> Notification</a></li>
+                    <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
+                  </ul>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
-          
+      </div>
+
+      <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="https://customisepage.blob.core.windows.net/images/300.jpeg" alt="">
+
+              <div class="card__overlay card__overlay--blue">
+                <div class="card__overlay-content">
+                  <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i>News</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i> 2 days ago</a></li>
+                  </ul>
+
+                  <a href="#0" class="card__title">December Price specials Updates </a>
+
+                  <ul class="card__meta card__meta--last">
+                    <li><a href="#0"><i class="fa fa-user"></i> Azalia Hair</a></li>
+                    <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="https://customisepage.blob.core.windows.net/images/301.jpeg" alt="">
+
+              <div class="card__overlay card__overlay--indigo">
+                <div class="card__overlay-content">
+                <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i> Promotions</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i> 2 days ago</a></li>
+                  </ul>
+
+                  <a href="#0" class="card__title">Promo codes coming to 2018</a>
+
+                  <ul class="card__meta card__meta--last">
+                    <li><a href="#0"><i class="fa fa-user"></i> Notification</a></li>
+                    <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
+                  </ul>    
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="https://customisepage.blob.core.windows.net/images/111.jpeg" alt="">
+
+              <div class="card__overlay card__overlay--indigo">
+                <div class="card__overlay-content">
+                  <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i> Promotions</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i> 5 days ago</a></li>
+                  </ul>
+
+                  <a href="#0" class="card__title">New Service coming to iMakApp</a>
+
+                  <ul class="card__meta card__meta--last">
+                    <li><a href="#0"><i class="fa fa-user"></i> Notification</a></li>
+                    <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
+                  </ul>   
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="https://customisepage.blob.core.windows.net/images/122.jpeg" alt="">
+
+              <div class="card__overlay card__overlay--blue">
+                <div class="card__overlay-content">
+                  <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i> Tutorials</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i> 1 days ago</a></li>
+                  </ul>
+
+                  <a href="#0" class="card__title">What hair products should you use and why</a>
+
+                  <ul class="card__meta card__meta--last">
+                    <li><a href="#0"><i class="fa fa-user"></i> African Hair Salons</a></li>
+                    <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
+                  </ul>   
+                </div>
+              </div>
+            </div>
+          </div>
+      </div> 
+   </div>
+                    <!-- /.categories-wrapper -->
+                  </div>
+                  <!-- /.block-inner -->
+                </div>
+                <!-- /.block-inner -->
+                <div class="carousel-fullwidth">
+                  <div class="carousel-fullwidth-inner">
+                    <div class="listing-boxes">
+                      <div class="row mb-30 carousel-items">
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <span class="listing-box-featured">Featured</span>
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-1.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Durban</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Salon @800</a></h2>
+                                <h3>500 Peter Mokaba Ridge, Essenwood, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>15 </dd>
+                                  <dt>Nail &amp; Makeup Artist</dt>
+                                  <dd>10 </dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <ul>
+                                  <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                  </a>
+                                </ul>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-2.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Greyville</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Beauty and Balance</a></h2>
+                                <h3>G15, 10 Mathews Meyiwa Rd, Greyville, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>24</dd>
+                                  <dt>Nail &amp; Makeup Artist</dt>
+                                  <dd>15</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-3.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Durban</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Bespoke Hair</a></h2>
+                                <h3>892 Umgeni road, Lion Match Office Park, Windermere, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>55</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>63</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-4.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Durban</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Sisters Hair &amp; Beauty Salon</a></h2>
+                                <h3>Shop No.3, 237 O R Tambo Parade, North Beach, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>45</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>68</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-5.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Musgrave</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">B Scene Hair Designs by Donne</a></h2>
+                                <h3>234 St. Thomas Rd, Musgrave, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-6.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Durban</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Hair @ Mel's</a></h2>
+                                <h3>2 Interstate Ave, Umgeni Business Park, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-7.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Springfield</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Salon Lisa</a></h2>
+                                <h3>Shop No. 269, Inanda Rd, Springfield, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-8.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Durban</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Salon Nishani</a></h2>
+                                <h3>247 Wandsbeck Rd, Palmiet, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-9.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Durban Central</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Heaven On Earth Beauty Salon</a></h2>
+                                <h3>1st Floor, 3rd Rock Entrance, Smith Street, 494, Durban Central</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-10.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Berea</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">The Beauty Bar</a></h2>
+                                <h3>417 Lilian Ngoyi Rd, Windermere, Berea</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                 <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-11.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Durban</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Happiness Hair Salon</a></h2>
+                                <h3>Shop No. 9, 14 Sylvester Ntuli Rd, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-12.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Berea</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Phophotha</a></h2>
+                                <h3>109B, Musgrave Centre, 115 Musgrave Rd, Berea, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <span class="listing-box-featured">Featured</span>
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-13.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Bellair</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Sixtythree Hairstudio</a></h2>
+                                <h3>255 Wakesleigh Rd, Bellair, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                        <div class="col">
+                          <div class="listing-box">
+                            <div class="listing-box-inner">
+                              <span class="listing-box-featured">Featured</span>
+                              <a href="listings-detail.html" class="listing-box-image">
+                                <span class="listing-box-image-content" style="background-image: url(https://imakapp.blob.core.windows.net/image/web/assets/img/tmp/listing-14.jpg)"></span><!-- /.listing-box-image-content -->
+                                <span class="listing-box-category tag">Montclair</span>
+                                <span class="listing-box-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                </span>
+                              </a><!-- /.listing-box-image -->
+                              <div class="listing-box-content">
+                                <h2><a href="listings-detail.html">Imvelo Beauty Square Hair Salon &amp; Nail bar</a></h2>
+                                <h3>Shop 39, Montclair Mall, Montclair, Durban</h3>
+                              </div>
+                              <!-- /.listing-box-content -->
+                              <div class="listing-box-attributes">
+                                <dl>
+                                  <dt>Hair Stylists</dt>
+                                  <dd>70</dd>
+                                  <dt>Nail &amp; Makeup Artists</dt>
+                                  <dd>88</dd>
+                                </dl>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                              <div class="listing-box-attributes-icons">
+                                <a href="Salon.html">
+                                  <li><button type="view">View</button></li>
+                                </a>
+                              </div>
+                              <!-- /.listing-box-attributes -->
+                            </div>
+                            <!-- /.listing-box-inner -->
+                          </div>
+                          <!-- /.listing-box -->
+                        </div>
+                      </div>
+                      <!-- /.row -->
+                    </div>
+                    <!-- /.listing-boxes -->
+                  </div>
+                  <!-- /.carousel-fullwidth-inner -->
+                </div>
+                <!-- /.carousel-fullwidth -->
+        
+            <!-- /.container -->
+          </div>
+          <!-- /.main-inner -->
+        </div>
+        <!-- /.main -->
+      </div>
+      <!-- /.main-wrapper -->
+ 
+    </div>
+
+    <div id="modal-submit" class="modal fade"  ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl">
+      <div class="modal-dialog" role="document" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form ng-controller='bookingController' ng-submit="makeBooking(obj)">
+                
+              <fieldset class="container-fluid" >
+                <legend>Booking Information</legend>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                     <label>Stylist</label>
+                      <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.firstname for stylist in stylistList track by stylist.style_id" ng-change="onChangeSelectedUser(selectedStylist)">
+                          <option value="" disabled>Select Stylist</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" ng-model="obj.stylistId.stylist_email" class="form-control" placeholder="Email Address" disabled/>
+                    </div>
+                    <div class="form-group">
+                      <label>Phone Number</label>
+                      <input type="text" ng-model="obj.stylistId.stylist_contact_number" class="form-control" placeholder="Phone Number" disabled/>
+                  </div>
+                  <div class="form-group">
+                    <label>Stylist Location</label>
+                    <input type="text" ng-model="obj.stylistId.salon_physical_address" class="form-control" placeholder="Physical Address" disabled/>
+                </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                      <div class="listing-box">
+                        <div class="listing-box-inner">
+                          <a href="agents-detail.html" class="listing-box-image">
+                            <span class="listing-box-image-content" ng-model="obj.stylistId.profile">
+                              <img ng-src="{{obj.stylistId.stylist_profile_pic}}" alt="" />
+                              </span><!-- /.listing-box-image-content -->
+                          </a><!-- /.listing-box-image -->
+                    
+                          <div class="listing-box-attributes" ng-model="obj.stylistId" >
+                            <dl>
+                              <dt ><div ng-bind="obj.stylistId.firstname">Firstname</div></dt>
+                              <dd><div ng-bind="obj.stylistId.surname">Lastname</div></dd>
+                            </dl>
+                          </div>
+                          <!-- /.listing-box-attributes -->
+                        </div>
+                        <!-- /.listing-box-inner -->
+                      </div>
+                      <!-- /.listing-box -->
+                    </div>
+                <!-- /.row -->
+              </fieldset>
+              <fieldset >
+                
+                 
+      <div  class="app-container"  ng-cloak>
+    
+  <div date-picker
+     datepicker-title="Select Date"
+     picktime="true"
+     pickdate="true"
+     pickpast="false"
+     mondayfirst="false"
+     custom-message="You have selected"
+     selecteddate="ctrl.selected_date"
+     updatefn="ctrl.updateDate(newdate)">
+  
+    <div class="datepicker"
+       ng-class="{
+        'am': timeframe == 'am',
+        'pm': timeframe == 'pm',
+        'compact': compact
+      }">
+      <div class="datepicker-header">
+        <div class="datepicker-title" ng-if="datepicker_title">{{ datepickerTitle }}</div>
+        <div class="datepicker-subheader">{{ localdate.getDate() }} {{ monthNames[localdate.getMonth()] }} {{ localdate.getFullYear() }}</div>
+      </div>
+      <div class="datepicker-calendar">
+        <div class="calendar-header">
+          <div class="goback" ng-click="moveBack()" ng-if="pickdate">
+            <svg width="30" height="30">
+              <path fill="none" stroke="#0DAD83" stroke-width="3" d="M19,6 l-9,9 l9,9"/>
+            </svg>
+          </div>
+          <div class="current-month-container">{{ currentViewDate.getFullYear() }} {{ currentMonthName() }}</div>
+          <div class="goforward" ng-click="moveForward()" ng-if="pickdate">
+            <svg width="30" height="30">
+              <path fill="none" stroke="#0DAD83" stroke-width="3" d="M11,6 l9,9 l-9,9" />
+            </svg>
+          </div>
+        </div>
+        <div class="calendar-day-header">
+          <span ng-repeat="day in days" class="day-label">{{ day.short }}</span>
+        </div>
+        <div class="calendar-grid" ng-class="{false: 'no-hover'}[pickdate]">
+          <div
+            ng-class="{'no-hover': !day.showday}"
+            ng-repeat="day in month"
+            class="datecontainer"
+            ng-style="{'margin-left': calcOffset(day, $index)}"
+            track by $index>
+            <div class="datenumber" ng-class="{'day-selected': day.selected }" ng-click="selectDate(day)">
+              {{ day.daydate }}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="side-wrapper">
+      <div class="timepicker" ng-if="picktime == 'true'">
+        <div ng-class="{'am': timeframe == 'am', 'pm': timeframe == 'pm' }">
+          <div class="timepicker-container-outer" selectedtime="time" timetravel>
+            <div class="timepicker-container-inner">
+              <div class="timeline-container" ng-mousedown="timeSelectStart($event)" sm-touchstart="timeSelectStart($event)">
+                <div class="current-time">
+                  <div class="actual-time" >{{ time }}</div>
+                </div>
+                <div class="timeline">
+                </div>
+                <div class="hours-container">
+                  <div class="hour-mark" ng-repeat="hour in getHours() track by $index"></div>
+                </div>
+              </div>
+              <div class="display-time">
+                <div class="decrement-time" ng-click="adjustTime('decrease')">
+                  <svg width="24" height="24">
+                    <path stroke="white" stroke-width="2" d="M8,12 h8"/>
+                  </svg>
+                </div>
+                <div class="time" ng-class="{'time-active': edittime.active}">
+                  <input type="text" class="time-input" ng-model="edittime.input" ng-keydown="changeInputTime($event)" ng-focus="edittime.active = true; edittime.digits = [];" ng-blur="edittime.active = false"/>
+                  <div class="formatted-time" contenteditable="false" ng-model="obj.date">{{ edittime.formatted }}</div>
+                </div>
+                <div class="increment-time" ng-click="adjustTime('increase')">
+                  <svg width="24" height="24">
+                    <path stroke="white" stroke-width="2" d="M12,7 v10 M7,12 h10"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="am-pm-container">
+                <div class="am-pm-button" ng-click="changetime('am');">am</div>
+                <div class="am-pm-button" ng-click="changetime('pm');">pm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  
+  </div>
+</div>
+</div>
+
+</fieldset>
+<fieldset>
+
+<div class="row">
+<div class="col-sm-6">
+<div id="location-google-map" style="height: 450px;"></div>
+</div>
+<div class="col-sm-6">
+<div class="form-group" class="time" ng-class="{'time-active': edittime.active}">
+<label>Booking Date</label>
+<input type="text" id="serviceDate" ng-model="newDateSelected" class="form-control" disabled />
+</div>
+<!-- /.form-group -->
+<div class="form-group">
+<label>Booking Time</label>
+<input type="hidden"  class="form-control" id="listing_location_latitude">
+<input type="text" id="serviceTime" ng-model="newTimeSelected" class="form-control" disabled />
+</div>
+<!-- /.form-group -->
+<div class="form-group">
+<label>Service</label>
+<select class="form-control" ng-model="obj.bookedService" ng-options="service.name for service in serviceList track by service.id">
+<option value="" disabled>Select Service</option>
+</select>
+</div>
+<!-- /.form-group -->
+<div class="form-group">
+<label>Total Cost</label>
+<input type="text" class="form-control" disabled ng-model="obj.bookedService.price" disabled/>
+
+</div>
+<!-- /.form-group -->
+<div class="form-group">
+<label>Payment Method</label>
+<select class="form-control" disabled>
+<option value="">Cash</option>
+</select>
+</div>
+<!-- /.form-group -->
+<div class="form-check">
+<label class="form-check-label">
+<input type="checkbox" class="form-check-input"> I agree with terms &amp; conditions
+</label>
+</div>
+</div>
+
+</div>
+<!-- /.row -->
+</fieldset>
+<div class="modal-footer row">
+<input type="submit" class="btn btn-primary" value="Request Booking"/>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+</div>    <div class="side-wrapper" ng-controller="bookingController">
       <div class="side">
         <div class="side-inner">
           <div class="side-user">
-            <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
+            <span class="avatar" style="background-image: url('');"></span>
           <span class="side-user-avatar-name">
-              <strong>User Name</strong>
-              <span>Surname</span>
+              <strong ng-bind="clientname"></strong>
+              <span ng-bind="clientsname"></span>
             </span>
             <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
               <i class="fa fa-cog"></i>
@@ -454,7 +1198,7 @@
           <!-- /.side-user -->
           <ul class="nav flex-column">
             <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-            <li class="nav-item"><a href="framework/booking.html" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="clientBookings.html" class="nav-link">Bookings</a></li>
             <li class="nav-item"><a href="Notification.html" class="nav-link">Notification</a></li>
             <li class="nav-item"><a href="https://www.imakeapp.com" class="nav-link">Sign Out</a></li>
           </ul>
@@ -480,9 +1224,6 @@
     <div class="side-overlay"></div>
     <!-- /.side-overlay -->
 
-
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyAKoSezP6EU1e2BUw5Es-8F5mT2yYgLp9o" type="text/javascript"></script>
-    <script src='https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js'></script>
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
