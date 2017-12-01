@@ -20,6 +20,44 @@
     <link href="css/loader.css" rel="stylesheet" type="text/css">
     <link href="css/modal.css" rel="stylesheet" type="text/css">
     <link href="css/modalss.css" rel="stylesheet" type="text/css">
+    <style>
+     
+      @media only screen and (max-width: 500px) {
+        h1.hero-image-content-title-simple{
+          font-size: 23pt;
+        }
+        .hero-image-content p{
+          font-size: 10pt;
+        }
+
+        .header-actions{
+          display: block;
+          position: absolute;
+          right: 30px;
+        }
+
+        .justify-content-sm-center{
+          z-index: -1;
+        }
+        .hero-image-category {
+            background-color: rgba(255, 255, 255, 0.16);
+            border-radius: 2px;
+            display: inline-block;
+            margin: 1px 7px;
+            padding: 5px 9px;
+            transition: all .2s ease;
+            width: 80px;
+        }
+
+        .hero-image-categories {
+            bottom: 8px;
+            left: 0;
+            position: absolute;
+            text-align: center;
+            right: 0;
+        }
+    }
+    </style>
     
  <script src="https://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyAKoSezP6EU1e2BUw5Es-8F5mT2yYgLp9o" type="text/javascript"></script>
  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
@@ -74,11 +112,6 @@
         <div class="header">
           <div class="container">
             <div class="header-inner">
-              <div class="navigation-toggle toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
              <div class="header-logo">
             
                 <a href="index.html" class="header-title"> <img src="images/logo-wide-white.png" alt=""></a>
@@ -123,7 +156,7 @@
             <div class="hero-image-content">
               <div class="container" >
                 <div class="center" ng-controller="PlacesSearchController as search">
-                  <h1 class="hero-image-content-title-simple float-none">Durban KwaZulu-Natal</h1>
+                  <h1 class="hero-image-content-title-simple float-none moblieDashboardTitle">Durban KwaZulu-Natal</h1>
                   <p class="float-none">Search South Africa's play ground for Beauty Salons and Stylist, As well as products.</p>
                   <form method="post" action="?">
                     <div class="row justify-content-sm-center">
