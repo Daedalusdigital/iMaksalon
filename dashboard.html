@@ -21,6 +21,20 @@
     <link href="css/modal.css" rel="stylesheet" type="text/css">
     <link href="css/modalss.css" rel="stylesheet" type="text/css">
     <style>
+        .search-places-results {
+            z-index: 1;
+            margin-left: 23px;
+            margin-top: 45px;
+        }
+
+        .formReport{
+          background-color:rgb(255,255,255);
+          padding:30px;
+        }
+        .input-group-addon.no-border {
+            border: 0;
+            padding: 15px;
+        }
      
       @media only screen and (max-width: 500px) {
         h1.hero-image-content-title-simple{
@@ -40,17 +54,17 @@
           z-index: -1;
         }
         .hero-image-category {
-            background-color: rgba(255, 255, 255, 0.16);
-            border-radius: 2px;
-            display: inline-block;
-            margin: 1px 7px;
-            padding: 5px 9px;
-            transition: all .2s ease;
-            width: 80px;
+          background-color: rgba(255, 255, 255, 0.16);
+          border-radius: 2px;
+          display: inline-block;
+          margin: 1px 7px;
+          padding: 8px 23px;
+          transition: all .2s ease;
+          width: 96px;
         }
 
         .hero-image-categories {
-            bottom: 8px;
+            bottom: 24px;
             left: 0;
             position: absolute;
             text-align: center;
@@ -60,6 +74,23 @@
         .center{
           margin-top: -111px;
         }
+
+        .input-group-addon.no-border {
+            border: 0;
+            padding: 15px;
+        }
+
+        .search-places-results {
+            z-index: 99999;
+            margin-left: 10px;
+            margin-top: 45px;
+        }
+
+        .formReport {
+          margin-left: -20px;
+          margin-top: 31px;
+        }
+
     }
     </style>
     
@@ -80,7 +111,7 @@
               <div class="modal-content animate" style="background-color: transparent;border:0;" ng-controller="reportCtl">
                   <div class="row">
                       <div class="col-md-3"></div>
-                      <div class="col-md-4" style="background-color:rgb(255,255,255);padding:30px;">
+                      <div class="col-md-4 formReport">
               
                         <label><b>Firstname</b></label>
                         <input class="form-control" type="text"  ng-model="obj.guest_name" placeholder="Your firstname" name="firstname" required>
@@ -174,9 +205,9 @@
                            <script type="text/ng-template" id="search-results.html">
                           </div>
                                 </div>
-                                      <div class="search-places-results" ng-show="ngModel" style="margin-left: 23px; margin-top: 45px;">
-                                      <ul>
-                                        <li ng-repeat="result in results" ng-class="{active: isActive($index) }" ng-click="selectResult($index)">
+                                      <div class="search-places-results" ng-show="ngModel">
+                                      <ul class="placessFound">
+                                        <li ng-repeat="result in results" ng-class="{active: isActive($index)}" ng-click="selectResult($index)" onclick="$('.placessFound li').fadeOut(500);">
                                     <div>
                                             <span ng-bind-html="result.name | highlightSearchTerms:ngModel"></span>&nbsp;&nbsp;
                                           <span class="result-vicinity">{{ result.vicinity }}</span>
