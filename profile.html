@@ -122,17 +122,17 @@
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>Surname</label>
-                      <input type="text" class="form-control" ng-model="stylistSname" value="{{stylistSname}}">
+                      <input type="text" class="form-control" ng-model="stylistSname">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>E-mail</label>
-                      <input type="text" class="form-control" ng-model="stylistEmail" value="{{stylistEmail}}">
+                      <input type="text" class="form-control" ng-model="stylistEmail">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>Phone</label>
-                      <input type="text" class="form-control" ng-model="stylistContact" value="{{stylistContact}}">
+                      <input type="text" class="form-control" ng-model="stylistContact">
                     </div>
                     <!-- /.form-group -->
                   </div>
@@ -143,22 +143,22 @@
                   <div class="row">
                     <div class="form-group col-sm-6">
                       <label>State</label>
-                      <input type="text" class="form-control" value="{{stylistState}}">
+                      <input type="text" class="form-control" ng-model="stylistState">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>City</label>
-                      <input type="text" class="form-control" value="{{stylistCity}}">
+                      <input type="text" class="form-control" ng-model="stylistCity">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>Street</label>
-                      <input type="text" class="form-control" value="{{stylistStreet}}">
+                      <input type="text" class="form-control" ng-model="stylistStreet">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-3">
                       <label>House Number</label>
-                      <input type="text" class="form-control" value="{{stylistHouse}}">
+                      <input type="text" class="form-control" ng-model="stylistHouse">
                     </div>
                     <!-- /.form-group -->
                   </div>
@@ -168,29 +168,29 @@
               <h3 class="page-title-small">Social Connections</h3>
                   <div class="form-group">
                     <label>Facebook</label>
-                    <input type="text" class="form-control" value="{{facebookUrl}}">
+                    <input type="text" class="form-control" ng-model="facebookUrl" value="{{facebookUrl}}">
                   </div>
                   <!-- /.form-group -->
                   <div class="form-group">
                     <label>Twitter</label>
-                    <input type="text" class="form-control" value="http://twitter.com/">
+                    <input type="text" class="form-control" ng-model="twitter" value="http://twitter.com/">
                   </div>
                   <!-- /.form-group -->
                   <div class="form-group">
                     <label>Linkedin</label>
-                    <input type="text" class="form-control" value="http://linkedin.com/">
+                    <input type="text" class="form-control" ng-model="linkedIn" value="http://linkedin.com/">
                   </div>
                   <!-- /.form-group -->
                   <div class="form-group">
                     <label>Dribbble</label>
-                    <input type="text" class="form-control" value="http://dribbble.com/">
+                    <input type="text" class="form-control" ng-model="dribble" value="http://dribbble.com/">
                   </div>
                   <!-- /.form-group -->
                   <div class="form-group">
                     <label>Instagram</label>
-                    <input type="text" class="form-control" value="http://instagram.com/">
+                    <input type="text" class="form-control" ng-model="instagram" value="http://instagram.com/">
                   </div>
-                  <input type="submit" value="Update" ng-click="updateProfile()">
+                  <input type="submit" value="Update" ng-click="updateProfile()"> <span ng-bind="results" style="color: green"></span>
               <!-- /.box -->
             </form>
             </div>

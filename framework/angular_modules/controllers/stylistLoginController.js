@@ -26,15 +26,18 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
                 $scope.result = "Successfully Login";
                 $scope.stylistId = res.data[0].style_id;
                 SessionService.set("stylestID", res.data[0].style_id);
+                SessionService.set("SalonId", res.data[0].salon_id);
                 SessionService.set("stylestFname", res.data[0].firstname);
                 SessionService.set("stylestSname", res.data[0].surname);
                 SessionService.set("stylestEmail", res.data[0].email);
                 SessionService.set("stylestContact", res.data[0].contact_number);
-                SessionService.set("stylistState",res.data[0].state);
-                SessionService.set("stylistCity",res.data[0].city);
-                SessionService.set("stylistStreet",res.data[0].street);
-                SessionService.set("stylistHouse",res.data[0].house_unit_number);
-                SessionService.set("facebookUrl",res.data[0].facebook_url);
+                SessionService.set("stylistState", res.data[0].state);
+                SessionService.set("stylistCity", res.data[0].city);
+                SessionService.set("stylistStreet", res.data[0].street);
+                SessionService.set("stylistHouse", res.data[0].house_unit_number);
+                SessionService.set("facebookUrl", res.data[0].facebook_url);
+                SessionService.set("twitter_url", res.data[0].twitter_url);
+                SessionService.set("instagram", res.data[0].instagram_url);
 
                 $scope.stylistName = SessionService.get("stylestSname");
                 window.location.href = "../book-stylist.html";
@@ -45,6 +48,7 @@ app.controller("testingController", ['$scope','loginService','SessionService',fu
 }]);
 app.controller('profileController',['$scope','$http','SessionService','updateProfileServices',function($scope,$http,SessionService,updateProfileServices){
     var stylistIds = SessionService.get("stylestID");
+    var salonId = SessionService.get("SalonId");
     var stylistName = SessionService.get("stylestFname");
     var stylistSname = SessionService.get("stylestSname");
     var stylistEmail = SessionService.get("stylestEmail");
@@ -54,8 +58,12 @@ app.controller('profileController',['$scope','$http','SessionService','updatePro
     var stylistStreet = SessionService.get("stylistStreet");
     var stylistHouse = SessionService.get("stylistHouse");
     var facebookUrl = SessionService.get("facebookUrl");
+    var twitter = SessionService.get("twitter_url");
+    var instagram = SessionService.get("instagram");
+
 
     $scope.stylistIds = stylistIds;
+    $scope.salonId = salonId;
     $scope.stylistName = stylistName;
     $scope.stylistSname = stylistSname;
     $scope.stylistEmail = stylistEmail;
@@ -65,19 +73,27 @@ app.controller('profileController',['$scope','$http','SessionService','updatePro
     $scope.stylistStreet = stylistStreet;
     $scope.stylistHouse = stylistHouse;
     $scope.facebookUrl = facebookUrl;
+    $scope.twitter = twitter;
+    $scope.instagram = instagram;
 
     $scope.updateProfile = function(){
-        alert("Clicked"+stylistName+" "+stylistSname);
-        var object = angular.toJson({firstname:stylistName,surname:stylistSname,email:stylistEmail,contact_number:stylistContact,style_id:stylistIds});
-        alert(object);
+        //alert("Clicked"+$scope.stylistName+" "+$scope.stylistSname+" State "+$scope.stylistState+" City"+$scope.stylistCity+" Street "+$scope.stylistStreet+" Houes "+$scope.stylistHouse);
+        
+        var object = angular.toJson({firstname:$scope.stylistName,
+            surname:$scope.stylistSname,email:$scope.stylistEmail,
+            contact_number:$scope.stylistContact,style_id:$scope.stylistIds,salon_id:$scope.salonId,
+            state:$scope.stylistState,city: $scope.stylistCity,
+            street:$scope.stylistStreet,house_unit_number:$scope.stylistHouse,
+            facebook_url:$scope.facebookUrl,twitter_url: $scope.twitter,
+            instagram_url:$scope.instagram});
 
         updateProfileServices.updateProfile(object).then(function(res){
             if(res.data.response == "successful")
             {
-                alert("Your Profile Was Updated Successfully");
+                $scope.results = "Your Profile Was Updated Successfully";
             }
             else{
-                alert("Failed to Update, please check your updates");
+                $scope.results = "Failed to Update, please check your updates";
             }
         });
     }
@@ -132,14 +148,13 @@ app.controller('viewingController',['$scope','$http','loginService','SessionServ
                   .then(function(response){
                       //$scope.bookings = response.data.records;
                     console.log(response.data);
-                    
-                  $scope.loadContent();
                   },function(error){
                       console.log(error);
                   });
 
 
                   
+                  $scope.loadContent();
                   
                   
                  
