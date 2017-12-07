@@ -6,7 +6,7 @@ app.controller('registerUserController',['$scope','registerService','SessionServ
         $scope.clientRegister = function(values){
             $scope.result = "";
             $scope.loading = true;
-            var object = angular.toJson({firstname:values.firstname, surname:values.surname, contact_number:values.contact_number, email:values.email_address, physical_address:values.physical_address, client_password:values.client_password, client_username:values.client_username});
+            var object = angular.toJson({firstname:values.firstname, surname:values.surname, contact_number:values.contact_number, email:values.email_address, client_password:values.client_password, client_username:values.client_username});
            
                 console.log(object);
                 registerService.sendRegister(object).then(function(res){

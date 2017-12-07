@@ -101,6 +101,7 @@ app.controller('reportCtl',['$scope','$http',function($scope,$http){
         
         populateStylistService.getStylists().then(function(res){
             $scope.stylistList = res.data;
+            console.log(res.data);
             //$scope.stylistImage = res.data[0].profile_pic;
             console.log(res.data);
         });
@@ -122,7 +123,7 @@ app.controller('reportCtl',['$scope','$http',function($scope,$http){
     app.factory('populateStylistService',['$http',function($http){
           var service={};
           service.getStylists=function(object){
-              var promise=$http.get('https://prod-14.southcentralus.logic.azure.com:443/workflows/ddfbff4cd859434897cf388edee47955/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=k5pJbHXL04UUSW4tqaiB38pGbI195PuLkqQ81yVeUoo');
+              var promise=$http.get('https://prod-21.southcentralus.logic.azure.com/workflows/1f070dd37cff4e6c8d4e0bdd11fe97ac/triggers/request/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Frequest%2Frun&sv=1.0&sig=HN0ZFaXjcR2dqzRs8TKF9NJDzMx-52IFcAPNSE1ul24');
               return promise;
           };
           return service;
