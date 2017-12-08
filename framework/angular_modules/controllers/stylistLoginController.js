@@ -79,18 +79,69 @@ app.controller('profileController',['$scope','$http','SessionService','updatePro
     $scope.updateProfile = function(){
         //alert("Clicked"+$scope.stylistName+" "+$scope.stylistSname+" State "+$scope.stylistState+" City"+$scope.stylistCity+" Street "+$scope.stylistStreet+" Houes "+$scope.stylistHouse);
         
-        var object = angular.toJson({firstname:$scope.stylistName,
-            surname:$scope.stylistSname,email:$scope.stylistEmail,
-            contact_number:$scope.stylistContact,style_id:$scope.stylistIds,salon_id:$scope.salonId,
-            state:$scope.stylistState,city: $scope.stylistCity,
-            street:$scope.stylistStreet,house_unit_number:$scope.stylistHouse,
-            facebook_url:$scope.facebookUrl,twitter_url: $scope.twitter,
-            instagram_url:$scope.instagram});
+        var object = angular.toJson(
+            {   firstname:$scope.stylistName,
+                surname:$scope.stylistSname,
+                email:$scope.stylistEmail,
+                contact_number:$scope.stylistContact,
+                style_id:$scope.stylistIds,
+                salon_id:$scope.salonId,
+                state:$scope.stylistState,
+                city: $scope.stylistCity,
+                street:$scope.stylistStreet,
+                house_unit_number:$scope.stylistHouse,
+                facebook_url:$scope.facebookUrl,
+                twitter_url: $scope.twitter,
+                instagram_url:$scope.instagram
+            }
+            );
 
         updateProfileServices.updateProfile(object).then(function(res){
             if(res.data.response == "successful")
             {
                 $scope.results = "Your Profile Was Updated Successfully";
+        
+                SessionService.set("stylestFname", $scope.stylistName);
+                SessionService.set("stylestSname", $scope.stylistSname);
+                SessionService.set("stylestEmail", $scope.stylistEmail);
+                SessionService.set("stylestContact", $scope.stylistContact);
+                SessionService.set("stylistState", $scope.stylistState);
+                SessionService.set("stylistCity", $scope.stylistCity);
+                SessionService.set("stylistStreet", $scope.stylistStreet);
+                SessionService.set("stylistHouse", $scope.stylistHouse);
+                SessionService.set("facebookUrl", $scope.facebookUrl);
+                SessionService.set("twitter_url", $scope.twitter);
+                SessionService.set("instagram", $scope.instagram);
+
+                 stylistIds = SessionService.get("stylestID");
+                 salonId = SessionService.get("SalonId");
+                 stylistName = SessionService.get("stylestFname");
+                 stylistSname = SessionService.get("stylestSname");
+                 stylistEmail = SessionService.get("stylestEmail");
+                 stylistContact = SessionService.get("stylestContact");
+                 stylistState = SessionService.get("stylistState");
+                 stylistCity = SessionService.get("stylistCity");
+                 stylistStreet = SessionService.get("stylistStreet");
+                 stylistHouse = SessionService.get("stylistHouse");
+                 facebookUrl = SessionService.get("facebookUrl");
+                 twitter = SessionService.get("twitter_url");
+                 instagram = SessionService.get("instagram");
+            
+            
+                $scope.stylistIds = stylistIds;
+                $scope.salonId = salonId;
+                $scope.stylistName = stylistName;
+                $scope.stylistSname = stylistSname;
+                $scope.stylistEmail = stylistEmail;
+                $scope.stylistContact = stylistContact;
+                $scope.stylistState = stylistState;
+                $scope.stylistCity = stylistCity;
+                $scope.stylistStreet = stylistStreet;
+                $scope.stylistHouse = stylistHouse;
+                $scope.facebookUrl = facebookUrl;
+                $scope.twitter = twitter;
+                $scope.instagram = instagram;
+
             }
             else{
                 $scope.results = "Failed to Update, please check your updates";
@@ -115,9 +166,12 @@ app.controller('viewingController',['$scope','$http','loginService','SessionServ
      var stylistEmail = SessionService.get("stylestEmail");
      var stylistContact = SessionService.get("stylestContact");
      var stylistAddress = SessionService.get("stylestPhysicalAddress");
+
      $scope.loading = false;
+
      $scope.stylistNames = stylistName;
      $scope.stylistSnames = stylistSname;
+     
      $scope.loadContent = function(){
         $scope.loading = true;
         var obj = angular.toJson({stylist_id: stylistIds});

@@ -21,7 +21,7 @@
     <link href="css/loader.css" rel="stylesheet" type="text/css">
     <title>PriceList- iMakeapp</title>
   </head>
-  <body class="">
+  <body class="" ng-app="loginApp" ng-controller="notificationController" ng-init="loadContent()">
       <div id="preloader">
           <div id="loader"></div>
         </div>
@@ -250,11 +250,12 @@
       <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
 <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.3/ng-csv.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.13/vue-router.min.js'></script>
-
+<script src="framework/angular_modules/controllers/loginClientController.js"></script>
     <script  src="js/notification.js"></script>
 
     <script type="text/javascript" src="assets/js/jquery.js"></script>

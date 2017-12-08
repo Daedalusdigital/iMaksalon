@@ -3,7 +3,7 @@ var clientId;
 app.controller('loginClientController',['$scope','loginService','SessionService',function($scope,loginService,SessionService){
 
     console.log("Loading");
-    
+
     $scope.loading = false;
         $scope.clientLogin = function(values){
             $scope.result = "";
@@ -36,6 +36,7 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
         });
         };
 }]);
+
 app.controller('viewingController',['$scope','$http','SessionService',function($scope,$http,SessionService){
     var clientIds = SessionService.get("clientId");
     var clientName = SessionService.get("clientName");
@@ -45,20 +46,47 @@ app.controller('viewingController',['$scope','$http','SessionService',function($
     $scope.clientSnames = clientSname;
     
     $scope.loadContent = function(){
-       var obj = angular.toJson({client_id: clientIds});
-       $scope.loading = true;
-      $http.post("https://prod-11.southcentralus.logic.azure.com:443/workflows/11d6344af2e5400f8165a0f49d50b813/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=5HU7C4ioqfeR9gkRFjoEx1zGxnDLnfVY-JN7d74Sr50",obj)
-          .then(function(response){
-              //$scope.bookings = response.data.records;
-            $scope.loading = false;
-            $scope.bookinglist = response.data;
-            console.log(response.data);
-          },function(error){
-            $scope.loading = false;
-            console.log(error);
-          });
+        var obj = angular.toJson({client_id: clientIds});
+        $scope.loading = true;
+        
+        $http.post("https://prod-11.southcentralus.logic.azure.com:443/workflows/11d6344af2e5400f8165a0f49d50b813/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=5HU7C4ioqfeR9gkRFjoEx1zGxnDLnfVY-JN7d74Sr50",obj)
+            .then(function(response){
+                //$scope.bookings = response.data.records;
+                $scope.loading = false;
+                $scope.bookinglist = response.data;
+                console.log(response.data);
+            },function(error){
+                $scope.loading = false;
+                console.log(error);
+            });
     }
 }]);
+
+app.controller('notificationController',['$scope','$http','SessionService',function($scope,$http,SessionService){
+    var clientIds = SessionService.get("clientId");
+
+    alert("Works");
+
+    $scope.loadContent = function(){
+
+        var obj = angular.toJson({client_id: clientIds});
+
+        $scope.loading = true;
+        $http.post("https://prod-25.southcentralus.logic.azure.com:443/workflows/4e1e81034fd349638c36b7cda5f3540c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=g622NdS1IebLamr9YESHvHl4oSMIyjFuuuWyI2AcYbs",obj)
+           .then(function(response){
+
+             $scope.loading = false;
+
+             $scope.notificationList = response.data;
+
+             console.log($scope.notification);
+           },function(error){
+             $scope.loading = false;
+             console.log(error);
+        });
+     }
+}]);
+
 app.factory('loginService',['$http',function($http){
         var service={};
         service.sendLogin=function(object){
