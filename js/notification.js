@@ -1,9 +1,18 @@
-var products = [
-  {id: 1, name: 'Booking', description: 'Booking Accepted.', details: 'your booking was accepted by the Stylist', Date: '2017-11-17'},
-  {id: 2, name: 'Report', description: 'Report on Profile.',details: 'The report you sent Has been recicved and we are attending to the issue', Date: '2017-11-17'},
-  {id: 3, name: 'Booking', description: 'Booking Declined.', details: 'Your booking was declined by the stylist due to time conflicts',Date: '2017-11-17'},
-   {id: 4, name: 'Booking', description: 'Booking Accepted.', details: 'your booking was accepted by the Stylist', Date: '2017-11-17'},
-];
+var products = [];
+
+function loadContent() {
+  
+  var obj = angular.toJson({client_id: 1});
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      products = this.responseText;
+      console.log(products);
+    }
+  };
+  xhttp.open("POST", "https://prod-25.southcentralus.logic.azure.com:443/workflows/4e1e81034fd349638c36b7cda5f3540c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=g622NdS1IebLamr9YESHvHl4oSMIyjFuuuWyI2AcYbsxmlhttp_info.txt", true);
+  xhttp.send(obj);
+}
 
 function findProduct (productId) {
   return products[findProductKey(productId)];
@@ -86,6 +95,7 @@ var AddProduct = Vue.extend({
 });
 
 var router = new VueRouter();
+
 router.map({
   '/': {component: List},
   '/product/:product_id': {component: Product, name: 'product'},
@@ -94,3 +104,4 @@ router.map({
   '/product/:product_id/delete': {component: ProductDelete, name: 'product-delete'}
 })
   .start(Vue.extend({}), '#app');
+

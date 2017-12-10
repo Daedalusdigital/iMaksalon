@@ -77,9 +77,10 @@ app.controller('notificationController',['$scope','$http','SessionService',funct
 
              $scope.loading = false;
 
-             $scope.notificationList = response.data;
+             $scope.notificationList = response.data[0];
 
-             console.log($scope.notification);
+             console.log($scope.notificationList);
+             alert("Works = "+$scope.notificationList[0].message);
            },function(error){
              $scope.loading = false;
              console.log(error);

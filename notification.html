@@ -21,7 +21,7 @@
     <link href="css/loader.css" rel="stylesheet" type="text/css">
     <title>PriceList- iMakeapp</title>
   </head>
-  <body class="" ng-app="loginApp" ng-controller="notificationController" ng-init="loadContent()">
+  <body class="" >
       <div id="preloader">
           <div id="loader"></div>
         </div>
@@ -117,36 +117,24 @@
 </div>
 
 <template id="product-list">
- 
+ <button class="btn btn-success" onclick="loadContent()">Refresh</button>
   <div class="filters row">
     <div class="form-group col-sm-3">
       <label for="search-element">Notifcation name</label>
       <input v-model="searchKey" class="form-control" id="search-element" requred/>
     </div>
   </div>
+  <div ng-bind="test">nbewvdv</div>
   <table class="table">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th class="col-sm-2">Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr v-for="product in products | filterBy searchKey in 'name'">
-      <td>
-        <a v-link="{name: 'product', params: {product_id: product.id}}">{{ product.name }}</a>
-      </td>
-      <td>{{ product.description }}</td>
-      <td>
-        {{ product.Date }}
-      </td>
-      <td>
-        <a class="btn btn-default" v-link="{path: '/add-product'}">Reply</a>
-        <a class="btn btn-danger btn-xs" v-link="{name: 'product-delete', params: {product_id: product.id}}">Delete</a>
-      </td>
-    </tr>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th class="col-sm-2">Actions</th>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
     </tbody>
   </table>
 </template>
@@ -255,9 +243,6 @@
 <script src='http://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.3/ng-csv.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.13/vue-router.min.js'></script>
-<script src="framework/angular_modules/controllers/loginClientController.js"></script>
-    <script  src="js/notification.js"></script>
-
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -277,6 +262,9 @@
     <script type="text/javascript" src="assets/js/particles.min.js"></script>
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+    <script  src="js/notification.js"></script>  
+
+
     <script type="text/javascript">
       setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
     </script>
