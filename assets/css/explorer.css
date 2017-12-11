@@ -634,7 +634,7 @@ mark,
   display: inline-block;
   padding: 0.5em 1em;
   max-width: 200px;
-  background: #f93;
+  background: rgb(45, 160, 112)
   border: 3px solid #f93;
   color: white;
   border-radius: 5px;
@@ -645,7 +645,7 @@ mark,
   transition: all 0.3s;
 }
 .container input[type='submit']:hover, .container input[type='submit']:active {
-  color: #f93;
+  color: rgb(17, 197, 158)
   background: none;
 }
 

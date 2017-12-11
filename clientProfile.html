@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href="css/calender2.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="assets/libraries/slick/slick.css" rel="stylesheet" type="text/css">
+    <link href="images/icon.png" rel="shortcut icon" type="image/png">
+    <link href="assets/libraries/slick/slick-theme.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/trackpad-scroll-emulator.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/chartist.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jquery.raty.css" rel="stylesheet" type="text/css">
+    <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/explorer.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets//favicon.png">
+    <link href="css/preloader.css" rel="stylesheet" type="text/css">
+    <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="css/loader.css" rel="stylesheet" type="text/css">
+    <link href="css/modalss.css" rel="stylesheet" type="text/css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyAKoSezP6EU1e2BUw5Es-8F5mT2yYgLp9o" type="text/javascript"></script>
+    <script  src="js/calender2.js"></script>
+    <script src='js/index.js'></script>
+    <script  src="js/report.js"></script>
+    <script src="framework/angular_modules/controllers/loginClientController.js"></script>
+    <title>Profile - iMakeapp</title>
+   </head>
+  <body class="" ng-app="Imakapp">
+      <div id="preloader">
+          <div id="loader"></div>
+        </div>
+    <div class="page-wrapper" ng-controller="clientProfileController">
+      <div class="header-wrapper">
+        <div class="header">
+          <div class="container">
+            <div class="header-inner">
+              <div class="navigation-toggle toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <!-- /.header-toggle -->
+              <div class="header-logo">
+               <a href="dashboard.html" class="header-title"> <img src="images/logo-wide-white.png" alt=""></a>
+              </div>
+                <!-- /.header-logo -->
+              <div class="header-nav">
+                <div class="primary-nav-wrapper">
+                  <ul class="nav">
+                    <li class="nav-item ">
+                      <a href="dashboard.html" class="nav-link ">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a href="listings-google-map.html" class="nav-link ">Map</a>
+                    </li>
+                    <li class="nav-item has-sub-menu">
+                      <a href="#" class="nav-link ">Salons &amp; Stylists</a>
+                        <ul class="sub-menu">
+                        <li><a href="salons.html" class="">Salons</a></li>
+                        <li><a href="stylist.html" class="">Stylists</a></li>
+                         </ul> 
+                    </li>
+                    <li class="nav-item">
+                      <a href="Products.html" class="nav-link ">Products</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a href="pricelist.html" class="nav-link ">Pricelist</a>
+                      <!-- /.mega-menu -->
+                  </ul>
+                </div>
+                <!-- /.primary-nav-wrapper -->
+              </div>
+             
+              <!-- /.header-toggle -->
+         <div class="header-actions">
+                  <ul class="nav nav-pills">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link modal-submit" id="modal-action-submit" data-toggle="modal" data-target="#modal-submit">
+                        <i class="fa fa-sign-out"></i><span>Sign Out</span>
+                      </a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+            <!-- /.header-inner -->
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.header -->
+      </div>
+     <div class="main-wrapper">
+        <div class="main">
+          <div class="main-inner">
+            <div class="page-title">
+              <div class="container">
+                <h1>User Profile Edit
+                </h1>
+                <div class="page-title-actions">
+      
+                </div>
+                <!-- /.page-title-actions -->
+              </div>
+              <!-- /.container-->
+            </div>
+            <!-- /.page-title -->
+            <div class="container" ng-view="">
+             <form>
+              <div class="box">
+                <div class="box-inner">
+                  <h3 class="page-title-small">Contact Information</h3>
+                  <div class="row">
+                    <div class="form-group col-sm-6">
+                      <label>Name</label>
+                      <input type="text" class="form-control" ng-model="stylistName" value="{{stylistName}}">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group col-sm-6">
+                      <label>Surname</label>
+                      <input type="text" class="form-control" ng-model="stylistSname">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group col-sm-6">
+                      <label>E-mail</label>
+                      <input type="text" class="form-control" ng-model="stylistEmail">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group col-sm-6">
+                      <label>Phone</label>
+                      <input type="text" class="form-control" ng-model="stylistContact">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.row -->
+                  
+                  <!-- /.form-group -->
+                  <h3 class="page-title-small">Address</h3>
+                  <div class="row">
+                    <div class="form-group col-sm-6">
+                      <label>State</label>
+                      <input type="text" class="form-control" ng-model="stylistState">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group col-sm-6">
+                      <label>City</label>
+                      <input type="text" class="form-control" ng-model="stylistCity">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group col-sm-6">
+                      <label>Street</label>
+                      <input type="text" class="form-control" ng-model="stylistStreet">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group col-sm-3">
+                      <label>House Number</label>
+                      <input type="text" class="form-control" ng-model="stylistHouse">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                </div>
+                <!-- /.box-inner -->
+              </div>
+              <h3 class="page-title-small">Social Connections</h3>
+                  <div class="form-group">
+                    <label>Facebook</label>
+                    <input type="text" class="form-control" ng-model="facebookUrl" value="{{facebookUrl}}">
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="form-group">
+                    <label>Twitter</label>
+                    <input type="text" class="form-control" ng-model="twitter" value="http://twitter.com/">
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="form-group">
+                    <label>Linkedin</label>
+                    <input type="text" class="form-control" ng-model="linkedIn" value="http://linkedin.com/">
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="form-group">
+                    <label>Dribbble</label>
+                    <input type="text" class="form-control" ng-model="dribble" value="http://dribbble.com/">
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="form-group">
+                    <label>Instagram</label>
+                    <input type="text" class="form-control" ng-model="instagram" value="http://instagram.com/">
+                  </div>
+                  <input type="submit" value="Update" ng-click="updateProfile()"> <span ng-bind="results" style="color: green"></span>
+              <!-- /.box -->
+            </form>
+            </div>
+            <!-- /.container-fluid -->
+          </div>
+          <!-- /.main-inner -->
+        </div>
+        <!-- /.main -->
+      </div>
+      <!-- /.main-wrapper -->
+    </div>
+                                          
+    <div class="side-wrapper">
+      <div class="side">
+        <div class="side-inner">
+          <div class="side-user">
+            <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
+          <span class="side-user-avatar-name">
+              <strong>User Name</strong>
+              <span>Surname</span>
+            </span>
+            <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
+              <i class="fa fa-cog"></i>
+            </a>
+          </div>
+          <!-- /.side-user -->
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="clientBookings.html" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="Notification.html" class="nav-link">Notification</a></li>
+            <li class="nav-item"><a href="https://www.imakapp.com" class="nav-link">Sign Out</a></li>
+          </ul>
+        </div>
+        <!-- /.side-inner -->
+      </div>
+      <!-- /.side -->
+    </div>
+    <!-- /.side-wrapper -->
+    <div class="side-overlay"></div>
+    <!-- /.side-overlay -->
+
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/tether.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/google-map.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.inlinesvg.min.js"></script>
+    <script type="text/javascript" src="assets/libraries/slick/slick.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.raty.js"></script>
+
+    <script type="text/javascript" src="assets/js/explorer.js"></script>
+    <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+    <script type="text/javascript">
+      setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
+    </script>
+  </body>
+</html>
