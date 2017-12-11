@@ -84,7 +84,7 @@
 
         <div ng-view="">
             <input placeholder="Search" type="search" ng-model="search" /><br>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Status</th>
                     <th>Name</th>
@@ -98,7 +98,7 @@
                     <td ng-bind="notice.status"></td>
                     <td ng-bind="notice.timeStamp"></td>
                     <td colspan="2">
-                      <button type="button" ng-click="alterNotification(notice,'Delete')">Delete</button>
+                      <button type="button" class="btn btn-success" ng-click="alterNotification(notice,'Delete')">Delete</button>
                     </td>
                 </tr>
             </table>
