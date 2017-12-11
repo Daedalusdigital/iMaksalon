@@ -44,7 +44,7 @@
                 <div class="primary-nav-wrapper">
                   <ul class="nav">
                     <li class="nav-item ">
-                      <a href="dashboard.html" class="nav-link ">Home</a>
+                      <a href="dashboard.html" class="nav-link ">Dashboard</a>
                     </li>
                     <li class="nav-item ">
                       <a href="listings-google-map.html" class="nav-link ">Map</a>
@@ -55,6 +55,9 @@
                         <li><a href="salons.html" class="">Salons</a></li>
                         <li><a href="stylist.html" class="">Stylists</a></li>
                          </ul> 
+                    </li>
+                    <li class="nav-item">
+                      <a href="clientBook.html" class="nav-link ">Bookings</a>
                     </li>
                     <li class="nav-item">
                       <a href="products.html" class="nav-link">Product</a>
@@ -847,58 +850,61 @@
       </div>
     </div>
     <div class="side-wrapper">
-      <div class="side">
-        <div class="side-inner">
-          <div class="side-user">
-            <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
-            <span class="side-user-avatar-name">
-              <strong>User Name</strong>
-              <span>Surname</span>
-            </span>
-            <a href="https://www.imakapp.com/user-profile-edit.html" class="side-user-avatar-action">
-              <i class="fa fa-cog"></i>
-            </a>
-          </div>
-          <!-- /.side-user -->
-          <ul class="nav flex-column">
-            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-            <li class="nav-item"><a href="clientBookings.html" class="nav-link">Bookings</a></li>
-            <li class="nav-item"><a href="Notification.html" class="nav-link">Notification</a></li>
-            <li class="nav-item"><a href="https://www.imakapp.com" class="nav-link">Sign Out</a></li>
-          </ul>
-        </div>
-        <!-- /.side-inner -->
-      </div>
-      <!-- /.side -->
-    </div>
-  </div>
-
-    </div>
-    <!-- /.side-wrapper -->
-    <div class="side-overlay"></div>
-    <!-- /.side-overlay -->
-    <script src="http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyDmXybAJzoPZ6hH-Jhv7QMCSGgQ6MY8WqY" type="text/javascript"></script>
-    <script type="text/javascript" src="assets/js/jquery.js"></script>
-    <script type="text/javascript" src="assets/js/tether.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/chartist.min.js"></script>
-    <script type="text/javascript" src="assets/js/google-map-richmarker.min.js"></script>
-    <script type="text/javascript" src="assets/js/google-map-infobox.min.js"></script>
-    <script type="text/javascript" src="assets/js/google-map-markerclusterer.js"></script>
-    <script type="text/javascript" src="assets/js/google-map.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.inlinesvg.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.affix.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.scrollTo.js"></script>
-    <script type="text/javascript" src="assets/libraries/slick/slick.min.js"></script>
-    <script type="text/javascript" src="assets/js/nouislider.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.raty.js"></script>
-    <script type="text/javascript" src="assets/js/wNumb.js"></script>
-    <script type="text/javascript" src="assets/js/particles.min.js"></script>
-    <script type="text/javascript" src="assets/js/explorer.js"></script>
-    <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
-    <script type="text/javascript">
-      setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
-    </script>
+      <div class="side"ng-app="loginApp" ng-controller="viewingController">
+         <div class="side-inner">
+           <div class="side-user">
+             <span class="avatar" style="background-image: url('#');"></span>
+             <span class="side-user-avatar-name" >
+               <strong>{{clientNames}}</strong>
+               <span> {{clientSnames}}</span>
+             </span>
+             <a href="#" class="side-user-avatar-action">
+               <i class="fa fa-cog"></i>
+             </a>
+           </div>
+         !-- /.side-user -->
+             <ul class="nav flex-column">
+             <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+             <li class="nav-item"><a href="clientBook.html" class="nav-link">Bookings</a></li>
+             <li class="nav-item"><a href="notification.html" class="nav-link">Notifications</a></li>
+             <li class="nav-item"><a href="https://www.imakapp.com" class="nav-link">Sign Out</a></li>
+           </ul>
+         </div>
+       </div>
+     
+       <!-- /.side -->
+     </div>
+     <!-- /.side-wrapper -->
+     <div class="side-overlay"></div>
+     <!-- /.side-overlay -->
+     </div>
+     
+  
+     <script src="https://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&key=AIzaSyDmXybAJzoPZ6hH-Jhv7QMCSGgQ6MY8WqY" type="text/javascript"></script>
+ 
+     <script type="text/javascript" src="assets/js/jquery.js"></script>
+     <script type="text/javascript" src="assets/js/tether.min.js"></script>
+     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="assets/js/chartist.min.js"></script>
+     <script type="text/javascript" src="assets/js/google-map-richmarker.min.js"></script>
+     <script type="text/javascript" src="assets/js/google-map-infobox.min.js"></script>
+     <script type="text/javascript" src="assets/js/google-map-markerclusterer.js"></script>
+     <script type="text/javascript" src="assets/js/google-map.js"></script>
+     <script type="text/javascript" src="assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
+     <script type="text/javascript" src="assets/js/jquery.inlinesvg.min.js"></script>
+     <script type="text/javascript" src="assets/js/jquery.affix.js"></script>
+     <script type="text/javascript" src="assets/js/jquery.scrollTo.js"></script>
+     <script type="text/javascript" src="assets/libraries/slick/slick.min.js"></script>
+     <script type="text/javascript" src="assets/js/nouislider.min.js"></script>
+     <script type="text/javascript" src="assets/js/jquery.raty.js"></script>
+     <script type="text/javascript" src="assets/js/wNumb.js"></script>
+     <script type="text/javascript" src="assets/js/particles.min.js"></script>
+     <script type="text/javascript" src="assets/js/explorer.js"></script>
+     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+     <script src="js/angular.min.js" type="text/javascript"></script>
+     <script src="framework/angular_modules/controllers/loginClientController.js"></script>
+     <script type="text/javascript">
+       setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
+     </script>
   </body>
 </html>

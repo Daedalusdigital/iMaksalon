@@ -54,7 +54,7 @@ app.controller('viewingController',['$scope','$http','SessionService',function($
                 //$scope.bookings = response.data.records;
                 $scope.loading = false;
                 $scope.bookinglist = response.data;
-                console.log(response.data);
+                $scope.results = response.data;
             },function(error){
                 $scope.loading = false;
                 console.log(error);

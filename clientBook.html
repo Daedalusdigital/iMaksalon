@@ -19,9 +19,14 @@
     <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
     <link href="css/responsive.css" rel="stylesheet" type="text/css">
     <link href="css/loader.css" rel="stylesheet" type="text/css">
-    <title>Products- iMakeapp</title>
+    <style>
+        td{
+          color:black;
+        }
+      </style>
+    <title>Bookings- iMakeapp</title>
   </head>
-  <body class="">
+  <body class="" ng-app="loginApp" ng-controller="viewingController" ng-init="loadContent()">
       <div id="preloader">
           <div id="loader"></div>
         </div>
@@ -44,7 +49,7 @@
                 <div class="primary-nav-wrapper">
                   <ul class="nav">
                     <li class="nav-item ">
-                      <a href="dashboard.html" class="nav-link ">Dashboard</a>
+                      <a href="dashboard.html" class="nav-link ">Home</a>
                     </li>
                     <li class="nav-item ">
                       <a href="listings-google-map.html" class="nav-link ">Map</a>
@@ -56,12 +61,13 @@
                         <li><a href="stylist.html" class="">Stylists</a></li>
                          </ul> 
                     </li>
-                    <li class="nav-item">
-                      <a href="clientBook.html" class="nav-link ">Bookings</a>
+                    <li class="nav-item ">
+                      <a href="products.html" class="nav-link ">Product</a>
+                      <!-- /.mega-menu -->
                     </li>
                     <li class="nav-item ">
-                      <a href="pricelist.html" class="nav-link ">Price list</a>
-                      <!-- /.mega-menu -->
+                      <a href="PriceList.html" class="nav-link ">Pricelist</a>
+                    
                     </li>
                   </ul>
                 </div>
@@ -76,7 +82,7 @@
               <div class="header-actions">
                 <ul class="nav nav-pills">
                   <li class="nav-item">
-                    <a href="framework/Booking.html" class="nav-link modal-submit">Add Booking</a>
+                    <a href="framework/booking.html" class="nav-link modal-submit">Add Booking</a>
                   </li>
                 </ul>
               </div>
@@ -94,82 +100,64 @@
           <div class="main-inner">
             <div class="page-title">
               <div class="container">
-                <h1>Products</h1>
+                <h1>Your Bookings</h1>
+                <div class="row" ng-if="loading" style="position: absolute;right:150px;margin-top:15px;">
+                    <center>
+                        <img style="width: 20px;" src="css/lightbox/load.gif" alt="logo"/>
+                    </center>
+                </div>
+                <button class="btn btn-info" ng-click="loadContent()" style="position: absolute;right:50px;margin-top:10px;">Refresh</button>
+                
                 </div>
                 <!-- /.page-title-actions -->
               </div>
               <!-- /.container-->
             </div>
             <!-- /.page-title -->
-            <div class="container" ng-app="csvApp">
-              <div class="box">
-                <div class="box-inner">
-                  <h3 class="page-title-small">iMakApp Products</h3>
-                  <div class="row">
-                    <div class="form-group col-sm-6">
-                     <div ng-controller="csvController" class="container" ng-cloack>
+           <div class="container">
+  <header class="page-header">
+  </header>
 
-    <br>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Service</th>
-              <th>Price</th>
-              <th>Availability</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat='reg in data1'>
-              <td>{{reg.id}}</td>
-              <td>{{reg.name}}</td>
-              <td>{{reg.service}}</td>
-              <td>{{reg.price}}</td>
-              <td>{{reg.availability}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div><br>
-    <button type="button" class="btn btn-default" ng-csv="data1" filename="Prices.csv" csv-header="['Id', 'Name', 'Service', 'Price', 'Availability']" charset="utf-8"><span class="glyphicon glyphicon-download-alt">&nbsp;</span>Download products Table</button>
-    
-    <br>
-    <p>
-      <small>
-      More information and other inquiries please email us at <a href="#" target="_blank">Info@imakapp.com</a>
-    </small>
-    </p>
-  </div>
+  <table class="table table-inverse">
+    <tr>
+        <th>Booking Status</th>
+        <th>Booked Service</th>
+        <th>Stylist ID</th>
+        <th>Service Location</th>
+        <th>Service Time</th>
+        <th>Service Date</th>
+    </tr>
+    <tr ng-repeat="booking in bookinglist">
+        <td>{{booking.booking_status}}</td>
+        <td>{{booking.booked_service}}</td>
+        <td>{{booking.stylist_id}}</td>
+        <td>{{booking.service_location}}</td>
+        <td>{{booking.service_time}}</td>
+        <td>{{booking.service_date}}</td>
+    </tr>
+</table>
 </div>
-                <!-- /.box-inner -->
-              </div>
-              <!-- /.box -->
-            </div>
-            <!-- /.container-fluid -->
-          </div>
-          <!-- /.main-inner -->
-        </div>
-        <!-- /.main -->
-      </div>
-      <!-- /.main-wrapper -->
-      
+
+
+
+
+    
       <!-- /.footer-wrapper -->
     </div>
     <!-- /.page-wrapper -->
         </div>
       </div>
     </div>
+
+
     <div class="side-wrapper">
       <div class="side">
         <div class="side-inner">
           <div class="side-user">
             <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
             <span class="side-user-avatar-name">
-              <strong></strong>
-              <span></span>
+              <strong>{{clientNames}}</strong>
+              <span> {{clientSnames}}</span>
             </span>
             <a href="#" class="side-user-avatar-action">
               <i class="fa fa-cog"></i>
@@ -178,27 +166,27 @@
           <!-- /.side-user -->
             <ul class="nav flex-column">
             <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-            <li class="nav-item"><a href="clientBookings.html" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Bookings</a></li>
             <li class="nav-item"><a href="notification.html" class="nav-link">Notification</a></li>
-            <li class="nav-item"><a href="https://iMakApp.com" class="nav-link">Sign Out</a></li>
+            <li class="nav-item"><a href="https://imakapp.com" class="nav-link">Sign Out</a></li>
           </ul>
         </div>
       </div>
       <!-- /.side -->
-  
+    </div>
     <!-- /.side-wrapper -->
     <div class="side-overlay"></div>
     <!-- /.side-overlay -->
 
 
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.3/ng-csv.min.js'></script>
-
-    <script  src="js/pricelist.js"></script>
-
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.3/ng-csv.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.13/vue-router.min.js'></script>
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -218,6 +206,10 @@
     <script type="text/javascript" src="assets/js/particles.min.js"></script>
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="framework/angular_modules/controllers/loginClientController.js"></script>
+
+
     <script type="text/javascript">
       setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
     </script>
