@@ -1,7 +1,9 @@
 var app = angular.module('app',[]);
 
 app.controller('notificationController', ['$scope','$http','SessionService',function($scope,$http,SessionService){  
-    alert("Works");
+    $scope.alterNotification = function(obj,btnName){
+        alert("Button Name : "+btnName+"\n"+angular.toJson(obj));
+    }
 
     // $scope.notifications = [{
     //         'Name':'Sphamandla',

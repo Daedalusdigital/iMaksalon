@@ -90,19 +90,23 @@
                     <th>Name</th>
                     <th>Description</th>
                     <th>Date</th>
+                    <th colspan="2">Alter notification</th>
                 </tr>
                 <tr ng-repeat="notice in notificationList |filter:search">
                     <td ng-bind="notice.message"></td>
                     <td ng-bind="notice.name"></td>
                     <td ng-bind="notice.status"></td>
                     <td ng-bind="notice.timeStamp"></td>
+                    <td colspan="2">
+                      <button type="button" ng-click="alterNotification(notice,'Delete')">Delete</button>
+                    </td>
                 </tr>
             </table>
         </div> 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script src="framework/angular_modules/controllers/notificationController.js"></script>
 
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
         <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.3/ng-csv.min.js'></script>
