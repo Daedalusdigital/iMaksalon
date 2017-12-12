@@ -28,8 +28,13 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
                    SessionService.set("clientId", res.data[0].clnt_id);
                    SessionService.set("clientName",res.data[0].fname);
                    SessionService.set("clientSurname",res.data[0].Sname);
-                   SessionService.set("clientEmail",res.data[0].email);
+                   //SessionService.set("clientEmail",res.data[0].e-mail);
                    SessionService.set("clientPhone",res.data[0].phone_number);
+                   SessionService.set("clientHouse",res.data[0].house_unit_number);
+                   SessionService.set("clientStreet",res.data[0].Street);
+                   SessionService.set("clientCity",res.data[0].city);
+                   SessionService.set("clientState",res.data[0].state);
+
                    window.location.href = "../dashboard.html";
                }
             },
@@ -40,52 +45,41 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
 }]);
 
 app.controller('clientProfileController',['$scope','$http','SessionService','updateProfileServices',function($scope,$http,SessionService,updateProfileServices){
-    var stylistIds = SessionService.get("stylestID");
-    var salonId = SessionService.get("SalonId");
-    var stylistName = SessionService.get("stylestFname");
-    var stylistSname = SessionService.get("stylestSname");
-    var stylistEmail = SessionService.get("stylestEmail");
-    var stylistContact = SessionService.get("stylestContact");
-    var stylistState = SessionService.get("stylistState");
-    var stylistCity = SessionService.get("stylistCity");
-    var stylistStreet = SessionService.get("stylistStreet");
-    var stylistHouse = SessionService.get("stylistHouse");
-    var facebookUrl = SessionService.get("facebookUrl");
-    var twitter = SessionService.get("twitter_url");
-    var instagram = SessionService.get("instagram");
+    var clientIds = SessionService.get("clientId");
+    //var salonId = SessionService.get("SalonId");
+    var clientName = SessionService.get("clientName");
+    var clientSurname = SessionService.get("clientSurname");
+    var clientEmail = SessionService.get("clientEmail");
+    var clientPhone = SessionService.get("clientPhone");
+    var clientState = SessionService.get("clientState");
+    var clientCity = SessionService.get("clientCity");
+    var clientStreet = SessionService.get("clientStreet");
+    var clientHouse = SessionService.get("clientHouse");
 
 
-    $scope.stylistIds = stylistIds;
-    $scope.salonId = salonId;
-    $scope.stylistName = stylistName;
-    $scope.stylistSname = stylistSname;
-    $scope.stylistEmail = stylistEmail;
-    $scope.stylistContact = stylistContact;
-    $scope.stylistState = stylistState;
-    $scope.stylistCity = stylistCity;
-    $scope.stylistStreet = stylistStreet;
-    $scope.stylistHouse = stylistHouse;
-    $scope.facebookUrl = facebookUrl;
-    $scope.twitter = twitter;
-    $scope.instagram = instagram;
+    $scope.clientIds = clientIds;
+    $scope.clientName = clientName;
+    $scope.clientSurname = clientSurname;
+    //$scope.clientEmail = clientEmail;
+    $scope.clientPhone = clientPhone;
+    $scope.clientState = clientState;
+    $scope.clientCity = clientCity;
+    $scope.clientStreet = clientStreet;
+    $scope.clientHouse = clientHouse;
 
     $scope.updateProfile = function(){
         //alert("Clicked"+$scope.stylistName+" "+$scope.stylistSname+" State "+$scope.stylistState+" City"+$scope.stylistCity+" Street "+$scope.stylistStreet+" Houes "+$scope.stylistHouse);
         
         var object = angular.toJson(
-            {   firstname:$scope.stylistName,
-                surname:$scope.stylistSname,
-                email:$scope.stylistEmail,
-                contact_number:$scope.stylistContact,
-                style_id:$scope.stylistIds,
-                salon_id:$scope.salonId,
-                state:$scope.stylistState,
-                city: $scope.stylistCity,
-                street:$scope.stylistStreet,
-                house_unit_number:$scope.stylistHouse,
-                facebook_url:$scope.facebookUrl,
-                twitter_url: $scope.twitter,
-                instagram_url:$scope.instagram
+            {   fname:$scope.clientName,
+                sname:$scope.clientSurname,
+                //email:$scope.clientEmail,
+                phone_number:$scope.clientPhone,
+                clnt_id:$scope.clientIds,
+                state:$scope.clientState,
+                city: $scope.clientCity,
+                street:$scope.clientStreet,
+                house_unit_number:scope.clientHouse
             }
             );
 
@@ -94,46 +88,37 @@ app.controller('clientProfileController',['$scope','$http','SessionService','upd
             {
                 $scope.results = "Your Profile Was Updated Successfully";
         
-                SessionService.set("stylestFname", $scope.stylistName);
-                SessionService.set("stylestSname", $scope.stylistSname);
-                SessionService.set("stylestEmail", $scope.stylistEmail);
-                SessionService.set("stylestContact", $scope.stylistContact);
-                SessionService.set("stylistState", $scope.stylistState);
-                SessionService.set("stylistCity", $scope.stylistCity);
-                SessionService.set("stylistStreet", $scope.stylistStreet);
-                SessionService.set("stylistHouse", $scope.stylistHouse);
-                SessionService.set("facebookUrl", $scope.facebookUrl);
-                SessionService.set("twitter_url", $scope.twitter);
-                SessionService.set("instagram", $scope.instagram);
+                SessionService.set("clientId", res.data[0].clnt_id);
+                SessionService.set("clientName",res.data[0].fname);
+                SessionService.set("clientSurname",res.data[0].Sname);
+                //SessionService.set("clientEmail",res.data[0].e-mail);
+                SessionService.set("clientPhone",res.data[0].phone_number);
+                SessionService.set("clientHouse",res.data[0].house_unit_number);
+                SessionService.set("clientStreet",res.data[0].Street);
+                SessionService.set("clientCity",res.data[0].city);
+                SessionService.set("clientState",res.data[0].state);
 
-                 stylistIds = SessionService.get("stylestID");
-                 salonId = SessionService.get("SalonId");
-                 stylistName = SessionService.get("stylestFname");
-                 stylistSname = SessionService.get("stylestSname");
-                 stylistEmail = SessionService.get("stylestEmail");
-                 stylistContact = SessionService.get("stylestContact");
-                 stylistState = SessionService.get("stylistState");
-                 stylistCity = SessionService.get("stylistCity");
-                 stylistStreet = SessionService.get("stylistStreet");
-                 stylistHouse = SessionService.get("stylistHouse");
-                 facebookUrl = SessionService.get("facebookUrl");
-                 twitter = SessionService.get("twitter_url");
-                 instagram = SessionService.get("instagram");
+                var clientIds = SessionService.get("clientId");
+                //var salonId = SessionService.get("SalonId");
+                var clientName = SessionService.get("clientName");
+                var clientSurname = SessionService.get("clientSurname");
+                var clientEmail = SessionService.get("clientEmail");
+                var clientPhone = SessionService.get("clientPhone");
+                var clientState = SessionService.get("clientState");
+                var clientCity = SessionService.get("clientCity");
+                var clientStreet = SessionService.get("clientStreet");
+                var clientHouse = SessionService.get("clientHouse");
             
             
-                $scope.stylistIds = stylistIds;
-                $scope.salonId = salonId;
-                $scope.stylistName = stylistName;
-                $scope.stylistSname = stylistSname;
-                $scope.stylistEmail = stylistEmail;
-                $scope.stylistContact = stylistContact;
-                $scope.stylistState = stylistState;
-                $scope.stylistCity = stylistCity;
-                $scope.stylistStreet = stylistStreet;
-                $scope.stylistHouse = stylistHouse;
-                $scope.facebookUrl = facebookUrl;
-                $scope.twitter = twitter;
-                $scope.instagram = instagram;
+                $scope.clientIds = clientIds;
+                $scope.clientName = clientName;
+                $scope.clientSurname = clientSurname;
+                //$scope.clientEmail = clientEmail;
+                $scope.clientPhone = clientPhone;
+                $scope.clientState = clientState;
+                $scope.clientCity = clientCity;
+                $scope.clientStreet = clientStreet;
+                $scope.clientHouse = clientHouse;
 
             }
             else{
@@ -141,6 +126,14 @@ app.controller('clientProfileController',['$scope','$http','SessionService','upd
             }
         });
     }
+}]);
+app.factory('updateProfileServices',['$http',function($http){
+    var service={};
+    service.updateProfile=function(obj){
+        var promise=$http.post('https://prod-12.southcentralus.logic.azure.com:443/workflows/c24ed9a0a9e34b71b3eb5c364c012de6/triggers/request/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Frequest%2Frun&sv=1.0&sig=0EUlv-CYCJN_eAFdb_xIHzkmg77O-eGoKbNIYNQ0lHU',obj);
+        return promise;
+    };
+    return service;
 }]);
 
 app.controller('viewingController',['$scope','$http','SessionService',function($scope,$http,SessionService){

@@ -1059,7 +1059,7 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                      <label>Stylist</label>
-                      <select class="form-control" ng-model="obj.stylistId" ng-options="stylist.firstname for stylist in stylistList track by stylist.style_id" ng-change="onChangeSelectedUser(selectedStylist)">
+                      <select class="form-control" required ng-model="obj.stylistId" ng-options="stylist.firstname for stylist in stylistList track by stylist.style_id" ng-change="onChangeSelectedUser(selectedStylist)">
                           <option value="" disabled>Select Stylist</option>
                       </select>
                     </div>
@@ -1219,7 +1219,7 @@
 <!-- /.form-group -->
 <div class="form-group">
 <label>Service</label>
-<select class="form-control" ng-model="obj.bookedService" ng-options="service.name for service in serviceList track by service.id">
+<select class="form-control" required ng-model="obj.bookedService" ng-options="service.name for service in serviceList track by service.id">
 <option value="" disabled>Select Service</option>
 </select>
 </div>
@@ -1239,7 +1239,7 @@
 <!-- /.form-group -->
 <div class="form-check">
 <label class="form-check-label">
-<input type="checkbox" class="form-check-input"> I agree with terms &amp; conditions
+<input type="checkbox" class="form-check-input" required /> I agree with terms &amp; conditions
 </label>
 </div>
 </div>
@@ -1259,7 +1259,7 @@
       <div class="side">
         <div class="side-inner">
           <div class="side-user">
-            <span class="avatar" style="background-image: url('');"></span>
+            <span class="avatar" style="background-image: url('#');"></span>
           <span class="side-user-avatar-name">
               <strong ng-bind="clientname"></strong>
               <span ng-bind="clientsname"></span>
@@ -1270,9 +1270,15 @@
           </div>
           <!-- /.side-user -->
           <ul class="nav flex-column">
+<<<<<<< HEAD
             <li class="nav-item"><a href="clientProfile.html" class="nav-link">Profile</a></li>
             <li class="nav-item"><a href="clientBookings.html" class="nav-link">Bookings</a></li>
             <li class="nav-item"><a href="Notification.html" class="nav-link">Notification</a></li>
+=======
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="clientBook.html" class="nav-link">Bookings</a></li>
+            <li class="nav-item"><a href="clientNotifications.html" class="nav-link">Notification</a></li>
+>>>>>>> 1c0fe9f64571bd3dc1b9bde20e48d5521c75260a
             <li class="nav-item"><a href="https://www.imakapp.com" class="nav-link">Sign Out</a></li>
           </ul>
           
