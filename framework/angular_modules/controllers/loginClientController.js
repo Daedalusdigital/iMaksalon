@@ -28,7 +28,7 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
                    SessionService.set("clientId", res.data[0].clnt_id);
                    SessionService.set("clientName",res.data[0].fname);
                    SessionService.set("clientSurname",res.data[0].Sname);
-                   //SessionService.set("clientEmail",res.data[0].e-mail);
+                   SessionService.set("clientEmail",res.data[0].email);
                    SessionService.set("clientPhone",res.data[0].phone_number);
                    SessionService.set("clientHouse",res.data[0].house_unit_number);
                    SessionService.set("clientStreet",res.data[0].Street);
@@ -44,7 +44,8 @@ app.controller('loginClientController',['$scope','loginService','SessionService'
         };
 }]);
 
-app.controller('clientProfileController',['$scope','$http','SessionService','updateProfileServices',function($scope,$http,SessionService,updateProfileServices){
+app.controller('clientProfileController',['$scope','SessionService','updateProfileServices',function($scope,SessionService,updateProfileServices){
+    
     var clientIds = SessionService.get("clientId");
     //var salonId = SessionService.get("SalonId");
     var clientName = SessionService.get("clientName");
@@ -60,26 +61,28 @@ app.controller('clientProfileController',['$scope','$http','SessionService','upd
     $scope.clientIds = clientIds;
     $scope.clientName = clientName;
     $scope.clientSurname = clientSurname;
-    //$scope.clientEmail = clientEmail;
+    $scope.clientEmail = clientEmail;
     $scope.clientPhone = clientPhone;
     $scope.clientState = clientState;
     $scope.clientCity = clientCity;
     $scope.clientStreet = clientStreet;
     $scope.clientHouse = clientHouse;
 
+    alert(clientIds+" "+clientName+" "+clientSurname+" "+clientEmail);
+
     $scope.updateProfile = function(){
-        //alert("Clicked"+$scope.stylistName+" "+$scope.stylistSname+" State "+$scope.stylistState+" City"+$scope.stylistCity+" Street "+$scope.stylistStreet+" Houes "+$scope.stylistHouse);
+        alert("Clicked"+$scope.clientName+" "+$scope.clientEmail+" "+$scope.clientSurname+" State "+$scope.clientState+" City"+$scope.clientCity+" Street "+$scope.clientStreet+" Houes "+$scope.clientHouse);
         
         var object = angular.toJson(
             {   fname:$scope.clientName,
                 sname:$scope.clientSurname,
-                //email:$scope.clientEmail,
+                email:$scope.clientEmail,
                 phone_number:$scope.clientPhone,
                 clnt_id:$scope.clientIds,
                 state:$scope.clientState,
                 city: $scope.clientCity,
                 street:$scope.clientStreet,
-                house_unit_number:scope.clientHouse
+                house_unit_number:$scope.clientHouse
             }
             );
 
@@ -91,7 +94,7 @@ app.controller('clientProfileController',['$scope','$http','SessionService','upd
                 SessionService.set("clientId", res.data[0].clnt_id);
                 SessionService.set("clientName",res.data[0].fname);
                 SessionService.set("clientSurname",res.data[0].Sname);
-                //SessionService.set("clientEmail",res.data[0].e-mail);
+                SessionService.set("clientEmail",res.data[0].email);
                 SessionService.set("clientPhone",res.data[0].phone_number);
                 SessionService.set("clientHouse",res.data[0].house_unit_number);
                 SessionService.set("clientStreet",res.data[0].Street);
@@ -99,7 +102,6 @@ app.controller('clientProfileController',['$scope','$http','SessionService','upd
                 SessionService.set("clientState",res.data[0].state);
 
                 var clientIds = SessionService.get("clientId");
-                //var salonId = SessionService.get("SalonId");
                 var clientName = SessionService.get("clientName");
                 var clientSurname = SessionService.get("clientSurname");
                 var clientEmail = SessionService.get("clientEmail");
@@ -113,7 +115,7 @@ app.controller('clientProfileController',['$scope','$http','SessionService','upd
                 $scope.clientIds = clientIds;
                 $scope.clientName = clientName;
                 $scope.clientSurname = clientSurname;
-                //$scope.clientEmail = clientEmail;
+                $scope.clientEmail = clientEmail;
                 $scope.clientPhone = clientPhone;
                 $scope.clientState = clientState;
                 $scope.clientCity = clientCity;

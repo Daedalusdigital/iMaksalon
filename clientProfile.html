@@ -30,7 +30,7 @@
     <script src="framework/angular_modules/controllers/loginClientController.js"></script>
     <title>Profile - iMakeapp</title>
    </head>
-  <body class="" ng-app="Imakapp">
+  <body class="" ng-app="loginApp">
       <div id="preloader">
           <div id="loader"></div>
         </div>
@@ -116,22 +116,22 @@
                   <div class="row">
                     <div class="form-group col-sm-6">
                       <label>Name</label>
-                      <input type="text" class="form-control" ng-model="stylistName" value="{{stylistName}}">
+                      <input type="text" class="form-control" ng-model="clientName">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>Surname</label>
-                      <input type="text" class="form-control" ng-model="stylistSname">
+                      <input type="text" class="form-control" ng-model="clientSurname">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>E-mail</label>
-                      <input type="text" class="form-control" ng-model="stylistEmail">
+                      <input type="text" class="form-control" ng-model="clientEmail">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>Phone</label>
-                      <input type="text" class="form-control" ng-model="stylistContact">
+                      <input type="text" class="form-control" ng-model="clientPhone">
                     </div>
                     <!-- /.form-group -->
                   </div>
@@ -142,53 +142,28 @@
                   <div class="row">
                     <div class="form-group col-sm-6">
                       <label>State</label>
-                      <input type="text" class="form-control" ng-model="stylistState">
+                      <input type="text" class="form-control" ng-model="clientState">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>City</label>
-                      <input type="text" class="form-control" ng-model="stylistCity">
+                      <input type="text" class="form-control" ng-model="clientCity">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-6">
                       <label>Street</label>
-                      <input type="text" class="form-control" ng-model="stylistStreet">
+                      <input type="text" class="form-control" ng-model="clientStreet">
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group col-sm-3">
                       <label>House Number</label>
-                      <input type="text" class="form-control" ng-model="stylistHouse">
+                      <input type="text" class="form-control" ng-model="clientHouse">
                     </div>
                     <!-- /.form-group -->
                   </div>
                 </div>
                 <!-- /.box-inner -->
               </div>
-              <h3 class="page-title-small">Social Connections</h3>
-                  <div class="form-group">
-                    <label>Facebook</label>
-                    <input type="text" class="form-control" ng-model="facebookUrl" value="{{facebookUrl}}">
-                  </div>
-                  <!-- /.form-group -->
-                  <div class="form-group">
-                    <label>Twitter</label>
-                    <input type="text" class="form-control" ng-model="twitter" value="http://twitter.com/">
-                  </div>
-                  <!-- /.form-group -->
-                  <div class="form-group">
-                    <label>Linkedin</label>
-                    <input type="text" class="form-control" ng-model="linkedIn" value="http://linkedin.com/">
-                  </div>
-                  <!-- /.form-group -->
-                  <div class="form-group">
-                    <label>Dribbble</label>
-                    <input type="text" class="form-control" ng-model="dribble" value="http://dribbble.com/">
-                  </div>
-                  <!-- /.form-group -->
-                  <div class="form-group">
-                    <label>Instagram</label>
-                    <input type="text" class="form-control" ng-model="instagram" value="http://instagram.com/">
-                  </div>
                   <input type="submit" value="Update" ng-click="updateProfile()"> <span ng-bind="results" style="color: green"></span>
               <!-- /.box -->
             </form>
