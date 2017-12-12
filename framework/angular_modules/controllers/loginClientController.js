@@ -68,11 +68,9 @@ app.controller('clientProfileController',['$scope','SessionService','updateProfi
     $scope.clientStreet = clientStreet;
     $scope.clientHouse = clientHouse;
 
-    alert(clientIds+" "+clientName+" "+clientSurname+" "+clientEmail);
 
     $scope.updateProfile = function(){
-        alert("Clicked"+$scope.clientName+" "+$scope.clientEmail+" "+$scope.clientSurname+" State "+$scope.clientState+" City"+$scope.clientCity+" Street "+$scope.clientStreet+" Houes "+$scope.clientHouse);
-        
+
         var object = angular.toJson(
             {   fname:$scope.clientName,
                 sname:$scope.clientSurname,
