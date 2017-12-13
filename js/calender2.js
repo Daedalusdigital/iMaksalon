@@ -29,7 +29,6 @@ app.controller('reportCtl',['$scope','$http','SessionService',function($scope,$h
       $scope.guest_name = clientName;
       $scope.guest_surname = clientSname;
       $scope.guest_email = clientEmail;
-      $scope.guest_comment = "";
 
    
       $scope.support = function(obj){
