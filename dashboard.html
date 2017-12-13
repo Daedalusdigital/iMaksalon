@@ -107,7 +107,7 @@
       <div id="preloader">
           <div id="loader"></div>
         </div>
-        <div id="id01" class="modal" style="z-index: 22;" >
+        <div id="id01" class="modal" style="z-index: 22;"  name="reportFormm">
         
               <div class="modal-content animate" style="background-color: transparent;border:0;" ng-controller="reportCtl">
                   <div class="row">
@@ -115,13 +115,13 @@
                       <div class="col-md-4 formReport">
               
                         <label><b>Firstname</b></label>
-                        <input class="form-control" type="text"  ng-model="obj.guest_name" placeholder="Your firstname" name="firstname" required>
+                        <input class="form-control" type="text" disabled ng-model="guest_name" placeholder="Your firstname" name="firstname" required>
                         
                         <label><b>Lastname</b></label>
-                        <input class="form-control" type="text" ng-model="obj.guest_surname" placeholder="Your lastname" name="lastname" required>    
+                        <input class="form-control" type="text" disabled ng-model="guest_surname" placeholder="Your lastname" name="lastname" required>    
               
                         <label><b>Email</b></label>
-                        <input class="form-control" type="email" ng-model="obj.guest_email" placeholder="Your email" name="email" required>
+                        <input class="form-control" type="email" disabled ng-model="guest_email" placeholder="Your email" name="email" required>
               
                         <label><b>Comment</b></label>
                         <textarea class="form-control" style="width:100%;height:100px;resize:none" ng-model="obj.guest_comment" placeholder="Empty..."></textarea>
@@ -129,7 +129,7 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <button ng-click="support(obj)" class="btn btn-success">Send</button>
+                                <button ng-click="support()" class="btn btn-success">Send</button>
                               </div>
                               <div class="col-md-6">
                                   <button onclick="$('#id01').fadeOut(500);" class="btn btn-danger">Cancel</button>

@@ -21,7 +21,7 @@
     <link href="css/loader.css" rel="stylesheet" type="text/css">
     <title>PriceList- iMakeapp</title>
   </head>
-  <body class="">
+  <body class="" ng-app="loginApp">
       <div id="preloader">
           <div id="loader"></div>
         </div>
@@ -94,55 +94,62 @@
         <!-- /.header -->
       </div>
       <!-- /.header-wrapper -->
-      <div class="main-wrapper">
-        <div class="main">
+      <div class="main-wrapper" >
+        <div class="main" ng-controller="productListController" ng-init="refreshProductList()">
           <div class="main-inner">
             <div class="page-title">
               <div class="container">
                 <h1>Product Pricelist</h1>
+                <div class="row" ng-if="loading" style="position: absolute;right:150px;margin-top:15px;">
+                  <center>
+                      <img style="width: 20px;" src="css/lightbox/load.gif" alt="logo"/>
+                  </center>
+              </div>
+              <button class="btn btn-info" ng-click="refreshProductList()" style="position: absolute;right:50px;margin-top:10px;">Refresh</button>
+              
                 </div>
                 <!-- /.page-title-actions -->
               </div>
               <!-- /.container-->
             </div>
             <!-- /.page-title -->
-            <div class="container" ng-app="csvApp">
+            <div class="container" >
               <div class="box">
                 <div class="box-inner">
                   <h3 class="page-title-small">Imakapp Price List</h3>
                   <div class="row">
                     <div class="form-group col-sm-6">
-                     <div ng-controller="productListController" class="container" ng-cloack>
+                     <div class="container" ng-cloack>
 
-    <br>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Availability</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat='reg in data1'>
-              <td>{{reg.id}}</td>
-              <td>{{reg.name}}</td>
-              <td>{{reg.service}}</td>
-              <td>{{reg.price}}</td>
-              <td>{{reg.availability}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div><br>
-    <button type="button" class="btn btn-default" ng-csv="data1" filename="Prices.csv" csv-header="['Id', 'Name', 'Service', 'Price', 'Availability']" charset="utf-8"><span class="glyphicon glyphicon-download-alt">&nbsp;</span>Download Price Table</button>
-    
-    <br>
-    <p>
+                    <br>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Id</th>
+                              <th>Name</th>
+                              <th>Product</th>
+                              <th>Price</th>
+                              <th>Availability</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr ng-repeat='reg in data1'>
+                              <td>{{reg.id}}</td>
+                              <td>{{reg.name}}</td>
+                              <td>{{reg.service}}</td>
+                              <td>{{reg.price}}</td>
+                              <td>{{reg.availability}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div><br>
+                    <button type="button" class="btn btn-default" ng-csv="data1" filename="Prices.csv" csv-header="['Id', 'Name', 'Service', 'Price', 'Availability']" charset="utf-8"><span class="glyphicon glyphicon-download-alt">&nbsp;</span>Download Price Table</button>
+                    
+                    <br>
+                    <p>
       <small>
       More information and other Queries please Mail <a href="#" target="_blank">Info@imakapp.com</a>
     </small>
@@ -170,11 +177,11 @@
     <div class="side-wrapper">
       <div class="side">
         <div class="side-inner">
-          <div class="side-user">
+          <div class="side-user" ng-controller="viewingController">
             <span class="avatar" style="background-image: url('../assets/img/tmp/user-10.jpg');"></span>
             <span class="side-user-avatar-name">
-              <strong></strong>
-              <span></span>
+              <strong>{{clientNames}}</strong>
+              <span> {{clientSnames}}</span>
             </span>
             <a href="#" class="side-user-avatar-action">
               <i class="fa fa-cog"></i>
@@ -202,7 +209,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.3/ng-csv.min.js'></script>
 
-    <script  src="js/pricelist.js"></script>
+    
 
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/tether.min.js"></script>
@@ -223,6 +230,8 @@
     <script type="text/javascript" src="assets/js/particles.min.js"></script>
     <script type="text/javascript" src="assets/js/explorer.js"></script>
     <script type="text/javascript" src="assets/js/explorer-map-search.js"></script>
+    
+    <script src="framework/angular_modules/controllers/loginClientController.js"></script>
     <script type="text/javascript">
       setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
     </script>

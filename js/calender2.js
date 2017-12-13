@@ -19,21 +19,27 @@ app.controller('dateTimeCtrl', function ($scope) {
     };
 });
 
-app.controller('reportCtl',['$scope','$http',function($scope,$http){
-    /*  var client__id = SessionService.get("client__ID");    
-      var firstname = SessionService.get("fname");
-      var lastname = SessionService.get("lname");
-      var email = SessionService.get("client_email");*/
+app.controller('reportCtl',['$scope','$http','SessionService',function($scope,$http,SessionService){
   
+      var clientId =  SessionService.get("clientId");
+      var clientName = SessionService.get("clientName");
+      var clientSname = SessionService.get("clientSurname");
+      var clientEmail = SessionService.get("clientEmail");
   
+      $scope.guest_name = clientName;
+      $scope.guest_surname = clientSname;
+      $scope.guest_email = clientEmail;
+      $scope.guest_comment = "";
+
+   
       $scope.support = function(obj){
           $scope.loading = "Loading...";
           var object = angular.toJson(
               {
-                  firstname:obj.guest_name,
-                  lastname :obj.guest_surname,
-                  client_email : obj.guest_email,
-                  comment : obj.guest_comment
+                  firstname: $scope.guest_name,
+                  lastname : $scope.guest_surname,
+                  client_email : $scope.guest_email,
+                  comment : $scope.guest_comment
               
               });
   
@@ -41,10 +47,10 @@ app.controller('reportCtl',['$scope','$http',function($scope,$http){
               .then(function(response){
                   //$scope.bookings = response.data.records;
                 console.log(response.data);
-                obj.guest_name = "";
-                obj.guest_surname = "";
-                obj.guest_email = "";
-                obj.guest_comment = "";
+                $scope.obj.guest_name = "";
+                $scope.obj.guest_surname = "";
+                $scope.obj.guest_email = "";
+                $scope.obj.guest_comment = "";
                 location.reload();
 
               },function(error){
@@ -61,7 +67,8 @@ app.controller('reportCtl',['$scope','$http',function($scope,$http){
         var clientId =  SessionService.get("clientId");
         var clientName = SessionService.get("clientName");
         var clientSname = SessionService.get("clientSurname");
-
+        var clientEmail = SessionService.get("clientEmail");
+        
         $scope.clientid = clientId;
         $scope.clientname = clientName;
         $scope.clientsname = clientSname;
