@@ -83,10 +83,14 @@ app.controller('reportCtl',['$scope','$http','SessionService',function($scope,$h
             
         };
 
+        $scope.loading = false;
+
         $scope.makeBooking = function(values){
             //alert("Clicked");
             var serviceDate = $scope.newDateSelected;
             var serviceTime = $scope.newTimeSelected;
+
+            $scope.loading = true;
 
             //alert("Booked Service "+values.bookedService.name+" Stylist Id "+values.stylistId.style_id+" Client Id "+clientId+" Service Date "+serviceDate+" Service Time "+serviceTime+" Service Price "+values.bookedService.price+" Stylist Location "+values.stylistId.salon_physical_address)
             var object = angular.toJson({booked_service: values.bookedService.name, stylist_id: values.stylistId.style_id, client_id: clientId, service_date: serviceDate, service_time: serviceTime, service_location: values.stylistId.salon_physical_address});
@@ -97,10 +101,12 @@ app.controller('reportCtl',['$scope','$http','SessionService',function($scope,$h
                     $scope.results = "You've booked successfully";
                     console.log("You've booked successfully");
                     alert("You've booked successfully");
+                    $scope.loading = false;
                     location.reload();
                 }
                 else{
-                    $scope.results = "Booking failed, please check your details";
+                    alert("Booking failed, please check your details");
+                    $scope.loading = false;
                 }
              });
         };
