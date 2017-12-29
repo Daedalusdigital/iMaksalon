@@ -537,6 +537,51 @@ hr {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
+footer.bg-deep {
+  background-color: #191919 !important;
+}
+.bg-black-111 {
+  background-color: #111111 !important;
+}
+.bg-black-222 {
+  background-color: #222222 !important;
+}
+.bg-black-333 {
+  background-color: #333333 !important;
+}
+.bg-black-444 {
+  background-color: #404040 !important;
+}
+.bg-black-555 {
+  background-color: #555555 !important;
+}
+.bg-gray-dimgray {
+  background-color: #666666 !important;
+}
+.bg-gray-light {
+  background-color: #777777 !important;
+}
+.bg-gray {
+  background-color: #808080 !important;
+}
+.bg-gray-darkgray {
+  background-color: #a9a9a9 !important;
+}
+.bg-gray-silver {
+  background-color: #c0c0c0 !important;
+}
+.bg-gray-lightgray {
+  background-color: #d3d3d3 !important;
+}
+.bg-gray-gainsboro {
+  background-color: #dcdcdc !important;
+}
+.bg-gray-lighter {
+  background-color: #eeeeee !important;
+}
+
+
+
 small,
 .small {
   font-size: 80%;
@@ -10163,7 +10208,7 @@ h1.hero-image-content-title-simple {
   background-color: #fff;
   box-shadow: 0 0 3px rgba(50, 50, 50, 0.2);
   color: #7f7f7f;
-  padding: 40px 0;
+  padding: 30px 0;
   position: relative;
   z-index: 10; }
   @media (max-width: 1199px) {
