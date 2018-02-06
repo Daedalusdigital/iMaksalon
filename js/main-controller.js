@@ -8,5 +8,6 @@ app.controller('MainController', ['$scope', '$http',
                   $scope.people = data;
             })   
 
+            
     }
 ]);

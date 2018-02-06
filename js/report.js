@@ -8,7 +8,13 @@ report.controller('reportCtl',['$scope','$http',function($scope,$http){
 
 
     $scope.support = function(obj){
-        alert("In.");
+
+          var object = angular.toJson({feed_description: "New Report", feed_type: "report"});
+                 
+           $http.post('https://prod-14.southcentralus.logic.azure.com:443/workflows/a0742c1197b74358a25d4392507ae093/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YedVUN8n_kYuNW-GbDw7UNlKZ5QbcgP_x90fEuaJbng',object);
+             
+    
+      
         var object = angular.toJson(
             {
                 firstname:obj.guest_name,

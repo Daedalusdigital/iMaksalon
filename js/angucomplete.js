@@ -45,6 +45,8 @@ angular.module('angucomplete', [] )
                 return newTerm.length >= $scope.minLength && newTerm != oldTerm
             }
 
+
+
             $scope.processResults = function(responseData, str) {
                 if (responseData && responseData.length > 0) {
                     $scope.results = [];
@@ -183,11 +185,13 @@ angular.module('angucomplete', [] )
                 if ($scope.matchClass) {
                     result.title = result.title.toString().replace(/(<([^>]+)>)/ig, '');
                 }
+                console.log("clicked");
                 $scope.searchStr = $scope.lastSearchTerm = result.title;
                 $scope.selectedObject = result;
                 $scope.showDropdown = false;
                 $scope.results = [];
                 //$scope.$apply();
+
             }
 
             var inputField = elem.find('input');
@@ -234,6 +238,7 @@ angular.module('angucomplete', [] )
                     $scope.$apply();
                 }
             });
+
 
         }
     };

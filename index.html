@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en" ng-app="app">
+<html dir="ltr" lang="en">
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -50,8 +50,8 @@
 
 
 </head>
-<body ng-app="Imakapp">
-
+<body ng-app="app">
+<div ng-controller="newVisit"></div>
 <div id="wrapper">
   <div id="preloader">
     <div id="loader"></div>
@@ -810,7 +810,7 @@
           <div class="widget dark">
             <h5 class="widget-title mb-10">Subscribe to Us</h5>
             <!-- Mailchimp Subscription Form Starts Here -->
-            <form ng-controller="emailController" class="newsletter-form" >
+            <form class="newsletter-form" >
               <div class="input-group">
                 <span class="input-group-btn">
                   <a href="framework/subscribe.html" style="coloR:white" class="btn btn-success btn-theme-colored btn-xs m-0 font-14">Subscribe</a>
@@ -888,9 +888,26 @@
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script> 
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script> 
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
 
 <script type="text/javascript">
   setTimeout(function(){ $('#preloader').fadeOut('slow') }, 2000);
+  var app = angular.module('app',[]);
+
+  app.controller('newVisit',['$scope','$http',function($scope,$http){
+    
+    var object = angular.toJson({feed_description: "New visit", feed_type: "visits"});
+           
+      // visit.addVisit(obj).then(function(res){
+      //     alert("welcome "+res);
+      // });
+      var promise=$http.post('https://prod-14.southcentralus.logic.azure.com:443/workflows/a0742c1197b74358a25d4392507ae093/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YedVUN8n_kYuNW-GbDw7UNlKZ5QbcgP_x90fEuaJbng',object);
+       
+      if(promise){
+        alert("welcome ");
+      }
+      
+  }]);
 
 </script>
 </body>
