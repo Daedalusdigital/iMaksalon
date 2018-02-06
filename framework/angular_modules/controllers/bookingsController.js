@@ -22,9 +22,8 @@ app.controller("bookingController",['$scope','BookingService','populateServices'
                if(res.data.response=='1'){
                    $scope.results = "You've booked successfully";
                    var object = angular.toJson({feed_description: "New Booking", feed_type: "bookings"});
-                 
-                   $http.post('https://prod-14.southcentralus.logic.azure.com:443/workflows/a0742c1197b74358a25d4392507ae093/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YedVUN8n_kYuNW-GbDw7UNlKZ5QbcgP_x90fEuaJbng',object);
-                     
+                   
+                   $http.post('https://prod-14.southcentralus.logic.azure.com:443/workflows/a0742c1197b74358a25d4392507ae093/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YedVUN8n_kYuNW-GbDw7UNlKZ5QbcgP_x90fEuaJbng',object);      
                }
                else{
                    $scope.results = "Booking failed, please check your details";
